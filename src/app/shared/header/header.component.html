@@ -1,0 +1,119 @@
+<!-- Menu cabecera -->
+<header class="topbar">
+	<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+		<!-- ============================================================== -->
+		<!-- Logo -->
+		<!-- ============================================================== -->
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">
+				<b>
+					<!-- Dark Logo icon -->
+					<img src="assets/images/logo-icon.png" style="max-width: 60px; max-height: 60px" alt="homepage" class="dark-logo" />
+				</b>
+				<!-- Logo text -->
+				<span>
+					<!-- dark Logo text -->
+					<img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+				</span>
+			</a>
+		</div>
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- Toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+				<li class="nav-item">
+					<a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
+						<img src="assets/images/icon/menu.svg" height="30px" width="30px" alt="menu">
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+						<img src="assets/images/icon/menu.svg" height="30px" width="30px" alt="menu">
+					</a>
+				</li>
+				<li class="nav-item hidden-sm-down"></li>
+			</ul>
+
+
+			<!-- ============================================================== -->
+            <!-- Search book-->
+            <!-- ============================================================== -->
+			<ul class="navbar-nav my-lg-0">
+	            <li class="nav-item hidden-xs-down search-box">
+	                <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+	                	<i class="ti-search"></i>
+	                </a>
+	                <form class="app-search">
+	                	<input type="text" class="form-control" placeholder="Search & enter">
+	                	<a class="srh-btn">
+	                		<i class="ti-close"></i>
+	                	</a>
+	                </form>
+	            </li>
+	        </ul>
+			<!-- <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+      		<button (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button> -->
+
+				
+
+			<!-- ============================================================== -->
+			<!-- Add book -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav my-lg-0">	
+				<!-- <a class="has-arrow waves-effect waves-dark" href="{% url 'add_book' %}" aria-expanded="false"> -->
+				<img src="assets/images/add.png" alt="add_book" class="" />
+			</ul>
+
+
+			<!-- ============================================================== -->
+			<!-- Profile -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav my-lg-0">	
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="assets/images/profile.jpg" alt="user" class="profile-pic" />
+					</a>
+					<div class="dropdown-menu dropdown-menu-right animated flipInY">
+						<ul class="dropdown-user">
+							<li>
+								<div class="dw-user-box">
+									<div class="u-img">
+										<img src="assets/images/profile.jpg" alt="user" style="max-width: 60px; max-height: 60px">
+									</div>
+									<div class="u-text">
+										<h4>Steave Jobs</h4>
+										<p class="text-muted">stevejobs@gmail.com</p>
+										<a href="#" class="btn btn-rounded btn-danger btn-sm">Ver perfil</a>
+									</div>
+								</div>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="#"></a>
+								<a class="has-arrow waves-effect waves-dark " href="#" aria-expanded="false">
+									<i class="ti-wallet"></i> Mi biblioteca digital
+								</a>
+							</li>
+							<li>
+								<a href="#">
+								<i class="ti-email"></i>Mis mensajes</a>
+							</li>
+							<li>
+								<a href="#">
+								<i class="ti-email"></i>Mis notificaciones</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="#">
+								<i class="fa fa-power-off"></i> Logout</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<!-- Fin Menu cabecera -->
