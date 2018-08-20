@@ -1,8 +1,7 @@
-<!-- Menu cabecera -->
 <header class="topbar">
-	<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+	<nav class="navbar top-navbar navbar-expand-md navbar-light">
 		<!-- ============================================================== -->
-		<!-- Logo -->
+		<!-- Logo 															-->
 		<!-- ============================================================== -->
 		<div class="navbar-header">
 			<a class="navbar-brand" href="index.html">
@@ -17,103 +16,178 @@
 				</span>
 			</a>
 		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo 														-->
+		<!-- ============================================================== -->
 		<div class="navbar-collapse">
 			<!-- ============================================================== -->
-			<!-- Toggle and nav items -->
+			<!-- Toggle and nav items 											-->
 			<!-- ============================================================== -->
 			<ul class="navbar-nav mr-auto">
 				<!-- This is  -->
 				<li class="nav-item">
 					<a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
-						<img src="assets/images/icon/menu.svg" height="30px" width="30px" alt="menu">
+						<i class="ti-menu"></i>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
-						<img src="assets/images/icon/menu.svg" height="30px" width="30px" alt="menu">
+						<i class="ti-menu"></i>
 					</a>
 				</li>
 				<li class="nav-item hidden-sm-down"></li>
 			</ul>
-
-
 			<!-- ============================================================== -->
-            <!-- Search book-->
-            <!-- ============================================================== -->
+			<!-- User profile, notifications, add book and search 				-->
+			<!-- ============================================================== -->
 			<ul class="navbar-nav my-lg-0">
-	            <li class="nav-item hidden-xs-down search-box">
-	                <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
-	                	<i class="ti-search"></i>
-	                </a>
-	                <form class="app-search">
-	                	<input type="text" class="form-control" placeholder="Search & enter">
-	                	<a class="srh-btn">
-	                		<i class="ti-close"></i>
-	                	</a>
-	                </form>
-	            </li>
-	        </ul>
-			<!-- <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
-      		<button (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button> -->
+				<!-- ============================================================== -->
+				<!-- Search 														-->
+				<!-- ============================================================== -->
+				<li class="nav-item hidden-xs-down search-box">
+					<a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+						<i class="ti-search"></i>
+					</a>
+					<form class="app-search">
+						<input type="text" class="form-control" placeholder="Search & enter">
+						<a class="srh-btn">
+							<i class="ti-close"></i>
+						</a>
+					</form>
+				</li>
+				<!-- ============================================================== -->
+				<!-- End search 													-->
+				<!-- ============================================================== -->
 
-				
+				<!-- ============================================================== -->
+				<!-- Notifications 													-->
+				<!-- ============================================================== -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+						<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
+						<ul>
+							<li>
+								<div class="drop-title">Notifications</div>
+							</li>
+							<li>
+								<div class="message-center">
+									<!-- Message -->
+									<a href="#">
+										<div class="btn btn-danger btn-circle">
+											<i class="fa fa-link"></i>
+										</div>
+										<div class="mail-contnet">
+											<h5>Luanch Admin</h5> 
+											<span class="mail-desc">Just see the my new admin!</span> 
+											<span class="time">9:30 AM</span> 
+										</div>
+									</a>
+									<!-- Message -->
+									<a href="#">
+										<div class="btn btn-success btn-circle">
+											<i class="ti-calendar"></i></div>
+										<div class="mail-contnet">
+											<h5>Event today</h5> 
+											<span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> 
+										</div>
+									</a>
+									<!-- Message -->
+									<a href="#">
+										<div class="btn btn-info btn-circle">
+											<i class="ti-settings"></i>
+										</div>
+										<div class="mail-contnet">
+											<h5>Settings</h5> 
+											<span class="mail-desc">You can customize this template as you want</span> 
+											<span class="time">9:08 AM</span> 
+										</div>
+									</a>
+									<!-- Message -->
+									<a href="#">
+										<div class="btn btn-primary btn-circle">
+											<i class="ti-user"></i>
+										</div>
+										<div class="mail-contnet">
+											<h5>Pavan kumar</h5> 
+											<span class="mail-desc">Just see the my admin!</span> 
+											<span class="time">9:02 AM</span> 
+										</div>
+									</a>
+								</div>
+							</li>
+							<li>
+								<a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> 
+									<i class="fa fa-angle-right"></i> 
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<!-- ============================================================== -->
+				<!-- End Notifications 												-->
+				<!-- ============================================================== -->
 
-			<!-- ============================================================== -->
-			<!-- Add book -->
-			<!-- ============================================================== -->
-			<ul class="navbar-nav my-lg-0">	
-				<!-- <a class="has-arrow waves-effect waves-dark" href="{% url 'add_book' %}" aria-expanded="false"> -->
-				<img src="assets/images/add.png" alt="add_book" class="" />
-			</ul>
+				<!-- ============================================================== -->
+				<!-- Add book 														-->
+				<!-- ============================================================== -->
+				<li class="nav-item hidden-xs-down">
+					<a [routerLink]="['/addBook']" class="nav-link hidden-sm-down waves-effect waves-dark">
+						<img src="assets/images/add.png" alt="add_book" class="" />
+					</a>
 
+				</li>
+				<!-- ============================================================== -->
+				<!-- End Add book 													-->
+				<!-- ============================================================== -->
 
-			<!-- ============================================================== -->
-			<!-- Profile -->
-			<!-- ============================================================== -->
-			<ul class="navbar-nav my-lg-0">	
+				<!-- ============================================================== -->
+				<!-- Profile 														-->
+				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img src="assets/images/profile.jpg" alt="user" class="profile-pic" />
+						<img src="../assets/images/users/profile.jpg" alt="user" class="profile-pic" />
 					</a>
-					<div class="dropdown-menu dropdown-menu-right animated flipInY">
+					<div class="dropdown-menu dropdown-menu-right animated fadeIn">
 						<ul class="dropdown-user">
 							<li>
 								<div class="dw-user-box">
 									<div class="u-img">
-										<img src="assets/images/profile.jpg" alt="user" style="max-width: 60px; max-height: 60px">
+										<img src="../assets/images/users/1.jpg" alt="user">
 									</div>
 									<div class="u-text">
 										<h4>Steave Jobs</h4>
-										<p class="text-muted">stevejobs@gmail.com</p>
-										<a href="#" class="btn btn-rounded btn-danger btn-sm">Ver perfil</a>
+										<p class="text-muted">varun@gmail.com</p>
+										<a [routerLink]="['/profile']" class="btn btn-rounded btn-danger btn-sm">Ver perfil</a>
 									</div>
 								</div>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li>
-								<a href="#"></a>
-								<a class="has-arrow waves-effect waves-dark " href="#" aria-expanded="false">
-									<i class="ti-wallet"></i> Mi biblioteca digital
-								</a>
+								<a [routerLink]="['/profile']">
+									<i class="ti-user"></i>Mi perfil</a>
 							</li>
 							<li>
 								<a href="#">
-								<i class="ti-email"></i>Mis mensajes</a>
+									<i class="ti-wallet"></i>Mi biblioteca</a>
 							</li>
 							<li>
 								<a href="#">
-								<i class="ti-email"></i>Mis notificaciones</a>
+									<i class="ti-email"></i>Mis mensajes</a>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li>
 								<a href="#">
-								<i class="fa fa-power-off"></i> Logout</a>
+									<i class="fa fa-power-off"></i>Cerrar sesión</a>
 							</li>
 						</ul>
 					</div>
 				</li>
+				<!-- ============================================================== -->
+				<!-- End Profile 													-->
+				<!-- ============================================================== -->
 			</ul>
 		</div>
 	</nav>
 </header>
-<!-- Fin Menu cabecera -->

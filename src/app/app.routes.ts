@@ -1,16 +1,16 @@
 import {  RouterModule, Routes } from '@angular/router';
 
-
-import { BooksComponent } from './components/books/books.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+// PAGES
+import { AddBookComponent  } from './pages/add-book/add-book.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 const APP_ROUTES: Routes = [
-   { path: 'books', component: BooksComponent },
-   { path: 'header', component: HeaderComponent },
-   { path: 'sidebar', component: SidebarComponent },
-   { path: '**', pathMatch: 'full', redirectTo: 'books' }
+   { path: 'home', component: HomeComponent },
+   { path: 'addBook', component: AddBookComponent },
+   { path: 'profile', component: ProfileComponent },
+   { path: '**', pathMatch: 'full', redirectTo: 'addBook' }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

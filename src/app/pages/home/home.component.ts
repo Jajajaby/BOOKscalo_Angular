@@ -5,16 +5,14 @@ import { Book } from "../../interface/book.interface";
 import { BooksService } from "../../services/books.service";
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html'
+  selector: 'app-home',
+  templateUrl: './home.component.html'
 })
-export class BooksComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
-	
   constructor() { }
 
   ngOnInit() {
   }
-
 
 }
