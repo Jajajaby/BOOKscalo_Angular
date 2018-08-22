@@ -29,12 +29,12 @@ export class CardBookComponent implements OnInit {
 	ngOnInit() {
  	}
 
-
+ 	// Para mostrar un solo libro en la página
  	showBook(i) {
  		console.log( this.index );
  		// UNLIBRO es el nombre de la página a la que se va a redirigir
  		// index es el índice del libro que se va a mostrar
- 		// this.router.navigate( ['/UNLIBRO', this.index] );
+ 		this.router.navigate( ['/book', this.index] );
  	}
 
 
