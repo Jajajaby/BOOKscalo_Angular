@@ -66,7 +66,7 @@
 					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
 						<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
+					<div class="dropdown-menu dropdown-menu-right fadeIn animated">
 						<ul>
 							<li>
 								<div class="drop-title">Notifications</div>
@@ -90,7 +90,8 @@
 											<i class="ti-calendar"></i></div>
 										<div class="mail-contnet">
 											<h5>Event today</h5> 
-											<span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> 
+											<span class="mail-desc">Just a reminder that you have event</span> 
+											<span class="time">9:10 AM</span> 
 										</div>
 									</a>
 									<!-- Message -->
@@ -149,7 +150,7 @@
 					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<img src="../assets/images/users/profile.jpg" alt="user" class="profile-pic" />
 					</a>
-					<div class="dropdown-menu dropdown-menu-right animated fadeIn">
+					<div class="dropdown-menu dropdown-menu-right fadeIn animated">
 						<ul class="dropdown-user">
 							<li>
 								<div class="dw-user-box">
@@ -159,27 +160,38 @@
 									<div class="u-text">
 										<h4>Steave Jobs</h4>
 										<p class="text-muted">varun@gmail.com</p>
-										<a [routerLink]="['/profile']" class="btn btn-rounded btn-danger btn-sm">Ver perfil</a>
+										<a [routerLink]="['/profile']"
+											class="btn btn-rounded btn-danger btn-sm">
+											Ver perfil
+										</a>
 									</div>
 								</div>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li>
 								<a [routerLink]="['/profile']">
-									<i class="ti-user"></i>Mi perfil</a>
+									<i class="ti-user"></i>
+									&nbsp; Mi perfil
+								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="ti-wallet"></i>Mi biblioteca</a>
+								<a [routerLink]="['/library']">
+									<i class="ti-wallet"></i>
+									&nbsp; Mi biblioteca
+								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="ti-email"></i>Mis mensajes</a>
+								<a [routerLink]="['/messages']">
+									<i class="ti-email"></i>
+									&nbsp; Mis mensajes
+								</a>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li>
 								<a href="#">
-									<i class="fa fa-power-off"></i>Cerrar sesión</a>
+									<i class="fa fa-power-off"></i>
+									&nbsp; Cerrar sesión
+								</a>
 							</li>
 						</ul>
 					</div>

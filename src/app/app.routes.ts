@@ -4,12 +4,16 @@ import {  RouterModule, Routes } from '@angular/router';
 import { AddBookComponent  } from './pages/add-book/add-book.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+import { LibraryComponent } from './pages/library/library.component';
 
 
 const APP_ROUTES: Routes = [
    { path: 'home', component: HomeComponent },
    { path: 'addBook', component: AddBookComponent },
    { path: 'profile', component: ProfileComponent },
+   { path: 'messages', component: MessagesComponent },
+   { path: 'library', component: LibraryComponent },
    { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

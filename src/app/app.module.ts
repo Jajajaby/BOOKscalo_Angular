@@ -19,6 +19,10 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CardBookComponent } from './components/card-book/card-book.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+import { LibraryComponent } from './pages/library/library.component';
+import { OtherUserComponent } from './pages/other-user/other-user.component';
+import { OneBookComponent } from './pages/one-book/one-book.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { HomeComponent } from './pages/home/home.component';
     AddBookComponent,
     ProfileComponent,
     CardBookComponent,
-    HomeComponent
+    HomeComponent,
+    MessagesComponent,
+    LibraryComponent,
+    OtherUserComponent,
+    OneBookComponent
   ],
   imports: [
     BrowserModule,

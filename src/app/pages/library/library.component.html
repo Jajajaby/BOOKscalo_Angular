@@ -1,0 +1,63 @@
+<!-- FALTA DÓNDE UBICAR EL TÍTULO -->
+<!-- FALTA UN SEARCH CON KEYUP(??) -->
+
+
+
+<!-- ========================================================================== -->
+<!-- Options view bar															-->
+<!-- ========================================================================== -->
+<div class="container">
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4">
+			<div class="btn-group mr-2" role="group">
+				<button type="button" class="btn btn-secondary">
+					<a class="" (click)="view_bar = 'all'">Todos</a>
+				</button>
+				<button type="button" class="btn btn-secondary">
+					<a class="" (click)="view_bar = 'exchange'">Intercambio</a>
+				</button>
+				<button type="button" class="btn btn-secondary">
+					<a class="" (click)="view_bar = 'sales'">Ventas</a>
+				</button>
+				<button type="button" class="btn btn-secondary">
+					<a class="" (click)="view_bar = 'both'">Ambos</a>
+				</button>
+			</div>
+		</div>
+		<div class="col-4"></div>
+	</div>
+</div>
+
+
+<div [ngSwitch]="view_bar" class="col-8">
+<!-- ============================================================== -->
+<!-- Show profile													-->
+<!-- ============================================================== -->
+	<div *ngSwitchCase="'all'">Todos
+		<!-- Large modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+		<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+			  		LARGE MODAL
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngSwitchCase="'exchange'">Intercambio
+
+
+	</div>
+	<div *ngSwitchCase="'sales'">Venta
+
+
+	</div>
+	<div *ngSwitchCase="'both'">Ambos
+
+	</div>
+</div>
+
+
+
