@@ -16,7 +16,7 @@ export class BooksService {
 
 	constructor(private http:Http) { 
 	}
-
+	
 	newBook ( book:Book ){
 		// Lo que se va a mandar
 		let body = JSON.stringify( book );
