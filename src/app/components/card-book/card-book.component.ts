@@ -14,7 +14,7 @@ export class CardBookComponent implements OnInit {
 	@Input() index:	number ;
 
 	// Todos los libros
-	books:any;
+	books: any[] = [];
 
 	// Se inyecta router para redirigir las páginas
 	constructor( private router:Router,
@@ -23,6 +23,7 @@ export class CardBookComponent implements OnInit {
 		this._booksService.getBooks()
 			.subscribe( data =>{
 				console.log(data);
+				this.books = data;
 			})
 	}
 

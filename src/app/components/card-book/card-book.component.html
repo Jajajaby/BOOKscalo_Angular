@@ -1,33 +1,28 @@
-<!-- TRAER LOS LIBROS DESDE FIREBASE -->
-<!-- DOS BOTONES EN CADA CARD. TIENE QUE ABRIR MODAL CON EL LIBRO O PÁGINA CON CONTACTO PARA HACER LA TRANSACCIÓN -->
-
-
-
-
-
+<!-- TIENE QUE ABRIR MODAL CON EL LIBRO O PÁGINA CON CONTACTO PARA HACER LA TRANSACCIÓN -->
 
 
 <div class="container m-4">
 	<div class="row">
-		
-			<div class="col-4">
-				<div class="card" style="width: 18rem;">
-					<!-- picture o img -->
-					<img class="card-img-top" [src]="book.picture" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Título: {{ book.title }}</h5>
-						<p class="card-text">Autor/a: {{ book.author }}</p>
-						<p class="card-text">Editorial: {{book.editorial }}</p>
-						<button class="dropdown-item" href="#" type="button" class="btn btn-outline-info btn-block">Ver libro</button>
-						<!-- <button (click)="showBook()" href="#" type="button" class="btn btn-outline-primary btn-block">Ver libro</button> -->
+		<div class="col-4">
+			<div class="card" style="width: 18rem;" 
+			*ngFor="let k of books | keys; let i = index">
+				<!-- picture o img -->
+				<img class="card-img-top" [src]="book.picture" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Título: {{ books[k].title }}</h5>
+					<p class="card-text">Autor/a: {{ books[k].author }}</p>
+					<p class="card-text">Editorial: {{books[k].editorial }}</p>
+
+					<button class="dropdown-item" href="#" type="button" class="btn btn-outline-info btn-block">Ver libro</button>
+					<!-- <button (click)="showBook()" href="#" type="button" class="btn btn-outline-primary btn-block">Ver libro</button> -->
 						
-						<a href="#" class="btn btn-outline-info col-md-6" type="button">Ver libro</a>
-						<a href="#" class="btn btn-outline-info col-md-6" type="button">Contactar dueño/a</a>
-					</div>
+					<a href="#" class="btn btn-outline-info col-md-6" type="button">Ver libro</a>
+					<a href="#" class="btn btn-outline-info col-md-6" type="button">Contactar dueño/a</a>
 				</div>
 			</div>
-	
+		</div>
 	</div>
 </div>
 
-<!-- *ngFor="let book of books; let i = index"  -->
+
+<!-- *ngFor="let book of books; let i = index" -->

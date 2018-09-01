@@ -59,6 +59,7 @@ export class AddBookComponent implements OnInit {
 		}
 	}
 
+	// Para agregar un libro
 	addNewBook( forma:NgForm ){
 		this.router.navigate(['/book', 'nuevo']);
 		forma.reset();

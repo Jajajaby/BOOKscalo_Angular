@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BooksService } from "../../services/books.service";
 
 @Component({
   selector: 'app-one-book',
@@ -6,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneBookComponent implements OnInit {
 
-  constructor() { }
+  	// Todos los libros
+	books: any[] = [];
+
+	// Se inyecta router para redirigir las páginas
+	constructor( private _booksService:BooksService) { 
+		// Procedimiento para leer el servicio
+		this._booksService.getBooks()
+			.subscribe( data =>{
+				console.log(data);
+				this.books = data;
+			})
+	}
 
   ngOnInit() {
   }

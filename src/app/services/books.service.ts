@@ -3,6 +3,8 @@ import { Http, Headers } from "@angular/http";
 import { Book } from "../interface/book.interface";
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +48,7 @@ export class BooksService {
 		let url = `${ this.bookURL}/${ key$ }.json`;
 
 		// Observable para ver si se actualizó o no
+		// Método PUT
 		return this.http.put( url, body, { headers } )
 			.pipe(map( res=>{
 				console.log(res.json());

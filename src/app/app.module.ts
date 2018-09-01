@@ -10,6 +10,9 @@ import { APP_ROUTING } from './app.routes';
 //SERVICIOS
 import { BooksService } from "./services/books.service";
 
+//PIPES
+import { KeysPipe } from './pipes/keys.pipe';
+
 //COMPONENTES
 import { AppComponent } from './app.component';
 import { BooksComponent } from './components/books/books.component';
@@ -37,7 +40,8 @@ import { OneBookComponent } from './pages/one-book/one-book.component';
     MessagesComponent,
     LibraryComponent,
     OtherUserComponent,
-    OneBookComponent
+    OneBookComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

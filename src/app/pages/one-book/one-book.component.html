@@ -3,16 +3,10 @@
 
 <!-- CAMBIAR ESE COLOR DE FONDO -->
 
-
-
-
-
-
-
 	<!-- ================================================================== -->
 	<!-- Carrusel															-->
 	<!-- ================================================================== -->
-	<div class="row">	
+	<div class="row" *ngFor="let k of books | keys">	
 		<div id="carouselExampleIndicators2" class="carousel slide col-md-6" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
@@ -41,8 +35,8 @@
 		</div>
 
 		<div class="col-6">
-			<h1>Nombre libro</h1>
-			<h2>Autora libro</h2>
+			<h1>Nombre libro: {{ books[k].title }}</h1>
+			<h2>Autora libro {{ books[k].author }}</h2>
 			<h2>$9.000</h2>
 		</div>
 
