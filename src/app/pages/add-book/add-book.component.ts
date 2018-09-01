@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Books } from "../../interface/book.interface";
+import { Books } from "../../interface/books.interface";
 import { BooksService } from "../../services/books.service";
 
 // Angularfire2
@@ -37,29 +37,14 @@ export class AddBookComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	// Función para guardar y actualizar el libro
-	saveBook(){
-		console.log(this.book);
+	
 
-		if( this.id == "nuevo" ){
-			// Insertando
-			
-		}else{
-			// Actualizando
-			
-		}
-	}
 
-	// Para agregar un libro
-	addNewBook( forma:NgForm ){
-		this.router.navigate(['/book', 'nuevo']);
-		forma.reset();
-		// Para resetear pero dejar un elemento como default
-		// forma.reset( {
-			// casa:"Marvel" 
-		// });
 
-	}
+
+
+
+
 
 	uploadFile(event) {
 		const file = event.target.files[0];

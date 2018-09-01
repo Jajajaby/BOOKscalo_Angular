@@ -25,13 +25,13 @@ export class BooksService {
   }
   
   // Retorna Promesa
-  //
+  // Agrega data con identificador específico
   public addDataIdCustom( collection:string, id:string, document:any ){
     return this.afs.collection<any>( collection ).doc( id ).set( document );
   }
 
   // Retorna Promesa
-  //
+  // Agrega data sin identificador específico
   public addData( collection:string, document:any ){
     return this.afs.collection<any>( collection ).add( document );
   }
