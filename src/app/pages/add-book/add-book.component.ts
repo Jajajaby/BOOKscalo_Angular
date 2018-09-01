@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Books } from "../../interface/books.interface";
 import { BooksService } from "../../services/books.service";
+
+import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
 // Angularfire2
 import { AngularFireStorage } from 'angularfire2/storage';
@@ -15,8 +16,9 @@ import { AngularFireStorage } from 'angularfire2/storage';
 })
 export class AddBookComponent implements OnInit {
 
-	public book:Books;
+	forma:FormGroup;
 
+	
 	nuevo:boolean = false;
 	id:string;
 
@@ -25,25 +27,44 @@ export class AddBookComponent implements OnInit {
 					 private activatedRoute:ActivatedRoute,
 					 private storage: AngularFireStorage 
 				 ) { 
-
 		// Observable
 		this.activatedRoute.params
-			.subscribe(parametros=>{
+			.subscribe( parametros=> {
 				this.id = parametros['id']
-				
 			});
 	}
 
 	ngOnInit() {
+		this.forma = new FormGroup({
+			author: new FormControl('', Validators.required),
+			title: new FormControl('', Validators.required)
+		})
+
 	}
 
 	
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+	// Función para guardar y actualizar el libro
+	saveBook(){
+		console.log(this.forma);
+	}
+
+	// Para agregar un libro
+	addNewBook( forma ){
+		this.router.navigate(['/book', 'nuevo']);
+		forma.reset();
+		// Para resetear pero dejar un elemento como default
+		// forma.reset( {
+			// casa:"Marvel" 
+		// });
+>>>>>>> 5db056a47676b499f9689c31ac763721befc4394
 
 
 	uploadFile(event) {

@@ -5,40 +5,31 @@
 			<div class="form-group">
 				<h1 style="margin-top:30px;">Agregar libro</h1>
 
-				<div class="input-group">
-				  <div class="custom-file">
-					<input type="file" class="custom-file-input" id="inputGroupFile04">
-					<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-				  </div>
-				  <div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="button">Button</button>
-				  </div>
-				</div>
 
-				<input type="file" (change)="uploadFile($event)">
+				<input type="file" (change)="uploadFile($event)" multiple>
 
 				<!-- Esto da al servicio -->
-				<form (ngSubmit)="addData()" #forma="ngForm">
+				<form  [formGroup]="forma" (ngSubmit)="saveBook()" novalidate="novalidate">
 
 						<div class="form-group">
-							<label for="formGroupExampleInput">Titulo</label>
-							<input [(ngModel)]="book.title" name="title"
-								type="text"	class="form-control" id="formGroupExampleInput" 
-								placeholder="Título del libro" required>
+						    <label for="formGroupExampleInput">Titulo</label>
+						    <input formControlName="title" name="title"
+						    	type="text"	class="form-control" id="formGroupExampleInput" 
+						    	placeholder="Título del libro" required>
 						</div>
 
 						<div class="form-group">
-							<label for="formGroupExampleInput">Autor</label>
-							<input [(ngModel)]="book.author" name="author"
-								type="text"	class="form-control" id="formGroupExampleInput" 
-								placeholder="Autor/a del libro" required>
+						    <label for="formGroupExampleInput">Autor</label>
+						    <input formControlName="author" name="author"
+						    	type="text"	class="form-control" id="formGroupExampleInput" 
+						    	placeholder="Autor/a del libro" required>
 						</div>
 
 						<div class="form-group">
-							<label for="formGroupExampleInput">Editorial</label>
-							<input [(ngModel)]="book.editorial" name="editorial"
-								type="text"	class="form-control" id="formGroupExampleInput" 
-								placeholder="Editorial del libro" required>
+						    <label for="formGroupExampleInput">Editorial</label>
+						    <input formControlName="editorial" name="editorial"
+						    	type="text"	class="form-control" id="formGroupExampleInput" 
+						    	placeholder="Editorial del libro" required>
 						</div>
 
 						<div class="form-group">
