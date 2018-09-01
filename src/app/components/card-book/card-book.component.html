@@ -7,7 +7,7 @@
 			<div class="card" style="width: 18rem;" 
 			*ngFor="let book of books">
 				<!-- picture o img -->
-				<img class="card-img-top" [src]="book.images" alt="Card image cap">
+				<img class="card-img-top" *ngFor="let img of book.images"  [src]="img" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Título: {{ book.title }}</h5>
 					<p class="card-text">Autor/a: {{ book.author }}</p>

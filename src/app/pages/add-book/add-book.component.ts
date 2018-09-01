@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Book } from "../../interface/book.interface";
+import { Books } from "../../interface/book.interface";
 import { BooksService } from "../../services/books.service";
 
 // Angularfire2
@@ -15,11 +15,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 })
 export class AddBookComponent implements OnInit {
 
-	public book:Book = {
-		title:"",
-		author:"",
-		editorial:""
-	}
+	public book:Books;
 
 	nuevo:boolean = false;
 	id:string;
