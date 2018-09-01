@@ -5,28 +5,28 @@
 			<div class="form-group">
 				<h1 style="margin-top:30px;">Agregar libro</h1>
 
-				<input type="file" (change)="uploadFile($event)">
+				<input type="file" (change)="uploadFile($event)" multiple>
 
 				<!-- Esto da al servicio -->
-				<form (ngSubmit)="saveBook()" #forma="ngForm">
+				<form  [formGroup]="forma" (ngSubmit)="saveBook()" novalidate="novalidate">
 
 						<div class="form-group">
 						    <label for="formGroupExampleInput">Titulo</label>
-						    <input [(ngModel)]="book.title" name="title"
+						    <input formControlName="title" name="title"
 						    	type="text"	class="form-control" id="formGroupExampleInput" 
 						    	placeholder="Título del libro" required>
 						</div>
 
 						<div class="form-group">
 						    <label for="formGroupExampleInput">Autor</label>
-						    <input [(ngModel)]="book.author" name="author"
+						    <input formControlName="author" name="author"
 						    	type="text"	class="form-control" id="formGroupExampleInput" 
 						    	placeholder="Autor/a del libro" required>
 						</div>
 
 						<div class="form-group">
 						    <label for="formGroupExampleInput">Editorial</label>
-						    <input [(ngModel)]="book.editorial" name="editorial"
+						    <input formControlName="editorial" name="editorial"
 						    	type="text"	class="form-control" id="formGroupExampleInput" 
 						    	placeholder="Editorial del libro" required>
 						</div>
