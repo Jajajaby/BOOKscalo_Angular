@@ -13,11 +13,7 @@ export class OneBookComponent implements OnInit {
 	// Se inyecta router para redirigir las páginas
 	constructor( private _booksService:BooksService) { 
 		// Procedimiento para leer el servicio
-		this._booksService.getBooks()
-			.subscribe( data =>{
-				console.log(data);
-				this.books = data;
-			})
+		
 	}
 
   ngOnInit() {
