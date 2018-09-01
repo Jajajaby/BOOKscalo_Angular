@@ -43,14 +43,6 @@ export class AddBookComponent implements OnInit {
 	}
 
 	
-
-<<<<<<< HEAD
-
-
-
-
-
-=======
 	// Función para guardar y actualizar el libro
 	saveBook(){
 		console.log(this.forma);
@@ -64,7 +56,7 @@ export class AddBookComponent implements OnInit {
 		// forma.reset( {
 			// casa:"Marvel" 
 		// });
->>>>>>> 5db056a47676b499f9689c31ac763721befc4394
+	}
 
 
 	uploadFile(event) {
