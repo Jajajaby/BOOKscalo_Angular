@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from "@angular/http";
-import { Book } from "../interface/book.interface";
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Router } from '@angular/router';
+
+// Angularfire2
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 @Injectable({
@@ -11,62 +9,42 @@ import { Router } from '@angular/router';
 })
 export class BooksService {
 
-	fireURL:string = "https://booksapp-chile.firebaseio.com/libros.json";
-	bookURL:string = "https://booksapp-chile.firebaseio.com/libros/";
+  constructor( private afs: AngularFirestore ) {}  
+  
 
-	constructor(private http:Http) { 
-	}
-	
-	newBook ( book:Book ){
-		// Lo que se va a mandar
-		let body = JSON.stringify( book );
+  // Retorna Observable
+  // Trae toda la data de una colección especifica.
+  public getData( collection:string ){
+    return this.afs.collection<any>( collection );
+  }
 
-		// Definición del encabezado de la petición
-		let headers = new Headers({
-			'Content-Type':'application/json'
-		});
+  // Retorna Observable
+  // 
+  public getDataQuery( collection:string, query:string, operator:any, value:any ){
+    return this.afs.collection<any>( collection, ref => ref.where(query, operator, value));
+  }
+  
+  // Retorna Promesa
+  //
+  public addDataIdCustom( collection:string, id:string, document:any ){
+    return this.afs.collection<any>( collection ).doc( id ).set( document );
+  }
 
-		// Observable para ver si se insertó o no
-		return this.http.post( this.fireURL, body, { headers } )
-			.pipe(map( res=>{
-				console.log(res.json());
-				return res.json();			// Esta es la respuesta
-			}));
-	}
+  // Retorna Promesa
+  //
+  public addData( collection:string, document:any ){
+    return this.afs.collection<any>( collection ).add( document );
+  }
 
+  // Retorna Promesa
+  //
+  public updateData( collection:string, id:string, document:any ){
+    return this.afs.collection<any>( collection ).doc( id ).update( document );
+  }
 
-	updateBook ( book:Book, key$:string ){
-		// Lo que se va a mandar
-		let body = JSON.stringify( book );
-
-		// Definición del encabezado de la petición
-		let headers = new Headers({
-			'Content-Type':'application/json'
-		});
-
-		// Url con el libro específico
-		let url = `${ this.bookURL}/${ key$ }.json`;
-
-		// Observable para ver si se actualizó o no
-		// Método PUT
-		return this.http.put( url, body, { headers } )
-			.pipe(map( res=>{
-				console.log(res.json());
-				return res.json();			// Esta es la respuesta
-			}));
-	}
-
-
-	// Para obtener un libro 
-	getBook( key$:string ){
-		let url = `${ this.bookURL }/${ key$ }.json`;
-		return this.http.get(url)
-			.pipe( map( res=>res.json()));
-	}
-
-	// Para obtener todos los libros 
-	getBooks( ){
-		return this.http.get( this.fireURL )
-			.pipe( map( res=>res.json()));
-	}
+  // Retorna Promesa
+  //
+  public deleteData( collection:string, id:string ){
+    return this.afs.collection<any>( collection ).doc( id ).delete();
+  }
 }

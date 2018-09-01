@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+
+  profile_options:string = 'my_profile';
+
   constructor() { }
 
   ngOnInit() {

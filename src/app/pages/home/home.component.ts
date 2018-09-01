@@ -10,6 +10,8 @@ import { BooksService } from "../../services/books.service";
 })
 export class HomeComponent implements OnInit {
 
+  view_bar:string = 'all';
+
   constructor() { }
 
   ngOnInit() {

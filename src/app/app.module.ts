@@ -27,6 +27,14 @@ import { LibraryComponent } from './pages/library/library.component';
 import { OtherUserComponent } from './pages/other-user/other-user.component';
 import { OneBookComponent } from './pages/one-book/one-book.component';
 
+
+// Angularfire2
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +57,11 @@ import { OneBookComponent } from './pages/one-book/one-book.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   providers: [
     BooksService
