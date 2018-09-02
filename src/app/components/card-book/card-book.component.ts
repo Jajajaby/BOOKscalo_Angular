@@ -18,7 +18,7 @@ export class CardBookComponent implements OnInit {
 
 	// Se inyecta router para redirigir las páginas
 	constructor( private router:Router,
-				 	 private _booksService:BooksService ) { 
+				 private _booksService:BooksService ) { 
 		
 		this._booksService.getData('books')
 			.valueChanges()
@@ -39,7 +39,7 @@ export class CardBookComponent implements OnInit {
 
 
 		// Agrega un documento con id generado automaticamente
-		// this._booksService.addData('books', {name: 'te amo jabibi <3'}).then();
+		// this._booksService.addData('books', {name: 'aa'}).then();
 	}
 
 	ngOnInit() {
@@ -48,7 +48,7 @@ export class CardBookComponent implements OnInit {
  	// Para mostrar un solo libro en la página
  	showBook(i) {
  		console.log( this.index );
- 		// UNLIBRO es el nombre de la página a la que se va a redirigir
+ 		// book es el nombre de la página a la que se va a redirigir
  		// index es el índice del libro que se va a mostrar
  		this.router.navigate( ['/book', this.index] );
  	}

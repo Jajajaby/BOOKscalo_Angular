@@ -14,7 +14,9 @@ import { AngularFireStorage } from 'angularfire2/storage';
 })
 export class AddBookComponent implements OnInit {
 
+	// Para el formulario
 	forma:FormGroup;
+	
 	nuevo:boolean = false;
 	id:string;
 
@@ -30,6 +32,7 @@ export class AddBookComponent implements OnInit {
 			});
 	}
 
+	// Se inicializa la forma con FormGroup para llenar el formulario
 	ngOnInit() {
 		this.forma = new FormGroup({
 			title: new FormControl(null, Validators.required),
@@ -48,17 +51,16 @@ export class AddBookComponent implements OnInit {
 
 	}
 
-	
-	// Función para guardar y actualizar el libro
+	// Función para guardar el libro
 	saveBook(){
 		console.log(this.forma.valid);
 		console.log("holas", this.forma.value );
 
 		if( !this.forma.valid ){
-			
 			return;
 		}
 
+		// Aquí se guarda el libro y tira mensajes informativos a la consola
 		this._booksService.addData('books', this.forma.value)
 			.then( () => console.log("se guardo el libro") )
 			.catch( (err) => console.log("error al guardar libros", err) );
@@ -66,24 +68,17 @@ export class AddBookComponent implements OnInit {
 		console.log(this.forma.value);
 	}
 
-	// Para agregar un libro
-	addNewBook( forma ){
-		this.router.navigate(['/book', 'nuevo']);
-		forma.reset();
-		// Para resetear pero dejar un elemento como default
-		// forma.reset( {
-			// casa:"Marvel" 
-		// });
-	}
-
 	uploadFile(event) {
 		const file = event.target.files[0];
 
+		// Para separar la extensión del nombre del archivo
 		const separatedFile = file.name.split('.');
 		const extension = separatedFile[separatedFile.length - 1];
 
+		// Tipos de archivo permitidos para las imagenes
 		const typeValid = ['jpg', 'jpeg', 'png'];
 
+		// Si el tipo de imagen corresponde a las especificadas, es válido
 		if( typeValid.indexOf( extension ) >= 0 ){
 			const filePath = file.name;
 
@@ -93,6 +88,7 @@ export class AddBookComponent implements OnInit {
 			
 			const ref = this.storage.ref('images/'+ filePath);
 			ref.put(file);
+		// Si el tipo de imagen no corresponde a las especificadas, no es válido
 		}else {
 			console.log('Tipo de imagen no valido');
 		}

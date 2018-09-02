@@ -10,11 +10,12 @@ import { BooksService } from "../../services/books.service";
 })
 export class HomeComponent implements OnInit {
 
-  view_bar:string = 'all';
+	// Para que por defecto se abra pestaña "Todos"
+	view_bar:string = 'all';
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
