@@ -1,12 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-
-
 /* Líneas del formulario de libro */
+
 .border-input-custom {
-	border-bottom: 1px solid #67757c !important;
+   border-bottom: 1px solid #67757c !important;
 }
+
 .border-input-custom:focus {
-	border-bottom: 1px solid #398bf7 !important;
+   border-bottom: 1px solid #398bf7 !important;
+}
+
+/*  Input para cargar las imagenes */
+.btn-tertiary {
+   color: #555;
+   padding: 0;
+   line-height: 40px;
+   width: 300px;
+   margin: auto;
+   display: block;
+   border: 2px solid #555;
+}
+
+.input-file {
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+}
+
+.input-file +.js-labelFile {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 10px;
+	cursor: pointer;	
 }

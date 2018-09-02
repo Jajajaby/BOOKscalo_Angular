@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// no los estamos usando por el momento (no se si se usen)
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,7 +13,7 @@ import { APP_ROUTING } from './app.routes';
 import { BooksService } from "./services/books.service";
 
 //PIPES
-import { KeysPipe } from './pipes/keys.pipe';
+import { KeysPipe } from './pipes/keys.pipe'; // hay que borrarlo ya no sirve era para le http
 
 //COMPONENTES
 import { AppComponent } from './app.component';
@@ -30,10 +32,12 @@ import { OneBookComponent } from './pages/one-book/one-book.component';
 
 // Angularfire2
 import { AngularFireModule } from 'angularfire2';
-import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// Enviroment
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -49,15 +53,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     LibraryComponent,
     OtherUserComponent,
     OneBookComponent,
-    KeysPipe
+    KeysPipe // se debe sacar
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
-    HttpClientModule,
+    HttpModule, // se debe sacar
+    HttpClientModule, // se debe sacar
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,

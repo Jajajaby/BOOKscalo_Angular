@@ -1,13 +1,8 @@
-<!-- Falta corregir genres como array y imagen -->
-
-
 <div class="container" style="background-color: #ffffff;">
 	<div class="row">
 		<div class="col-12">
 			<div class="form-group">
 				<h1 style="margin-top:30px;">Agregar libro</h1>
-
-				<input type="file" (change)="uploadFile($event)" multiple>
 
 				<!-- Esto da al servicio -->
 				<form class="form-material m-t-40" [formGroup]="forma" 
@@ -40,12 +35,12 @@
 					</div>
 					<div class="form-group border-input-custom">
 						<label>Género al que pertenece</label>
-						<select class="form-control" formControlName="genres">
-							<option>1</option>
-							<option>2</option>
-							<option>Lectura especializada</option>
-							<option>Literatura infantil</option>
-							<option>Otro</option>
+						<select class="form-control" formControlName="genres" multiple>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="Lectura especializada">Lectura especializada</option>
+							<option value="Literatura infantil">Literatura infantil</option>
+							<option value="Otro">Otro</option>
 						</select>
 					</div>
 					<div class="form-group border-input-custom">
@@ -87,24 +82,23 @@
 						</textarea>
 					</div>
 
-					<!-- <div class="form-group">
-						<label>File upload</label>
-							<div class="fileinput fileinput-new input-group" data-provides="fileinput">
-								<div class="form-control" data-trigger="fileinput"> 
-									<i class="glyphicon glyphicon-file fileinput-exists"></i> 
-									<span class="fileinput-filename"></span>
-								</div> 
-								<span class="input-group-addon btn btn-default btn-file"> 
-									<span class="fileinput-new">Select file</span> 
-									<span class="fileinput-exists">Change</span>
-									<input type="file" name="..."> 
-								</span> 
-								<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a> 
-							</div>
-					</div> -->
+					<div class="form-group">
+						<input type="file" (change)="uploadFile($event)" id="file" class="input-file" multiple>
+						<label for="file" class="btn btn-tertiary js-labelFile">
+						  <span class="js-fileName">
+								Subir imagenes
+							</span>
+						</label>
+					</div>
+
+					<div class="text-center" *ngIf="tamImgs !== undefined">
+						<i *ngIf="tamImgs < 1" class="fa fa-refresh fa-spin"></i>
+						<span *ngIf="tamImgs === 1" > {{ tamImgs }} imagen cargada </span>
+						<span *ngIf="tamImgs > 1" > {{ tamImgs }} imagenes cargadas </span>
+					</div>
 
 					<div class="form-group">
-						<button  
+						<button [disabled]="forma.invalid"
 							type="submit" class="btn btn-outline-primary">
 							Guardar libro
 						</button>
