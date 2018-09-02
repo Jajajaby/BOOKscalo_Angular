@@ -2738,8 +2738,7 @@ Form Material page
 .form-control-line .form-control {
   border: 0px;
   border-radius: 0px;
-  padding-left: 0px;
-  border-bottom: 1px solid #f6f9ff; }
+  padding-left: 0px; }
   .form-control-line .form-control:focus {
     border-bottom: 1px solid #398bf7; }
 

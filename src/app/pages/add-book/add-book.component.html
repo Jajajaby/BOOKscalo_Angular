@@ -1,43 +1,112 @@
 
-<div class="container">
+<div class="container" style="background-color: #ffffff;">
 	<div class="row">
-		<div class="col-6">
+		<div class="col-12">
 			<div class="form-group">
 				<h1 style="margin-top:30px;">Agregar libro</h1>
-
 
 				<input type="file" (change)="uploadFile($event)" multiple>
 
 				<!-- Esto da al servicio -->
-				<form  [formGroup]="forma" (ngSubmit)="saveBook()" novalidate="novalidate">
+				<form class="form-material m-t-40" [formGroup]="forma" 
+					(ngSubmit)="saveBook()" novalidate="novalidate">
 
-						<div class="form-group">
-						    <label for="formGroupExampleInput">Titulo</label>
-						    <input formControlName="title" name="title"
-						    	type="text"	class="form-control" id="formGroupExampleInput" 
-						    	placeholder="Título del libro" required>
-						</div>
+					<div class="form-group">
+						<label>Título del texto</label>
+						<input type="text" formControlName="title"
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: Harry Potter">
+					</div>
+					<div class="form-group">
+						<label>Autor del texto</label>
+						<input type="text" formControlName="author"
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: J. K. Rowling" required>
+					</div>
+					<div class="form-group">
+						<label>Editorial del texto</label>
+						<input type="text" formControlName="editorial"
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: Salamandra" required>
+					</div>
+					<div class="form-group border-input-custom">
+						<label>Tipo de elemento</label>
+						<select class="form-control" formControlName="type">
+							<option value="book">Libro</option>
+							<option value="comic">Cómic</option>
+							<option value="especial">Lectura especializada</option>
+							<option value="kid">Literatura infantil</option>
+							<option value="other">Otro</option>
+						</select>
+					</div>
+					<div class="form-group border-input-custom">
+						<label>Género al que pertenece</label>
+						<select class="form-control" formControlName="genres">
+							<option>1</option>
+							<option>2</option>
+							<option>Lectura especializada</option>
+							<option>Literatura infantil</option>
+							<option>Otro</option>
+						</select>
+					</div>
+					<div class="form-group border-input-custom">
+						<label>Tipo de transacción</label>
+						<select class="form-control" formControlName="transaction">
+							<option value="exchange">Intercambio</option>
+							<option value="sale">Venta</option>
+							<option value="both">Ambos</option>
+						</select>
+					</div>
+					<div class="form-group" *ngIf="forma.value.transaction === 'sale'">
+						<label>Precio</label>
+						<input type="text" formControlName="price"
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000" required>
+					</div>
+					<div class="form-group">
+						<label>Idioma</label>
+						<input type="text" formControlName="language" 
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: Español" required>
+					</div>
+					<div class="form-group border-input-custom" 
+						 name="original">
+						<label>Texto original</label>
+						<select class="form-control" formControlName="original">
+							<option value="yes">Sí</option>
+							<option value="no">No</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Cantidad de páginas</label>
+						<input type="text" formControlName="num_pages"
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: 324" required>
+					</div>
+					<div class="form-group">
+						<label>Comentario</label>
+						<textarea class="form-control border-input-custom" 
+							formControlName="comment" rows="3" 
+							placeholder="Ej.: El libro se encuentra en buen estado, leído solo una vez.">
+						</textarea>
+					</div>
 
-						<div class="form-group">
-						    <label for="formGroupExampleInput">Autor</label>
-						    <input formControlName="author" name="author"
-						    	type="text"	class="form-control" id="formGroupExampleInput" 
-						    	placeholder="Autor/a del libro" required>
-						</div>
+					<!-- <div class="form-group">
+						<label>File upload</label>
+							<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+								<div class="form-control" data-trigger="fileinput"> 
+									<i class="glyphicon glyphicon-file fileinput-exists"></i> 
+									<span class="fileinput-filename"></span>
+								</div> 
+								<span class="input-group-addon btn btn-default btn-file"> 
+									<span class="fileinput-new">Select file</span> 
+									<span class="fileinput-exists">Change</span>
+									<input type="file" name="..."> 
+								</span> 
+								<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a> 
+							</div>
+					</div> -->
 
-						<div class="form-group">
-						    <label for="formGroupExampleInput">Editorial</label>
-						    <input formControlName="editorial" name="editorial"
-						    	type="text"	class="form-control" id="formGroupExampleInput" 
-						    	placeholder="Editorial del libro" required>
-						</div>
-
-						<div class="form-group">
-							<button [disabled]="!forma.valid" 
-								type="submit" class="btn btn-outline-primary">
-								Guardar libro
-							</button>
-						</div>
+					<div class="form-group">
+						<button  
+							type="submit" class="btn btn-outline-primary">
+							Guardar libro
+						</button>
+					</div>
 				</form>
 			</div>
 		</div>

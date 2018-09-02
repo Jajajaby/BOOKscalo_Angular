@@ -8,8 +8,6 @@ import { FormGroup, FormControl, Validators, FormControlName } from '@angular/fo
 // Angularfire2
 import { AngularFireStorage } from 'angularfire2/storage';
 
-
-
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html'
@@ -17,16 +15,14 @@ import { AngularFireStorage } from 'angularfire2/storage';
 export class AddBookComponent implements OnInit {
 
 	forma:FormGroup;
-
-	
 	nuevo:boolean = false;
 	id:string;
 
-	constructor( private _booksService:BooksService,
-				 	 private router:Router,
-					 private activatedRoute:ActivatedRoute,
-					 private storage: AngularFireStorage 
-				 ) { 
+	constructor( 	private _booksService:BooksService,
+					private router:Router,
+					private activatedRoute:ActivatedRoute,
+					private storage: AngularFireStorage 
+				) { 
 		// Observable
 		this.activatedRoute.params
 			.subscribe( parametros=> {
@@ -36,8 +32,18 @@ export class AddBookComponent implements OnInit {
 
 	ngOnInit() {
 		this.forma = new FormGroup({
-			author: new FormControl('', Validators.required),
-			title: new FormControl('', Validators.required)
+			title: new FormControl(null, Validators.required),
+			author: new FormControl(null, Validators.required),
+			editorial: new FormControl(null, Validators.required),
+			type: new FormControl(null, Validators.required),
+			genres: new FormControl(null, Validators.required),
+			transaction: new FormControl(null, Validators.required),
+			price: new FormControl(null),
+			language: new FormControl(null, Validators.required),
+			original: new FormControl(null, Validators.required),
+			num_pages: new FormControl(null, Validators.required),
+			comment: new FormControl(null)
+			// image: new FormControl('', Validators.required)
 		})
 
 	}
@@ -45,7 +51,19 @@ export class AddBookComponent implements OnInit {
 	
 	// Función para guardar y actualizar el libro
 	saveBook(){
-		console.log(this.forma);
+		console.log(this.forma.valid);
+		console.log("holas", this.forma.value );
+
+		if( !this.forma.valid ){
+			
+			return;
+		}
+
+		this._booksService.addData('books', this.forma.value)
+			.then( () => console.log("se guardo el libro") )
+			.catch( (err) => console.log("error al guardar libros", err) );
+
+		console.log(this.forma.value);
 	}
 
 	// Para agregar un libro
@@ -57,7 +75,6 @@ export class AddBookComponent implements OnInit {
 			// casa:"Marvel" 
 		// });
 	}
-
 
 	uploadFile(event) {
 		const file = event.target.files[0];
