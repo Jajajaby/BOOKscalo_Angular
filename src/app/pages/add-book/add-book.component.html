@@ -5,7 +5,7 @@
 <div class="container" style="background-color: #ffffff;">
 	<h1 style="padding-top:30px;">Agregar libro</h1>
 	<!-- Esto da al servicio -->
-	<form class="form-material m-t-40" [formGroup]="forma" (ngSubmit)="saveBook()" novalidate="novalidate">
+	<form class="form-material m-t-40" [formGroup]="formulario" (ngSubmit)="saveBook()" novalidate="novalidate">
 		<div class="row">
 			<!-- Inicio col 1 -->
 			<div class="col-6">
@@ -62,13 +62,13 @@
 					</select>
 				</div>
 
-				<div class="form-group" *ngIf="forma.value.transaction === 'sale'">
+				<div class="form-group" *ngIf="formulario.value.transaction === 'sale'">
 					<label>Precio</label>
 					<input formControlName="price" onlynumber="true" minlength="3" maxlength="6" 
 						class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000" required>
 				</div>
 
-				<div class="form-group" *ngIf="forma.value.transaction === 'both'">
+				<div class="form-group" *ngIf="formulario.value.transaction === 'both'">
 					<label>Precio</label>
 					<input formControlName="price" onlynumber="true" minlength="3" maxlength="6" 
 						class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000" required>
@@ -126,7 +126,7 @@
 
 		<div class="row justify-content-md-center">
 			<div class="form-group">
-				<button [disabled]="forma.invalid" type="submit" class="btn btn-outline-info">
+				<button [disabled]="formulario.invalid" type="submit" class="btn btn-outline-info">
 					Guardar libro
 				</button>
 			</div>

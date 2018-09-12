@@ -16,7 +16,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 export class AddBookComponent implements OnInit {
 
 	// Para el formulario
-	forma:FormGroup;
+	formulario:FormGroup;
 	tamImgs:number = 0; 			// cantidad de imagenes válidas que se muestran en el formulario
 	urlImgs:any[]; 					// aquí se guardan las rutas de las imagenes para guardar en firebase
 	loader_img:boolean = false; 	// para cargar las imagenes
@@ -37,7 +37,7 @@ export class AddBookComponent implements OnInit {
 
 	// Inicializando el formulario
 	ngOnInit() {
-		this.forma = new FormGroup({
+		this.formulario = new FormGroup({
 			title: 			new FormControl(undefined, Validators.required),
 			author: 		new FormControl(undefined, Validators.required),
 			editorial: 		new FormControl(undefined, Validators.required),
@@ -55,19 +55,19 @@ export class AddBookComponent implements OnInit {
 
 	// Función para guardar el libro
 	saveBook(){
-		// Si la forma no es valida no se realiza la carga a firebase
-		if( this.forma.invalid ){
+		// Si la formulario no es valida no se realiza la carga a firebase
+		if( this.formulario.invalid ){
 			console.log('Formulario no valido');
 			return;
 		}
 		
-		// Se ponen las imagenes en la forma para luego subirlas
-		this.forma.patchValue({
+		// Se ponen las imagenes en la formulario para luego subirlas
+		this.formulario.patchValue({
 			images: this.urlImgs
 		});
 
-		// Se guarda la forma para validar
-		const book:Books = this.forma.value; 
+		// Se guarda la formulario para validar
+		const book:Books = this.formulario.value; 
 
 		// Se guarda el libro 
 		this._booksService.addData('books', book)
