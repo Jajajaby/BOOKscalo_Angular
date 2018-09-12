@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'; // no se usa hasta el momento aqui
+import { ActivatedRoute } from '@angular/router';
 
 import { Books } from "../../interface/books.interface";
 import { BooksService } from "../../services/books.service";
 
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
-// Angularfire2
+// ANGULARFIRE2
 import { AngularFireStorage } from 'angularfire2/storage';
 
 @Component({
@@ -17,15 +17,14 @@ export class AddBookComponent implements OnInit {
 
 	// Para el formulario
 	forma:FormGroup;
-	tamImgs:number = 0; // la cantidad de imagenes correctas que se muestra en pantalla
-	urlImgs:any[]; // aquí se guardan las rutas de las images para guardar en firebase
-	loader_img:boolean = false; // hace un pequenio efecto de carga al momento de subir las imagenes
+	tamImgs:number = 0; 			// cantidad de imagenes válidas que se muestran en el formulario
+	urlImgs:any[]; 					// aquí se guardan las rutas de las imagenes para guardar en firebase
+	loader_img:boolean = false; 	// para cargar las imagenes
 	
 	nuevo:boolean = false;
 	id:string;
 
 	constructor( private _booksService:BooksService,
-					 private router:Router, // no se usa hasta el momento aquí
 					 private activatedRoute:ActivatedRoute,
 					 private storage: AngularFireStorage 
 				) { 
@@ -36,21 +35,21 @@ export class AddBookComponent implements OnInit {
 			});
 	}
 
-	// Se inicializa la forma con FormGroup para llenar el formulario
+	// Inicializando el formulario
 	ngOnInit() {
 		this.forma = new FormGroup({
-			title: new FormControl(undefined, Validators.required),
-			author: new FormControl(undefined, Validators.required),
-			editorial: new FormControl(undefined, Validators.required),
-			type: new FormControl(undefined, Validators.required),
-			genres: new FormControl(undefined, Validators.required),
-			transaction: new FormControl(undefined, Validators.required),
-			price: new FormControl(undefined),
-			language: new FormControl(undefined, Validators.required),
-			original: new FormControl(undefined, Validators.required),
-			num_pages: new FormControl(undefined, Validators.required),
-			comment: new FormControl(undefined),
-			images: new FormControl(undefined)
+			title: 			new FormControl(undefined, Validators.required),
+			author: 		new FormControl(undefined, Validators.required),
+			editorial: 		new FormControl(undefined, Validators.required),
+			type: 			new FormControl(undefined, Validators.required),
+			genres: 		new FormControl(undefined, Validators.required),
+			transaction: 	new FormControl(undefined, Validators.required),
+			price: 			new FormControl(undefined),
+			language: 		new FormControl(undefined, Validators.required),
+			original: 		new FormControl(undefined, Validators.required),
+			num_pages: 		new FormControl(undefined, Validators.required),
+			comment: 		new FormControl(undefined),
+			images: 		new FormControl(undefined)
 		});
 	}
 
@@ -62,23 +61,22 @@ export class AddBookComponent implements OnInit {
 			return;
 		}
 		
-		// ponemos las imagenes dentro de la forma para luego subirlas
+		// Se ponen las imagenes en la forma para luego subirlas
 		this.forma.patchValue({
 			images: this.urlImgs
 		});
 
-		// alojamos la forma en una constante de tipo BOOKS(interface) para
-		// asegurarnos que todo esta correcto
+		// Se guarda la forma para validar
 		const book:Books = this.forma.value; 
 
-		// Aquí se guarda el libro y tira mensajes informativos a la consola
+		// Se guarda el libro 
 		this._booksService.addData('books', book)
 			.then( () => console.log("se guardo el libro") )
 			.catch( (err) => console.log("error al guardar libros", err) );
 	}
 
 
-	// Carga las imagenes al storage de firebase
+	// Carga las imagenes al storage de Firebase
 	uploadFile(event) {
 		this.loader_img = true;
 		console.log(this.loader_img);
@@ -86,14 +84,13 @@ export class AddBookComponent implements OnInit {
 		const files = event.target.files;
 		let url = []; // guarda las imagenes correctas para luego subirlas
 
-		// Recorro el arreglo para ir subiendo las imagen 1 a 1
+		// Para ir subiendo las imagen 1 a 1
 		for( let i=0; i<files.length; i++ ){
-			// le damos .5s para que las imagenes se cargen sin incombenientes
 			setTimeout( () => {
 				const separatedFile = files[i].name.split('.');
 				const extension = separatedFile[separatedFile.length - 1];
 				
-				// Tipos de archivo permitidos para las imagenes
+				// Tipos de archivo válidos para las imagenes
 				const typeValid = ['jpg', 'jpeg', 'png'];
 	
 				// Si el tipo de imagen corresponde a las especificadas, es válido
@@ -103,8 +100,7 @@ export class AddBookComponent implements OnInit {
 					const ref = this.storage.ref('images/'+ filePath);
 					ref.put(files[i]);
 					
-					// obtenenmos la ruta de donde estara guardada
-					// y lo alojamos en un array
+					// Se obtiene la ruta donde se va a guardar y se deja en una array
 					ref.getDownloadURL()
 						.subscribe( resp => {
 							console.log(resp);
@@ -117,10 +113,9 @@ export class AddBookComponent implements OnInit {
 				}
 			}, 500);
 		}
-		this.urlImgs = url; // pasamos las rutas al array global
+		this.urlImgs = url; // para pasar las rutas a un array global
 		this.loader_img = false;
 	 }
-
 }
 
 				
