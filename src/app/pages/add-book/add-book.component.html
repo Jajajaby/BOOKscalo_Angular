@@ -11,25 +11,34 @@
 			<div class="col-6">
 				<div class="form-group">
 					<label>Título del texto</label>
-					<input type="text" formControlName="title" 
-						class="form-control form-control-line border-input-custom" placeholder="Ej.: Harry Potter">
+					<input 	type="text" 
+							formControlName="title" 
+							class="form-control form-control-line border-input-custom" 
+							placeholder="Ej.: Harry Potter">
 				</div>
 
 				<div class="form-group">
 					<label>Autor del texto</label>
-					<input type="text" formControlName="author"
-						class="form-control form-control-line border-input-custom" placeholder="Ej.: J. K. Rowling" required>
+					<input 	type="text" 
+							formControlName="author"
+							class="form-control form-control-line border-input-custom" 	
+							placeholder="Ej.: J. K. Rowling"
+							required>
 				</div>
 
 				<div class="form-group">
 					<label>Editorial del texto</label>
-					<input type="text" formControlName="editorial"
-						class="form-control form-control-line border-input-custom" placeholder="Ej.: Salamandra" required>
+					<input 	type="text" 
+							formControlName="editorial"
+							class="form-control form-control-line border-input-custom" 
+							placeholder="Ej.: Salamandra" 
+							required>
 				</div>
 
 				<div class="form-group border-input-custom">
 					<label>Tipo de elemento</label>
-					<select class="form-control" formControlName="type">
+					<select class="form-control" 
+							formControlName="type">
 						<option value="book">Libro</option>
 						<option value="comic">Cómic</option>
 						<option value="especial">Lectura especializada</option>
@@ -40,7 +49,9 @@
 
 				<div class="form-group border-input-custom">
 					<label>Género al que pertenece</label>
-					<select class="form-control" formControlName="genres">
+					<select class="form-control" 
+							formControlName="genres"
+							multiple>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="Lectura especializada">Lectura especializada</option>
@@ -55,7 +66,8 @@
 			<div class="col-6">
 				<div class="form-group border-input-custom">
 					<label>Tipo de transacción</label>
-					<select class="form-control" formControlName="transaction">
+					<select class="form-control" 
+							formControlName="transaction">
 						<option value="exchange">Intercambio</option>
 						<option value="sale">Venta</option>
 						<option value="both">Ambos</option>
@@ -64,19 +76,30 @@
 
 				<div class="form-group" *ngIf="formulario.value.transaction === 'sale'">
 					<label>Precio</label>
-					<input formControlName="price" onlynumber="true" minlength="3" maxlength="6" 
-						class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000" required>
+					<input 	formControlName="price" 
+							onlynumber="true" 
+							minlength="3" 
+							maxlength="6" 
+							class="form-control form-control-line border-input-custom" 
+							placeholder="Ej.: 5000" 
+							required>
 				</div>
 
 				<div class="form-group" *ngIf="formulario.value.transaction === 'both'">
 					<label>Precio</label>
-					<input formControlName="price" onlynumber="true" minlength="3" maxlength="6" 
-						class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000" required>
+					<input 	formControlName="price" 
+							onlynumber="true" 
+							minlength="3" 
+							maxlength="6" 
+							class="form-control form-control-line border-input-custom" 
+							placeholder="Ej.: 5000" 
+							required>
 				</div>
 
 				<div class="form-group border-input-custom">
 					<label>Idioma</label>
-					<select class="form-control" formControlName="language">
+					<select class="form-control" 
+							formControlName="language">
 						<option value="spanish">Español</option>
 						<option value="english">Inglés</option>
 						<option value="other">Otro</option>
@@ -86,7 +109,8 @@
 				<div class="form-group border-input-custom" 
 					 name="original">
 					<label>Texto original</label>
-					<select class="form-control" formControlName="original">
+					<select class="form-control" 
+							formControlName="original">
 						<option value="yes">Sí</option>
 						<option value="no">No</option>
 					</select>
@@ -94,14 +118,21 @@
 
 				<div class="form-group">
 					<label>Cantidad de páginas</label>
-					<input formControlName="num_pages" onlynumber="true" minlength="2" maxlength="5" 
-						class="form-control form-control-line border-input-custom" placeholder="Ej.: 324" required>
+					<input 	formControlName="num_pages" 
+							onlynumber="true" 
+							minlength="2" 
+							maxlength="5" 
+							class="form-control form-control-line border-input-custom" 
+							placeholder="Ej.: 324" 
+							required>
 				</div>
 					
 				<div class="form-group">
 					<label>Comentario</label>
-					<textarea class="form-control border-input-custom" formControlName="comment" rows="2" 
-						placeholder="Ej.: El libro se encuentra en buen estado, leído solo una vez.">
+					<textarea 	class="form-control border-input-custom" 
+								formControlName="comment" 
+								rows="2" 
+								placeholder="Ej.: El libro se encuentra en buen estado, leído solo una vez.">
 					</textarea>
 				</div>
 			</div>
@@ -110,7 +141,10 @@
 
 		<div class="row">
 			<div class="form-group">
-				<input type="file" (change)="uploadFile($event)" id="file" multiple>
+				<input 	type="file" 
+						(change)="uploadFile($event)" 
+						id="file" 
+						multiple>
 			</div>
 		</div>
 
@@ -126,7 +160,9 @@
 
 		<div class="row justify-content-md-center">
 			<div class="form-group">
-				<button [disabled]="formulario.invalid" type="submit" class="btn btn-outline-info">
+				<button [disabled]="formulario.invalid" 
+						type="submit" 
+						class="btn btn-outline-info">
 					Guardar libro
 				</button>
 			</div>

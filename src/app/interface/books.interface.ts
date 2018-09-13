@@ -17,14 +17,14 @@ export interface Books{
 
 // Interface users
 export interface Users{
-	rut:string;
+	uid:string;
 	name:string;
+	rut:string;
 	last_name1:string;
 	last_name2:string;
 	email:string;
-	commune:string;
-	phone:string;
-	ranking:number;
 	favs_genres:Array<string>
-	image?:string;
+	commune?:string;
+	phone?:string;
+	ranking?:number;
 };

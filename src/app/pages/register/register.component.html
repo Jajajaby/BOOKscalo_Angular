@@ -1,127 +1,201 @@
-<section id="wrapper" class="login-register login-sidebar" style="background-image:url(../assets/images/background/login-register.jpg);">
+<section id="wrapper">
+	<div class="login-register" style="background-image:url(../../assets/images/background/book-2.jpg);">
 		<div class="login-box card">
-			<div class="card-body">
-				<form class="form-horizontal form-material" [formGroup]="forma" (ngSubmit)="saveUser()" novalidate="novalidate">
-					<a href="javascript:void(0)" class="text-center db">
-						<img src="../assets/images/logo-icon.png" alt="Home" /><br/><img src="../assets/images/background/book-1.jng" alt="Home" />
-					</a>
+			<div class="card-body" >
+				<form 	class="form-horizontal form-material" 
+						[formGroup]="formulario" 
+						(ngSubmit)="saveUser()" 
+						novalidate="novalidate" 
+						action="index.html">
 
-					<h3 class="box-title m-t-40 m-b-0">Datos de perfil</h3>
+					<div [ngSwitch]="register_pages">
+						<!-- ====================================================================== -->
+						<!-- PAGE 1																	-->
+						<!-- ====================================================================== -->
+						<div *ngSwitchCase="'page_1'">
+							<h3 class="box-title m-t-40 m-b-0">Datos de perfil</h3>
+							<small>Crea tu cuenta para ingresar</small>
 
-					<small>Crea tu cuenta para ingresar</small>
+							<div class="form-group m-t-20">
+								<div class="col-xs-12">
+									<input  formControlName="name" 
+											class="form-control" 
+											type="text" 
+											required="" 
+											placeholder="Nombre">
+								</div>
+							</div>
 
-					<div class="form-group m-t-20">
-						<div class="col-xs-12">
-							<input  formControlName="name" 
-									class="form-control" 
-									type="text" 
-									required="" 
-									placeholder="Nombre">
+							<div class="form-group m-t-20">
+								<div class="col-xs-12">
+									<input  formControlName="last_name1" 
+											class="form-control" 
+											type="text" 
+											required="" 
+											placeholder="Apellido paterno">
+								</div>
+							</div>
+
+							<div class="form-group m-t-20">
+								<div class="col-xs-12">
+									<input  formControlName="last_name2" 
+											class="form-control" 
+											type="text" 
+											required="" 
+											placeholder="Apellido materno">
+								</div>
+							</div>
+
+							<div class="form-group m-t-20">
+								<div class="col-xs-12">
+									<input  formControlName="rut" 
+											class="form-control" 
+											type="text" 
+											required=""
+											placeholder="RUT">
+								</div>
+							</div>
+
+							<div class="form-group m-t-20">
+								<div class="col-xs-12">
+									<input  formControlName="phone" 
+											class="form-control" 
+											type="text" 
+											placeholder="Teléfono opcional">
+								</div>
+							</div>
+
+							<div class="form-group text-center m-t-20">
+								<div class="col-xs-12">
+									<button (click)="register_pages='page_2'" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">Continuar</button>
+								</div>
+							</div>
+
+							<div class="form-group m-b-0">
+								<div class="col-sm-12 text-center">
+									<p>Ya tienes una cuenta?
+										<a href="pages-login-2.html" class="text-info m-l-5">
+											<b>Ingresar</b>
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- ====================================================================== -->
+						<!-- PAGE 2																	-->
+						<!-- ====================================================================== -->
+						<div *ngSwitchCase="'page_2'">Datos de preferencias
+							
+							<div class="form-group border-input-custom" 
+								 name="original">
+								<label>Comuna de preferencia</label>
+								<select class="form-control" 
+										formControlName="commune">
+									<option value="santiago">Santiago centro</option>
+									<option value="providencia">Providencia</option>
+									<option value="recoleta">Recoleta</option>
+									<option value="estacion_central">Estación central</option>
+									<option value="san_miguel">San Miguel</option>
+									<option value="nunoa">Ñuñoa</option>
+								</select>
+							</div>
+
+							<div class="form-group border-input-custom" 
+								 name="original">
+								<label>Géneros de interés</label>
+								<select class="form-control" 
+										formControlName="favs_genres"
+										multiple>
+									<option value="Aventura">Aventura</option>
+									<option value="Biográfica">Biográfica</option>
+									<option value="Ciencia Ficción">Ciencia Ficción</option>
+									<option value="Deportes">Deportes</option>
+									<option value="Economía / Marketing">Economía / Marketing</option>
+									<option value="">Enciclopedia / Manual</option>
+									<option value="">Erótica</option>
+									<option value="">Ficción / Realidad</option>
+									<option value="">Hogar</option>
+									<option value="">Infantil</option>
+									<option value="">Investigación</option>
+									<option value="">Policial (o Thriller)</option>
+									<option value="">Política</option>
+									<option value="">Romántica</option>
+									<option value="">Sociedad</option>
+									<option value="">Terror</option>
+									<option value="">Viajes / Cultura</option>
+									<option value="">Otros géneros</option>
+								</select>
+							</div>
+
+							<div class="form-group text-center m-t-20">
+								<div class="col-xs-12">
+									<button (click)="register_pages='page_3'" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">Continuar</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- ====================================================================== -->
+						<!-- PAGE 3																	-->
+						<!-- ====================================================================== -->
+						<div *ngSwitchCase="'page_3'">Datos de la cuenta
+
+							<div class="form-group ">
+								<div class="col-xs-12">
+									<input  formControlName="email" 
+											class="form-control" 
+											type="text" 
+											required="" 
+											placeholder="Correo electrónico">
+								</div>
+							</div>
+
+							<div class="form-group ">
+								<div class="col-xs-12">
+									<input  formControlName="password" 
+											class="form-control" 
+											type="password" 
+											required="" 
+											placeholder="Contraseña">
+								</div>
+							</div>
+
+							<div class="form-group">
+							  	<div class="col-xs-12">
+									<input 	formControlName="password2"
+										   	class="form-control" 
+										   	type="password" 
+										   	required=""
+										   	placeholder="Confirme su contraseña">
+							  	</div>
+							</div>
+
+							<!-- <div class="form-group" *ngIf="forma['errors']?.areEquals && !forma.pristine">
+								<p class="text-danger">	Las contraseñas deben ser iguales </p>
+							</div> -->
+
+							<div class="form-group row">
+					          	<div class="col-md-12">
+						            <div class="checkbox checkbox-primary p-t-0">
+						              	<input 	formControlName="conditions" 
+						                     	id="checkbox-signup" 
+						                     	type="checkbox">
+						              	<label for="checkbox-signup"> Acepto los
+						                	<a href="#">Términos y condiciones</a>
+						              	</label>
+						            </div>
+					          	</div>
+					        </div>
+
+							<div class="form-group text-center m-t-20">
+								<div class="col-xs-12">
+									<button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Registrarme</button>
+								</div>
+							</div>
 						</div>
 					</div>
-
-					<div class="form-group m-t-20">
-						<div class="col-xs-12">
-							<input  formControlName="last_name1" 
-									class="form-control" 
-									type="text" 
-									required="" 
-									placeholder="Apellido paterno">
-						</div>
-					</div>
-
-					<div class="form-group m-t-20">
-						<div class="col-xs-12">
-							<input  formControlName="last_name2" 
-									class="form-control" 
-									type="text" 
-									required="" 
-									placeholder="Apellido materno">
-						</div>
-					</div>
-
-					<div class="form-group m-t-20">
-						<div class="col-xs-12">
-							<input  formControlName="rut" 
-									class="form-control" 
-									type="text" 
-									required=""
-									minlength="8" 
-									max="12" 
-									placeholder="RUT">
-						</div>
-					</div>
-
-					<div class="form-group ">
-						<div class="col-xs-12">
-							<input  formControlName="email" 
-									class="form-control" 
-									type="text" 
-									required="" 
-									minlength="6" 
-									placeholder="Correo electrónico">
-							<input class="form-control" type="password" required="" placeholder="Contraseña">
-						</div>
-					</div>
-
-					<div class="form-group ">
-						<div class="col-xs-12">
-							<input  formControlName="password" 
-									name="password" 
-									class="form-control" 
-									type="password" 
-									required="" 
-									minlength="7" 
-									placeholder="Contraseña">
-						</div>
-					</div>
-
-					<div class="form-group">
-					  	<div class="col-xs-12">
-							<input 	formControlName="password2"
-									name="password2" 
-								   	class="form-control" 
-								   	type="password" 
-								   	required=""
-								   	placeholder="Confirme su contraseña">
-					  	</div>
-					</div>
-
-					<div class="form-group" *ngIf="forma['errors']?.areEquals && !forma.pristine">
-						<p class="text-danger">	Las contraseñas deben ser iguales </p>
-					</div>
-
-					<div class="form-group row">
-			          	<div class="col-md-12">
-				            <div class="checkbox checkbox-primary p-t-0">
-				              	<input 	formControlName="condiciones" 
-				                     	name="condiciones" 
-				                     	id="checkbox-signup" 
-				                     	type="checkbox">
-				              	<label for="checkbox-signup"> Acepto los
-				                	<a href="#">Terminos y condiciones</a>
-				              	</label>
-				            </div>
-			          	</div>
-			        </div>
-
-					<div class="form-group text-center m-t-20">
-						<div class="col-xs-12">
-							<button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Registrarme</button>
-						</div>
-					</div>
-
-					<div class="form-group m-b-0">
-						<div class="col-sm-12 text-center">
-							<p>Ya tienes una cuenta?
-								<a href="pages-login-2.html" class="text-info m-l-5">
-									<b>Ingresar</b>
-								</a>
-							</p>
-						</div>
-					</div>
-
 				</form>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>

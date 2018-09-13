@@ -24,9 +24,9 @@ export class AddBookComponent implements OnInit {
 	nuevo:boolean = false;
 	id:string;
 
-	constructor( private _booksService:BooksService,
-					 private activatedRoute:ActivatedRoute,
-					 private storage: AngularFireStorage 
+	constructor( 	private _booksService:BooksService,
+					private activatedRoute:ActivatedRoute,
+					private storage: AngularFireStorage 
 				) { 
 		// Observable
 		this.activatedRoute.params
