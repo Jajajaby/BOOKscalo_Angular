@@ -10,8 +10,8 @@ import { PagesModule } from './pages/pages.module';
 
 // COMPONENTES
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './pages/register/register.component';
-// import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './register/login.component';
 
 // TEMPORAL
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,8 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
-    RegisterComponent
+    LoginComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

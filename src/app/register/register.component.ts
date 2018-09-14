@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
-import { Users } from "../../interface/books.interface";
-import { BooksService } from "../../services/books.service";
+import { Users } from "../interface/books.interface";
+import { BooksService } from "../services/books.service";
 
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -22,14 +22,14 @@ export class RegisterComponent implements OnInit {
 	register_pages:string = "page_1";
 
 	constructor( 	private _booksService:BooksService,
-					private afAuth: AngularFireAuth ) { }
+						private afAuth: AngularFireAuth ) { }
 
 	ngOnInit() {
 		this.formulario = 	new FormGroup({
 			name: 			new FormControl(undefined, Validators.required),
 			last_name1: 	new FormControl(undefined, Validators.required),
 			last_name2: 	new FormControl(undefined, Validators.required),
-			rut: 			new FormControl(undefined, Validators.required),
+			rut: 				new FormControl(undefined, Validators.required),
 			phone: 			new FormControl(undefined),
 			commune: 		new FormControl(undefined),
 			favs_genres: 	new FormControl(undefined, Validators.required),
@@ -61,22 +61,23 @@ export class RegisterComponent implements OnInit {
 		if (this.formulario.valid) {
 			let form=this.formulario.value;
 
-			// Se guarda la formulario para validar
-			const USER:Users = {
-				rut: 			form.rut,
-				name: 			form.name,
-				last_name1: 	form.last_name1,
-				last_name2: 	form.last_name2,
-				email: 			form.email,
-				favs_genres:	form.favs_genres,
-				commune:		form.commune,
-				phone: 			form.phone,
-				ranking: 		0,
-				uid:			""
-			};
-
 			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
 				.then( (resp:any) => {
+
+					// Se guarda la formulario para validar
+					const USER:Users = {
+						uid: 				resp.user.uid,
+						rut: 				form.rut,
+						name: 			form.name.toLowerCase(),
+						last_name1: 	form.last_name1.toLowerCase(),
+						last_name2: 	form.last_name2.toLowerCase(),
+						email: 			form.email.toLowerCase(),
+						favs_genres:	form.favs_genres,
+						commune:			form.commune,
+						phone: 			form.phone,
+						ranking: 		0
+					};
+
 				  	// Se guarda el usuario 
 					this._booksService.addData('users', USER)
 						.then( () => console.log("se guardó el usuario") )
