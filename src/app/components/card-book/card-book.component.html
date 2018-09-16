@@ -7,8 +7,7 @@
 <div class="container m-4">
 	<div class="row">
 		<div class="col-4">
-			<div class="card" style="width: 18rem;" 
-			*ngFor="let book of books">
+			<div class="card" style="width: 18rem;" *ngFor="let book of books">
 				<!-- picture o img -->
 				<img class="card-img-top" *ngFor="let img of book.images"  [src]="img" alt="Card image cap">
 				<div class="card-body">
@@ -16,7 +15,32 @@
 					<p class="card-text">Autor/a: {{ book.author }}</p>
 					<p class="card-text">Editorial: {{book.editorial }}</p>
 
-					<button class="dropdown-item" href="#" type="button" class="btn btn-outline-info btn-block">Ver libro</button>
+					<!-- sample modal content -->
+					<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title" id="myLargeModalLabel">Nombre libro</h4>
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								</div>
+								<div class="modal-body">
+								<h4>Overflowing text to show scroll behavior</h4>
+									<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+									<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal-dialog -->
+					</div>
+					<!-- /.modal -->
+					<!-- <img src="../assets/images/alert/model2.png" alt="default" data-toggle="modal" data-target=".bs-example-modal-lg" class="model_img img-responsive" /> -->
+
+
+					<button class="model_img img-responsive" data-toggle="modal" data-target=".bs-example-modal-lg" href="#" type="button" class="btn btn-outline-info btn-block">Ver libro</button>
 					<!-- <button (click)="showBook()" href="#" type="button" class="btn btn-outline-primary btn-block">Ver libro</button> -->
 						
 					<a href="#" class="btn btn-outline-info col-md-6" type="button">Ver libro</a>

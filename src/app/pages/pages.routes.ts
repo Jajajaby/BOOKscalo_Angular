@@ -16,12 +16,12 @@ const PAGES_ROUTE: Routes = [
 		// canActivate: [ LoginGuard ],
       	children: [
       		{ path: 'home', component: HomeComponent },
-		   { path: 'addBook', component: AddBookComponent },
-		   { path: 'profile', component: ProfileComponent },
-		   { path: 'messages', component: MessagesComponent },
-		   { path: 'library', component: LibraryComponent },
-		   { path: 'book', component: OneBookComponent },
-		   { path: '', pathMatch: 'full', redirectTo: 'home' }
+			{ path: 'addBook', component: AddBookComponent },
+			{ path: 'profile', component: ProfileComponent },
+			{ path: 'messages', component: MessagesComponent },
+			{ path: 'library', component: LibraryComponent },
+			{ path: 'book', component: OneBookComponent },
+			{ path: '', pathMatch: 'full', redirectTo: 'home' }
 		] 
    }
 ];

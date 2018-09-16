@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Users } from "../interface/books.interface";
 import { BooksService } from "../services/books.service";
 
 import { AngularFireAuth } from 'angularfire2/auth';
+
+// Sweet Alert
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-register',
@@ -22,14 +25,15 @@ export class RegisterComponent implements OnInit {
 	register_pages:string = "page_1";
 
 	constructor( 	private _booksService:BooksService,
-						private afAuth: AngularFireAuth ) { }
+					private afAuth: AngularFireAuth,
+					public router: Router ) { }
 
 	ngOnInit() {
 		this.formulario = 	new FormGroup({
 			name: 			new FormControl(undefined, Validators.required),
 			last_name1: 	new FormControl(undefined, Validators.required),
 			last_name2: 	new FormControl(undefined, Validators.required),
-			rut: 				new FormControl(undefined, Validators.required),
+			rut: 			new FormControl(undefined, Validators.required),
 			phone: 			new FormControl(undefined),
 			commune: 		new FormControl(undefined),
 			favs_genres: 	new FormControl(undefined, Validators.required),
@@ -66,26 +70,43 @@ export class RegisterComponent implements OnInit {
 
 					// Se guarda la formulario para validar
 					const USER:Users = {
-						uid: 				resp.user.uid,
-						rut: 				form.rut,
+						uid: 			resp.user.uid,
+						rut: 			form.rut,
 						name: 			form.name.toLowerCase(),
 						last_name1: 	form.last_name1.toLowerCase(),
 						last_name2: 	form.last_name2.toLowerCase(),
 						email: 			form.email.toLowerCase(),
 						favs_genres:	form.favs_genres,
-						commune:			form.commune,
+						commune:		form.commune,
 						phone: 			form.phone,
 						ranking: 		0
 					};
 
-				  	// Se guarda el usuario 
+					console.log("UNO:"+ this.formulario.value.conditions);
+
+					if( !this.formulario.value.conditions ){
+					    swal("Importante", "Debe aceptar los términos y condiciones", "warning");
+					console.log("DOS:"+ this.formulario.value.conditions);
+
+					    return;
+
+					}
+
+					console.log("TRES:"+ this.formulario.value.conditions);
+
+					
+					// Se guarda el usuario 
 					this._booksService.addData('users', USER)
-						.then( () => console.log("se guardó el usuario") )
-						.catch( (err) => console.log("error al guardar al usuario", err) );
+						.then( () => {
+							console.log("Se guardó el usuario");
+							swal('Cuenta creada con éxito', USER.email, 'success');
+							this.router.navigate([ '/home' ]);
+						})
+					.catch( (err) => console.log("Error al guardar al usuario", err) );
 				})
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
 		}else{
-			console.log("CUEEEEEK")
+			console.log("No funcionó")
 		}
 	}
 }
