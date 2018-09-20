@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 			password: 		new FormControl(undefined, Validators.required),
 			password2: 		new FormControl(undefined, Validators.required),
 			conditions: 	new FormControl(false, Validators.required),
-		});
+		}, { validators: this.areEquals( 'password', 'password2') });
 	}
 
 
@@ -82,18 +82,10 @@ export class RegisterComponent implements OnInit {
 						ranking: 		0
 					};
 
-					console.log("UNO:"+ this.formulario.value.conditions);
-
 					if( !this.formulario.value.conditions ){
 					    swal("Importante", "Debe aceptar los términos y condiciones", "warning");
-					console.log("DOS:"+ this.formulario.value.conditions);
-
 					    return;
-
 					}
-
-					console.log("TRES:"+ this.formulario.value.conditions);
-
 					
 					// Se guarda el usuario 
 					this._booksService.addData('users', USER)

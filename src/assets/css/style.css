@@ -231,7 +231,7 @@ html body .p-b-10 {
   padding-bottom: 10px; }
 
 html body .p-b-20 {
-  padding-bottom: 20px; }
+  /*padding-bottom: 20px;*/ }
 
 html body .p-b-30 {
   padding-bottom: 30px; }
@@ -2460,7 +2460,12 @@ Buttons
 
 .btn-googleplus {
   color: #ffffff;
-  background-color: #dd4b39; }
+  background-color: #dd4b39;
+  /* NEW */
+  width: 100%;
+  border-radius: 60px;
+  height: 56px; 
+  /* END NEW*/}
   .btn-googleplus:hover {
     color: #ffffff; }
 

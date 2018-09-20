@@ -9,8 +9,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class BooksService {
 
-  constructor( private afs: AngularFirestore ) {}  
-  
+  constructor( private afs: AngularFirestore ) {} 
 
   // Retorna Observable
   // Trae toda la data de una colección específica.

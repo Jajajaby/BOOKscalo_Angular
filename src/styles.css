@@ -10,7 +10,14 @@
    border-bottom: 1px solid #398bf7 !important;
 }
 
-
+/*
+.fa-google-plus:before {
+  content: url(assets/images/icon/google.png)!important;
+  width: 10px;
+  height: 10px;
+  
+}
+*/
 
 /* #17a2b8  */
 /*#button-celeste {
