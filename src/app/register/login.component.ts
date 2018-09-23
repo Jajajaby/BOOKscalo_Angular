@@ -6,11 +6,8 @@ import { Users } from "../interface/books.interface";
 import { BooksService } from "../services/books.service";
 
 import { AngularFireAuth } from 'angularfire2/auth';
-// import firebase from 'firebase/app';
+import * as firebase from 'firebase/app';
 import { auth } from 'firebase';
-
-// Google API
-declare const gapi:any;
 
 // Sweet Alert
 import swal from 'sweetalert';
@@ -29,17 +26,28 @@ export class LoginComponent implements OnInit {
 	email:string;  
 	rememberMe:boolean = false;
 
-	// Objeto para iniciar sesión con Google API
-	auth2:any;
-
-	// var provider = new firebase.auth.GoogleAuthProvider();
+	// 
+	public usuario:any = {};
 
 	constructor( private afAuth: AngularFireAuth, 
-				 private router:Router ) { }
+				 private router:Router ) { 
+
+		this.afAuth.authState.subscribe( user => {
+
+		console.log( 'Estado del usuario', user );
+
+		if( !user ){
+			return;
+		}
+		
+		this.usuario.nombre = user.displayName;
+		this.usuario.uid 	= user.uid;
+		this.usuario.email 	= user.email;
+		})
+
+	}
 
 	ngOnInit() {
-		this.googleInit();
-
 		this.formulario = 	new FormGroup({
 			email: 			new FormControl(undefined, [Validators.required, Validators.email]),
 			password: 		new FormControl(undefined, [Validators.required,Validators.minLength(6)]),
@@ -55,29 +63,14 @@ export class LoginComponent implements OnInit {
 	    }
 	}
 
-	// Inicialización de API de Google
-	googleInit(){
-		gapi.load('auth2', () => {
-			this.auth2 = gapi.auth2.init({
-				client_id: '748589695279-mt7l161vm35ca3d9ftbgqoe7au5in0da.apps.googleusercontent.com',
-				cookiepolicy: 'single_host_origin',
-				scope: 'profile email'
-			});
-			this.attachSignIn( document.getElementById('btnGoogle'));
-		});
-	}
-
-	attachSignIn( element ){
-		this.auth2.attachClickHandler( element, {}, (googleUser)=> {
-			// let profile = googleUser.getBasicProfile();
-			let token = googleUser.getAuthResponse().id_token;
-			console.log( token );
-		})
-	}
-
 	login() {
     	this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  	}
+	}
+	
+	logout() {
+		this.afAuth.auth.signOut();
+		this.router.navigate(['/login']);
+	}
 
 
 	loginUser(){

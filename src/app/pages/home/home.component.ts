@@ -12,7 +12,18 @@ export class HomeComponent implements OnInit {
 	// Para que por defecto se abra pestaña "Todos"
 	view_bar:string = 'all';
 
-	constructor() { }
+	// Todos los libros
+	books: any[] = [];
+
+	constructor( private _booksService:BooksService ) { 
+		
+		this._booksService.getData('books')
+			.valueChanges()
+			.subscribe( data => {
+				this.books = [];
+				this.books = data;
+			}); 
+	}
 
 	ngOnInit() {
 	}

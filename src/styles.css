@@ -23,3 +23,12 @@
 /*#button-celeste {
    background: #459FAE !important;
 }*/
+
+.modal-lg {
+    max-width: 70% !important;
+    min-width: 500px !important;
+}
+
+.modal-body {
+    min-width: 500px !important;
+}

@@ -11,6 +11,7 @@ export interface Books{
 	original:boolean;
 	transaction:string;
 	user:any;
+	id:string;
 	price?:number;
 	images?:Array<string>;
 };

@@ -22,6 +22,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { LibraryComponent } from './library/library.component';
 import { OtherUserComponent } from './other-user/other-user.component';
 import { OneBookComponent } from './one-book/one-book.component';
+import { PreferencesComponent } from './preferences/preferences.component';
 
 // ANGULARFIRE2
 import { AngularFireModule } from 'angularfire2';
@@ -36,6 +37,7 @@ import { environment } from '../../environments/environment';
 // COMPONENTS
 import { BooksComponent } from '../components/books/books.component';
 import { CardBookComponent } from '../components/card-book/card-book.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { CardBookComponent } from '../components/card-book/card-book.component';
     OneBookComponent,
     PagesComponent,
     BooksComponent,
-    CardBookComponent
+    CardBookComponent,
+    PreferencesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -35,7 +35,7 @@
 						<i class="ti-menu"></i>
 					</a>
 				</li>
-				<li class="nav-item hidden-sm-down"></li>
+				<li class="nav-item"></li>
 			</ul>
 			<!-- ============================================================== -->
 			<!-- User profile, notifications, add book and search 				-->
@@ -44,13 +44,17 @@
 				<!-- ============================================================== -->
 				<!-- Search 														-->
 				<!-- ============================================================== -->
-				<li class="nav-item hidden-xs-down search-box">
-					<a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+				<li class="nav-item search-box">
+					<a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
 						<i class="ti-search"></i>
 					</a>
 					<form class="app-search">
-						<input type="text" class="form-control" placeholder="Search & enter">
-						<a class="srh-btn">
+						<input 	type="text" 
+								class="form-control" 
+								placeholder="Buscar..." 
+								(keyup.enter)="searchBook(Search.value)" 
+								#Search>
+						<a class="srh-btn" >
 							<i class="ti-close"></i>
 						</a>
 					</form>
@@ -63,7 +67,8 @@
 				<!-- Notifications 													-->
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+						<i class="mdi mdi-message"></i>
 						<div class="notify"> 
 							<span class="heartbit"></span> 
 							<span class="point"></span> 
@@ -136,8 +141,8 @@
 				<!-- ============================================================== -->
 				<!-- Add book 														-->
 				<!-- ============================================================== -->
-				<li class="nav-item hidden-xs-down">
-					<a [routerLink]="['/addBook']" class="nav-link hidden-sm-down waves-effect waves-dark">
+				<li class="nav-item">
+					<a [routerLink]="['/addBook']" class="nav-link waves-effect waves-dark">
 						<img src="assets/images/add.png" alt="add_book" style="width: 25px;" />
 					</a>
 
@@ -191,7 +196,7 @@
 							</li>
 							<li role="separator" class="divider"></li>
 							<li>
-								<a href="#">
+								<a (click)="logout()">
 									<i class="fa fa-power-off"></i>
 									&nbsp; Cerrar sesión
 								</a>

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
 import { Books } from "../../interface/books.interface";
 import { BooksService } from "../../services/books.service";
 
-import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
-
 // ANGULARFIRE2
 import { AngularFireStorage } from 'angularfire2/storage';
+
+// Sweet Alert
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-add-book',
@@ -26,8 +28,8 @@ export class AddBookComponent implements OnInit {
 
 	constructor( 	private _booksService:BooksService,
 					private activatedRoute:ActivatedRoute,
-					private storage: AngularFireStorage 
-				) { 
+					private storage: AngularFireStorage,
+					public router: Router ) { 
 		// Observable
 		this.activatedRoute.params
 			.subscribe( parametros=> {
@@ -67,19 +69,31 @@ export class AddBookComponent implements OnInit {
 		});
 
 		// Se guarda la formulario para validar
-		const book:Books = this.formulario.value; 
+		let book:Books = this.formulario.value; 
+
+		// Para agregar la referencia al usuario propietario del libro
+		let user = JSON.parse( localStorage.getItem( "user" ));
+		book.user = "users/" + user.uid;
+
+		// Para que el id de Firebase sea el uid + fechahora 
+		book.id = user.uid + "-" + new Date().valueOf() ;
 
 		// Se guarda el libro 
 		this._booksService.addData('books', book)
-			.then( () => console.log("se guardo el libro") )
-			.catch( (err) => console.log("error al guardar libros", err) );
+			.then( () => {
+				console.log("se guardó el libro"); 
+				swal('Libro registrado con éxito', book.title, 'success');
+				this.router.navigate([ '/home' ]);
+			})
+			.catch( (err) => {
+				console.log("error al guardar libros", err) 
+				swal("Error", "No se ha podido guardar el nuevo libro", "warning");
+			});
 	}
 
 
 	// Carga las imagenes al storage de Firebase
 	uploadFile(event) {
-		this.loader_img = true;
-		console.log(this.loader_img);
 		this.tamImgs = 0;
 		const files = event.target.files;
 		let url = []; // guarda las imagenes correctas para luego subirlas

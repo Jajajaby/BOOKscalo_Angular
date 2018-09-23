@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { LibraryComponent } from './library/library.component';
 import { OneBookComponent } from './one-book/one-book.component';
+import { PreferencesComponent } from './preferences/preferences.component';
+import { SearchComponent } from './search/search.component';
 
 const PAGES_ROUTE: Routes = [
 	{
@@ -21,6 +23,8 @@ const PAGES_ROUTE: Routes = [
 			{ path: 'messages', component: MessagesComponent },
 			{ path: 'library', component: LibraryComponent },
 			{ path: 'book', component: OneBookComponent },
+			{ path: 'preferences', component: PreferencesComponent },
+			{ path: 'search/:input', component: SearchComponent },
 			{ path: '', pathMatch: 'full', redirectTo: 'home' }
 		] 
    }

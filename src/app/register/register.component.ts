@@ -94,8 +94,11 @@ export class RegisterComponent implements OnInit {
 							swal('Cuenta creada con éxito', USER.email, 'success');
 							this.router.navigate([ '/home' ]);
 						})
-					.catch( (err) => console.log("Error al guardar al usuario", err) );
-				})
+					.catch( (err) => {
+						console.log("Error al guardar al usuario", err);
+					    swal("Error", "No se ha podido guardar el nuevo usuario", "warning");
+					})					
+				})					
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
 		}else{
 			console.log("No funcionó")

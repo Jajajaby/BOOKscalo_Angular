@@ -11,8 +11,6 @@
 			<div class="card">
 				<form class="form-horizontal" role="form">
 					<div class="form-body">
-						<h3 class="box-title">Nombre libro</h3>
-						<hr class="m-t-0 m-b-40">
 						<div class="row">
 							<div class="col-md-6" style="background-color: #0000FF">
 
@@ -41,25 +39,25 @@
 							<div class="col-md-6">
 								<!-- TÍTULO LIBRO -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Título:</label>
-										<div class="col-md-9">
-											<p class="form-control-static"> John </p>
+									<label class="control-label text-left col-md-6">Título:</label>
+										<div class="col-md-6">
+											<p class="form-control-static"> {{ book.title }} </p>
 										</div>
 								</div>
 								
 								<!-- AUTOR/A LIBRO -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Autor/a:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> Doe </p>
+									<label class="control-label text-left col-md-6">Autor/a:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.author }} </p>
 									</div>
 								</div>
 
 								<!-- PRECIO LIBRO -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Precio:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> Doe </p>
+									<label class="control-label text-left col-md-6">Precio:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.price }} </p>
 									</div>
 								</div>
 							</div>
@@ -73,33 +71,33 @@
 							<div class="col-md-6">
 								<!-- TIPO DE ELEMENTO -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Elemento:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Elemento:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.type }} </p>
 									</div>
 								</div>
 
 								<!-- GÉNERO -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Género:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Género:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.genre }} </p>
 									</div>
 								</div>
 
 								<!-- EDITORIAL -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Editorial:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Editorial:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.editorial }} </p>
 									</div>
 								</div>
 
 								<!-- IDIOMA -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Idioma:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Idioma:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.language }} </p>
 									</div>
 								</div>
 							</div>
@@ -107,25 +105,25 @@
 							<div class="col-md-6">
 								<!-- ORIGINAL -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Original:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Original:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.original }} </p>
 									</div>
 								</div>
 
 								<!-- NÚMERO DE PÁGINAS -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Número de páginas:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Número de páginas:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.num_pages }} </p>
 									</div>
 								</div>
 
 								<!-- COMENTARIOS -->
 								<div class="form-group row">
-									<label class="control-label text-right col-md-3">Comentario:</label>
-									<div class="col-md-9">
-										<p class="form-control-static"> E104, Dharti-2, Near silverstar mall </p>
+									<label class="control-label text-left col-md-6">Comentario:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.comment }} </p>
 									</div>
 								</div>
 							</div>
