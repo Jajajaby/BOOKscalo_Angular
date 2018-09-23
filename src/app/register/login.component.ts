@@ -32,18 +32,18 @@ export class LoginComponent implements OnInit {
 	constructor( private afAuth: AngularFireAuth, 
 				 private router:Router ) { 
 
-		this.afAuth.authState.subscribe( user => {
-
-		console.log( 'Estado del usuario', user );
-
-		if( !user ){
-			return;
-		}
-		
-		this.usuario.nombre = user.displayName;
-		this.usuario.uid 	= user.uid;
-		this.usuario.email 	= user.email;
-		})
+			this.afAuth.authState.subscribe( user => {
+	
+			console.log( 'Estado del usuario', user );
+	
+			if( !user ){
+				return;
+			}
+			
+			this.usuario.nombre = user.displayName;
+			this.usuario.uid 	= user.uid;
+			this.usuario.email 	= user.email;
+		});
 
 	}
 

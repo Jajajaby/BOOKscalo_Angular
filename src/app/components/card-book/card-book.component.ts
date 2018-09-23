@@ -1,8 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+
+// Services
 import { BooksService } from "../../services/books.service";
 
-import { Books } from "../../interface/books.interface";
+// Interfaces
+import { Books } from '../../interface/books.interface';
 
 @Component({
   selector: 'app-card-book',
@@ -14,12 +16,13 @@ export class CardBookComponent implements OnInit {
 	books: any[] = [];
 
 	// Variable para clonar un libro y que se pueda leer desde el modal
-	book_modal: Books;
+	book_modal: Books = {
+		author: '', title: '', editorial: '', type: '', genres: [], language: '', num_page: 0,
+		original: false, transaction: '', 	user: '', id: '', comment: '', price: 0, images: []
+	};
 
 	// Se inyecta router para redirigir las páginas
-	constructor( private router:Router,
-				 private _booksService:BooksService ) { 
-		
+	constructor( private _booksService:BooksService ) { 
 		this._booksService.getData('books')
 			.valueChanges()
 			.subscribe( data => {
@@ -29,5 +32,6 @@ export class CardBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		
  	}
 }

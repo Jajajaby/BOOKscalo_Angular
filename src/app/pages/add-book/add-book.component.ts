@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
+// Interfaces
 import { Books } from "../../interface/books.interface";
+
+// Services
 import { BooksService } from "../../services/books.service";
 
 // ANGULARFIRE2
@@ -19,22 +22,12 @@ export class AddBookComponent implements OnInit {
 
 	// Para el formulario
 	formulario:FormGroup;
-	tamImgs:number = 0; 			// cantidad de imagenes válidas que se muestran en el formulario
-	urlImgs:any[]; 					// aquí se guardan las rutas de las imagenes para guardar en firebase
-	loader_img:boolean = false; 	// para cargar las imagenes
-	
-	nuevo:boolean = false;
-	id:string;
+	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
+	uid:string; // uid del usuario
 
-	constructor( 	private _booksService:BooksService,
-					private activatedRoute:ActivatedRoute,
-					private storage: AngularFireStorage,
-					public router: Router ) { 
-		// Observable
-		this.activatedRoute.params
-			.subscribe( parametros=> {
-				this.id = parametros['id']
-			});
+	constructor( private _booksService:BooksService,
+					 private storage: AngularFireStorage,
+					 public router: Router ) { 			
 	}
 
 	// Inicializando el formulario
@@ -53,13 +46,19 @@ export class AddBookComponent implements OnInit {
 			comment: 		new FormControl(undefined),
 			images: 		new FormControl(undefined)
 		});
+
+		this.uid = JSON.parse(localStorage.getItem('user')).uid;
 	}
 
 	// Función para guardar el libro
 	saveBook(){
 		// Si la formulario no es valida no se realiza la carga a firebase
 		if( this.formulario.invalid ){
-			console.log('Formulario no valido');
+			swal(
+				'Debe completar el formulario', 
+				'Debe ingresar todos los campos de este formulario',
+				'warning'
+			);
 			return;
 		}
 		
@@ -94,42 +93,49 @@ export class AddBookComponent implements OnInit {
 
 	// Carga las imagenes al storage de Firebase
 	uploadFile(event) {
-		this.tamImgs = 0;
-		const files = event.target.files;
+		let files = event.target.files;
 		let url = []; // guarda las imagenes correctas para luego subirlas
+		let aux = false; // para que no se cargen imagenes si existe aunque sea 1 mala
 
-		// Para ir subiendo las imagen 1 a 1
 		for( let i=0; i<files.length; i++ ){
-			setTimeout( () => {
-				const separatedFile = files[i].name.split('.');
-				const extension = separatedFile[separatedFile.length - 1];
+			const separatedFile = files[i].name.split('.');
+			const extension = separatedFile[separatedFile.length - 1];
 				
-				// Tipos de archivo válidos para las imagenes
-				const typeValid = ['jpg', 'jpeg', 'png'];
-	
-				// Si el tipo de imagen corresponde a las especificadas, es válido
-				if( typeValid.indexOf( extension ) >= 0 ){
-					const filePath = files[i].name;
-					
-					const ref = this.storage.ref('images/'+ filePath);
+			// Tipos de archivo válidos para las imagenes
+			const typeValid = ['jpg', 'jpeg', 'png'];
+
+			// si las imagenes no son validas se termina el proceso
+			if( typeValid.indexOf( extension ) <= -1 ){
+				swal(
+					'Error al ingresar imagen',
+					'Extensiones validas [png, jpg, jpeg], vuelva a intentarlo',
+					'error'
+				);
+				aux = true;
+				return;
+			}
+		}
+
+		// si todas las imagenes son correctas se guardaran
+		if( !aux ){
+			// Para ir subiendo las imagen 1 a 1
+			for( let i=0; i<files.length; i++ ){
+				setTimeout( () => {
+					let filePath = `${this.uid}-${new Date().valueOf()}`;
+					let ref = this.storage.ref('images/'+ filePath);
 					ref.put(files[i]);
-					
+						
 					// Se obtiene la ruta donde se va a guardar y se deja en una array
 					ref.getDownloadURL()
 						.subscribe( resp => {
 							console.log(resp);
-							this.tamImgs += 1;
 							url.push(resp);
 						});
-				// Si el tipo de imagen no corresponde a las especificadas, no es válido
-				}else {
-					console.log('Tipo de imagen no valido');
-				}
-			}, 500);
+				}, 1000);
+			}
+			this.urlImgs = url; // para pasar las rutas a un array global
 		}
-		this.urlImgs = url; // para pasar las rutas a un array global
-		this.loader_img = false;
-	 }
+	}
 }
 
 				

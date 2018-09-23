@@ -88,11 +88,12 @@ export class RegisterComponent implements OnInit {
 					}
 					
 					// Se guarda el usuario 
-					this._booksService.addData('users', USER)
+					this._booksService.addDataIdCustom('users', USER.uid, USER)
 						.then( () => {
 							console.log("Se guardó el usuario");
 							swal('Cuenta creada con éxito', USER.email, 'success');
-							this.router.navigate([ '/home' ]);
+							this.afAuth.auth.signOut();
+							this.router.navigate([ '/login' ]);
 						})
 					.catch( (err) => {
 						console.log("Error al guardar al usuario", err);
