@@ -1,0 +1,54 @@
+<!-- TIENE QUE ABRIR MODAL CON EL LIBRO O PÁGINA CON CONTACTO PARA HACER LA TRANSACCIÓN -->
+
+
+<!-- ============================================================================== -->
+<!-- Card book 																		-->
+<!-- ============================================================================== -->
+<div class="card-columns">
+	<div class="card" style="width: 18rem;" *ngFor="let book of books">
+		<!-- picture o img -->
+		<img class="card-img-top" *ngFor="let img of book.images"  [src]="img" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">Título: {{ book.title }}</h5>
+			<p class="card-text">Autor/a: {{ book.author }}</p>
+			<p class="card-text">Editorial: {{book.editorial }}</p>
+				
+			<button class="btn btn-outline-info model_img img-responsive" 
+					data-toggle="modal" 
+					data-target=".bs-example-modal-lg" 
+					type="button"
+					(click)="book_modal=book">Ver libro</button>
+				
+			<a href="#" class="btn btn-outline-info col-md-12" type="button">Contactar dueño/a</a>
+		</div>
+	</div>
+</div>
+
+<!-- sample modal content -->
+<div 	class="modal fade bs-example-modal-lg" 
+		tabindex="-1" 
+		role="dialog" 
+		aria-labelledby="myLargeModalLabel" 
+		aria-hidden="true" 
+		style="display: none;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title }}</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			</div>
+			<div class="modal-body">
+			
+				<app-one-book [book]="book_modal"></app-one-book>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- <img src="../assets/images/alert/model2.png" alt="default" data-toggle="modal" data-target=".bs-example-modal-lg" class="model_img img-responsive" /> -->

@@ -1,0 +1,21 @@
+<!-- ========================================================================== -->
+<!-- Options view bar															-->
+<!-- ========================================================================== -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-4">
+			<h3>Mis libros</h3>
+			<ul class="list-group">
+				<li class="list-group-item" style="cursor: pointer;" 
+					*ngFor="let book of books"
+					[ngClass]="{'active': book.id === book_modal.id}"
+					(click)="book_modal = book">
+					{{ book.title }}>
+				</li>
+			</ul>
+		</div>
+		<div class="col-8">
+			<app-one-book [book]="book_modal" *ngIf="book_modal.title!==undefined"></app-one-book>		
+		</div>
+	</div>
+</div>

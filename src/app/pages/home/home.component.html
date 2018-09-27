@@ -1,0 +1,59 @@
+<!-- ============================================================================== -->
+<!-- Options view bar																-->
+<!-- ============================================================================== -->
+<div class="container">
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4">
+			<div class="btn-group mr-2" role="group">
+
+				<button type="button" class="btn btn-secondary">
+			    	<a class="" (click)="view_bar = 'all'">Todos</a>
+			  	</button>
+			  	<button type="button" class="btn btn-secondary">
+			    	<a class="" (click)="view_bar = 'exchange'">Intercambio</a>
+			  	</button>
+				<button type="button" class="btn btn-secondary">
+			    	<a class="" (click)="view_bar = 'sales'">Ventas</a>
+				</button>
+				<button type="button" class="btn btn-secondary">
+			    	<a class="" (click)="view_bar = 'both'">Ambos</a>
+				</button>
+			</div>
+		</div>
+		<div class="col-4"></div>
+	</div>
+</div>
+
+<div [ngSwitch]="view_bar">
+	<div *ngSwitchCase="'all'">Todos
+
+
+	</div>
+	<div *ngSwitchCase="'exchange'">Intercambio
+		<!-- *ngIf="forma.value.transaction === 'exchange'">Intercambio -->
+
+
+	</div>
+	<div *ngSwitchCase="'sales'">Venta
+
+
+	</div>
+	<div *ngSwitchCase="'both'">Ambos
+
+	</div>
+</div>
+
+<!-- ============================================================================== -->
+<!-- Cards books 																	-->
+<!-- ============================================================================== -->
+<app-card-book></app-card-book>
+
+
+
+<!-- [heroe] es el nombre de la propiedad y "heroe" es el nombre de la variable local -->
+<!-- <app-books-card [book]="heroe" [index]="i" *ngFor="let book of books; let i = index"></app-books-card> -->
+
+<!-- <app-card-book [book]="b" [index]="i" *ngFor="let b of books; let i = index"></app-card-book> -->
+
+

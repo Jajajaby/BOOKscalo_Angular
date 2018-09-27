@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Líneas del formulario de libro */
+
+.border-input-custom {
+   border-bottom: 1px solid #67757c !important;
+}
+
+.border-input-custom:focus {
+   border-bottom: 1px solid #398bf7 !important;
+}
+
+/*
+.fa-google-plus:before {
+  content: url(assets/images/icon/google.png)!important;
+  width: 10px;
+  height: 10px;
+  
+}
+*/
+
+/* #17a2b8  */
+/*#button-celeste {
+   background: #459FAE !important;
+}*/
+
+.modal-lg {
+    max-width: 70% !important;
+    min-width: 500px !important;
+}
+
+.modal-body {
+    min-width: 500px !important;
+}

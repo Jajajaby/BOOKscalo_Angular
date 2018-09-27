@@ -1,0 +1,113 @@
+<section id="wrapper">
+	<div class="login-register" style="background-image:url(../../assets/images/background/book-2.jpg);">
+		<div class="login-box card">
+		  <div class="card-body">
+
+		  	<!-- ============================================================================== -->
+			<!-- Login																			-->
+			<!-- ============================================================================== -->
+			<form class="form-horizontal form-material" 
+				[formGroup]="formulario" 
+				(ngSubmit)="loginUser()" 
+				novalidate="novalidate" 
+				action="index.html">    
+
+				<h3 class="box-title m-b-20">Sign In</h3>
+					<div class="form-group ">
+						<div class="col-xs-12">
+							<input  formControlName="email"
+									class="form-control" 
+									type="text" 
+									placeholder="Correo electrónico"> 
+						</div>
+					</div>
+					  
+					<div class="form-group">
+						<div class="col-xs-12">
+							  <input 	formControlName="password"
+										class="form-control" 
+										type="password" 
+										placeholder="Password"> 
+						</div>
+					</div>
+					  
+					<div class="form-group row">
+						<div class="col-md-12">
+							<div class="checkbox checkbox-info pull-left p-t-0">
+								<input 	formControlName="rememberMe"
+										id="checkbox-signup" 
+										type="checkbox" 
+										class="filled-in chk-col-light-blue">
+								<label for="checkbox-signup"> Recuérdame </label>
+							</div> 
+							<a href="javascript:void(0)" id="to-recover" class="text-dark pull-right">
+								<i class="fa fa-lock m-r-5"></i> Olvidó su contraseña? 
+							</a> 
+						</div>
+					</div>
+					
+					<div class="form-group text-center">
+						<div class="col-xs-12 p-b-20">
+							<button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Ingresar</button>
+						</div>
+					</div>
+					
+					<!-- Login with Google button -->
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+							<div class="social">
+								<button (click)="login()" 
+										type="button" 
+										id="btnGoogle" 
+										class="btn btn-googleplus" 
+										data-toggle="tooltip" 
+										title="Iniciar sesión con Google"> 
+									<i aria-hidden="true" class="fa fa-google-plus"></i> 
+								</button>
+							</div>
+						</div>
+					  </div>
+					  
+					<!-- Register me -->
+					<div class="form-group m-b-0">
+						<div class="col-sm-12 text-center">No tienes una cuenta?
+							<a [routerLink]="['/register']" class="text-info m-l-5">
+								<b>Registrarme</b>
+							</a>
+						</div>
+					</div>
+				</form>
+				<!-- ============================================================================== -->
+				<!-- End Login																		-->
+				<!-- ============================================================================== -->
+					
+				  
+				<!-- ============================================================================== -->
+				<!-- Recovery password																	-->
+				<!-- ============================================================================== -->
+				<form class="form-horizontal" id="recoverform" action="index.html">
+					<div class="form-group">
+						<div class="col-xs-12">
+							<h3>Recuperar contraseña</h3>
+							<p class="text-muted">Ingresa tu correo electrónico y te enviaremos las instrucciones</p>
+						</div>
+					</div>
+					  
+					<div class="form-group ">
+						<div class="col-xs-12">
+							<input class="form-control" type="text" required="" placeholder="Email"> </div>
+					</div>
+					<div class="form-group text-center m-t-20">
+						<div class="col-xs-12">
+							<button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
+						</div>
+					</div>
+				</form>
+				<!-- ============================================================================== -->
+				<!-- End recovery password															-->
+				<!-- ============================================================================== -->
+					
+			</div>
+		</div>
+	</div>
+</section>
