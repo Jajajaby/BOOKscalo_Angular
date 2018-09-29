@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 // Services
-import { BooksService } from "../../services/books.service";
+import { DatabaseService } from "../../services/database.service";
 
 // Interfaces
 import { Books } from '../../interface/books.interface';
@@ -22,7 +22,7 @@ export class CardBookComponent implements OnInit {
 	};
 
 	// Se inyecta router para redirigir las páginas
-	constructor( private _booksService:BooksService ) { 
+	constructor( private _booksService:DatabaseService ) { 
 		this._booksService.getData('books')
 			.valueChanges()
 			.subscribe( data => {

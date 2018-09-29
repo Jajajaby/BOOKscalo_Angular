@@ -6,7 +6,7 @@ import { FormGroup, FormControl, Validators, FormControlName } from '@angular/fo
 import { Books } from "../../interface/books.interface";
 
 // Services
-import { BooksService } from "../../services/books.service";
+import { DatabaseService } from "../../services/database.service";
 
 // ANGULARFIRE2
 import { AngularFireStorage } from 'angularfire2/storage';
@@ -25,7 +25,7 @@ export class AddBookComponent implements OnInit {
 	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
 	uid:string; // uid del usuario
 
-	constructor( private _booksService:BooksService,
+	constructor( private _dbService:DatabaseService,
 					 private storage: AngularFireStorage,
 					 public router: Router ) { 			
 	}
@@ -78,7 +78,7 @@ export class AddBookComponent implements OnInit {
 		book.id = user.uid + "-" + new Date().valueOf() ;
 
 		// Se guarda el libro 
-		this._booksService.addData('books', book)
+		this._dbService.addData('books', book)
 			.then( () => {
 				console.log("se guardó el libro"); 
 				swal('Libro registrado con éxito', book.title, 'success');

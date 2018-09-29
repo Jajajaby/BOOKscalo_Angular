@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormControlName } from '@angular/fo
 import { Router } from '@angular/router';
 
 import { Users } from "../interface/books.interface";
-import { BooksService } from "../services/books.service";
+import { DatabaseService } from "../services/database.service";
 
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
 	// Para que se muestre la primera página del registro
 	register_pages:string = "page_1";
 
-	constructor( 	private _booksService:BooksService,
+	constructor( 	private _dbService:DatabaseService,
 					private afAuth: AngularFireAuth,
 					public router: Router ) { }
 
@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
 					}
 					
 					// Se guarda el usuario 
-					this._booksService.addDataIdCustom('users', USER.uid, USER)
+					this._dbService.addDataIdCustom('users', USER.uid, USER)
 						.then( () => {
 							console.log("Se guardó el usuario");
 							swal('Cuenta creada con éxito', USER.email, 'success');

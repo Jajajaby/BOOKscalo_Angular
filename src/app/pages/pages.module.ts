@@ -8,7 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 // import { PipesModule } from '../pipes/pipes.module';
 
 //SERVICIOS
-import { BooksService } from "./../services/books.service";
+import { DatabaseService } from "./../services/database.service";
 
 // RUTAS
 import { PAGES_ROUTES } from './pages.routes';
@@ -67,7 +67,7 @@ import { SearchComponent } from './search/search.component';
     AngularFireAuthModule
   ],
   providers: [
-    BooksService
+    DatabaseService
   ],
   bootstrap: [PagesComponent]
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { BooksService } from "../../services/books.service";
+import { DatabaseService } from "../../services/database.service";
 
 
 @Component({
@@ -13,12 +13,12 @@ export class SearchComponent implements OnInit {
 	books:any[] = [];
 
 	constructor( private activatedRoute:ActivatedRoute,
-				 private _booksService: BooksService ) { }
+				 private _dbService: DatabaseService ) { }
 
 	ngOnInit() {
 		this.activatedRoute.params.subscribe( params => {
 			console.log( params['input'] );
-			this.books = this._booksService.seachBooks( params['input'] );
+			this.books = this._dbService.seachBooks( params['input'] );
 			console.log(this.books);
 		});
 

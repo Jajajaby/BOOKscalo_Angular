@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
 import { Users } from "../interface/books.interface";
-import { BooksService } from "../services/books.service";
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';

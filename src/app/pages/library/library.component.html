@@ -10,7 +10,7 @@
 					*ngFor="let book of books"
 					[ngClass]="{'active': book.id === book_modal.id}"
 					(click)="book_modal = book">
-					{{ book.title }}>
+					{{ book.title }}
 				</li>
 			</ul>
 		</div>

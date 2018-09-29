@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Books } from "../../interface/books.interface";
-import { BooksService } from "../../services/books.service";
+import { DatabaseService } from "../../services/database.service";
 
 @Component({
   selector: 'app-home',
@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
 	// Todos los libros
 	books: any[] = [];
 
-	constructor( private _booksService:BooksService ) { 
+	constructor( private _dbService:DatabaseService ) { 
 		
-		this._booksService.getData('books')
+		this._dbService.getData('books')
 			.valueChanges()
 			.subscribe( data => {
 				this.books = [];

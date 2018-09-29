@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Services
-import { BooksService } from "../../services/books.service";
+import { DatabaseService } from "../../services/database.service";
 
 // Interfaces
 import { Books } from '../../interface/books.interface';
@@ -21,10 +21,10 @@ export class LibraryComponent implements OnInit {
 		original: false, transaction: '', 	user: '', id: '', comment: '', price: 0, images: []
 	};
 
-	constructor( private _booksService:BooksService ) { 
-		 let user = JSON.parse( localStorage.getItem( "user" ) );
+	constructor( private _dbService:DatabaseService ) { 
+		let user = JSON.parse( localStorage.getItem( "user" ) );
 
-		this._booksService.getDataQuery( "books", "user", "==", "users/" + user.uid)
+		this._dbService.getDataQuery( "books", "user", "==", "users/" + user.uid)
 			.valueChanges().subscribe( data => {
 				console.log(data);
 				this.books = [];
