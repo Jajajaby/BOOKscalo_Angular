@@ -14,8 +14,109 @@
 				</li>
 			</ul>
 		</div>
+
+
 		<div class="col-8">
-			<app-one-book [book]="book_modal" *ngIf="book_modal.title!==undefined"></app-one-book>		
+
+
+
+
+			<div class="card-body" style="background-color: #FFFFFF;">
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<form class="form-horizontal" role="form">
+								<div class="form-body">
+									<div class="row">
+										<div class="col-md-6">
+											<!-- TÍTULO LIBRO -->
+											<div class="form-group row">
+												<label class="control-label text-left col-md-6">Título:</label>
+													<div class="col-md-6">
+														<p class="form-control-static" *ngIf="book_modal.title !== undefined"> {{ book_modal.title }} </p>
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+											
+								<div class="form-actions">
+									<div class="row justify-content-md-center">
+										<div class="col-md-4 text-center">
+											<button class="btn btn-danger model_img img-responsive" 
+													data-toggle="modal" 
+													data-target=".bs-example-modal-lg" 
+													type="button">
+													<i class="fa fa-pencil"></i> Editar</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- Row -->
+			</div>
+
+
+
+
 		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<!-- <a href="#openModal">Lanzar el modal</a> -->
+
+<div id="openModal" class="modal fade bs-example-modal-lg">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title }} </h4>
+					<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
+		            	<span _ngcontent-c0="" aria-hidden="true">×</span>
+		            </button>
+			</div>
+			<div class="modal-body">
+			
+
+				<form class="form-material m-t-40" >
+					<div class="row">
+						<!-- Inicio col 1 -->
+						<div class="col-6">
+							<div class="form-group">
+								<label>Título del texto</label>
+								<input type="text" 
+										[(ngModel)]="book_modal.title"
+										name="title"
+										class="form-control form-control-line border-input-custom" 
+										placeholder="Ej.: Harry Potter">
+							</div>
+
+
+							<div class="row justify-content-md-center">
+								<div class="form-group">
+									<button type="button" class="btn btn-outline-info" (click)="updateBook()">
+										Editar
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</form>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
 	</div>
 </div>

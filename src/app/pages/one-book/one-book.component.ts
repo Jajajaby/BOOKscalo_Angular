@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl  } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, FormControl, FormControlName  } from "@angular/forms";
 
 import { Books } from "../../interface/books.interface";
 import { DatabaseService } from "../../services/database.service";
@@ -21,8 +21,23 @@ export class OneBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		
+
+	}
+
+// updateData( collection:string, id:string, document:any )
+	jj() {
+	    // this._dbService.updateData("books", "", this.editForm.value);
+	    let credentials = this.editForm.value;
+	    console.log( credentials );
+  	}
+
+  	modal(){
+  		console.log( this.book.id );
+  		console.log("aaa" + this.book.title);
+
 		this.editForm = new FormGroup({
-			title: 			new FormControl(this.book.title),
+			title: 			new FormControl(this.book.title)
 		// this.editForm = this.formBuilder.group({
 	 //      	title:		[this.book.title]
 			// author: 		['', Validators.required],
@@ -37,19 +52,6 @@ export class OneBookComponent implements OnInit {
 			// comment: 		[''],
 			// images: 		['']
 	    });
-
-	}
-
-// updateData( collection:string, id:string, document:any )
-	jj() {
-	    // this._dbService.updateData("books", "", this.editForm.value);
-	    let credentials = this.editForm.value;
-	    console.log( credentials );
-  	}
-
-  	clg(){
-  		console.log( this.book.id );
-  		console.log( this.book.title);
 
   	}
 
