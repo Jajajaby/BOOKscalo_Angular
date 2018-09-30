@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-
 
 // Services
 import { DatabaseService } from "../../services/database.service";
 
-// Interfaces
-import { Books } from '../../interface/books.interface';
+// RXJS
+import { map } from 'rxjs/operators';
+
+// SWAL
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-library',
@@ -24,17 +25,17 @@ export class LibraryComponent implements OnInit {
 		let user = JSON.parse( localStorage.getItem( "user" ) );
 
 		this._dbService.getDataQuery( "books", "user", "==", "users/" + user.uid)
-			.snapshotChanges().pipe(
+			.snapshotChanges()
+			.pipe(
 				map(actions => actions.map(a => {
 					const data = a.payload.doc.data();
-					const id = a.payload.doc.id;
-					return { id, ...data };
+					const key = a.payload.doc.id;
+					return { key, ...data };
 				}))
-			).subscribe((data:any) => {
-				// this.books = [];
-				// this.books = data;
-				console.log(data);
-			})
+			).subscribe( data => {
+				this.books = [];
+				this.books = data;
+			});
 	}
 
 	ngOnInit() {
@@ -58,11 +59,14 @@ export class LibraryComponent implements OnInit {
 	}
 
 	updateBook(){
-		console.log(this.book_modal);
-
 		// Actualiza la data según el id y el documento a modificar
-		this._dbService.updateData( "books", this.book_modal.id, this.book_modal );
-
+		this._dbService.updateData( "books", this.book_modal.key, this.book_modal )
+			.then( () => {
+				swal('Cambios guardados', 'Sus cambios han sidos guardados con exito', 'success');
+			})
+			.catch( () => {
+				swal('Error al editar', 'Por favor vuelva a intentarlo', 'error');
+			});
 	}
 
 }
