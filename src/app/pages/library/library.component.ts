@@ -21,7 +21,7 @@ export class LibraryComponent implements OnInit {
 	// Variable para clonar un libro y que se pueda leer desde el modal
 	book_modal: any;
 
-	constructor( 	private _dbService:DatabaseService ) { 
+	constructor( private _dbService:DatabaseService ) { 
 		let user = JSON.parse( localStorage.getItem( "user" ) );
 
 		this._dbService.getDataQuery( "books", "user", "==", "users/" + user.uid)
@@ -62,10 +62,10 @@ export class LibraryComponent implements OnInit {
 		// Actualiza la data según el id y el documento a modificar
 		this._dbService.updateData( "books", this.book_modal.key, this.book_modal )
 			.then( () => {
-				swal('Cambios guardados', 'Sus cambios han sidos guardados con exito', 'success');
+				swal('Cambios guardados', 'Sus cambios han sidos guardados con éxito', 'success');
 			})
 			.catch( () => {
-				swal('Error al editar', 'Por favor vuelva a intentarlo', 'error');
+				swal('Error al editar', 'Por favor, vuelva a intentarlo', 'error');
 			});
 	}
 

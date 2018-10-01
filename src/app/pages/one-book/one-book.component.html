@@ -7,8 +7,8 @@
 				<form class="form-horizontal" role="form">
 					<div class="form-body">
 						<div class="row">
+							
 							<div class="col-md-6" style="background-color: #0000FF">
-
 								<!-- CARRUSEL FOTOS LIBRO -->
 								<div class="carousel-inner" role="listbox">
 									<div class="carousel-item active">
@@ -45,6 +45,14 @@
 									<label class="control-label text-left col-md-6">Autor/a:</label>
 									<div class="col-md-6">
 										<p class="form-control-static"> {{ book.author }} </p>
+									</div>
+								</div>
+
+								<!-- TIPO DE TRANSACCIÓN -->
+								<div class="form-group row">
+									<label class="control-label text-left col-md-6">Tipo de transacción:</label>
+									<div class="col-md-6">
+										<p class="form-control-static"> {{ book.transaction }} </p>
 									</div>
 								</div>
 

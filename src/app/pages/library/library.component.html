@@ -1,8 +1,6 @@
-<!-- ========================================================================== -->
-<!-- Options view bar															-->
-<!-- ========================================================================== -->
 <div class="container-fluid">
 	<div class="row">
+		<!-- LISTA DE LIBROS -->
 		<div class="col-4">
 			<h3>Mis libros</h3>
 			<ul class="list-group">
@@ -17,32 +15,134 @@
 
 
 		<div class="col-8">
-
-
-
-
 			<div class="card-body" style="background-color: #FFFFFF;">
-				<!-- Row -->
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="card" *ngIf="book_modal.title !== ''; else other">
 							<form class="form-horizontal" role="form">
+								<!-- ROW PRINCIPAL -->
 								<div class="form-body">
 									<div class="row">
+										<!-- CARRUSEL FOTOS LIBRO -->
+										<div class="col-md-6" style="background-color: #0000FF">
+											<div class="carousel-inner" role="listbox">
+												<div class="carousel-item active">
+													<img class="d-block img-fluid" src="..." alt="First slide">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block img-fluid" src="..." alt="Second slide">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block img-fluid" src="..." alt="Third slide">
+												</div>
+											</div>
+											<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+												<span class="sr-only">Previous</span>
+											</a>
+											<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+												<span class="carousel-control-next-icon" aria-hidden="true"></span>
+												<span class="sr-only">Next</span>
+											</a>
+										</div>
+										
 										<div class="col-md-6">
 											<!-- TÍTULO LIBRO -->
 											<div class="form-group row">
 												<label class="control-label text-left col-md-6">Título:</label>
-													<div class="col-md-6">
-														<p class="form-control-static"> {{ book_modal.title }} </p>
-													</div>
+												<div class="col-md-6">
+													<p class="form-control-static"> {{ book_modal.title }} </p>
+												</div>
+											</div>
+											<!-- AUTOR/A LIBRO -->
+											<div class="form-group row">
+												<label class="control-label text-left col-md-6">Autor/a:</label>
+												<div class="col-md-6">
+													<p class="form-control-static"> {{ book_modal.author }} </p>
+												</div>
+											</div>
+											<!-- TIPO DE TRANSACCIÓN -->
+											<div class="form-group row">
+												<label class="control-label text-left col-md-6">Tipo de transacción:</label>
+												<div class="col-md-6">
+													<p class="form-control-static"> {{ book_modal.transaction }} </p>
+												</div>
+											</div>
+											<!-- PRECIO LIBRO -->
+											<div class="form-group row" 
+													*ngIf="book_modal.transaction === 'Venta' || book_modal.transaction === 'Ambos'">
+												<label class="control-label text-left col-md-6">Precio:</label>
+												<div class="col-md-6">
+													<p class="form-control-static"> {{ book_modal.price }} </p>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-											
+
+								<!-- ROW DETALLES -->
+								<h3 class="box-title">Detalles</h3>
+								<hr class="m-t-0 m-b-40">
+								<div class="row">
+									<div class="col-md-6">
+										<!-- TIPO DE ELEMENTO -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Elemento:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.type }} </p>
+											</div>
+										</div>
+										<!-- GÉNERO -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Género:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.genres }} </p>
+											</div>
+										</div>
+										<!-- EDITORIAL -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Editorial:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.editorial }} </p>
+											</div>
+										</div>
+										<!-- IDIOMA -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Idioma:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.language }} </p>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<!-- ORIGINAL -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Original:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.original }} </p>
+											</div>
+										</div>
+										<!-- NÚMERO DE PÁGINAS -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Número de páginas:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.num_page }} </p>
+											</div>
+										</div>
+										<!-- COMENTARIOS -->
+										<div class="form-group row">
+											<label class="control-label text-left col-md-6">Comentario:</label>
+											<div class="col-md-6">
+												<p class="form-control-static"> {{ book_modal.comment }} </p>
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div class="form-actions">
 									<div class="row justify-content-md-center">
+										<!-- BOTÓN EDITAR -->
 										<div class="col-md-4 text-center">
 											<button class="btn btn-danger model_img img-responsive" 
 													data-toggle="modal" 
@@ -50,54 +150,46 @@
 													type="button">
 													<i class="fa fa-pencil"></i> Editar</button>
 										</div>
+										<!-- BOTÓN ELIMINAR -->
+										<div class="col-md-4 text-center">
+											<button class="btn btn-inverse model_img img-responsive" type="button">
+													ELIMINAR 
+											</button>
+										</div>
+										<div class="col-md-6"> </div>
 									</div>
 								</div>
 							</form>
 						</div>
-
-						<ng-template #other>
-							<div class="alert alert-primary" role="alert">
-								Debe seleccionar un libro
-							</div>
-						</ng-template>
 					</div>
-				</div>
-				<!-- Row -->
+				<ng-template #other>
+					<div class="alert alert-primary" role="alert">
+						Debe seleccionar un libro
+					</div>
+				</ng-template>
 			</div>
-
-
-
-
 		</div>
 	</div>
-</div>
 
 
-
-
-
-
-
-<!-- <a href="#openModal">Lanzar el modal</a> -->
 
 <div id="openModal" class="modal fade bs-example-modal-lg">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title }} </h4>
-					<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
-		            	<span _ngcontent-c0="" aria-hidden="true">×</span>
-		            </button>
+				<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
+					<span _ngcontent-c0="" aria-hidden="true">×</span>
+				</button>
 			</div>
 			<div class="modal-body">
 			
-
 				<form class="form-material m-t-40" >
 					<div class="row">
 						<!-- Inicio col 1 -->
 						<div class="col-6">
 							<div class="form-group">
-								<label>Título del texto</label>
+								<label>Título</label>
 								<input type="text" 
 										[(ngModel)]="book_modal.title"
 										name="title"
@@ -105,24 +197,129 @@
 										placeholder="Ej.: Harry Potter">
 							</div>
 
-
-							<div class="row justify-content-md-center">
-								<div class="form-group">
-									<button type="button" class="btn btn-outline-info" (click)="updateBook()">
-										Editar
-									</button>
-								</div>
+							<div class="form-group">
+								<label>Autor/a</label>
+								<input type="text" 
+										[(ngModel)]="book_modal.author"
+										name="author"
+										class="form-control form-control-line border-input-custom" 
+										placeholder="Ej.: J. K. Rowling">
 							</div>
 
+							<div class="form-group">
+								<label>Editorial</label>
+								<input type="text" 
+										[(ngModel)]="book_modal.editorial"
+										name="editorial"
+										class="form-control form-control-line border-input-custom" 
+										placeholder="Ej.: Salamandra">
+							</div>
+
+							<div class="form-group border-input-custom">
+								<label>Tipo de transacción</label>
+								<select class="form-control" 
+												[(ngModel)]="book_modal.transaction"
+												name="transaction">
+									<option value="Intercambio">Intercambio</option>
+									<option value="Venta">Venta</option>
+									<option value="Ambos">Ambos</option>
+								</select>
+							</div>
+
+							<div class="form-group" 
+										*ngIf="book_modal.transaction === 'Venta' || book_modal.transaction === 'Ambos'">
+								<label>Precio</label>
+								<input [(ngModel)]="book_modal.price" 
+										name="price"
+										onlynumber="true" 
+										minlength="3" 
+										maxlength="6" 
+										class="form-control form-control-line border-input-custom" 
+										placeholder="Ej.: 5000" 
+										required>
+							</div>
+
+							<div class="form-group border-input-custom">
+								<label>Tipo de elemento</label>
+								<select class="form-control" 
+												[(ngModel)]="book_modal.type"
+												name="type">
+									<option value="book">Libro</option>
+									<option value="comic">Cómic</option>
+									<option value="especial">Lectura especializada</option>
+									<option value="kid">Literatura infantil</option>
+									<option value="other">Otro</option>
+								</select>
+							</div>
 						</div>
+
+						<!-- Inicio col 2 -->
+						<div class="col-6">
+							<div class="form-group border-input-custom">
+								<label>Género al que pertenece</label>
+								<select class="form-control" 
+												[(ngModel)]="book_modal.genres"
+												name="genres" multiple>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="Lectura especializada">Lectura especializada</option>
+									<option value="Literatura infantil">Literatura infantil</option>
+									<option value="Otro">Otro</option>
+								</select>
+							</div>
+
+							<div class="form-group border-input-custom">
+								<label>Idioma</label>
+								<select class="form-control" 
+												[(ngModel)]="book_modal.language"
+												name="language">
+									<option value="spanish">Español</option>
+									<option value="english">Inglés</option>
+									<option value="other">Otro</option>
+								</select>
+							</div>
+
+							<div class="form-group border-input-custom">
+								<label>Texto original</label>
+								<select class="form-control" 
+												[(ngModel)]="book_modal.original"
+												name="original">
+									<option value="yes">Sí</option>
+									<option value="no">No</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label>Cantidad de páginas</label>
+								<input 	[(ngModel)]="book_modal.num_pages"
+												name="num_pages" 
+												onlynumber="true" 
+												minlength="2" 
+												maxlength="5" 
+												class="form-control form-control-line border-input-custom" 
+												placeholder="Ej.: 324" 
+												required>
+							</div>
+								
+							<div class="form-group">
+								<label>Comentario</label>
+								<textarea class="form-control border-input-custom" 
+													[(ngModel)]="book_modal.comment" 
+													name="comment"
+													rows="2" 
+													placeholder="Ej.: El libro se encuentra en buen estado, leído solo una vez.">
+								</textarea>
+							</div>
+						</div>
+							
 					</div>
 				</form>
-
 			</div>
 			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-info" (click)="updateBook()">Editar</button>
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+				</div>
 			</div>
 		</div>
-		<!-- /.modal-content -->
 	</div>
 </div>
