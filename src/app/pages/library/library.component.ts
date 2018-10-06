@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
-// Services
-import { DatabaseService } from "../../services/database.service";
-
-// RXJS
 import { map } from 'rxjs/operators';
 
-// SWAL
+// SERVICE
+import { DatabaseService } from "../../services/database.service";
+
+// SWEET ALERT
 import swal from 'sweetalert';
 
 @Component({
@@ -15,10 +13,7 @@ import swal from 'sweetalert';
 })
 export class LibraryComponent implements OnInit {
 
-	// Todos los libros
 	books: any[] = [];
-
-	// Variable para clonar un libro y que se pueda leer desde el modal
 	book_modal: any;
 
 	constructor( private _dbService:DatabaseService ) { 
@@ -39,7 +34,6 @@ export class LibraryComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// Variable para clonar un libro y que se pueda leer desde el modal
 		this.book_modal = {
 			author: 		'', 
 			title: 			'', 

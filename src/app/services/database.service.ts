@@ -22,7 +22,7 @@ export class DatabaseService {
 	}
 
 	// Retorna Observable
-	// Trae la data que se especpifica en la query, de una colección específica.
+	// Trae la data que se especifica en la query, de una colección específica.
 	public getDataQuery( collection:string, query:string, operator:any, value:any ){
 		return this.afs.collection<any>( collection, ref => ref.where(query, operator, value));
 	}

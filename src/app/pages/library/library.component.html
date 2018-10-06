@@ -1,6 +1,8 @@
 <div class="container-fluid">
 	<div class="row">
-		<!-- LISTA DE LIBROS -->
+		<!-- ============================================================================================== -->
+		<!-- Columne left: List of books																	-->
+		<!-- ============================================================================================== -->
 		<div class="col-4">
 			<h3>Mis libros</h3>
 			<ul class="list-group">
@@ -12,8 +14,13 @@
 				</li>
 			</ul>
 		</div>
+		<!-- ============================================================================================== -->
+		<!-- End columne left: List of books																-->
+		<!-- ============================================================================================== -->
 
-
+		<!-- ============================================================================================== -->
+		<!-- Columne right: Selected book details															-->
+		<!-- ============================================================================================== -->
 		<div class="col-8">
 			<div class="card-body" style="background-color: #FFFFFF;">
 				<div class="row">
@@ -152,7 +159,7 @@
 										</div>
 										<!-- BOTÓN ELIMINAR -->
 										<div class="col-md-4 text-center">
-											<button class="btn btn-inverse model_img img-responsive" type="button">
+											<button class="btn btn-inverse" type="button">
 													ELIMINAR 
 											</button>
 										</div>
@@ -162,28 +169,36 @@
 							</form>
 						</div>
 					</div>
-				<ng-template #other>
-					<div class="alert alert-primary" role="alert">
-						Debe seleccionar un libro
-					</div>
-				</ng-template>
+					<ng-template #other>
+						<div class="alert alert-primary" role="alert">
+							Debe seleccionar un libro
+						</div>
+					</ng-template>
+				</div>
 			</div>
 		</div>
+		<!-- ============================================================================================== -->
+		<!-- End columne right: Selected book details														-->
+		<!-- ============================================================================================== -->
 	</div>
+</div>
 
-
-
+<!-- ================================================================================================== -->
+<!-- Modal edit/delete book																				-->
+<!-- ================================================================================================== -->
 <div id="openModal" class="modal fade bs-example-modal-lg">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
+			
 			<div class="modal-header">
 				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title }} </h4>
+				<!-- Botón para cerrar el modal -->
 				<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
 					<span _ngcontent-c0="" aria-hidden="true">×</span>
 				</button>
 			</div>
+
 			<div class="modal-body">
-			
 				<form class="form-material m-t-40" >
 					<div class="row">
 						<!-- Inicio col 1 -->
@@ -318,8 +333,10 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline-info" (click)="updateBook()">Editar</button>
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
-				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<!-- ================================================================================================== -->
+<!-- End modal edit/delete book																				-->
+<!-- ================================================================================================== -->

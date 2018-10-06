@@ -1,60 +1,61 @@
-<!-- ============================================================== -->
-<!-- Profile options																								-->
-<!-- ============================================================== -->
 <div class="container">
-	<div class="row">
-		<div class="col-4">
-			<div class="card" style="width: 18rem;">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item" style="cursor: pointer;" 
-						[ngClass]="{'active': profile_options === 'my_profile'}"
-						(click)="profile_options = 'my_profile'">
-						Mi perfil
-					</li>
-					<li class="list-group-item" style="cursor: pointer;" 
-						[ngClass]="{'active': profile_options === 'edit_profile'}"
-						(click)="profile_options = 'edit_profile'">
-						Editar perfil
-					</li>
-					<li class="list-group-item" style="cursor: pointer;" 
-						[ngClass]="{'active': profile_options === 'change_pass_profile'}"
-						(click)="profile_options = 'change_pass_profile'">
-						Cambiar contraseña
-					</li>
-					<li class="list-group-item" style="cursor: pointer;" 
-						[ngClass]="{'active': profile_options === 'preference_profile'}"
-						(click)="profile_options = 'preference_profile'">
-						Preferencias de entrega
-					</li>
-					<li class="list-group-item" style="cursor: pointer;" 
-						[ngClass]="{'active': profile_options === 'delete_profile'}"
-						(click)="profile_options = 'delete_profile'">
-						Eliminar cuenta
-					</li>
-				</ul>
-			</div>
-		</div>
+	<div class="row card">
+		<!-- ================================================================================================== -->
+		<!-- Profile options																					-->
+		<!-- ================================================================================================== -->
+		<ul class="nav nav-tabs customtab" role="tablist">
+			<li class="nav-item"> 
+				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
+					[ngClass]="{'active': profile_options === 'my_profile'}"
+					(click)="profile_options = 'my_profile'">
+					<span class="hidden-xs-down">Mi perfil</span>	
+				</a>
+			</li>
+			<li class="nav-item"> 
+				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
+					[ngClass]="{'active': profile_options === 'edit_profile'}"
+					(click)="profile_options = 'edit_profile'">
+					<span class="hidden-xs-down">Editar perfil</span>	
+				</a>
+			</li>
+			<li class="nav-item"> 
+				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
+					[ngClass]="{'active': profile_options === 'preference_profile'}"
+					(click)="profile_options = 'preference_profile'">
+					<span class="hidden-xs-down">Preferencias de entrega</span>	
+				</a>
+			</li>
+			<li class="nav-item"> 
+				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
+					[ngClass]="{'active': profile_options === 'delete_profile'}"
+					(click)="profile_options = 'delete_profile'">
+					<span class="hidden-xs-down">Eliminar cuenta</span>	
+				</a>
+			</li>
+		</ul>
+		<!-- ================================================================================================== -->
+		<!-- Profile options																					-->
+		<!-- ================================================================================================== -->
 
 
-
-
-		<div [ngSwitch]="profile_options" class="col-8">
-			<!-- ============================================================== -->
-			<!-- Show profile													-->
-			<!-- ============================================================== -->
+		<div [ngSwitch]="profile_options">
+			<!-- ============================================================================================== -->
+			<!-- Show profile																					-->
+			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'my_profile'">
 				<div class="col-12">
 					<div class="card">
-						<div class="card-body">
-							<div class="m-t-30" align="center"> 
-								<img src="../assets/images/profile.jpg" class="img-circle" width="150" />
-								<h4 class="card-title m-t-10">Steve Jobs</h4>
+						<div class="card-body row">
+							<div class="col-md-6" align="center">
+								<img src="../assets/images/profile.jpg" class="img-circle" width="150" /> 
+								<h4 class="card-title">
+									{{ profile.name | uppercase }} {{ profile.last_name1 | uppercase }} {{ profile.last_name2 | uppercase }} </h4>
 								<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
 								<div class="row text-center justify-content-md-center">
 									<div class="col-4">
 										<a href="javascript:void(0)" class="link">
 											<i class="icon-people"></i> 
-											<font class="font-medium">254</font>
+											<font class="font-medium"> {{ profile.ranking }}</font>
 										</a>
 									</div>
 									<div class="col-4">
@@ -65,24 +66,20 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-md-6">
+								<small class="text-muted">Correo electrónico</small>
+								<h6>{{ profile.email }}</h6> 
+								<small class="text-muted p-t-30 db">Teléfono de contacto</small>
+								<h6>{{ profile.phone }}</h6> 
+							</div>
 						</div>
-						<div>
+						<!-- <div>
 						<hr> 
-						</div>
+						</div> -->
 						<div class="card-body"> 
-							<small class="text-muted">Correo electrónico</small>
-							<h6>varum@gmail.com</h6> 
-							<small class="text-muted p-t-30 db">Teléfono de contacto</small>
-							<h6>+91 654 784 547</h6> 
-							<small class="text-muted p-t-30 db">Comuna de residencia</small>
-							<h6>Santiago centro</h6>
-							<div class="map-box">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
-							</div> 
 							<div class="dropdown-divider"></div>
 
-							<small class="text-muted p-t-30 db">Redes sociales</small>
-							<br/>
+							<small class="text-muted p-t-30 db">Redes sociales</small><br/>
 							<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
 							<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
 							<button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
@@ -90,114 +87,206 @@
 					</div>
 				</div>
 			</div>
-			<!-- ============================================================== -->
-			<!-- End show profile												-->
-			<!-- ============================================================== -->	
+			<!-- ============================================================================================== -->
+			<!-- End show profile																				-->
+			<!-- ============================================================================================== -->	
 
-			<!-- ============================================================== -->
-			<!-- Edit profile													-->
-			<!-- ============================================================== -->
+			<!-- ============================================================================================== -->
+			<!-- Edit profile																					-->
+			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'edit_profile'">
 				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
 					<div class="card-body">
 						<form class="form-horizontal form-material">
 							<div class="form-group">
-								<label class="col-md-12">Nombre completo</label>
+								<label class="col-md-12">Nombres</label>
 								<div class="col-md-12">
-									<input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+									<input type="text" [(ngModel)]="profile.name" name="name" class="form-control form-control-line">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-12">Apellido Paterno</label>
+								<div class="col-md-12">
+									<input type="text" [(ngModel)]="profile.last_name1" name="last_name1" class="form-control form-control-line">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-12">Apellido Materno</label>
+								<div class="col-md-12">
+									<input type="text" [(ngModel)]="profile.last_name2" name="last_name2" class="form-control form-control-line">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="example-email" class="col-md-12">Correo electrónico</label>
 								<div class="col-md-12">
-									<input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+									<input type="email" [(ngModel)]="profile.email" name="email" class="form-control form-control-line" name="example-email" id="example-email">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-12">Teléfono de contacto</label>
 								<div class="col-md-12">
-									<input type="text" placeholder="123 456 7890" class="form-control form-control-line">
+									<input type="text" [(ngModel)]="profile.phone" name="phone" class="form-control form-control-line">
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-md-12">Información adicional</label>
-								<div class="col-md-12">
-									<textarea rows="5" class="form-control form-control-line"></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-12">Comuna de residencia</label>
-								<div class="col-sm-12">
-									<select class="form-control form-control-line">
-										<option>Santiago centro</option>
-										<option>Providencia</option>
-										<option>Recoleta</option>
-										<option>Estación central</option>
-										<option>San Miguel</option>
-										<option>Ñuñoa</option>
-									</select>
-								</div>
-							</div>
+							
 							<div class="form-group">
 								<div class="col-sm-12">
-									<button class="btn btn-success">Actualizar perfil</button>
+									<button type="button" class="btn btn-outline-info btn-block" (click)="updateProfile()">Editar</button>
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-			<!-- ============================================================== -->
-			<!-- End edit profile																								-->
-			<!-- ============================================================== -->
+			<!-- ============================================================================================== -->
+			<!-- End edit profile																				-->
+			<!-- ============================================================================================== -->
 
-			<!-- ============================================================== -->
-			<!-- Change password																								-->
-			<!-- ============================================================== -->
-			<div *ngSwitchCase="'change_pass_profile'">
+			<!-- ============================================================================================== -->
+			<!-- User preferences																				-->
+			<!-- ============================================================================================== -->
+			<div *ngSwitchCase="'preference_profile'">
 				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
 					<div class="card-body">
-						<form class="form-horizontal form-material">
-							<div class="form-group">
-								<label class="col-md-12">Constraseña</label>
-								<div class="col-md-12">
-									<input type="password" value="password" class="form-control form-control-line">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-12">Repetir contraseña</label>
-								<div class="col-md-12">
-									<input type="password" value="password" class="form-control form-control-line">
-								</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<button class="btn btn-success">Actualizar contraseña</button>
-								</div>
-							</div>
-							</div>
-						</form>
+						<div class="table-responsive">
+							<table class="table color-table info-table ">
+								<thead>
+									<tr>
+										<th>Estación de metro</th>
+										<th>Día</th>
+										<th>Horario</th>
+										<th class="text-nowrap">Acción</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Estación{{ subway_station }}</td>
+										<td>día{{ day }}</td>
+										<td>hora{{ hour }}</td>
+										<td class="text-nowrap">
+											<a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+											<a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<button type="button" 
+								class="btn btn-outline-info model_img img-responsive" 
+								data-toggle="modal" 
+								data-target=".bs-example-modal-lg">Agregar nueva preferencia</button>
+					</div>	
+				</div>
+			</div>
+			<!-- ============================================================================================== -->
+			<!-- End user preferences																			-->
+			<!-- ============================================================================================== -->
+
+			<!-- ============================================================================================== -->
+			<!-- Delete user account																			-->
+			<!-- ============================================================================================== -->
+			<div *ngSwitchCase="'delete_profile'">
+				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
+					<div class="card-body">
+						<p>Estás por eliminar tu cuenta de BOOKscalo. Tus datos, tu perfil público y las publicaciones que realizaste ya no podrán ser vistas por ti, ni por ningún otro usuario.
+						</p>
+						<p>Además debes considerar:</p>
+						<ul>
+							<li type="circle">Si solo quieres cambiar tus datos, no es necesario que desactives tu cuenta; modifícala en "Editar perfil".</li>
+							<li type="circle">Si solo quieres eliminar o editar una o todas tus publicaciones, no es necesario que desactives tu cuenta; elimínalos o edítalos en "Mi Biblioteca".</li>
+							<li type="circle">No podrás crear otra cuenta con el mismo correo con que iniciaste esta cuenta.</li>
+						</ul>
+						<button type="button" class="btn waves-effect waves-light btn-block btn-danger">Eliminar cuenta</button>
 					</div>
 				</div>
 			</div>
-			<!-- ============================================================== -->
-			<!-- End change password																						-->
-			<!-- ============================================================== -->
-
-
-			<div *ngSwitchCase="'preference_profile'">Preferencias
-
-			</div>
-			<div *ngSwitchCase="'delete_profile'">Eliminar cuenta
-
-			</div>
+			<!-- ============================================================================================== -->
+			<!-- End delete user account																		-->
+			<!-- ============================================================================================== -->
 		</div>
-		
-		
 	</div>
 </div>
 
-
-
+<!-- ================================================================================================== -->
+<!-- Modal add preferences																				-->
+<!-- ================================================================================================== -->
+<div id="openModal" class="modal fade bs-example-modal-lg">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myLargeModalLabel"> Agregar nueva preferencia de transacción </h4>
+				<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
+					<span _ngcontent-c0="" aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form class="form-material m-t-40" >
+					<div class="row">
+						<!-- Inicio col 1 -->
+						<div class="form-group col-12">
+							<label>Estación de metro</label>
+							<select name="subway_station" class="form-control">
+							<!-- <select name="subway_station" 
+								[(ngModel)]="profile.preferences.subway_station"> -->
+								<optgroup label="Línea 1">
+									<option value="República">República</option>
+									<option value="Los Héroes">Los Héroes</option>
+									<option value="La Moneda">La Moneda</option>
+									<option value="Universidad de Chile">Universidad de Chile</option>
+									<option value="Santa Lucía">Santa Lucía</option>
+									<option value="Universidad Católica">Universidad Católica</option>
+									<option value="Baquedano">Baquedano</option>
+									<option value="Salvador">Salvador</option>
+									<option value="Manuel Montt">Manuel Montt</option>
+									<option value="Pedro de Valdivia">Pedro de Valdivia</option>
+									<option value="Los Leones">Los Leones</option>
+									<option value="Tobalaba">Tobalaba</option>
+								</optgroup>
+								<optgroup label="Línea 5">
+									<option value="Quinta Normal">Quinta Normal</option>
+									<option value="Cumming">Cumming</option>
+									<option value="Santa Ana">Santa Ana</option>
+									<option value="Plaza de Armas">Plaza de Armas</option>
+									<option value="Bellas Artes">Bellas Artes</option>
+									<option value="Baquedano">Baquedano</option>
+									<option value="Parque Bustamante">Parque Bustamante</option>
+									<option value="Santa Isabel">Santa Isabel</option>
+								</optgroup>
+							</select>
+						</div>
+							<div class="form-group col-md-6">
+							<label>Tipo de elemento</label>
+							<select name="day" id="day" class="form-control">
+								<option value="Lunes">Lunes</option>
+								<option value="Martes">Martes</option>
+								<option value="Miércoles">Miércoles</option>
+								<option value="Jueves">Jueves</option>
+								<option value="Viernes">Viernes</option>
+								<option value="Sábado">Sábado</option>
+								<option value="Domingo">Domingo</option>
+							</select>
+						</div>
+						
+						<div class="form-group col-md-6">
+							<label>Hora</label>
+							<input type="text" 
+									name="title"
+									class="form-control form-control-line border-input-custom" 
+									placeholder="Ej.: 15.30">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-info" (click)="newPreference()">Agregar</button>
+				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ================================================================================================== -->
+<!-- End modal add preferences																			-->
+<!-- ================================================================================================== -->
 
 
 					
