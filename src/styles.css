@@ -33,5 +33,9 @@
     min-width: 500px !important;
 }
 
+.sidebar-nav ul li a {
+    padding: 0 !important;
+    font-size: 12px !important;
+}
 
 

@@ -781,7 +781,7 @@ use profile section
 sidebar navigation
 ******************/
 .scroll-sidebar {
-  height: calc(100% - 70px); }
+  height: calc(100% - 40px); }
   .scroll-sidebar.ps .ps__scrollbar-y-rail {
     left: 2px;
     right: auto;
@@ -820,7 +820,7 @@ sidebar navigation
         .sidebar-nav ul li ul ul {
           padding-left: 15px; }
       .sidebar-nav ul li.nav-small-cap {
-        font-size: 12px;
+        /* font-size: 12px; */
         margin-bottom: 0px;
         padding: 14px 14px 14px 20px;
         color: #263238;
