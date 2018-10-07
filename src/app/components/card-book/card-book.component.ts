@@ -11,6 +11,8 @@ import { Books } from '../../interface/books.interface';
   templateUrl: './card-book.component.html'
 })
 export class CardBookComponent implements OnInit {
+
+	@Input() type:string;
 	
 	// Todos los libros
 	books: any[] = [];
@@ -22,16 +24,26 @@ export class CardBookComponent implements OnInit {
 	};
 
 	// Se inyecta router para redirigir las páginas
-	constructor( private _booksService:DatabaseService ) { 
-		this._booksService.getData('books')
-			.valueChanges()
-			.subscribe( data => {
-				this.books = [];
-				this.books = data;
-			});
-	}
+	constructor( private _booksService:DatabaseService ) {}
 
+	// cuando se trabaja con Input() se debe usar el ngOnInit y no el constructor
 	ngOnInit() {
-		
+		// si queremos mostrar todos los libros hacemos una consulta general a la bd
+		if(this.type === 'all') {
+			this._booksService.getData('books')
+				.valueChanges()
+				.subscribe( data => {
+					this.books = [];
+					this.books = data;
+				});
+		}else { // Consulta con condicion para buscar los libros de cada seccion
+			this._booksService.getDataQuery('books', 'transaction', '==', this.type)
+				.valueChanges()
+				.subscribe( data => {
+					this.books = [];
+					this.books = data;
+				});
+		}
+
  	}
 }
