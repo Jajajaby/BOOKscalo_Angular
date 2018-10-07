@@ -21,14 +21,14 @@ const PAGES_ROUTE: Routes = [
 		canActivate: [ LoginGuardGuard ],
       	children: [
       		{ path: 'home', component: HomeComponent },
-			{ path: 'addBook', component: AddBookComponent },
-			{ path: 'profile', component: ProfileComponent },
-			{ path: 'messages', component: MessagesComponent },
-			{ path: 'library', component: LibraryComponent },
-			{ path: 'book', component: OneBookComponent },
-			{ path: 'preferences', component: PreferencesComponent },
-			{ path: 'search/:input', component: SearchComponent },
-			{ path: '', pathMatch: 'full', redirectTo: 'home' }
+				{ path: 'addBook', component: AddBookComponent },
+				{ path: 'profile', component: ProfileComponent },
+				{ path: 'messages', component: MessagesComponent },
+				{ path: 'library', component: LibraryComponent },
+				{ path: 'book', component: OneBookComponent },
+				{ path: 'preferences', component: PreferencesComponent },
+				{ path: 'search/:input', component: SearchComponent },
+				{ path: '', pathMatch: 'full', redirectTo: 'home' }
 		] 
    }
 ];
