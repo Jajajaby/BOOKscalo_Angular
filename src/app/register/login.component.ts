@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
-import { Users } from "../interface/books.interface";
-
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import { auth } from 'firebase';
-
-// Sweet Alert
-import swal from 'sweetalert';
 
 @Component({
 	selector: 'app-login',
@@ -18,32 +12,26 @@ import swal from 'sweetalert';
 })
 export class LoginComponent implements OnInit {
 
-	// Para el formulario
 	formulario:FormGroup;  
 
 	// Para el "Recuerdame" en localStorage
 	email:string;  
 	rememberMe:boolean = false;
 
-	// 
 	public usuario:any = {};
 
 	constructor( private afAuth: AngularFireAuth, 
 				 private router:Router ) { 
 
 			this.afAuth.authState.subscribe( user => {
-	
-			console.log( 'Estado del usuario', user );
-	
-			if( !user ){
-				return;
-			}
-			
-			this.usuario.nombre = user.displayName;
-			this.usuario.uid 	= user.uid;
-			this.usuario.email 	= user.email;
+				console.log( 'Estado del usuario', user );
+				if( !user ){
+					return;
+				}
+				this.usuario.nombre = user.displayName;
+				this.usuario.uid 	= user.uid;
+				this.usuario.email 	= user.email;
 		});
-
 	}
 
 	ngOnInit() {
@@ -71,7 +59,6 @@ export class LoginComponent implements OnInit {
 		this.router.navigate(['/login']);
 	}
 
-
 	loginUser(){
 		if( this.formulario.valid ){
 			this.afAuth.auth.signInWithEmailAndPassword(this.formulario.value['email'], this.formulario.value['password'])
@@ -94,5 +81,4 @@ export class LoginComponent implements OnInit {
 				.catch()
 		}
 	}
-
 }

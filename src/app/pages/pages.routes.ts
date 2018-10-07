@@ -11,11 +11,14 @@ import { OneBookComponent } from './one-book/one-book.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { SearchComponent } from './search/search.component';
 
+// GUARD
+import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+
 const PAGES_ROUTE: Routes = [
 	{
 		path: '',
 		component: PagesComponent,
-		// canActivate: [ LoginGuard ],
+		canActivate: [ LoginGuardGuard ],
       	children: [
       		{ path: 'home', component: HomeComponent },
 			{ path: 'addBook', component: AddBookComponent },

@@ -53,13 +53,22 @@ export class LibraryComponent implements OnInit {
 	}
 
 	updateBook(){
-		// Actualiza la data según el id y el documento a modificar
 		this._dbService.updateData( "books", this.book_modal.key, this.book_modal )
 			.then( () => {
 				swal('Cambios guardados', 'Sus cambios han sidos guardados con éxito', 'success');
 			})
 			.catch( () => {
 				swal('Error al editar', 'Por favor, vuelva a intentarlo', 'error');
+			});
+	}
+
+	deleteBook(){
+		this._dbService.deleteData( "books", this.book_modal.key )
+			.then( () => {
+				swal('Libro eliminado', 'El libro seleccionado ha sido eliminado', 'success');
+			})
+			.catch( () => {
+				swal('Error al eliminar', 'Por favor, vuelva a intentarlo', 'error');
 			});
 	}
 

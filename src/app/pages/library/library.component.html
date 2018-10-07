@@ -151,7 +151,7 @@
 									<div class="row justify-content-md-center">
 										<!-- BOTÓN EDITAR -->
 										<div class="col-md-4 text-center">
-											<button class="btn btn-danger model_img img-responsive" 
+											<button class="btn btn-outline-info model_img img-responsive" 
 													data-toggle="modal" 
 													data-target=".bs-example-modal-lg" 
 													type="button">
@@ -159,9 +159,9 @@
 										</div>
 										<!-- BOTÓN ELIMINAR -->
 										<div class="col-md-4 text-center">
-											<button class="btn btn-inverse" type="button">
-													ELIMINAR 
-											</button>
+											<button class="btn btn-danger img-responsive" type="button" 
+													(click)="deleteBook()">
+													<i class="fa fa-trash-o"></i> Eliminar</button>
 										</div>
 										<div class="col-md-6"> </div>
 									</div>
