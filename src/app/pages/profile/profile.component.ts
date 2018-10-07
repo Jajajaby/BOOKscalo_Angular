@@ -72,7 +72,6 @@ export class ProfileComponent implements OnInit {
 		// agregar
 		// update(this.profile);
 
-
 		console.log(this.profile);
 		let user: Users;
 
