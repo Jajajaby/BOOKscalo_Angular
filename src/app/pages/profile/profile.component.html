@@ -196,7 +196,7 @@
 							<li type="circle">Si solo quieres eliminar o editar una o todas tus publicaciones, no es necesario que desactives tu cuenta; elimínalos o edítalos en "Mi Biblioteca".</li>
 							<li type="circle">No podrás crear otra cuenta con el mismo correo con que iniciaste esta cuenta.</li>
 						</ul>
-						<button type="button" class="btn waves-effect waves-light btn-block btn-danger">
+						<button type="button" class="btn waves-effect waves-light btn-block btn-danger" (click)="deleteAccount()">
 							<i class="fa fa-warning"></i> Eliminar cuenta</button>
 					</div>
 				</div>
@@ -227,8 +227,6 @@
 						<div class="form-group col-12">
 							<label>Estación de metro</label>
 							<select name="subway_station" class="form-control">
-							<!-- <select name="subway_station" 
-								[(ngModel)]="profile.preferences.subway_station"> -->
 								<optgroup label="Línea 1">
 									<option value="República">República</option>
 									<option value="Los Héroes">Los Héroes</option>
@@ -270,10 +268,7 @@
 						
 						<div class="form-group col-md-6">
 							<label>Hora</label>
-							<input type="text" 
-									name="title"
-									class="form-control form-control-line border-input-custom" 
-									placeholder="Ej.: 15.30">
+							<input class="form-control" type="time" value="12:00" id="example-time-input">
 						</div>
 					</div>
 				</form>

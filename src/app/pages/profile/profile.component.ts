@@ -1,8 +1,11 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 // SERVICE
 import { DatabaseService } from "../../services/database.service";
+
+import { Users } from '../../interface/books.interface';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +15,8 @@ export class ProfileComponent implements OnInit {
 
 	profile_options:string = 'my_profile';
 	profile:any;  
-  	user_profile: any;
+	user_profile: any;
+	form:FormGroup; 
 
   	constructor( private _dbService:DatabaseService ) {
 		let user = JSON.parse( localStorage.getItem( "user" ) );
@@ -42,7 +46,7 @@ export class ProfileComponent implements OnInit {
 			phone: 			'', 
 			ranking: 		0,
 			favs_genres:	[], 
-			commune: 		'', 	
+			commune: 		''
 		};
 	}
 	
@@ -57,6 +61,26 @@ export class ProfileComponent implements OnInit {
 			});
 	}
 
+	newPreference(){
 
+		if(this.profile.preferences === undefined ){
+			this.profile.preferences = ['agregar la preferencia'];
+		}else {
+			this.profile.preferences.push('una preferencia');
+		}
+
+		// agregar
+		// update(this.profile);
+
+
+		console.log(this.profile);
+		let user: Users;
+
+
+	}
+
+	deleteAccount(){
+
+	}
 
 }
