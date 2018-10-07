@@ -13,11 +13,6 @@ import { auth } from 'firebase';
 export class LoginComponent implements OnInit {
 
 	formulario:FormGroup;  
-
-	// Para el "Recuerdame" en localStorage
-	email:string;  
-	rememberMe:boolean = false;
-
 	public usuario:any = {};
 
 	constructor( private afAuth: AngularFireAuth, 
@@ -36,29 +31,16 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit() {
 		this.formulario = 	new FormGroup({
-			email: 			new FormControl(undefined, [Validators.required, Validators.email]),
+			email: 			new FormControl(localStorage.getItem('email') || undefined, [Validators.required, Validators.email]),
 			password: 		new FormControl(undefined, [Validators.required,Validators.minLength(6)]),
-			rememberMe: 	new FormControl(false)
+			rememberMe: 	new FormControl(JSON.parse(localStorage.getItem('session')).rememberMe)
 		});
-
-		// Si existe un email en el localStorage, que se guarde en email
-		this.email = localStorage.getItem('email') || '';
-
-		// Si hay un correo en el campo, el check de "Recuérdame" persiste
-		if( this.email.length > 1 ){
-	      this.rememberMe = true;
-	    }
 	}
 
 	login() {
     	this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
 	}
 	
-	logout() {
-		this.afAuth.auth.signOut();
-		this.router.navigate(['/login']);
-	}
-
 	loginUser(){
 		if( this.formulario.valid ){
 			this.afAuth.auth.signInWithEmailAndPassword(this.formulario.value['email'], this.formulario.value['password'])
@@ -69,6 +51,12 @@ export class LoginComponent implements OnInit {
 						uid: USER.uid,
 						email: USER.email
 					};
+
+					if( this.formulario.value['rememberMe'] ){
+						localStorage.setItem('email', USER.email);
+					}else {
+						localStorage.removeItem('email');
+					}
 
 					localStorage.setItem('user', JSON.stringify(userStorage));
 					localStorage.setItem('session', JSON.stringify({

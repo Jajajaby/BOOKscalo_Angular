@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit {
         }));
 
         swal('Adiós', 'Vuelva pronto', 'success');
+        this.router.navigate(['/login']);
       })
       .catch( ()=> swal('Error al cerrar sesión', 'Vuelva a intentarlo', 'error') );
   }
