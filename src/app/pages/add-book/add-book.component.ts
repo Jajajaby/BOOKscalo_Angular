@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
-// Interfaces
+// INTERFACE
 import { Books } from "../../interface/books.interface";
 
-// Services
+// SERVICE
 import { DatabaseService } from "../../services/database.service";
 
 // ANGULARFIRE2
 import { AngularFireStorage } from 'angularfire2/storage';
 
-// Sweet Alert
+// SWEET ALERT
 import swal from 'sweetalert';
 
 @Component({
@@ -20,7 +20,6 @@ import swal from 'sweetalert';
 })
 export class AddBookComponent implements OnInit {
 
-	// Para el formulario
 	formulario:FormGroup;
 	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
 	uid:string; // uid del usuario
@@ -30,8 +29,8 @@ export class AddBookComponent implements OnInit {
 					 public router: Router ) { 			
 	}
 
-	// Inicializando el formulario
 	ngOnInit() {
+		// Inicializando el formulario
 		this.formulario = new FormGroup({
 			title: 			new FormControl(undefined, Validators.required),
 			author: 		new FormControl(undefined, Validators.required),

@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
+  constructor(){
+    if(JSON.parse(localStorage.getItem('session')) === null) {
+			localStorage.setItem('session', JSON.stringify({
+				session: false,
+				rememberMe: false
+			}));
+		}
+  }
 }

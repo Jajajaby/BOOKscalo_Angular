@@ -1,5 +1,5 @@
-import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 
 // SERVICE
@@ -48,6 +48,12 @@ export class ProfileComponent implements OnInit {
 			favs_genres:	[], 
 			commune: 		''
 		};
+
+		this.form = new FormGroup({
+			subway_station: new FormControl(undefined, Validators.required),
+			day: 			new FormControl(undefined, Validators.required),
+			hour: 			new FormControl(undefined, Validators.required)
+		});
 	}
 	
 	updateProfile(){

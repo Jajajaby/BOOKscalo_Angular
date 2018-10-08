@@ -1,6 +1,5 @@
 <div class="container" style="background-color: #ffffff;">
 	<h1 style="padding-top:30px;">Agregar libro</h1>
-	<!-- Esto da al servicio -->
 	<form class="form-material m-t-40" [formGroup]="formulario" (ngSubmit)="saveBook()" novalidate="novalidate">
 		<div class="row">
 			<!-- Inicio col 1 -->
@@ -188,16 +187,6 @@
 						multiple>
 			</div>
 		</div>
-
-
-		<!-- NO SÉ QUÉ ES ESTO, SI ES EL CIRCULITO DE CARGANDO, NO LO QUIERO JJJJ -->
-		<!-- <div class="row">
-			<div class="text-center" *ngIf="tamImgs !== undefined">
-				<i *ngIf="tamImgs < 1" class="fa fa-refresh fa-spin"></i>
-				<span *ngIf="tamImgs === 1" > {{ tamImgs }} imagen cargada </span>
-				<span *ngIf="tamImgs > 1" > {{ tamImgs }} imagenes cargadas </span>
-			</div>
-		</div> -->
 
 		<div class="row justify-content-md-center">
 			<div class="form-group">
