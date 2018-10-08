@@ -21,21 +21,6 @@ export class OneBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		
-
-	}
-
-// updateData( collection:string, id:string, document:any )
-	jj() {
-	    // this._dbService.updateData("books", "", this.editForm.value);
-	    let credentials = this.editForm.value;
-	    console.log( credentials );
-  	}
-
-  	modal(){
-  		console.log( this.book.id );
-  		console.log("aaa" + this.book.title);
-
 		this.editForm = new FormGroup({
 			title: 			new FormControl(this.book.title)
 		// this.editForm = this.formBuilder.group({
@@ -52,6 +37,21 @@ export class OneBookComponent implements OnInit {
 			// comment: 		[''],
 			// images: 		['']
 	    });
+
+	}
+
+// updateData( collection:string, id:string, document:any )
+	jj() {
+	    // this._dbService.updateData("books", "", this.editForm.value);
+	    let credentials = this.editForm.value;
+	    console.log( credentials );
+  	}
+
+  	modal(){
+  		console.log( this.book.id );
+  		console.log("aaa" + this.book.title);
+
+		
 
   	}
 
