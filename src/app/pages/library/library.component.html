@@ -10,7 +10,7 @@
 					*ngFor="let book of books"
 					[ngClass]="{'active': book.id === book_modal.id}"
 					(click)="book_modal = book">
-					{{ book.title }}
+					{{ book.title | titlecase }}
 				</li>
 			</ul>
 		</div>
@@ -58,14 +58,14 @@
 											<div class="form-group row">
 												<label class="control-label text-left col-md-6">Título:</label>
 												<div class="col-md-6">
-													<p class="form-control-static"> {{ book_modal.title }} </p>
+													<p class="form-control-static"> {{ book_modal.title | titlecase }} </p>
 												</div>
 											</div>
 											<!-- AUTOR/A LIBRO -->
 											<div class="form-group row">
 												<label class="control-label text-left col-md-6">Autor/a:</label>
 												<div class="col-md-6">
-													<p class="form-control-static"> {{ book_modal.author }} </p>
+													<p class="form-control-static"> {{ book_modal.author | titlecase }} </p>
 												</div>
 											</div>
 											<!-- TIPO DE TRANSACCIÓN -->
@@ -110,7 +110,7 @@
 										<div class="form-group row">
 											<label class="control-label text-left col-md-6">Editorial:</label>
 											<div class="col-md-6">
-												<p class="form-control-static"> {{ book_modal.editorial }} </p>
+												<p class="form-control-static"> {{ book_modal.editorial | titlecase }} </p>
 											</div>
 										</div>
 										<!-- IDIOMA -->
@@ -191,7 +191,7 @@
 		<div class="modal-content">
 			
 			<div class="modal-header">
-				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title }} </h4>
+				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title | titlecase }} </h4>
 				<!-- Botón para cerrar el modal -->
 				<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
 					<span _ngcontent-c0="" aria-hidden="true">×</span>
