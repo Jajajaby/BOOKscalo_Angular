@@ -25,6 +25,7 @@ export interface Users{
 	last_name2:string;
 	email:string;
 	favs_genres:Array<string>;
+	google:boolean;
 	preferences?:Array<string>;
 	commune?:string;
 	phone?:string;

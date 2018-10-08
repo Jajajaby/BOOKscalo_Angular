@@ -2,8 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
+// Services
+import { DatabaseService } from '../services/database.service';
+
+// Angularfire2
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
+
+// Plugins
+import swal from 'sweetalert';
+
 
 @Component({
 	selector: 'app-login',
@@ -16,7 +24,8 @@ export class LoginComponent implements OnInit {
 	public usuario:any = {};
 
 	constructor( private afAuth: AngularFireAuth, 
-				 private router:Router ) { 
+					 private router:Router,
+					 private _db:DatabaseService ) { 
 
 			this.afAuth.authState.subscribe( user => {
 				console.log( 'Estado del usuario', user );
@@ -30,15 +39,19 @@ export class LoginComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.formulario = 	new FormGroup({
+		this.formulario = new FormGroup({
 			email: 			new FormControl(localStorage.getItem('email') || undefined, [Validators.required, Validators.email]),
 			password: 		new FormControl(undefined, [Validators.required,Validators.minLength(6)]),
 			rememberMe: 	new FormControl(JSON.parse(localStorage.getItem('session')).rememberMe)
 		});
 	}
 
-	login() {
-    	this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+	loginGoogle() {		
+		this.afAuth.auth.signInWithPopup( new auth.GoogleAuthProvider() )
+			.then( data => {
+				console.log(data);
+			})
+			.catch( e => console.log('error', e));
 	}
 	
 	loginUser(){
