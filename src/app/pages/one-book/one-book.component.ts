@@ -36,13 +36,20 @@ export class OneBookComponent implements OnInit {
 			// num_pages: 		['', Validators.required],
 			// comment: 		[''],
 			// images: 		['']
-	    });
+		});
+		
+		this._dbService.getData(this.book.user)
+			.valueChanges()
+			.subscribe( data => console.log(data) );
+
+
+		this._dbService.getDataQuery('users', 'user', '==', this.book.user)
+			.valueChanges()
+			.subscribe( data => console.log(data) );
 
 	}
 
-// updateData( collection:string, id:string, document:any )
 	jj() {
-	    // this._dbService.updateData("books", "", this.editForm.value);
 	    let credentials = this.editForm.value;
 	    console.log( credentials );
   	}

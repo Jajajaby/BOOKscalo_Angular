@@ -1,44 +1,79 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
-// Angularfire2
+// ANGULARFIRE2
 import { AngularFireAuth } from 'angularfire2/auth';
 
-// Plugins
+// SERVICE
+import { DatabaseService } from "../../services/database.service";
+
+// SWEET ALERT
 import swal from 'sweetalert';
 
-
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html'
+	selector: 'app-header',
+	templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private router:Router, private auth: AngularFireAuth) { }
+	profile:any;  
 
-  ngOnInit() {
-  }
+	constructor( 	private router:Router, 
+					private auth: AngularFireAuth,
+					private _dbService:DatabaseService ) {
+		let user = JSON.parse( localStorage.getItem( "user" ) );
+		  
+		this._dbService.getDataQuery( "users", "uid", "==", user.uid)
+			.snapshotChanges()
+			.pipe(
+				map(actions => actions.map(a => {
+					const data = a.payload.doc.data();
+					const key = a.payload.doc.id;
+					return { key, ...data };
+				}))
+			).subscribe( data => {
+				this.profile = data[0];
+				console.log(this.profile);
+				console.log(this.profile.name);
+			});
+	}
 
-  searchBook( input:string ){
-  	// console.log(input);
-  	this.router.navigate( ['/search', input] );
-  }
+	ngOnInit() {
+		this.profile = {
+			uid: 			'', 
+			rut: 			'', 
+			name: 			'', 
+			last_name1: 	'', 
+			last_name2: 	'', 
+			email: 			[], 
+			phone: 			'', 
+			ranking: 		0,
+			favs_genres:	[], 
+			commune: 		''
+		};
+	}
 
-  logout(){
-    this.auth.auth.signOut()
-      .then( () => {
-        localStorage.removeItem('user');
+	searchBook( input:string ){
+		// console.log(input);
+		this.router.navigate( ['/search', input] );
+	}
 
-        let rememberMe = JSON.parse(localStorage.getItem('session')).rememberMe;
-        localStorage.setItem('session', JSON.stringify({
-          session: false,
-          rememberMe: rememberMe
-        }));
+	logout(){
+		this.auth.auth.signOut()
+			.then( () => {
+				localStorage.removeItem('user');
 
-        swal('Adiós', 'Vuelva pronto', 'success');
-        this.router.navigate(['/login']);
-      })
-      .catch( ()=> swal('Error al cerrar sesión', 'Vuelva a intentarlo', 'error') );
-  }
+				let rememberMe = JSON.parse(localStorage.getItem('session')).rememberMe;
+				localStorage.setItem('session', JSON.stringify({
+					session: false,
+					rememberMe: rememberMe
+				}));
+
+				swal('Adiós', 'Vuelva pronto', 'success');
+				this.router.navigate(['/login']);
+			})
+			.catch( ()=> swal('Error al cerrar sesión', 'Vuelva a intentarlo', 'error') );
+	}
 
 }

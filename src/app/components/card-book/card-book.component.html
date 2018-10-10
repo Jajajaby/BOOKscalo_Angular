@@ -55,13 +55,71 @@
 				<app-one-book [book]="book_modal"></app-one-book>
 			</div>
 
-
 			<!-- En app one book tiene que ir el perfil COLLAPSE -->
 
-
-
-
-
+			<div id="accordion">
+				<div class="card">
+				  	<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+					  	<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							Ver perfil del dueño
+					  	</button>
+						</h5>
+					</div>
+					<div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<!-- ============================================================================== -->
+							<!-- Show profile																	-->
+							<!-- ============================================================================== -->
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body row">
+										<div class="col-md-6" align="center">
+											<img src="../assets/images/profile.jpg" class="img-circle" width="150" /> 
+											<h4 class="card-title">
+												{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} </h4>
+											<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
+											<div class="row text-center justify-content-md-center">
+												<div class="col-4">
+													<a href="javascript:void(0)" class="link">
+														<i class="icon-people"></i> 
+														<font class="font-medium"> {{ profile.ranking }}</font>
+													</a>
+												</div>
+												<div class="col-4">
+													<a href="javascript:void(0)" class="link">	 
+														<i class="icon-picture"></i> 
+														<font class="font-medium">54</font>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<small class="text-muted">Correo electrónico</small>
+											<h6>{{ profile.email }}</h6> 
+											<small class="text-muted p-t-30 db">Teléfono de contacto</small>
+											<h6>{{ profile.phone }}</h6> 
+										</div>
+									</div>
+									<!-- <div>
+									<hr> 
+									</div> -->
+									<div class="card-body"> 
+										<div class="dropdown-divider"></div>
+										<small class="text-muted p-t-30 db">Redes sociales</small><br/>
+										<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
+										<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
+										<button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
+									</div>
+								</div>
+							</div>
+							<!-- ================================================================================== -->
+							<!-- End show profile																	-->
+							<!-- ================================================================================== -->	
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
@@ -89,9 +147,10 @@
 			</div>
 			<div class="modal-body">
 				<!-- Mensaje a enviar -->
-				<div *ngIf="" >
+				<div *ngIf="book_modal.transaction == 'Ambos'" >
 					<label>Elija el mensaje a enviar</label>
-					<select name="" id=""></select>
+					<select name="" id="">Deseo intercambiar este libro</select>
+					<select name="" id="">Deseo comprar este libro</select>
 				</div>
 
 				<!-- Mostrar preferencias usuario -->
