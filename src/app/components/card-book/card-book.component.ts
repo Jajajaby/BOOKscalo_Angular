@@ -14,13 +14,23 @@ export class CardBookComponent implements OnInit {
 
 	@Input() type:string;
 	
-	// Todos los libros
 	books: any[] = [];
 
-	// Variable para clonar un libro y que se pueda leer desde el modal
 	book_modal: Books = {
-		author: '', title: '', editorial: '', type: '', genres: [], language: '', num_page: 0,
-		original: false, transaction: '', 	user: '', id: '', comment: '', price: 0, images: []
+		author: 		'', 
+		title: 			'', 
+		editorial: 		'', 
+		type: 			'', 
+		genres: 		[], 
+		language: 		'', 
+		num_page: 		0,
+		original: 		false, 
+		transaction:	'', 	
+		user: 			'', 
+		id: 			'', 
+		comment: 		'', 
+		price: 			0, 
+		images: 		[]
 	};
 
 	// Se inyecta router para redirigir las páginas

@@ -24,9 +24,9 @@ export class AddBookComponent implements OnInit {
 	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
 	uid:string; // uid del usuario
 
-	constructor( private _dbService:DatabaseService,
-					 private storage: AngularFireStorage,
-					 public router: Router ) { 			
+	constructor( 	private _dbService:DatabaseService,
+					private storage: AngularFireStorage,
+					public router: Router ) { 			
 	}
 
 	ngOnInit() {
