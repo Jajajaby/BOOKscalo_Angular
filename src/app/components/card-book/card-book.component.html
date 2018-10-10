@@ -6,7 +6,6 @@
 <!-- ============================================================================== -->
 <div class="card-columns">
 	<div class="card" style="width: 18rem;" *ngFor="let book of books; let index = index;">
-		
 		<!-- picture o img -->
 		<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">
 			<div class="carousel-inner">
@@ -77,13 +76,13 @@
 										<div class="col-md-6" align="center">
 											<img src="../assets/images/profile.jpg" class="img-circle" width="150" /> 
 											<h4 class="card-title">
-												{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} </h4>
+												<!-- {{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }}--> </h4>
 											<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
 											<div class="row text-center justify-content-md-center">
 												<div class="col-4">
 													<a href="javascript:void(0)" class="link">
 														<i class="icon-people"></i> 
-														<font class="font-medium"> {{ profile.ranking }}</font>
+														<font class="font-medium"> <!-- {{ profile.ranking }} --> </font>
 													</a>
 												</div>
 												<div class="col-4">
@@ -96,9 +95,9 @@
 										</div>
 										<div class="col-md-6">
 											<small class="text-muted">Correo electrónico</small>
-											<h6>{{ profile.email }}</h6> 
+											<h6> <!-- {{ profile.email }} --> </h6> 
 											<small class="text-muted p-t-30 db">Teléfono de contacto</small>
-											<h6>{{ profile.phone }}</h6> 
+											<h6> <!-- {{ profile.phone }} --> </h6> 
 										</div>
 									</div>
 									<!-- <div>

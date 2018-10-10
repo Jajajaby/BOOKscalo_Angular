@@ -19,10 +19,12 @@ export class HomeComponent implements OnInit {
 				this.books = [];
 				this.books = data;
 				
-				// Funciona crear metodo en base de datos
-				// this._dbService.afs.doc(data[0].user)
-				// 	.valueChanges()
-				// 	.subscribe( resp => console.log(resp));
+				// cambia la referencia de user por el objeto del usuario
+				for(let i=0; i<this.books.length; i++){
+					this._dbService.afs.doc(data[i].user)
+					.valueChanges()
+					.subscribe( resp => this.books[i].user = resp );
+				}
 			}); 
 	}
 
