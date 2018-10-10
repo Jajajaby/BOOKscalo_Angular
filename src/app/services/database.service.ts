@@ -12,7 +12,7 @@ export class DatabaseService {
 
 	books: any[] = [];
 
-	constructor( private afs: AngularFirestore ) {
+	constructor( public afs: AngularFirestore ) {
 	} 
 
 	// Retorna Observable

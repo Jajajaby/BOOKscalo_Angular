@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from "../../services/database.service";
 
@@ -17,6 +18,11 @@ export class HomeComponent implements OnInit {
 			.subscribe( data => {
 				this.books = [];
 				this.books = data;
+				
+				// Funciona crear metodo en base de datos
+				// this._dbService.afs.doc(data[0].user)
+				// 	.valueChanges()
+				// 	.subscribe( resp => console.log(resp));
 			}); 
 	}
 

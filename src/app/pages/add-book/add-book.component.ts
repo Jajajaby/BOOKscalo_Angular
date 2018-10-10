@@ -71,7 +71,8 @@ export class AddBookComponent implements OnInit {
 
 		// Para agregar la referencia al usuario propietario del libro
 		let user = JSON.parse( localStorage.getItem( "user" ));
-		book.user = "users/" + user.uid;
+		// book.user = "users/" + user.uid;
+		book.user = this._dbService.afs.collection('users').doc(user.uid).ref;
 
 		// Para que el id de Firebase sea el uid + fechahora 
 		book.id = user.uid + "-" + new Date().valueOf() ;
