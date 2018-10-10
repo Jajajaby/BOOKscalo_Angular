@@ -10,6 +10,7 @@ import { DatabaseService } from "../../services/database.service";
 
 // ANGULARFIRE2
 import { AngularFireStorage } from 'angularfire2/storage';
+import * as firebase from 'firebase';
 
 // SWEET ALERT
 import swal from 'sweetalert';
@@ -116,24 +117,32 @@ export class AddBookComponent implements OnInit {
 			}
 		}
 
-		// si todas las imagenes son correctas se guardaran
 		if( !aux ){
-			// Para ir subiendo las imagen 1 a 1
-			for( let i=0; i<files.length; i++ ){
-				setTimeout( () => {
-					let filePath = `${this.uid}-${new Date().valueOf()}`;
-					let ref = this.storage.ref('images/'+ filePath);
-					ref.put(files[i]);
-						
-					// Se obtiene la ruta donde se va a guardar y se deja en una array
-					ref.getDownloadURL()
-						.subscribe( resp => {
-							console.log(resp);
-							url.push(resp);
-						});
-				}, 1000);
+			const storageRef = firebase.storage().ref();
+			let upload = false;
+			for(let i=0; i<files.length; i++){
+				
+				let filePath = `${this.uid}-${new Date().valueOf()}`; 
+					 
+				const uploadTask:firebase.storage.UploadTask = 
+					storageRef.child(`images/${ filePath }`)
+					.put(files[i])
+
+				uploadTask.on('state_changed',
+					() => {}, // Manejo de carga
+					(error) => { // Manejo de errores
+						console.log('Error al cargar imagen' ,error);
+				  		swal('Error al cargar imagenes', 'Por favor, vueva a intentarlo', 'error');
+					}, 
+					() => { // todo salio bien
+					   uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+							url.push( downloadURL );
+							if(i === files.length-1) swal('Exito', 'Imagenes cargadas con exito', 'success');
+				  		});
+					}
+				);
 			}
-			this.urlImgs = url; // para pasar las rutas a un array global
+			this.urlImgs = url;
 		}
 	}
 }
