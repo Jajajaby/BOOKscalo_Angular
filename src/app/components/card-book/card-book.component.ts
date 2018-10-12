@@ -45,6 +45,13 @@ export class CardBookComponent implements OnInit {
 				.subscribe( data => {
 					this.books = [];
 					this.books = data;
+					
+					// cambia la referencia de user por el objeto del usuario
+					for(let i=0; i<this.books.length; i++){
+						this._booksService.afs.doc(data[i].user)
+						.valueChanges()
+						.subscribe( resp => this.books[i].user = resp );
+					}
 				});
 		}else { // Consulta con condicion para buscar los libros de cada seccion
 			this._booksService.getDataQuery('books', 'transaction', '==', this.type)
@@ -52,6 +59,13 @@ export class CardBookComponent implements OnInit {
 				.subscribe( data => {
 					this.books = [];
 					this.books = data;
+
+					// cambia la referencia de user por el objeto del usuario
+					for(let i=0; i<this.books.length; i++){
+						this._booksService.afs.doc(data[i].user)
+						.valueChanges()
+						.subscribe( resp => this.books[i].user = resp );
+					}
 				});
 		}
 

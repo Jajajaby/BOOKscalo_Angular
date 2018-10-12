@@ -19,7 +19,7 @@ export class LibraryComponent implements OnInit {
 	constructor( private _dbService:DatabaseService ) { 
 		let user = JSON.parse( localStorage.getItem( "user" ) );
 
-		this._dbService.getDataQuery( "books", "user", "==", "users/" + user.uid)
+		this._dbService.getDataQuery( "books", "uid", "==", user.uid)
 			.snapshotChanges()
 			.pipe(
 				map(actions => actions.map(a => {

@@ -12,6 +12,7 @@ export interface Books{
 	transaction:string;
 	user:any;
 	id:string;
+	uid?:string;
 	price?:number;
 	images?:Array<string>;
 };

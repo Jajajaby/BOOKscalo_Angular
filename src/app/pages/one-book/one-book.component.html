@@ -10,17 +10,17 @@
 				
 				<div class="col-md-6">
 					<!-- CARRUSEL FOTOS LIBRO -->
-					<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">
+					<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 						<div class="carousel-inner">
 							<div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{'active': i===0}" >
 								<img class="d-block img-carousel" [src]="img">
 							</div> 
 						</div>
-						<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">
+						<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 							<span class="sr-only">Previous</span>
 						</a>
-						<a class="carousel-control-next" href="#carouselExampleFade-{{index}}" role="button" data-slide="next">
+						<a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 						</a>
@@ -64,7 +64,11 @@
 				   	<div class="form-group row">
 						<label class="control-label text-left col-md-6">Dueño:</label>
 						<div class="col-md-6">
-						   <p class="form-control-static"> {{ book.user }} </p>
+						   <p class="form-control-static"> 
+								{{ book.user.name | titlecase }} 
+								{{ book.user.last_name1 | titlecase }}
+								{{ book.user.last_name2 | titlecase }}
+							</p>
 						</div>
 					</div>
 				</div>
