@@ -35,8 +35,8 @@ export class HeaderComponent implements OnInit {
 			).subscribe( data => {
 				this.profile = [];
 				this.profile = data[0];
-				// console.log(this.profile);
-				// console.log(this.profile.name);
+				console.log(this.profile);
+				console.log(this.profile.name);
 			});
 	}
 

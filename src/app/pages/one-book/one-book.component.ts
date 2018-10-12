@@ -38,14 +38,14 @@ export class OneBookComponent implements OnInit {
 			// images: 		['']
 		});
 		
-		this._dbService.getData(this.book.user)
-			.valueChanges()
-			.subscribe( data => console.log(data) );
+		// this._dbService.getData(this.book.user)
+		// 	.valueChanges()
+		// 	.subscribe( data => console.log(data) );
 
 
-		this._dbService.getDataQuery('users', 'user', '==', this.book.user)
-			.valueChanges()
-			.subscribe( data => console.log(data) );
+		// this._dbService.getDataQuery('users', 'user', '==', this.book.user)
+		// 	.valueChanges()
+		// 	.subscribe( data => console.log(data) );
 
 	}
 

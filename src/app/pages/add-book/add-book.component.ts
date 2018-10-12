@@ -21,7 +21,7 @@ import swal from 'sweetalert';
 })
 export class AddBookComponent implements OnInit {
 
-	formulario:FormGroup;
+	form:FormGroup;
 	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
 	uid:string; // uid del usuario
 
@@ -32,7 +32,7 @@ export class AddBookComponent implements OnInit {
 
 	ngOnInit() {
 		// Inicializando el formulario
-		this.formulario = new FormGroup({
+		this.form = new FormGroup({
 			title: 			new FormControl(undefined, Validators.required),
 			author: 		new FormControl(undefined, Validators.required),
 			editorial: 		new FormControl(undefined, Validators.required),
@@ -53,7 +53,7 @@ export class AddBookComponent implements OnInit {
 	// Función para guardar el libro
 	saveBook(){
 		// Si la formulario no es valida no se realiza la carga a firebase
-		if( this.formulario.invalid ){
+		if( this.form.invalid ){
 			swal(
 				'Debe completar el formulario', 
 				'Debe ingresar todos los campos de este formulario',
@@ -63,12 +63,12 @@ export class AddBookComponent implements OnInit {
 		}
 		
 		// Se ponen las imagenes en la formulario para luego subirlas
-		this.formulario.patchValue({
+		this.form.patchValue({
 			images: this.urlImgs
 		});
 
 		// Se guarda la formulario para validar
-		let book:Books = this.formulario.value; 
+		let book:Books = this.form.value; 
 
 		// Para agregar la referencia al usuario propietario del libro
 		let user = JSON.parse( localStorage.getItem( "user" ));
