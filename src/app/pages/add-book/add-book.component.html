@@ -1,6 +1,6 @@
 <div class="container" style="background-color: #ffffff;">
 	<h1 style="padding-top:30px;">Agregar libro</h1>
-	<form class="form-material m-t-40" [formGroup]="formulario" (ngSubmit)="saveBook()" novalidate="novalidate">
+	<form class="form-material m-t-40" [formGroup]="form" (ngSubmit)="saveBook()" novalidate="novalidate">
 		<div class="row">
 			<!-- Inicio col 1 -->
 			<div class="col-6">
@@ -114,7 +114,7 @@
 					</select>
 				</div>
 
-				<div class="form-group" *ngIf="formulario.value.transaction === 'sale'">
+				<div class="form-group" *ngIf="form.value.transaction === 'Venta'">
 					<label>Precio</label>
 					<input 	formControlName="price" 
 							onlynumber="true" 
@@ -125,7 +125,7 @@
 							required>
 				</div>
 
-				<div class="form-group" *ngIf="formulario.value.transaction === 'both'">
+				<div class="form-group" *ngIf="form.value.transaction === 'Ambos'">
 					<label>Precio</label>
 					<input 	formControlName="price" 
 							onlynumber="true" 

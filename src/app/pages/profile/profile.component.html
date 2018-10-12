@@ -4,63 +4,63 @@
 		<!-- Profile options																					-->
 		<!-- ================================================================================================== -->
 		<ul class="nav nav-tabs customtab" role="tablist">
-			<li class="nav-item"> 
+			<li class="nav-item">
 				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
 					[ngClass]="{'active': profile_options === 'my_profile'}"
 					(click)="profile_options = 'my_profile'">
-					<span class="hidden-xs-down">Mi perfil</span>	
+					<span class="hidden-xs-down">Mi perfil</span>
 				</a>
 			</li>
-			<li class="nav-item"> 
+			<li class="nav-item">
 				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
 					[ngClass]="{'active': profile_options === 'edit_profile'}"
 					(click)="profile_options = 'edit_profile'">
-					<span class="hidden-xs-down">Editar perfil</span>	
+					<span class="hidden-xs-down">Editar perfil</span>
 				</a>
 			</li>
-			<li class="nav-item"> 
+			<li class="nav-item">
 				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
 					[ngClass]="{'active': profile_options === 'preference_profile'}"
 					(click)="profile_options = 'preference_profile'">
-					<span class="hidden-xs-down">Preferencias de entrega</span>	
+					<span class="hidden-xs-down">Preferencias de entrega</span>
 				</a>
 			</li>
-			<li class="nav-item"> 
+			<li class="nav-item">
 				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"
 					[ngClass]="{'active': profile_options === 'delete_profile'}"
 					(click)="profile_options = 'delete_profile'">
-					<span class="hidden-xs-down">Eliminar cuenta</span>	
+					<span class="hidden-xs-down">Eliminar cuenta</span>
 				</a>
 			</li>
 		</ul>
 		<!-- ================================================================================================== -->
-		<!-- Profile options																					-->
+		<!-- Profile options																																										-->
 		<!-- ================================================================================================== -->
 
 
 		<div [ngSwitch]="profile_options">
 			<!-- ============================================================================================== -->
-			<!-- Show profile																					-->
+			<!-- Show profile																																										-->
 			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'my_profile'">
 				<div class="col-12">
 					<div class="card">
 						<div class="card-body row">
 							<div class="col-md-6" align="center">
-								<img src="../assets/images/profile.jpg" class="img-circle" width="150" /> 
+								<img src="../assets/images/profile.jpg" class="img-circle" width="150" />
 								<h4 class="card-title">
 									{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} </h4>
 								<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
 								<div class="row text-center justify-content-md-center">
 									<div class="col-4">
 										<a href="javascript:void(0)" class="link">
-											<i class="icon-people"></i> 
+											<i class="icon-people"></i>
 											<font class="font-medium"> {{ profile.ranking }}</font>
 										</a>
 									</div>
 									<div class="col-4">
-										<a href="javascript:void(0)" class="link">	 
-											<i class="icon-picture"></i> 
+										<a href="javascript:void(0)" class="link">
+											<i class="icon-picture"></i>
 											<font class="font-medium">54</font>
 										</a>
 									</div>
@@ -68,15 +68,22 @@
 							</div>
 							<div class="col-md-6">
 								<small class="text-muted">Correo electrónico</small>
-								<h6>{{ profile.email }}</h6> 
+								<h6>{{ profile.email }}</h6>
 								<small class="text-muted p-t-30 db">Teléfono de contacto</small>
-								<h6>{{ profile.phone }}</h6> 
+								<h6>{{ profile.phone }}</h6>
 							</div>
 						</div>
-						<!-- <div>
-						<hr> 
-						</div> -->
-						<div class="card-body"> 
+						<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->
+						<div class="card-body">
+							<small class="text-muted">Categorías favoritas:</small>
+							<ul>
+								<li>
+									<h6>{{ profile.favs_genres }}</h6>
+								</li>
+							</ul>
+						</div>
+
+						<div class="card-body">
 							<div class="dropdown-divider"></div>
 
 							<small class="text-muted p-t-30 db">Redes sociales</small><br/>
@@ -88,11 +95,11 @@
 				</div>
 			</div>
 			<!-- ============================================================================================== -->
-			<!-- End show profile																				-->
-			<!-- ============================================================================================== -->	
+			<!-- End show profile																																								-->
+			<!-- ============================================================================================== -->
 
 			<!-- ============================================================================================== -->
-			<!-- Edit profile																					-->
+			<!-- Edit profile																																										-->
 			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'edit_profile'">
 				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
@@ -119,7 +126,7 @@
 							<div class="form-group">
 								<label for="example-email" class="col-md-12">Correo electrónico</label>
 								<div class="col-md-12">
-									<input type="email" [(ngModel)]="profile.email" name="email" class="form-control form-control-line" name="example-email" id="example-email">
+									<input type="email" [(ngModel)]="profile.email" name="email" class="form-control form-control-line">
 								</div>
 							</div>
 							<div class="form-group">
@@ -128,7 +135,7 @@
 									<input type="text" [(ngModel)]="profile.phone" name="phone" class="form-control form-control-line">
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<div class="col-sm-12">
 									<button type="button" class="btn btn-outline-info btn-block" (click)="updateProfile()">Editar</button>
@@ -139,11 +146,11 @@
 				</div>
 			</div>
 			<!-- ============================================================================================== -->
-			<!-- End edit profile																				-->
+			<!-- End edit profile																																								-->
 			<!-- ============================================================================================== -->
 
 			<!-- ============================================================================================== -->
-			<!-- User preferences																				-->
+			<!-- User preferences																																								-->
 			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'preference_profile'">
 				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
@@ -164,26 +171,30 @@
 										<td>día{{ day }}</td>
 										<td>hora{{ hour }}</td>
 										<td class="text-nowrap">
-											<a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-											<a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+											<a data-toggle="modal" data-target="#editPreferences">
+												<i class="fa fa-pencil text-inverse m-r-10"></i> 
+											</a>
+											<a data-toggle="modal" data-target="#deletePreferences">
+												<i class="fa fa-close text-danger"></i>
+											</a>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-						<button type="button" 
-								class="btn btn-outline-info model_img img-responsive" 
-								data-toggle="modal" 
-								data-target=".bs-example-modal-lg">Agregar nueva preferencia</button>
-					</div>	
+						<button type="button"
+								class="btn btn-outline-info"
+								data-toggle="modal"
+								data-target="#addPreferences">Agregar nueva preferencia</button>
+					</div>
 				</div>
 			</div>
 			<!-- ============================================================================================== -->
-			<!-- End user preferences																			-->
+			<!-- End user preferences																																						-->
 			<!-- ============================================================================================== -->
 
 			<!-- ============================================================================================== -->
-			<!-- Delete user account																			-->
+			<!-- Delete user account																																						-->
 			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'delete_profile'">
 				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
@@ -211,7 +222,7 @@
 <!-- ================================================================================================== -->
 <!-- Modal add preferences																				-->
 <!-- ================================================================================================== -->
-<div id="openModal" class="modal fade bs-example-modal-lg">
+<div id="addPreferences" class="modal fade bs-example-modal-lg">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -265,7 +276,7 @@
 								<option value="Domingo">Domingo</option>
 							</select>
 						</div>
-						
+
 						<div class="form-group col-md-6">
 							<label>Hora</label>
 							<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">
@@ -281,11 +292,87 @@
 	</div>
 </div>
 <!-- ================================================================================================== -->
-<!-- End modal add preferences																			-->
+<!-- End modal add preferences																																					-->
 <!-- ================================================================================================== -->
 
 
-					
+<!-- ================================================================================================== -->
+<!-- Modal edit preferences																																							-->
+<!-- ================================================================================================== -->
+<div id="editPreferences" class="modal fade bs-example-modal-lg">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myLargeModalLabel"> Editar preferencia de transacción </h4>
+					<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">
+						<span _ngcontent-c0="" aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="form-material m-t-40" >
+						<div class="row">
+							<!-- Inicio col 1 -->
+							<div class="form-group col-12">
+								<label>Estación de metro</label>
+								<select formControlName="subway_station" id="subway_station" class="form-control">
+									<optgroup label="Línea 1">
+										<option value="República">República</option>
+										<option value="Los Héroes">Los Héroes</option>
+										<option value="La Moneda">La Moneda</option>
+										<option value="Universidad de Chile">Universidad de Chile</option>
+										<option value="Santa Lucía">Santa Lucía</option>
+										<option value="Universidad Católica">Universidad Católica</option>
+										<option value="Baquedano">Baquedano</option>
+										<option value="Salvador">Salvador</option>
+										<option value="Manuel Montt">Manuel Montt</option>
+										<option value="Pedro de Valdivia">Pedro de Valdivia</option>
+										<option value="Los Leones">Los Leones</option>
+										<option value="Tobalaba">Tobalaba</option>
+									</optgroup>
+									<optgroup label="Línea 5">
+										<option value="Quinta Normal">Quinta Normal</option>
+										<option value="Cumming">Cumming</option>
+										<option value="Santa Ana">Santa Ana</option>
+										<option value="Plaza de Armas">Plaza de Armas</option>
+										<option value="Bellas Artes">Bellas Artes</option>
+										<option value="Baquedano">Baquedano</option>
+										<option value="Parque Bustamante">Parque Bustamante</option>
+										<option value="Santa Isabel">Santa Isabel</option>
+									</optgroup>
+								</select>
+							</div>
+								<div class="form-group col-md-6">
+								<label>Tipo de elemento</label>
+								<select formControlName="day" id="day" class="form-control">
+									<option value="Lunes">Lunes</option>
+									<option value="Martes">Martes</option>
+									<option value="Miércoles">Miércoles</option>
+									<option value="Jueves">Jueves</option>
+									<option value="Viernes">Viernes</option>
+									<option value="Sábado">Sábado</option>
+									<option value="Domingo">Domingo</option>
+								</select>
+							</div>
+	
+							<div class="form-group col-md-6">
+								<label>Hora</label>
+								<input type="email" [(ngModel)]="profile.preferences.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-info" (click)="editPreference()">Editar</button>
+					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- ================================================================================================== -->
+<!-- End modal edit preferences																				-->
+<!-- ================================================================================================== -->
+
+
 
 
 

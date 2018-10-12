@@ -25,9 +25,10 @@
 		<!-- FIN picture o img -->
 		
 		<div class="card-body">
-			<h5 class="card-title">Título: {{ book.title }}</h5>
-			<p class="card-text">Autor/a: {{ book.author }}</p>
-			<p class="card-text">Editorial: {{book.editorial }}</p>
+			<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
+			<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
+			<p class="card-text">Editorial: {{book.editorial | titlecase }}</p>
+			<p class="card-text">Dueño: {{book.editorial | titlecase }}</p>
 			<button class="btn btn-outline-info col-md-6" data-toggle="modal" 
 					data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
 			<button class="btn btn-outline-info col-md-6" data-toggle="modal" 
@@ -36,7 +37,9 @@
 	</div>
 </div>
 
-<!-- sample modal content -->
+<!-- ====================================================================== -->
+<!-- Modal show book														-->
+<!-- ====================================================================== -->
 <div 	class="modal fade bs-example-modal-lg" 
 		tabindex="-1" 
 		role="dialog" 
@@ -47,7 +50,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title }}</h4>
+				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title | titlecase }}</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
 			<div class="modal-body">
@@ -67,9 +70,9 @@
 					</div>
 					<div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
 						<div class="card-body">
-							<!-- ============================================================================== -->
-							<!-- Show profile																	-->
-							<!-- ============================================================================== -->
+							<!-- ====================================================================== -->
+							<!-- Show profile															-->
+							<!-- ====================================================================== -->
 							<div class="col-12">
 								<div class="card">
 									<div class="card-body row">
@@ -112,9 +115,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- ================================================================================== -->
-							<!-- End show profile																	-->
-							<!-- ================================================================================== -->	
+							<!-- ====================================================================== -->
+							<!-- End show profile														-->
+							<!-- ====================================================================== -->	
 						</div>
 					</div>
 				</div>
@@ -124,13 +127,16 @@
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
 			</div>
 		</div>
-		<!-- /.modal-content -->
 	</div>
-	<!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+<!-- ====================================================================== -->
+<!-- End modal show book													-->
+<!-- ====================================================================== -->
 
-<!-- sample modal content -->
+
+<!-- ====================================================================== -->
+<!-- Modal contact owner													-->
+<!-- ====================================================================== -->
 <div 	class="modal fade bs-example-modal-lg" 
 		tabindex="-1" 
 		role="dialog"
@@ -146,10 +152,12 @@
 			</div>
 			<div class="modal-body">
 				<!-- Mensaje a enviar -->
-				<div *ngIf="book_modal.transaction == 'Ambos'" >
+				<div *ngIf="book_modal.transaction == 'Venta'" >
 					<label>Elija el mensaje a enviar</label>
-					<select name="" id="">Deseo intercambiar este libro</select>
-					<select name="" id="">Deseo comprar este libro</select>
+					<select class="form-control" formControlName="message">
+						<option value="exchange">Deseo intercambiar este libro</option>
+						<option value="sale">Deseo comprar este libro</option>
+					</select>
 				</div>
 
 				<!-- Mostrar preferencias usuario -->
@@ -162,8 +170,8 @@
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
 			</div>
 		</div>
-		<!-- /.modal-content -->
 	</div>
-	<!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+<!-- ====================================================================== -->
+<!-- End modal contact owner												-->
+<!-- ====================================================================== -->

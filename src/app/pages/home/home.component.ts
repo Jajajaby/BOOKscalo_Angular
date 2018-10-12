@@ -1,4 +1,3 @@
-import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from "../../services/database.service";
 
@@ -12,6 +11,6 @@ export class HomeComponent implements OnInit {
 
 	constructor( private _dbService:DatabaseService ) {}
 
-	ngOnInit() {
-	}
+
+	ngOnInit() {}
 }
