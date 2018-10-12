@@ -114,7 +114,7 @@
 					</select>
 				</div>
 
-				<div class="form-group" *ngIf="form.value.transaction === 'sale'">
+				<div class="form-group" *ngIf="form.value.transaction === 'Venta'">
 					<label>Precio</label>
 					<input 	formControlName="price" 
 							onlynumber="true" 
@@ -125,7 +125,7 @@
 							required>
 				</div>
 
-				<div class="form-group" *ngIf="form.value.transaction === 'both'">
+				<div class="form-group" *ngIf="form.value.transaction === 'Ambos'">
 					<label>Precio</label>
 					<input 	formControlName="price" 
 							onlynumber="true" 

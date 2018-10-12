@@ -37,7 +37,7 @@ export class OneBookComponent implements OnInit {
 			// comment: 		[''],
 			// images: 		['']
 		});
-		
+
 		// this._dbService.getData(this.book.user)
 		// 	.valueChanges()
 		// 	.subscribe( data => console.log(data) );

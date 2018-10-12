@@ -8,7 +8,7 @@ import { DatabaseService } from "../services/database.service";
 import { AngularFireAuth } from 'angularfire2/auth';
 
 // Sweet Alert
-import swal from 'sweetalert'; 
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-register',
@@ -35,7 +35,6 @@ export class RegisterComponent implements OnInit {
 			last_name2: 	new FormControl(undefined, Validators.required),
 			rut: 			new FormControl(undefined, Validators.required),
 			phone: 			new FormControl(undefined),
-			commune: 		new FormControl(undefined),
 			favs_genres: 	new FormControl(undefined, Validators.required),
 			email: 			new FormControl(undefined, Validators.required),
 			password: 		new FormControl(undefined, Validators.required),
@@ -84,11 +83,11 @@ export class RegisterComponent implements OnInit {
 					};
 
 					if( !this.formulario.value.conditions ){
-					    swal("Importante", "Debe aceptar los términos y condiciones", "warning");
-					    return;
+						swal("Importante", "Debe aceptar los términos y condiciones", "warning");
+						return;
 					}
-					
-					// Se guarda el usuario 
+
+					// Se guarda el usuario
 					this._dbService.addDataIdCustom('users', USER.uid, USER)
 						.then( () => {
 							console.log("Se guardó el usuario");
@@ -98,9 +97,9 @@ export class RegisterComponent implements OnInit {
 						})
 					.catch( (err) => {
 						console.log("Error al guardar al usuario", err);
-					    swal("Error", "No se ha podido guardar el nuevo usuario", "warning");
-					})					
-				})					
+						swal("Error", "No se ha podido guardar el nuevo usuario", "warning");
+					})
+				})
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
 		}else{
 			console.log("No funcionó")

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// Services
+// SERVICES
 import { DatabaseService } from "../../services/database.service";
 
-// Interfaces
+// INTERFACE
 import { Books } from '../../interface/books.interface';
 
 @Component({
@@ -33,12 +33,9 @@ export class CardBookComponent implements OnInit {
 		images: 		[]
 	};
 
-	// Se inyecta router para redirigir las páginas
 	constructor( private _booksService:DatabaseService ) {}
 
-	// cuando se trabaja con Input() se debe usar el ngOnInit y no el constructor
 	ngOnInit() {
-		// si queremos mostrar todos los libros hacemos una consulta general a la bd
 		if(this.type === 'all') {
 			this._booksService.getData('books')
 				.valueChanges()
@@ -46,7 +43,7 @@ export class CardBookComponent implements OnInit {
 					this.books = [];
 					this.books = data;
 				});
-		}else { // Consulta con condicion para buscar los libros de cada seccion
+		}else {
 			this._booksService.getDataQuery('books', 'transaction', '==', this.type)
 				.valueChanges()
 				.subscribe( data => {

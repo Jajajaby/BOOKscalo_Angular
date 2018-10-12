@@ -2,61 +2,61 @@
 	<div class="login-register" style="background-image:url(../../assets/images/background/book-2.jpg);">
 		<div class="login-box card">
 			<div class="card-body" >
-				<form class="form-horizontal form-material" 
-						[formGroup]="formulario" 
-						(ngSubmit)="saveUser()" 
-						novalidate="novalidate" 
+				<form class="form-horizontal form-material"
+						[formGroup]="formulario"
+						(ngSubmit)="saveUser()"
+						novalidate="novalidate"
 						action="index.html">
 
 					<div [ngSwitch]="register_pages">
-						<!-- ================================================================================== -->
-						<!-- PAGE 1																				-->
-						<!-- ================================================================================== -->
+						<!-- ================================================================== -->
+						<!-- PAGE 1													                      							-->
+						<!-- ================================================================== -->
 						<div *ngSwitchCase="'page_1'">
 							<h3 class="box-title m-t-40 m-b-0">Datos de perfil</h3>
 							<small>Crea tu cuenta para ingresar</small>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="name" 
-											class="form-control" 
-											type="text" 
+									<input  formControlName="name"
+											class="form-control"
+											type="text"
 											placeholder="Nombre">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="last_name1" 
-											class="form-control" 
-											type="text" 
+									<input  formControlName="last_name1"
+											class="form-control"
+											type="text"
 											placeholder="Apellido paterno">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="last_name2" 
-											class="form-control" 
-											type="text" 
+									<input  formControlName="last_name2"
+											class="form-control"
+											type="text"
 											placeholder="Apellido materno">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="rut" 
-											class="form-control" 
-											type="text" 
+									<input  formControlName="rut"
+											class="form-control"
+											type="text"
 											placeholder="RUT">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="phone" 
-											class="form-control" 
-											type="text" 
+									<input  formControlName="phone"
+											class="form-control"
+											type="text"
 											placeholder="Teléfono opcional">
 								</div>
 							</div>
@@ -83,28 +83,14 @@
 						</div>
 
 						<!-- ================================================================================== -->
-						<!-- PAGE 2																				-->
+						<!-- PAGE 2													                                      							-->
 						<!-- ================================================================================== -->
 						<div *ngSwitchCase="'page_2'">Datos de preferencias
-							
-							<div class="form-group border-input-custom" 
-								 name="original">
-								<label>Comuna de preferencia</label>
-								<select class="form-control" 
-										formControlName="commune">
-									<option value="Santiago centro">Santiago centro</option>
-									<option value="Providencia">Providencia</option>
-									<option value="Recoleta">Recoleta</option>
-									<option value="Estación central">Estación central</option>
-									<option value="San Miguel">San Miguel</option>
-									<option value="Ñuñoa">Ñuñoa</option>
-								</select>
-							</div>
 
-							<div class="form-group border-input-custom" 
+							<div class="form-group border-input-custom"
 								 name="original">
 								<label>Géneros de interés</label>
-								<select class="form-control" 
+								<select class="form-control"
 										formControlName="favs_genres"
 										multiple>
 									<option value="Aventura">Aventura</option>
@@ -143,18 +129,18 @@
 
 							<div class="form-group ">
 								<div class="col-xs-12">
-									<input  formControlName="email" 
-											class="form-control" 
-											type="text" 
+									<input  formControlName="email"
+											class="form-control"
+											type="text"
 											placeholder="Correo electrónico">
 								</div>
 							</div>
 
 							<div class="form-group ">
 								<div class="col-xs-12">
-									<input  formControlName="password" 
-											class="form-control" 
-											type="password" 
+									<input  formControlName="password"
+											class="form-control"
+											type="password"
 											placeholder="Contraseña">
 								</div>
 							</div>
@@ -162,8 +148,8 @@
 							<div class="form-group">
 							  	<div class="col-xs-12">
 									<input 	formControlName="password2"
-										   	class="form-control" 
-										   	type="password" 
+										   	class="form-control"
+										   	type="password"
 										   	placeholder="Confirme su contraseña">
 							  	</div>
 							</div>
@@ -175,8 +161,8 @@
 							<div class="form-group row">
 					          	<div class="col-md-12">
 						            <div class="checkbox checkbox-primary p-t-0">
-						              	<input 	formControlName="conditions" 
-						                     	id="checkbox-signup" 
+						              	<input 	formControlName="conditions"
+						                     	id="checkbox-signup"
 						                     	type="checkbox">
 						              	<label for="checkbox-signup"> Acepto los
 						                	<a href="#">Términos y condiciones</a>
