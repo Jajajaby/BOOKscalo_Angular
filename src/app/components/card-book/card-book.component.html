@@ -6,7 +6,7 @@
 <!-- ============================================================================== -->
 <div class="card-columns">
 	<div class="card" style="width: 18rem;" *ngFor="let book of books; let index = index;">
-		<!-- picture o img -->
+		<!-- CARROUSEL BOOK IMAGES -->
 		<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">
 			<div class="carousel-inner">
 			  <div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{'active': i===0}" >
@@ -15,15 +15,13 @@
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">
 			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Previous</span>
 			</a>
 			<a class="carousel-control-next" href="#carouselExampleFade-{{index}}" role="button" data-slide="next">
 			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Next</span>
 			</a>
 		 </div>
-		<!-- FIN picture o img -->
-		
+		<!-- CARROUSEL BOOK IMAGES -->
+
 		<div class="card-body">
 			<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
 			<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
