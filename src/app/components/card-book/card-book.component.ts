@@ -33,11 +33,11 @@ export class CardBookComponent implements OnInit {
 		images: 		[]
 	};
 
-	constructor( private _booksService:DatabaseService ) {}
+	constructor( private _dbService:DatabaseService ) {}
 
 	ngOnInit() {
 		if(this.type === 'all') {
-			this._booksService.getData('books')
+			this._dbService.getData('books')
 				.valueChanges()
 				.subscribe( data => {
 					this.books = [];
@@ -45,13 +45,13 @@ export class CardBookComponent implements OnInit {
 					
 					// cambia la referencia de user por el objeto del usuario
 					for(let i=0; i<this.books.length; i++){
-						this._booksService.afs.doc(data[i].user)
+						this._dbService.afs.doc(data[i].user)
 						.valueChanges()
 						.subscribe( resp => this.books[i].user = resp );
 					}
 				});
 		}else {
-			this._booksService.getDataQuery('books', 'transaction', '==', this.type)
+			this._dbService.getDataQuery('books', 'transaction', '==', this.type)
 				.valueChanges()
 				.subscribe( data => {
 					this.books = [];
@@ -59,7 +59,7 @@ export class CardBookComponent implements OnInit {
 
 					// cambia la referencia de user por el objeto del usuario
 					for(let i=0; i<this.books.length; i++){
-						this._booksService.afs.doc(data[i].user)
+						this._dbService.afs.doc(data[i].user)
 						.valueChanges()
 						.subscribe( resp => this.books[i].user = resp );
 					}
