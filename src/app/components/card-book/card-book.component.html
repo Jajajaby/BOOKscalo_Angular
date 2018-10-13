@@ -1,10 +1,18 @@
 <!-- TODO: TIENE QUE ABRIR MODAL CON EL LIBRO O PÁGINA CON CONTACTO PARA HACER LA TRANSACCIÓN -->
 
+<!-- LOADER -->
+<ng-template #other>
+	<div class="loader-contenedor">
+			<h3> <i class="fa fa-refresh fa-2x fa-spin"></i> </h3>
+			<p> Buscando libros... </p>
+	</div>
+</ng-template>
+
 
 <!-- ============================================================================== -->
 <!-- Card book 																							-->
 <!-- ============================================================================== -->
-<div class="card-columns">
+<div class="card-columns" *ngIf="!loading; else other">
 	<div class="card" style="width: 18rem;" *ngFor="let book of books; let index = index;">
 		<!-- CARROUSEL BOOK IMAGES -->
 		<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">
@@ -12,7 +20,7 @@
 			  <div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{'active': i===0}" >
 				 <img class="d-block img-carousel" [src]="img">
 			  </div>
-			</div>
+			</div> 
 			<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">
 			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			</a>
@@ -160,12 +168,12 @@
 				<!-- Mensaje a enviar -->
 				<div *ngIf="book_modal.transaction == 'Venta'" >
 					<label>Elija el mensaje a enviar</label>
-					<!-- TODO:  -->
-					<select class="form-control" formControlName="">
+					<!-- TODO: DEJE ESTAS LINEAS COMENTADAS PORQUE DABA ERROR -->
+					<!-- <select class="form-control" formControlName=""> -->
 					<!-- <select class="form-control" formControlName="message"> -->
-						<option value="exchange">Deseo intercambiar este libro</option>
-						<option value="sale">Deseo comprar este libro</option>
-					</select>
+						<!-- <option value="exchange">Deseo intercambiar este libro</option> -->
+						<!-- <option value="sale">Deseo comprar este libro</option> -->
+					<!-- </select> -->
 				</div>
 
 				<!-- TODO: Mostrar preferencias usuario -->

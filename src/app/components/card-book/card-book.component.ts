@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// SERVICES
-import { DatabaseService } from "../../services/database.service";
-
 // INTERFACE
 import { Books } from '../../interface/books.interface';
 
@@ -12,10 +9,12 @@ import { Books } from '../../interface/books.interface';
 })
 export class CardBookComponent implements OnInit {
 
-	@Input() type:string;
+	@Input() type:string; // el tipo que se mostrara en pantalla
+	@Input() booksHome:any[]; // Trae los books desde el home
 	
-	books: any[] = [];
-
+	books:any[]; // array con los books a mostrar
+	loading:boolean = true; // muestra y esconde un loading
+	
 	book_modal: Books = {
 		author: 		'', 
 		title: 			'', 
@@ -33,38 +32,22 @@ export class CardBookComponent implements OnInit {
 		images: 		[]
 	};
 
-	constructor( private _dbService:DatabaseService ) {}
+	constructor() {}
 
 	ngOnInit() {
-		if(this.type === 'all') {
-			this._dbService.getData('books')
-				.valueChanges()
-				.subscribe( data => {
-					this.books = [];
-					this.books = data;
-					
-					// cambia la referencia de user por el objeto del usuario
-					for(let i=0; i<this.books.length; i++){
-						this._dbService.afs.doc(data[i].user)
-						.valueChanges()
-						.subscribe( resp => this.books[i].user = resp );
-					}
-				});
-		}else {
-			this._dbService.getDataQuery('books', 'transaction', '==', this.type)
-				.valueChanges()
-				.subscribe( data => {
-					this.books = [];
-					this.books = data;
+		setTimeout( () => { 
+			if( this.type === 'all' ){
+				this.loading = false;
+				this.books = this.booksHome;
+			}else {
+				let aux = [];
 
-					// cambia la referencia de user por el objeto del usuario
-					for(let i=0; i<this.books.length; i++){
-						this._dbService.afs.doc(data[i].user)
-						.valueChanges()
-						.subscribe( resp => this.books[i].user = resp );
-					}
-				});
-		}
-
+				for(let book of this.booksHome){
+					if( book.transaction ===  this.type ) aux.push(book);
+				}
+				this.loading = false;
+				this.books = aux;
+			}
+		}, 2000);
  	}
 }

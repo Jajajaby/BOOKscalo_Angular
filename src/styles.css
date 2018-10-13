@@ -44,3 +44,13 @@
     height: 100%;
     max-height: 340px;
 }
+
+/* ESTILO DE CAJA DE LOADER QUE QUEDA AL CENTRO */
+.loader-contenedor {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}

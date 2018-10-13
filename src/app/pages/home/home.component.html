@@ -26,15 +26,15 @@
 
 <div [ngSwitch]="view_bar">
 	<div *ngSwitchCase="'all'">
-		<app-card-book type="all"></app-card-book>
+		<app-card-book type="all" [booksHome]="books"></app-card-book>
 	</div>
 	<div *ngSwitchCase="'exchange'">
-		<app-card-book type="Intercambio"></app-card-book>
+		<app-card-book type="Intercambio" [booksHome]="books"></app-card-book>
 	</div>
 	<div *ngSwitchCase="'sales'">
-		<app-card-book type="Venta"></app-card-book>
+		<app-card-book type="Venta" [booksHome]="books"></app-card-book>
 	</div>
 	<div *ngSwitchCase="'both'">
-		<app-card-book type="Ambos"></app-card-book>
+		<app-card-book type="Ambos" [booksHome]="books"></app-card-book>
 	</div>
 </div>
