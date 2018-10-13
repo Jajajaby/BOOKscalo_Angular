@@ -42,7 +42,7 @@ export class AddBookComponent implements OnInit {
 			price: 			new FormControl(undefined),
 			language: 		new FormControl(undefined, Validators.required),
 			original: 		new FormControl(undefined, Validators.required),
-			num_pages: 		new FormControl(undefined, Validators.required),
+			num_page: 		new FormControl(undefined, Validators.required),
 			comment: 		new FormControl(undefined),
 			images: 		new FormControl(undefined)
 		});

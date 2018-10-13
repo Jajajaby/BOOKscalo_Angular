@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl, FormControlName  } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 
 import { Books } from "../../interface/books.interface";
 import { DatabaseService } from "../../services/database.service";
@@ -37,30 +37,6 @@ export class OneBookComponent implements OnInit {
 			// comment: 		[''],
 			// images: 		['']
 		});
-
-		// this._dbService.getData(this.book.user)
-		// 	.valueChanges()
-		// 	.subscribe( data => console.log(data) );
-
-
-		// this._dbService.getDataQuery('users', 'user', '==', this.book.user)
-		// 	.valueChanges()
-		// 	.subscribe( data => console.log(data) );
-
 	}
-
-	jj() {
-	    let credentials = this.editForm.value;
-	    console.log( credentials );
-  	}
-
-  	modal(){
-  		console.log( this.book.id );
-  		console.log("aaa" + this.book.title);
-
-		
-
-  	}
-
 
 }

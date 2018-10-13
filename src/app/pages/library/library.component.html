@@ -254,11 +254,11 @@
 								<select class="form-control" 
 												[(ngModel)]="book_modal.type"
 												name="type">
-									<option value="book">Libro</option>
-									<option value="comic">Cómic</option>
-									<option value="especial">Lectura especializada</option>
-									<option value="kid">Literatura infantil</option>
-									<option value="other">Otro</option>
+									<option value="Libro">Libro</option>
+									<option value="Cómic">Cómic</option>
+									<option value="Lectura especializada">Lectura especializada</option>
+									<option value="Literatura infantil">Literatura infantil</option>
+									<option value="Otro">Otro</option>
 								</select>
 							</div>
 						</div>
@@ -283,9 +283,9 @@
 								<select class="form-control" 
 												[(ngModel)]="book_modal.language"
 												name="language">
-									<option value="spanish">Español</option>
-									<option value="english">Inglés</option>
-									<option value="other">Otro</option>
+									<option value="Español">Español</option>
+									<option value="Inglés">Inglés</option>
+									<option value="Otro">Otro</option>
 								</select>
 							</div>
 
@@ -294,14 +294,14 @@
 								<select class="form-control" 
 												[(ngModel)]="book_modal.original"
 												name="original">
-									<option value="yes">Sí</option>
-									<option value="no">No</option>
+									<option value="Sí">Sí</option>
+									<option value="No">No</option>
 								</select>
 							</div>
 
 							<div class="form-group">
 								<label>Cantidad de páginas</label>
-								<input 	[(ngModel)]="book_modal.num_pages"
+								<input 	[(ngModel)]="book_modal.num_page"
 												name="num_pages" 
 												onlynumber="true" 
 												minlength="2" 

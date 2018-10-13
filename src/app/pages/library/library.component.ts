@@ -41,7 +41,7 @@ export class LibraryComponent implements OnInit {
 			type: 			'', 
 			genres: 		[], 
 			language: 		'', 
-			num_page: 		0,
+			num_page: 		'',
 			original: 		false, 
 			transaction: 	'', 	
 			user: 			'', 

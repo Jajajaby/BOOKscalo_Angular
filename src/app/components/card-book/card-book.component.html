@@ -26,7 +26,7 @@
 			<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
 			<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
 			<p class="card-text">Editorial: {{book.editorial | titlecase }}</p>
-			<p class="card-text">Dueño: {{book.editorial | titlecase }}</p>
+			<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
 			<button class="btn btn-outline-info col-md-6" data-toggle="modal" 
 					data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
 			<button class="btn btn-outline-info col-md-6" data-toggle="modal" 
@@ -77,13 +77,13 @@
 										<div class="col-md-6" align="center">
 											<img src="../assets/images/profile.jpg" class="img-circle" width="150" /> 
 											<h4 class="card-title">
-												<!-- {{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }}--> </h4>
+												{{ book_modal.user.name | titlecase }} {{ book_modal.user.last_name1 | titlecase }} {{ book_modal.user.last_name2 | titlecase }} </h4>
 											<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
 											<div class="row text-center justify-content-md-center">
 												<div class="col-4">
 													<a href="javascript:void(0)" class="link">
 														<i class="icon-people"></i> 
-														<font class="font-medium"> <!-- {{ profile.ranking }} --> </font>
+														<font class="font-medium"> {{ book_modal.user.ranking }} </font>
 													</a>
 												</div>
 												<div class="col-4">
@@ -96,14 +96,20 @@
 										</div>
 										<div class="col-md-6">
 											<small class="text-muted">Correo electrónico</small>
-											<h6> <!-- {{ profile.email }} --> </h6> 
+											<h6> {{ book_modal.user.email }} </h6> 
 											<small class="text-muted p-t-30 db">Teléfono de contacto</small>
-											<h6> <!-- {{ profile.phone }} --> </h6> 
+											<h6> {{ book_modal.user.phone }} </h6> 
 										</div>
 									</div>
-									<!-- <div>
-									<hr> 
-									</div> -->
+									<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->
+									<div class="card-body">
+										<small class="text-muted">Categorías favoritas:</small>
+										<ul>
+											<li>
+												<h6>{{ book_modal.user.favs_genres }}</h6>
+											</li>
+										</ul>
+									</div>
 									<div class="card-body"> 
 										<div class="dropdown-divider"></div>
 										<small class="text-muted p-t-30 db">Redes sociales</small><br/>
@@ -154,17 +160,19 @@
 				<!-- Mensaje a enviar -->
 				<div *ngIf="book_modal.transaction == 'Venta'" >
 					<label>Elija el mensaje a enviar</label>
-					<select class="form-control" formControlName="message">
+					<!-- TODO:  -->
+					<select class="form-control" formControlName="">
+					<!-- <select class="form-control" formControlName="message"> -->
 						<option value="exchange">Deseo intercambiar este libro</option>
 						<option value="sale">Deseo comprar este libro</option>
 					</select>
 				</div>
 
-				<!-- Mostrar preferencias usuario -->
+				<!-- TODO: Mostrar preferencias usuario -->
 
-				<!-- Botón -->
+				<!-- TODO: Botón -->
 
-				<!-- Mensaje enviado y que se cierre el modal -->
+				<!-- TODO: Mensaje enviado y que se cierre el modal -->
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
