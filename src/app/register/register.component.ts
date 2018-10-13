@@ -69,17 +69,16 @@ export class RegisterComponent implements OnInit {
 
 					// Se guarda la formulario para validar
 					const USER:Users = {
-						uid: 			   resp.user.uid,
-						rut: 			   form.rut,
+						uid: 			resp.user.uid,
+						rut: 			form.rut,
 						name: 			form.name.toLowerCase(),
 						last_name1: 	form.last_name1.toLowerCase(),
 						last_name2: 	form.last_name2.toLowerCase(),
 						email: 			form.email.toLowerCase(),
 						favs_genres:	form.favs_genres,
-						commune:		   form.commune,
 						phone: 			form.phone,
 						ranking: 		0,
-						google:        false
+						google:        	false
 					};
 
 					if( !this.formulario.value.conditions ){
