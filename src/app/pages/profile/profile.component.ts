@@ -54,6 +54,7 @@ export class ProfileComponent implements OnInit {
 			day: 			new FormControl(undefined, Validators.required),
 			hour: 			new FormControl(undefined, Validators.required)
 		});
+
 	}
 	
 	updateProfile(){
@@ -67,28 +68,64 @@ export class ProfileComponent implements OnInit {
 			});
 	}
 
-	newPreference(){
-
-		if(this.profile.preferences === undefined ){
-			this.profile.preferences = ['agregar la preferencia'];
-		}else {
-			this.profile.preferences.push('una preferencia');
+	addPreference(){
+		
+		// Si la formulario no es valida no se realiza la carga a firebase
+		if( this.form.invalid ){
+			swal(
+				'Debe completar el formulario', 
+				'Debe ingresar todos los campos de este formulario',
+				'warning'
+			);
+			return;
 		}
 
-		// agregar
-		// update(this.profile);
+		let pref:any = this.form.value; 
 
-		console.log(this.profile);
-		let user: Users;
+		if(this.profile.preferences === undefined ){
+			this.profile.preferences = [pref];
+		}else {
+			this.profile.preferences.push(pref);
+		}
 
-
+		this._dbService.updateData( "users", this.profile.key, this.profile )
+			.then( () => {
+				console.log("funcionó");
+			})
+			.catch( () => {
+				console.log("cuek");
+			});
 	}
+
+	aaa(){
+		console.log(this.form.value);
+	}
+
+	// saveBook(){
+
+
+	// 	// Se guarda el libro 
+	// 	this._dbService.addData('books', book)
+	// 		.then( () => {
+	// 			console.log("se guardó el libro"); 
+	// 			swal('Libro registrado con éxito', book.title, 'success');
+	// 			this.router.navigate([ '/home' ]);
+	// 		})
+	// 		.catch( (err) => {
+	// 			console.log("error al guardar libros", err) 
+	// 			swal("Error", "No se ha podido guardar el nuevo libro", "warning");
+	// 		});
+	// }
+
+
+
+
+
+
+
 
 	deleteAccount(){
 
 	}
 
-	addPreferences(){
-		
-	}
 }

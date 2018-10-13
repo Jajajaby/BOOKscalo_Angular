@@ -166,10 +166,11 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Estación{{ subway_station }}</td>
-										<td>día{{ day }}</td>
-										<td>hora{{ hour }}</td>
+									<tr >
+										<!-- TODO: Falta hacer que esto funcione -->
+										<td> {{ profile.preferences.subway_station }} </td>
+										<td> {{ profile.preferences.day }} </td>
+										<td> {{ profile.preferences.hour }} </td>
 										<td class="text-nowrap">
 											<a data-toggle="modal" data-target="#editPreferences">
 												<i class="fa fa-pencil text-inverse m-r-10"></i> 
@@ -232,12 +233,12 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<!-- <form class="form-material m-t-40" [formGroup]="form" (ngSubmit)="addpreferences()"> -->
+				<form class="form-material m-t-40" [formGroup]="form" (ngSubmit)="addPreference()">
 					<div class="row">
 						<!-- Inicio col 1 -->
 						<div class="form-group col-12">
 							<label>Estación de metro</label>
-							<!-- <select formControlName="subway_station" id="subway_station" class="form-control">
+							<select formControlName="subway_station" id="subway_station" class="form-control">
 								<optgroup label="Línea 1">
 									<option value="República">República</option>
 									<option value="Los Héroes">Los Héroes</option>
@@ -262,11 +263,11 @@
 									<option value="Parque Bustamante">Parque Bustamante</option>
 									<option value="Santa Isabel">Santa Isabel</option>
 								</optgroup>
-							</select> -->
+							</select>
 						</div>
 							<div class="form-group col-md-6">
 							<label>Tipo de elemento</label>
-							<!-- <select formControlName="day" id="day" class="form-control">
+							<select formControlName="day" id="day" class="form-control">
 								<option value="Lunes">Lunes</option>
 								<option value="Martes">Martes</option>
 								<option value="Miércoles">Miércoles</option>
@@ -274,18 +275,18 @@
 								<option value="Viernes">Viernes</option>
 								<option value="Sábado">Sábado</option>
 								<option value="Domingo">Domingo</option>
-							</select> -->
+							</select>
 						</div>
 
 						<div class="form-group col-md-6">
 							<label>Hora</label>
-							<!-- <input formControlName="hour" class="form-control" type="time" value="12:00" id="hour"> -->
+							<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">
 						</div>
 					</div>
-				<!-- </form> -->
+				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-outline-info" (click)="newPreference()">Agregar</button>
+				<button type="button" class="btn btn-outline-info" (click)="addPreference()">Agregar</button>
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>
