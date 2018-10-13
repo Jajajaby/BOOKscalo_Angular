@@ -16,7 +16,9 @@ export class ProfileComponent implements OnInit {
 	profile_options:string = 'my_profile';
 	profile:any;  
 	user_profile: any;
-	form:FormGroup; 
+	form:FormGroup;
+	preferences:any; 
+	p_selected:any; 
 
   	constructor( private _dbService:DatabaseService ) {
 		let user = JSON.parse( localStorage.getItem( "user" ) );
@@ -32,6 +34,8 @@ export class ProfileComponent implements OnInit {
 			).subscribe( data => {
 				this.profile = data[0];
 				console.log(this.profile);
+				this.preferences =  this.profile.preferences;
+				console.log(this.preferences);
 			});
  	}
 
@@ -54,6 +58,7 @@ export class ProfileComponent implements OnInit {
 			day: 			new FormControl(undefined, Validators.required),
 			hour: 			new FormControl(undefined, Validators.required)
 		});
+
 
 	}
 	

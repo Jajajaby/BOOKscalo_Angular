@@ -156,7 +156,7 @@
 				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table color-table info-table ">
+							<table class="table color-table info-table">
 								<thead>
 									<tr>
 										<th>Estación de metro</th>
@@ -166,13 +166,14 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr >
-										<!-- TODO: Falta hacer que esto funcione -->
-										<td> {{ profile.preferences.subway_station }} </td>
-										<td> {{ profile.preferences.day }} </td>
-										<td> {{ profile.preferences.hour }} </td>
+									<tr *ngFor="let p of preferences">
+										<td> {{ p.subway_station }} </td>
+										<td> {{ p.day }} </td>
+										<td> {{ p.hour }} </td>
 										<td class="text-nowrap">
+											<!-- TODO: Falta hacer que esto funcione -->
 											<a data-toggle="modal" data-target="#editPreferences">
+											<!-- (click)="book_modal = book"> -->
 												<i class="fa fa-pencil text-inverse m-r-10"></i> 
 											</a>
 											<a data-toggle="modal" data-target="#deletePreferences">
