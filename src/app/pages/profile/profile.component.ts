@@ -88,4 +88,7 @@ export class ProfileComponent implements OnInit {
 
 	}
 
+	addPreferences(){
+		
+	}
 }

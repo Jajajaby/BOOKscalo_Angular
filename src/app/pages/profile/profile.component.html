@@ -232,12 +232,12 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form class="form-material m-t-40" >
+				<!-- <form class="form-material m-t-40" [formGroup]="form" (ngSubmit)="addpreferences()"> -->
 					<div class="row">
 						<!-- Inicio col 1 -->
 						<div class="form-group col-12">
 							<label>Estación de metro</label>
-							<select formControlName="subway_station" id="subway_station" class="form-control">
+							<!-- <select formControlName="subway_station" id="subway_station" class="form-control">
 								<optgroup label="Línea 1">
 									<option value="República">República</option>
 									<option value="Los Héroes">Los Héroes</option>
@@ -262,11 +262,11 @@
 									<option value="Parque Bustamante">Parque Bustamante</option>
 									<option value="Santa Isabel">Santa Isabel</option>
 								</optgroup>
-							</select>
+							</select> -->
 						</div>
 							<div class="form-group col-md-6">
 							<label>Tipo de elemento</label>
-							<select formControlName="day" id="day" class="form-control">
+							<!-- <select formControlName="day" id="day" class="form-control">
 								<option value="Lunes">Lunes</option>
 								<option value="Martes">Martes</option>
 								<option value="Miércoles">Miércoles</option>
@@ -274,15 +274,15 @@
 								<option value="Viernes">Viernes</option>
 								<option value="Sábado">Sábado</option>
 								<option value="Domingo">Domingo</option>
-							</select>
+							</select> -->
 						</div>
 
 						<div class="form-group col-md-6">
 							<label>Hora</label>
-							<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">
+							<!-- <input formControlName="hour" class="form-control" type="time" value="12:00" id="hour"> -->
 						</div>
 					</div>
-				</form>
+				<!-- </form> -->
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline-info" (click)="newPreference()">Agregar</button>
@@ -314,7 +314,7 @@
 							<!-- Inicio col 1 -->
 							<div class="form-group col-12">
 								<label>Estación de metro</label>
-								<select formControlName="subway_station" id="subway_station" class="form-control">
+								<!-- <select formControlName="subway_station" id="subway_station" class="form-control">
 									<optgroup label="Línea 1">
 										<option value="República">República</option>
 										<option value="Los Héroes">Los Héroes</option>
@@ -339,11 +339,11 @@
 										<option value="Parque Bustamante">Parque Bustamante</option>
 										<option value="Santa Isabel">Santa Isabel</option>
 									</optgroup>
-								</select>
+								</select> -->
 							</div>
 								<div class="form-group col-md-6">
 								<label>Tipo de elemento</label>
-								<select formControlName="day" id="day" class="form-control">
+								<!-- <select formControlName="day" id="day" class="form-control">
 									<option value="Lunes">Lunes</option>
 									<option value="Martes">Martes</option>
 									<option value="Miércoles">Miércoles</option>
@@ -351,12 +351,12 @@
 									<option value="Viernes">Viernes</option>
 									<option value="Sábado">Sábado</option>
 									<option value="Domingo">Domingo</option>
-								</select>
+								</select> -->
 							</div>
 	
 							<div class="form-group col-md-6">
 								<label>Hora</label>
-								<input type="email" [(ngModel)]="profile.preferences.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
+								<!-- <input type="email" [(ngModel)]="profile.preferences.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour"> -->
 							</div>
 						</div>
 					</form>
