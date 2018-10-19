@@ -165,22 +165,27 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
 			<div class="modal-body">
-				<!-- Mensaje a enviar -->
+				<!-- Si es solo venta -->
 				<div *ngIf="book_modal.transaction == 'Venta'" >
 					<label>Elija el mensaje a enviar</label>
-					<!-- TODO: DEJE ESTAS LINEAS COMENTADAS PORQUE DABA ERROR -->
-					<!-- <select class="form-control" formControlName=""> -->
-					<!-- <select class="form-control" formControlName="message"> -->
-						<!-- <option value="exchange">Deseo intercambiar este libro</option> -->
-						<!-- <option value="sale">Deseo comprar este libro</option> -->
-					<!-- </select> -->
+					<!-- TODO:  -->
+					<!-- TODO: Mostrar preferencias usuario -->
+					<select class="form-control" formControlName="text">
+						<option value="Deseo establecer la transacción">Deseo establecer la transacción</option>
+						<option value="Deseo contactarte personalmente">Deseo contactarte personalmente</option>
+						<option value="No me acomodan las preferencias de horario">No me acomodan las preferencias de horario</option>
+						<option value="No me acomoda el precio">No me acomoda el precio</option>
+					</select>
+					<!-- TODO: Botón -->
+					<!-- TODO: Mensaje enviado y que se cierre el modal -->
 				</div>
 
-				<!-- TODO: Mostrar preferencias usuario -->
+				<!-- TODO: Si es intercambio -->
 
-				<!-- TODO: Botón -->
+				<!-- TODO: Si son ambas -->
 
-				<!-- TODO: Mensaje enviado y que se cierre el modal -->
+
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>

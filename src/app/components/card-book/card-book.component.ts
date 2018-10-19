@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 // INTERFACE
 import { Books } from '../../interface/books.interface';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-card-book',
@@ -14,6 +15,7 @@ export class CardBookComponent implements OnInit {
 	
 	books:any[]; // array con los books a mostrar
 	loading:boolean = true; // muestra y esconde un loading
+	message:any; 
 	
 	book_modal: Books = {
 		author: 		'', 
@@ -49,5 +51,11 @@ export class CardBookComponent implements OnInit {
 				this.books = aux;
 			}
 		}, 2000);
+
+		this.message = new FormGroup({
+			text: 			new FormControl(undefined, Validators.required),
+			transaction: 	new FormControl(undefined, Validators.required),
+			pref: 			new FormControl(undefined, Validators.required),
+		})
  	}
 }
