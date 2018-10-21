@@ -1,45 +1,50 @@
 <!-- TODO: TIENE QUE ABRIR MODAL CON EL LIBRO O PÁGINA CON CONTACTO PARA HACER LA TRANSACCIÓN -->
 
 <!-- LOADER -->
-<ng-template #other>
-	<div class="loader-contenedor">
-			<h3> <i class="fa fa-refresh fa-2x fa-spin"></i> </h3>
-			<p> Buscando libros... </p>
-	</div>
-</ng-template>
-
+<div *ngIf="loading" class="loader-contenedor">
+		<h3> <i class="fa fa-refresh fa-2x fa-spin"></i> </h3>
+		<p> Buscando libros... </p>
+</div>
 
 <!-- ============================================================================== -->
-<!-- Card book 																							-->
+<!-- Card book 																		-->
 <!-- ============================================================================== -->
-<div class="card-columns" *ngIf="!loading; else other">
-	<div class="card" style="width: 18rem;" *ngFor="let book of books; let index = index;">
-		<!-- CARROUSEL BOOK IMAGES -->
-		<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">
-			<div class="carousel-inner">
-			  <div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{'active': i===0}" >
-				 <img class="d-block img-carousel" [src]="img">
-			  </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<div *ngIf="!loading" class="card-columns row contenedor-flex">
+				<div class="card col-12 col-sm-6 col-md-4" style="max-width:18rem;" *ngFor="let book of books; let index = index;">
+					<!-- CARROUSEL BOOK IMAGES -->
+					<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{'active': i===0}" >
+							 <img class="d-block img-carousel" [src]="img">
+							</div>
+						</div> 
+						<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleFade-{{index}}" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						</a>
+					 </div>
+					<!-- CARROUSEL BOOK IMAGES -->
+			
+					<div class="card-body">
+						<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
+						<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
+						<p class="card-text">Editorial: {{book.editorial | titlecase }}</p>
+						<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
+						<button *ngIf="book.uid === uid" class="btn btn-outline-info col-md-12" data-toggle="modal" 
+								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
+						<button *ngIf="book.uid !== uid" class="btn btn-outline-info col-md-6" data-toggle="modal" 
+								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
+						<button *ngIf="book.uid !== uid" 
+								class="btn btn-outline-info col-md-6" data-toggle="modal" 
+								data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>
+					</div>
+				</div>
 			</div>
-			<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleFade-{{index}}" role="button" data-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			</a>
-		 </div>
-		<!-- CARROUSEL BOOK IMAGES -->
-
-		<div class="card-body">
-			<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
-			<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
-			<p class="card-text">Editorial: {{book.editorial | titlecase }}</p>
-			<p class="card-text" *ngIf="book.transaction == 'Ambos' || book.transaction == 'Venta'">Price: ${{ book.price }}</p>
-			<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
-			<button class="btn btn-outline-info col-md-6" data-toggle="modal"
-					data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
-			<button class="btn btn-outline-info col-md-6" data-toggle="modal"
-					data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>
 		</div>
 	</div>
 </div>
