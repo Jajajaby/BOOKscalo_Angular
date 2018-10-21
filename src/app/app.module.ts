@@ -6,6 +6,7 @@ import { APP_ROUTES } from './app.routes';
 
 // MODULOS
 import { PagesModule } from './pages/pages.module';
+import { AdminModule } from './admin/admin.module';
 // import { ServiceModule } from './services/service.module';
 
 // COMPONENTES
@@ -20,12 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    LoginComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     PagesModule,
+    AdminModule,
     // ServiceModule,
     FormsModule,
     ReactiveFormsModule,
