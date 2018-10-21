@@ -16,6 +16,7 @@ export class CardBookComponent implements OnInit {
 	books:any[]; // array con los books a mostrar
 	loading:boolean = true; // muestra y esconde un loading
 	message:any; 
+	uid:string;
 	
 	book_modal: Books = {
 		author: 		'', 
@@ -34,7 +35,9 @@ export class CardBookComponent implements OnInit {
 		images: 		[]
 	};
 
-	constructor() {}
+	constructor() {
+		this.uid = JSON.parse(localStorage.getItem('user')).uid;
+	}
 
 	ngOnInit() {
 		setTimeout( () => { 

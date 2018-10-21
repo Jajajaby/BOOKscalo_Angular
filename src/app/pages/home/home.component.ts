@@ -7,7 +7,7 @@ import { DatabaseService } from "../../services/database.service";
 })
 export class HomeComponent implements OnInit {
 
-	view_bar:string = 'all';
+	view_bar:string;
 	books:any[];
 
 	constructor( private _dbService:DatabaseService ) {
@@ -27,5 +27,7 @@ export class HomeComponent implements OnInit {
 	}
 
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.view_bar = 'all';
+	}
 }
