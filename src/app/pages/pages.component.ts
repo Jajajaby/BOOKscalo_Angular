@@ -11,4 +11,5 @@ export class PagesComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

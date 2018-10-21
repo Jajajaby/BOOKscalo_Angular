@@ -20,7 +20,7 @@
 			  <div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{'active': i===0}" >
 				 <img class="d-block img-carousel" [src]="img">
 			  </div>
-			</div> 
+			</div>
 			<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">
 			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			</a>
@@ -34,10 +34,11 @@
 			<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
 			<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
 			<p class="card-text">Editorial: {{book.editorial | titlecase }}</p>
+			<p class="card-text" *ngIf="book.transaction == 'Ambos' || book.transaction == 'Venta'">Price: ${{ book.price }}</p>
 			<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
-			<button class="btn btn-outline-info col-md-6" data-toggle="modal" 
+			<button class="btn btn-outline-info col-md-6" data-toggle="modal"
 					data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
-			<button class="btn btn-outline-info col-md-6" data-toggle="modal" 
+			<button class="btn btn-outline-info col-md-6" data-toggle="modal"
 					data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>
 		</div>
 	</div>
@@ -46,12 +47,12 @@
 <!-- ====================================================================== -->
 <!-- Modal show book														-->
 <!-- ====================================================================== -->
-<div 	class="modal fade bs-example-modal-lg" 
-		tabindex="-1" 
-		role="dialog" 
+<div 	class="modal fade bs-example-modal-lg"
+		tabindex="-1"
+		role="dialog"
 		id="showBook"
-		aria-labelledby="myLargeModalLabel" 
-		aria-hidden="true" 
+		aria-labelledby="myLargeModalLabel"
+		aria-hidden="true"
 		style="display: none;">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -83,20 +84,20 @@
 								<div class="card">
 									<div class="card-body row">
 										<div class="col-md-6" align="center">
-											<img src="../assets/images/profile.jpg" class="img-circle" width="150" /> 
+											<img src="../assets/images/profile.jpg" class="img-circle" width="150" />
 											<h4 class="card-title">
 												{{ book_modal.user.name | titlecase }} {{ book_modal.user.last_name1 | titlecase }} {{ book_modal.user.last_name2 | titlecase }} </h4>
 											<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
 											<div class="row text-center justify-content-md-center">
 												<div class="col-4">
 													<a href="javascript:void(0)" class="link">
-														<i class="icon-people"></i> 
+														<i class="icon-people"></i>
 														<font class="font-medium"> {{ book_modal.user.ranking }} </font>
 													</a>
 												</div>
 												<div class="col-4">
-													<a href="javascript:void(0)" class="link">	 
-														<i class="icon-picture"></i> 
+													<a href="javascript:void(0)" class="link">
+														<i class="icon-picture"></i>
 														<font class="font-medium">54</font>
 													</a>
 												</div>
@@ -104,9 +105,9 @@
 										</div>
 										<div class="col-md-6">
 											<small class="text-muted">Correo electrónico</small>
-											<h6> {{ book_modal.user.email }} </h6> 
+											<h6> {{ book_modal.user.email }} </h6>
 											<small class="text-muted p-t-30 db">Teléfono de contacto</small>
-											<h6> {{ book_modal.user.phone }} </h6> 
+											<h6> {{ book_modal.user.phone }} </h6>
 										</div>
 									</div>
 									<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->
@@ -118,7 +119,7 @@
 											</li>
 										</ul>
 									</div>
-									<div class="card-body"> 
+									<div class="card-body">
 										<div class="dropdown-divider"></div>
 										<small class="text-muted p-t-30 db">Redes sociales</small><br/>
 										<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
@@ -129,7 +130,7 @@
 							</div>
 							<!-- ====================================================================== -->
 							<!-- End show profile														-->
-							<!-- ====================================================================== -->	
+							<!-- ====================================================================== -->
 						</div>
 					</div>
 				</div>
@@ -151,12 +152,12 @@
 <!-- ====================================================================== -->
 <!-- Modal contact owner													-->
 <!-- ====================================================================== -->
-<div 	class="modal fade bs-example-modal-lg" 
-		tabindex="-1" 
+<div 	class="modal fade bs-example-modal-lg"
+		tabindex="-1"
 		role="dialog"
-		id="contactOwner" 
-		aria-labelledby="myLargeModalLabel" 
-		aria-hidden="true" 
+		id="contactOwner"
+		aria-labelledby="myLargeModalLabel"
+		aria-hidden="true"
 		style="display: none;">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -165,20 +166,29 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
 			<div class="modal-body">
-				<!-- Si es solo venta -->
-				<div *ngIf="book_modal.transaction == 'Venta'" >
-					<label>Elija el mensaje a enviar</label>
-					<!-- TODO:  -->
-					<!-- TODO: Mostrar preferencias usuario -->
-					<select class="form-control" formControlName="text">
-						<option value="Deseo establecer la transacción">Deseo establecer la transacción</option>
-						<option value="Deseo contactarte personalmente">Deseo contactarte personalmente</option>
-						<option value="No me acomodan las preferencias de horario">No me acomodan las preferencias de horario</option>
-						<option value="No me acomoda el precio">No me acomoda el precio</option>
+				<!-- Transacción -- Ambos -->
+				<div *ngIf="book_modal.transaction == 'Ambos'" >
+					<label>Elija el tipo de transacción que desea</label>
+					<select class="form-control" formControlName="transaction">
+						<option value="exchange">Deseo intercambiar el libro</option>
+						<option value="sale">Deseo comprar el libro en ${{ book_modal.price }}</option>
 					</select>
-					<!-- TODO: Botón -->
-					<!-- TODO: Mensaje enviado y que se cierre el modal -->
 				</div>
+
+				<!-- Mensaje -- Venta -->
+				<label>Elija el mensaje a enviar</label>
+				<div *ngIf="book_modal.transaction == 'Venta'">
+					<select class="form-control" formControlName="text">
+						<option value="transaction">Deseo establecer la transacción</option>
+						<option value="message">Deseo contactarte personalmente</option>
+						<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
+						<option value="dislike-price">No me acomoda el precio</option>
+					</select>
+				</div>
+
+				<!-- TODO: Mostrar preferencias usuario -->
+				<!-- TODO: Botón -->
+				<!-- TODO: Mensaje enviado y que se cierre el modal -->
 
 				<!-- TODO: Si es intercambio -->
 
@@ -194,5 +204,5 @@
 	</div>
 </div>
 <!-- ====================================================================== -->
-<!-- End modal contact owner												-->
+<!-- End modal contact owner												sdas-->
 <!-- ====================================================================== -->
