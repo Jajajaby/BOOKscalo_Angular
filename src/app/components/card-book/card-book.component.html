@@ -169,43 +169,82 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title" id="myLargeModalLabel"> Contactar dueño/a </h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
-			<div class="modal-body">
-				<!-- Transacción -- Ambos -->
-				<div *ngIf="book_modal.transaction == 'Ambos'" >
-					<label>Elija el tipo de transacción que desea</label>
-					<select class="form-control" formControlName="transaction">
-						<option value="exchange">Deseo intercambiar el libro</option>
-						<option value="sale">Deseo comprar el libro en ${{ book_modal.price }}</option>
-					</select>
+			<form [formGroup]="message" (ngSubmit)="sendMessage()">
+				<div class="modal-body">
+					<!-- Transaction -- Ambos -->
+					<div *ngIf="book_modal.transaction == 'Ambos'" >
+						<label>Elija el tipo de transacción que desea</label>
+						<select class="form-control" formControlName="transaction">
+							<option value="exchange">Deseo intercambiar el libro</option>
+							<option value="sale">Deseo comprar el libro</option>
+						</select>
+					</div><br>
+
+					<!-- Preferences -->
+					<label>Seleccione la preferencia que más le acomode</label>
+					<select class="form-control" formControlName="pref">
+						<option value="{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}" *ngFor="let p of book_modal.user.preferences">{{ p.subway_station }} {{ p.day }} {{ p.hour  }}</option>
+					</select><br>
+					<!-- <div class="table-responsive">
+						<table class="table color-table info-table">
+							<thead>
+								<tr>
+									<th>Selección</th>
+									<th>Estación de metro</th>
+									<th>Día</th>
+									<th>Horario</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let p of book_modal.user.preferences">
+									<td class="controls">
+										<label class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input"> 
+											<span class="custom-control-indicator"></span>  
+										</label>
+									</td>
+									<td> {{ p.subway_station }} </td>
+									<td> {{ p.day }} </td>
+									<td> {{ p.hour }} </td>
+								</tr>
+							</tbody>
+						</table>
+					</div> -->
+					<br>
+					<!-- Message -- Venta -->
+					<div *ngIf="book_modal.transaction == 'Venta' || message.value.transaction == 'sale'">
+						<label>Elija el mensaje a enviar</label>
+						<select class="form-control" formControlName="text">
+							<option value="transaction">Deseo establecer la transacción</option>
+							<option value="message">Deseo contactarte personalmente</option>
+							<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
+							<option value="dislike-price">No me acomoda el precio</option>
+							<!-- TODO:Ingresar precio que le acomode -->
+						</select>
+					</div>
+					
+					<!-- Message -- Intercambio -->
+					<div *ngIf="book_modal.transaction == 'Intercambio' || message.value.transaction == 'exchange'">
+						<label>Elija el mensaje a enviar</label>
+						<select class="form-control" formControlName="text">
+							<option value="transaction">Deseo establecer la transacción</option>
+							<option value="message">Deseo contactarte personalmente</option>
+							<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
+						</select>
+					</div>
+
+					
+					<!-- TODO: Botón -->
+					<!-- TODO: Mensaje enviado y que se cierre el modal -->
+					
 				</div>
-
-				<!-- Mensaje -- Venta -->
-				<label>Elija el mensaje a enviar</label>
-				<div *ngIf="book_modal.transaction == 'Venta'">
-					<select class="form-control" formControlName="text">
-						<option value="transaction">Deseo establecer la transacción</option>
-						<option value="message">Deseo contactarte personalmente</option>
-						<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
-						<option value="dislike-price">No me acomoda el precio</option>
-					</select>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-outline-info waves-effect text-left">Enviar</button>
+					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
 				</div>
-
-				<!-- TODO: Mostrar preferencias usuario -->
-				<!-- TODO: Botón -->
-				<!-- TODO: Mensaje enviado y que se cierre el modal -->
-
-				<!-- TODO: Si es intercambio -->
-
-				<!-- TODO: Si son ambas -->
-
-
-
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>

@@ -60,5 +60,12 @@ export class CardBookComponent implements OnInit {
 			transaction: 	new FormControl(undefined, Validators.required),
 			pref: 			new FormControl(undefined, Validators.required),
 		})
- 	}
+	 }
+
+	 sendMessage(){
+		 console.log(this.message.valid);
+		 console.log(this.message.value);
+		 
+	 }
+
 }
