@@ -59,6 +59,7 @@ export class CardBookComponent implements OnInit {
 			text: 			new FormControl(undefined, Validators.required),
 			transaction: 	new FormControl(undefined, Validators.required),
 			pref: 			new FormControl(undefined, Validators.required),
+			new_price:		new FormControl(0)
 		})
 	 }
 

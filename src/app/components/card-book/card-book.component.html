@@ -219,7 +219,6 @@
 							<option value="message">Deseo contactarte personalmente</option>
 							<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
 							<option value="dislike-price">No me acomoda el precio</option>
-							<!-- TODO:Ingresar precio que le acomode -->
 						</select>
 					</div>
 					
@@ -232,14 +231,18 @@
 							<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
 						</select>
 					</div>
-
 					
-					<!-- TODO: Botón -->
-					<!-- TODO: Mensaje enviado y que se cierre el modal -->
+					<!-- FIXME: Revisarlo - Ingresar precio que le acomode -->
+					<div *ngIf="message.value.text == 'dislike-price'">
+						<label>Ingrese el precio que desea proponer</label>
+						<input 	type="text" formControlName="new_price" 
+							class="form-control form-control-line border-input-custom" placeholder="Ej.: 2000">
+					</div>					
 					
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-outline-info waves-effect text-left">Enviar</button>
+					<!-- TODO: Mensaje enviado y que se cierre el modal -->
 					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
 				</div>
 			</form>
