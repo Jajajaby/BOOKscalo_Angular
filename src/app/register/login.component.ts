@@ -12,7 +12,6 @@ import { auth } from 'firebase';
 // Plugins
 import swal from 'sweetalert';
 
-
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',

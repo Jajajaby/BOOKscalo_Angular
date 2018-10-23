@@ -28,6 +28,8 @@ export class RegisterComponent implements OnInit {
 					private afAuth: AngularFireAuth,
 					public router: Router ) { }
 
+	// TODO: Falta agregar ROLE: USER o ADMIN
+
 	ngOnInit() {
 		this.formulario = 	new FormGroup({
 			name: 			new FormControl(undefined, Validators.required),
