@@ -3,6 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 // INTERFACE
 import { Books } from '../../interface/books.interface';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DatabaseService } from '../../services/database.service';
+// import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-card-book',
@@ -17,6 +19,7 @@ export class CardBookComponent implements OnInit {
 	loading:boolean = true; // muestra y esconde un loading
 	message:any; 
 	uid:string;
+	// date:any;
 	
 	book_modal: Books = {
 		author: 		'', 
@@ -32,7 +35,8 @@ export class CardBookComponent implements OnInit {
 		id: 			'', 
 		comment: 		'', 
 		price: 			0, 
-		images: 		[]
+		images: 		[],
+		date: 			''
 	};
 
 	constructor() {
@@ -60,6 +64,9 @@ export class CardBookComponent implements OnInit {
 			transaction: 	new FormControl(undefined, Validators.required),
 			pref: 			new FormControl(undefined, Validators.required),
 		})
+
+    	// this.date = this.book_modal.date.transform(this.book_modal.date, 'dd/MM/yyyy');
+
 	 }
 
 	 sendMessage(){
