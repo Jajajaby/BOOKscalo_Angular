@@ -11,6 +11,7 @@ export interface Books{
 	original:boolean;
 	transaction:string;
 	user:any;
+	date:any;
 	id:string;
 	uid?:string;
 	price?:number;

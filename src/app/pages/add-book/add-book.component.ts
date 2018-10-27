@@ -31,6 +31,24 @@ export class AddBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		let date = new Date();
+		let dd, mm;
+		let day = date.getDate(); 
+		let month = (date.getMonth().valueOf() + 1); 
+		let year = date.getFullYear();
+
+		if( day < 10 ) {
+			dd = '0'+ day;  
+		} else{ 
+			dd = day;  }
+		if( month < 10 ) { 
+			mm = '0'+ month;
+		} else{ 
+			mm = month;  
+		}
+
+		let today = `${ dd }-${ mm }-${ year }`;
+
 		// Inicializando el formulario
 		this.form = new FormGroup({
 			title: 			new FormControl(undefined, Validators.required),
@@ -44,7 +62,8 @@ export class AddBookComponent implements OnInit {
 			original: 		new FormControl(undefined, Validators.required),
 			num_page: 		new FormControl(undefined, Validators.required),
 			comment: 		new FormControl(undefined),
-			images: 		new FormControl(undefined)
+			images: 		new FormControl(undefined),
+			date: 			new FormControl(today)
 		});
 
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
@@ -52,7 +71,8 @@ export class AddBookComponent implements OnInit {
 
 	// Función para guardar el libro
 	saveBook(){
-		// Si la formulario no es valida no se realiza la carga a firebase
+		// Si el formulario no es valido no se realiza la carga a firebase
+		console.log(this.form.value);
 		if( this.form.invalid ){
 			swal(
 				'Debe completar el formulario', 
@@ -67,12 +87,11 @@ export class AddBookComponent implements OnInit {
 			images: this.urlImgs
 		});
 
-		// Se guarda la formulario para validar
+		// Se guarda el formulario para validar
 		let book:Books = this.form.value; 
 
 		// Para agregar la referencia al usuario propietario del libro
 		let user = JSON.parse( localStorage.getItem( "user" ));
-		// book.user = "users/" + user.uid;
 		book.user = this._dbService.afs.collection('users').doc(user.uid).ref;
 
 		// Para que el id de Firebase sea el uid + fechahora 
@@ -138,7 +157,10 @@ export class AddBookComponent implements OnInit {
 					() => { // todo salio bien
 					   uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
 							url.push( downloadURL );
-							if(i === files.length-1) swal('Exito', 'Imagenes cargadas con exito', 'success');
+							if(i === files.length-1) {
+								console.log("Imagenes cargadas");
+								swal('Éxito', 'Imagenes cargadas con exito', 'success');
+							}
 				  		});
 					}
 				);

@@ -182,6 +182,8 @@
 					</div><br>
 
 					<!-- Preferences -->
+					<!-- FIXME: Esto tiene que ser una tabla u otra cosa, no un select -->
+					<!-- https://www.lawebdelprogramador.com/foros/JavaScript/1495600-seleccionar-una-o-varias-filas-de-una-tabla-y-marcar-o-desmarcar-el-check-de-la-fila-correspondiente.html -->
 					<label>Seleccione la preferencia que más le acomode</label>
 					<select class="form-control" formControlName="pref">
 						<option value="{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}" *ngFor="let p of book_modal.user.preferences">{{ p.subway_station }} {{ p.day }} {{ p.hour  }}</option>
