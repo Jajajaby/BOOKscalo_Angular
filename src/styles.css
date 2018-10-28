@@ -69,3 +69,9 @@
 .login-box{
     width: 580px !important;
 }
+.ms-container {
+    width: 600px;
+}
+.ms-container .ms-list{
+    height: 330px;
+}

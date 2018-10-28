@@ -18,55 +18,37 @@
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="name"
-											class="form-control"
-											type="text"
-											placeholder="Nombre">
+									<input formControlName="name" class="form-control" type="text" placeholder="Nombre">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="last_name1"
-											class="form-control"
-											type="text"
-											placeholder="Apellido paterno">
+									<input formControlName="last_name1" class="form-control" type="text" placeholder="Apellido paterno">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="last_name2"
-											class="form-control"
-											type="text"
-											placeholder="Apellido materno">
+									<input formControlName="last_name2" class="form-control" type="text" placeholder="Apellido materno">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="rut"
-											class="form-control"
-											type="text"
-											placeholder="RUT">
+									<input formControlName="rut" class="form-control"	type="text" placeholder="RUT">
 								</div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input  formControlName="phone"
-											class="form-control"
-											type="text"
-											placeholder="Teléfono opcional">
+									<input formControlName="phone" class="form-control" type="text" placeholder="Teléfono opcional">
 								</div>
 							</div>
 
 							<div class="form-group text-center m-t-20">
 								<div class="col-xs-12">
 									<button (click)="register_pages='page_2'" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">Continuar
-									<script type="text/javascript">
-										swal("Good job!", "You clicked the button!", "success");
-									</script>
 									</button>
 								</div>
 							</div>
@@ -85,35 +67,45 @@
 						<!-- ================================================================================== -->
 						<!-- PAGE 2													                                      							-->
 						<!-- ================================================================================== -->
-						<div *ngSwitchCase="'page_2'">Datos de preferencias
+						<div *ngSwitchCase="'page_2'">
 
-							<div class="form-group border-input-custom"
-								 name="original">
-								<label>Géneros de interés</label>
-								<select class="form-control"
-										formControlName="favs_genres"
-										multiple>
-									<option value="Aventura">Aventura</option>
-									<option value="Biográfica">Biográfica</option>
-									<option value="Ciencia Ficción">Ciencia Ficción</option>
-									<option value="Deportes">Deportes</option>
-									<option value="Economía / Marketing">Economía / Marketing</option>
-									<option value="Enciclopedia / Manual">Enciclopedia / Manual</option>
-									<option value="Erótica">Erótica</option>
-									<option value="Ficción / Realidad">Ficción / Realidad</option>
-									<option value="Hogar">Hogar</option>
-									<option value="Infantil">Infantil</option>
-									<option value="Investigación">Investigación</option>
-									<option value="Lectura especializada">Lectura especializada</option>
-									<option value="Policial/ Thriller">Policial/ Thriller</option>
-									<option value="Política">Política</option>
-									<option value="Romántica">Romántica</option>
-									<option value="Sociedad">Sociedad</option>
-									<option value="Terror">Terror</option>
-									<option value="Viajes">Viajes / Cultura</option>
-									<option value="Otros géneros">Otros géneros</option>
-								</select>
+							<h2>Géneros de interés</h2>
+							<!-- <div class="ms-container" id="ms-pre-selected-options">
+								<div class="ms-selectable" formControlName="favs_genres">
+									<ul class="ms-list" tabindex="-1">
+										<li class="ms-elem-selectable" *ngFor="let c of categories">
+											<span>{{ c }}</span>
+										</li>
+									</ul>
+								</div>
+								<div class="ms-selection">
+									<ul class="ms-list" tabindex="-1">
+										<li class="ms-elem-selection" id="-1300566143-selection" style="display: none;"><span>elem 1</span></li>
+										<li selected="" class="ms-elem-selection ms-selected" id="-1300566140-selection" style=""><span>elem 4</span></li>
+										<li selected="" class="ms-elem-selection ms-hover" id="-1300566139-selection" style="display: none;"><span>elem 5</span></li>
+										<li class="ms-elem-selection ms-hover" id="-1300566137-selection" style="display: none;"><span>elem 7</span></li>
+									</ul>
+								</div>
+							</div> -->
+
+							<h5 class="box-title">Pre-selected options</h5>
+							<div class="ms-container" id="ms-pre-selected-options">
+									<div class="ms-selectable" >
+										<select class="ms-list" multiple='multiple' formControlName="favs_genres">
+												<option value='elem_4' class="ms-elem-selectable" *ngFor="let c of categories"> {{ c }} </option>
+												<option value='elem_4' selected>elem 4</option>
+										</select>
+									</div>
+									<div class="ms-selection">
+										<select class="ms-list" multiple='multiple' formControlName="favs_genres">
+												<option value='elem_4' class="ms-elem-selection" *ngFor="let c of categories"> {{ c }} </option>
+												<option value='elem_4' selected>elem 4</option>
+										</select>
+									</div>
 							</div>
+
+
+
 
 							<div class="form-group text-center m-t-20">
 								<div class="col-xs-12">
@@ -129,29 +121,20 @@
 
 							<div class="form-group ">
 								<div class="col-xs-12">
-									<input  formControlName="email"
-											class="form-control"
-											type="text"
-											placeholder="Correo electrónico">
+									<input formControlName="email" class="form-control" type="text" placeholder="Correo electrónico">
 								</div>
 							</div>
 
 							<div class="form-group ">
 								<div class="col-xs-12">
-									<input  formControlName="password"
-											class="form-control"
-											type="password"
-											placeholder="Contraseña">
+									<input formControlName="password" class="form-control" type="password" placeholder="Contraseña">
 								</div>
 							</div>
 
 							<div class="form-group">
-							  	<div class="col-xs-12">
-									<input 	formControlName="password2"
-										   	class="form-control"
-										   	type="password"
-										   	placeholder="Confirme su contraseña">
-							  	</div>
+									<div class="col-xs-12">
+									<input formControlName="password2" class="form-control" type="password" placeholder="Confirme su contraseña">
+									</div>
 							</div>
 
 							<div class="form-group" *ngIf="formulario['errors']?.areEquals && !formulario.pristine">
@@ -159,17 +142,15 @@
 							</div>
 
 							<div class="form-group row">
-					          	<div class="col-md-12">
-						            <div class="checkbox checkbox-primary p-t-0">
-						              	<input 	formControlName="conditions"
-						                     	id="checkbox-signup"
-						                     	type="checkbox">
-						              	<label for="checkbox-signup"> Acepto los
-						                	<a href="#">Términos y condiciones</a>
-						              	</label>
-						            </div>
-					          	</div>
-					        </div>
+							 	<div class="col-md-12">
+									<div class="checkbox checkbox-primary p-t-0">
+									 	<input 	formControlName="conditions" id="checkbox-signup" type="checkbox">
+										<label for="checkbox-signup"> Acepto los
+											<a href="#">Términos y condiciones</a>
+										</label>
+									</div>
+								</div>
+							</div>
 
 							<div class="form-group text-center m-t-20">
 								<div class="col-xs-12">
