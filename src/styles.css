@@ -56,3 +56,16 @@
     width: 80vw;
     height: 300%;
 }
+
+.container-fluid{
+    margin-left: 1% !important;
+}
+
+
+/* REGISTER */
+.login-register{
+    padding: 5% 0 !important;
+}
+.login-box{
+    width: 580px !important;
+}
