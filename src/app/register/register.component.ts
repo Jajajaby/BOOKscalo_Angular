@@ -38,19 +38,19 @@ export class RegisterComponent implements OnInit {
 		// FIXME: Revisar los comentarios
 		this.formulario = 	new FormGroup({
 			name: 			new FormControl(undefined, Validators.required),
-			// name: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'),
+			// name: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'), Validators.minLength(2)]),
 			last_name1: 	new FormControl(undefined, Validators.required),
-			// last_name1: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'),
+			// last_name1: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'), Validators.minLength(2)]),
 			last_name2: 	new FormControl(undefined, Validators.required),
-			// last_name2: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'),
+			// last_name2: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'), Validators.minLength(2)]),
 			rut: 			new FormControl(undefined, Validators.required),
 			// rut: 			new FormControl(undefined, [Validators.required, Validators.pattern('\d{1,2}\.?\d{3}\.?\d{3}\-?[0-9kK]{1}'),
 			phone: 			new FormControl(undefined),
-			// phone: 			new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$')]),
-			// FIXME: Cömo se hace el Validators de un arreglo? jeje
+			// phone: 			new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
+			// FIXME: Cómo se hace el Validators de un arreglo? jeje
 			favs_genres: 	new FormControl([''], Validators.required),
 			// FIXME: Está validado esto?
-			email: 			new FormControl(undefined, Validators.required),
+			email: 			new FormControl(undefined, [Validators.required, Validators.minLength(8)]),
 			password: 		new FormControl(undefined, Validators.required),
 			password2: 		new FormControl(undefined, Validators.required),
 			conditions: 	new FormControl(false, Validators.required),
