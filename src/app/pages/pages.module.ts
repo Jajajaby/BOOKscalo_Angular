@@ -20,9 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { LibraryComponent } from './library/library.component';
-import { OtherUserComponent } from './other-user/other-user.component';
 import { OneBookComponent } from './one-book/one-book.component';
-import { PreferencesComponent } from './preferences/preferences.component';
 
 // ANGULARFIRE2
 import { AngularFireModule } from 'angularfire2';
@@ -47,12 +45,10 @@ import { SearchComponent } from './search/search.component';
     HomeComponent,
     MessagesComponent,
     LibraryComponent,
-    OtherUserComponent,
     OneBookComponent,
     PagesComponent,
     BooksComponent,
     CardBookComponent,
-    PreferencesComponent,
     SearchComponent
   ],
   imports: [
