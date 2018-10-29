@@ -69,42 +69,26 @@
 						<!-- ================================================================================== -->
 						<div *ngSwitchCase="'page_2'">
 
-							<h2>Géneros de interés</h2>
-							<!-- <div class="ms-container" id="ms-pre-selected-options">
-								<div class="ms-selectable" formControlName="favs_genres">
-									<ul class="ms-list" tabindex="-1">
-										<li class="ms-elem-selectable" *ngFor="let c of categories">
-											<span>{{ c }}</span>
-										</li>
-									</ul>
+							<h2>Categorías de interés</h2>
+							<h5 class="box-title">Pre-selected options</h5>
+							<!-- FIXME: Que no se cierre cuando no hay nada -->
+							<!-- FIXME: Que quede bonito y no se quede chiquito -->
+							<div class="ms-container" id="ms-pre-selected-options">
+								<div class="ms-selectable" >
+									<select class="ms-list" multiple='multiple' formControlName="favs_genres">
+										<option [value]='c' class="ms-elem-selectable" 
+											*ngFor="let c of categories; let i = index;"
+											(click)="addCategory(i)"> {{ c }} </option>
+									</select>
 								</div>
 								<div class="ms-selection">
-									<ul class="ms-list" tabindex="-1">
-										<li class="ms-elem-selection" id="-1300566143-selection" style="display: none;"><span>elem 1</span></li>
-										<li selected="" class="ms-elem-selection ms-selected" id="-1300566140-selection" style=""><span>elem 4</span></li>
-										<li selected="" class="ms-elem-selection ms-hover" id="-1300566139-selection" style="display: none;"><span>elem 5</span></li>
-										<li class="ms-elem-selection ms-hover" id="-1300566137-selection" style="display: none;"><span>elem 7</span></li>
-									</ul>
+									<select class="ms-list" multiple='multiple' formControlName="favs_genres">
+										<option [value]='sc' class="ms-elem-selection" 
+											*ngFor="let sc of selected_categories; let i = index;"
+											(click)="removeCategory(i)"> {{ sc }} </option>
+									</select>
 								</div>
-							</div> -->
-
-							<h5 class="box-title">Pre-selected options</h5>
-							<div class="ms-container" id="ms-pre-selected-options">
-									<div class="ms-selectable" >
-										<select class="ms-list" multiple='multiple' formControlName="favs_genres">
-												<option value='elem_4' class="ms-elem-selectable" *ngFor="let c of categories"> {{ c }} </option>
-												<option value='elem_4' selected>elem 4</option>
-										</select>
-									</div>
-									<div class="ms-selection">
-										<select class="ms-list" multiple='multiple' formControlName="favs_genres">
-												<option value='elem_4' class="ms-elem-selection" *ngFor="let c of categories"> {{ c }} </option>
-												<option value='elem_4' selected>elem 4</option>
-										</select>
-									</div>
 							</div>
-
-
 
 
 							<div class="form-group text-center m-t-20">

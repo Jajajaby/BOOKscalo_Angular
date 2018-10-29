@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
 	register_pages:string = "page_1";
 
 	categories:Array<string>=["Antiguedades y Coleccionables", "Arquitectura", "Arte", "Artes Escénicas", "Biografía y Autobiografía", "Casa y Hogar", "Ciencia", "Ciencias Políticas", "Ciencias Sociales", "Cocina", "Comida y Bebestibles", "Colecciones Literarias", "Cómics y Novelas Gráficas", "Computación e Internet", "Crímenes", "Crítica Literaria", "Cuerpo", "Mente y Espíritu", "Deportes y Recreación", "Drama", "Educación", "Estudio de Lenguas Extranjeras", "Ensayos Académicos", "Familia y Relaciones", "Ficción", "Ficción Adolescente", "Ficción para Niños", "Filosofía", "Fotografía", "Historia y Geografía", "Humor", "Jardinería", "Juegos", "Lectura escolar", "Lengua y Literatura", "Leyes", "Manualidades y Hobbies", "Mascotas y Animales", "Matemáticas", "Medicina", "Música", "Naturaleza y Aire libre", "Negocios y Economía", "Niños y Jóvenes", "Papelería", "Poesía", "Psicología", "Religión y Espiritualidad", "Salud y Bienestar", "Tecnología", "Transporte", "Viajes"];
+	selected_categories:string[] = [];
 
 	constructor( 	private _dbService:DatabaseService,
 					private afAuth: AngularFireAuth,
@@ -39,7 +40,7 @@ export class RegisterComponent implements OnInit {
 			last_name2: 	new FormControl(undefined, Validators.required),
 			rut: 			new FormControl(undefined, Validators.required),
 			phone: 			new FormControl(undefined),
-			favs_genres: 	new FormControl(undefined, Validators.required),
+			favs_genres: 	new FormControl([''], Validators.required),
 			email: 			new FormControl(undefined, Validators.required),
 			password: 		new FormControl(undefined, Validators.required),
 			password2: 		new FormControl(undefined, Validators.required),
@@ -79,7 +80,7 @@ export class RegisterComponent implements OnInit {
 						last_name1: 	form.last_name1.toLowerCase(),
 						last_name2: 	form.last_name2.toLowerCase(),
 						email: 			form.email.toLowerCase(),
-						favs_genres:	form.favs_genres,
+						favs_genres:	this.selected_categories, 
 						phone: 			form.phone,
 						ranking: 		0,
 						google:        	false
@@ -107,5 +108,16 @@ export class RegisterComponent implements OnInit {
 		}else{
 			console.log("No funcionó")
 		}
+	}
+
+	addCategory(index:number){
+		this.selected_categories.push(this.categories[index]);
+		this.categories.splice(index, 1);				
+		// TODO: Ordenar por index
+	}
+
+	removeCategory(index:number){
+		this.categories.push(this.selected_categories[index]);
+		this.selected_categories.splice(index, 1);				
 	}
 }
