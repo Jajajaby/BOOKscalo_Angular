@@ -34,13 +34,22 @@ export class RegisterComponent implements OnInit {
 	// TODO: Falta agregar ROLE: USER o ADMIN
 
 	ngOnInit() {
+		// FIXME: Validar
+		// FIXME: Revisar los comentarios
 		this.formulario = 	new FormGroup({
 			name: 			new FormControl(undefined, Validators.required),
+			// name: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'),
 			last_name1: 	new FormControl(undefined, Validators.required),
+			// last_name1: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'),
 			last_name2: 	new FormControl(undefined, Validators.required),
+			// last_name2: 			new FormControl(undefined, [Validators.required, Validators.pattern('^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$)]'),
 			rut: 			new FormControl(undefined, Validators.required),
+			// rut: 			new FormControl(undefined, [Validators.required, Validators.pattern('\d{1,2}\.?\d{3}\.?\d{3}\-?[0-9kK]{1}'),
 			phone: 			new FormControl(undefined),
+			// phone: 			new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$')]),
+			// FIXME: Cömo se hace el Validators de un arreglo? jeje
 			favs_genres: 	new FormControl([''], Validators.required),
+			// FIXME: Está validado esto?
 			email: 			new FormControl(undefined, Validators.required),
 			password: 		new FormControl(undefined, Validators.required),
 			password2: 		new FormControl(undefined, Validators.required),
