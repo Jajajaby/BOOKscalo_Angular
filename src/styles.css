@@ -75,3 +75,18 @@
 .ms-container .ms-list{
     height: 330px;
 }
+
+
+
+/* ADMIN */
+/* @media (max-width: 1023px){
+    .page-wrapper {
+        margin-left: 25px;
+    }
+}
+
+@media (min-width: 768px){
+    .mini-sidebar .page-wrapper {
+        margin-left: 0 !important;
+    }
+} */
