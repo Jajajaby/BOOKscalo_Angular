@@ -9,6 +9,8 @@ import { SharedModule } from '../shared/shared.module';
 
 //SERVICIOS
 import { DatabaseService } from "./../services/database.service";
+import { DateService } from "./../services/date.service";
+
 
 // RUTAS
 import { PAGES_ROUTES } from './pages.routes';
@@ -36,6 +38,7 @@ import { environment } from '../../environments/environment';
 import { BooksComponent } from '../components/books/books.component';
 import { CardBookComponent } from '../components/card-book/card-book.component';
 import { SearchComponent } from './search/search.component';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -63,7 +66,8 @@ import { SearchComponent } from './search/search.component';
     AngularFireAuthModule
   ],
   providers: [
-    DatabaseService
+    DatabaseService,
+    DateService
   ],
   bootstrap: [PagesComponent]
 })
