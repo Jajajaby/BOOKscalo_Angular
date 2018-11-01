@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
 			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
 				.then( (resp:any) => {
 
-					// Se guarda la formulario para validar
+					// Se guarda el formulario para validar
 					const USER:Users = {
 						uid: 			resp.user.uid,
 						rut: 			form.rut,
