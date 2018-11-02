@@ -34,7 +34,7 @@
 			</li>
 		</ul>
 		<!-- ================================================================================================== -->
-		<!-- Profile options																																										-->
+		<!-- End profile options																																										-->
 		<!-- ================================================================================================== -->
 
 
@@ -102,7 +102,7 @@
 			<!-- Edit profile																																										-->
 			<!-- ============================================================================================== -->
 			<div *ngSwitchCase="'edit_profile'">
-				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">
+				<div style="background-color: #FFFFFF;" class="tab-pane active" role="tabpanel" aria-expanded="true">
 					<div class="card-body">
 						<form class="form-horizontal form-material">
 							<div class="form-group">
@@ -316,7 +316,7 @@
 							<!-- Inicio col 1 -->
 							<div class="form-group col-12">
 								<label>Estación de metro</label>
-								<!-- <select formControlName="subway_station" id="subway_station" class="form-control">
+								<select [(ngModel)]="profile.preferences.subway_station" id="subway_station" class="form-control">
 									<optgroup label="Línea 1">
 										<option value="República">República</option>
 										<option value="Los Héroes">Los Héroes</option>
@@ -341,11 +341,11 @@
 										<option value="Parque Bustamante">Parque Bustamante</option>
 										<option value="Santa Isabel">Santa Isabel</option>
 									</optgroup>
-								</select> -->
+								</select>
 							</div>
 								<div class="form-group col-md-6">
 								<label>Tipo de elemento</label>
-								<!-- <select formControlName="day" id="day" class="form-control">
+								<select [(ngModel)]="profile.preferences.day" id="day" class="form-control">
 									<option value="Lunes">Lunes</option>
 									<option value="Martes">Martes</option>
 									<option value="Miércoles">Miércoles</option>
@@ -353,12 +353,12 @@
 									<option value="Viernes">Viernes</option>
 									<option value="Sábado">Sábado</option>
 									<option value="Domingo">Domingo</option>
-								</select> -->
+								</select>
 							</div>
 
 							<div class="form-group col-md-6">
 								<label>Hora</label>
-								<!-- <input type="email" [(ngModel)]="profile.preferences.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour"> -->
+								<input type="email" [(ngModel)]="profile.preferences.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
 							</div>
 						</div>
 					</form>

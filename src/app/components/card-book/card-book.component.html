@@ -7,7 +7,7 @@
 </div>
 
 <!-- ============================================================================== -->
-<!-- Card book 																		-->
+<!-- Card book 																																			-->
 <!-- ============================================================================== -->
 <div class="container-fluid">
 	<div class="row">
@@ -52,13 +52,8 @@
 <!-- ====================================================================== -->
 <!-- Modal show book														-->
 <!-- ====================================================================== -->
-<div 	class="modal fade bs-example-modal-lg"
-		tabindex="-1"
-		role="dialog"
-		id="showBook"
-		aria-labelledby="myLargeModalLabel"
-		aria-hidden="true"
-		style="display: none;">
+<div 	class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="showBook"	aria-labelledby="myLargeModalLabel"
+			aria-hidden="true" style="display: none;">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -141,7 +136,7 @@
 				</div>
 			</div>
 			<!-- ====================================================================== -->
-			<!-- End profile collapse													-->
+			<!-- End profile collapse																										-->
 			<!-- ====================================================================== -->
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
@@ -150,27 +145,22 @@
 	</div>
 </div>
 <!-- ====================================================================== -->
-<!-- End modal show book													-->
+<!-- End modal show book																										-->
 <!-- ====================================================================== -->
 
 
 <!-- ====================================================================== -->
-<!-- Modal contact owner													-->
+<!-- Modal contact owner																										-->
 <!-- ====================================================================== -->
-<div 	class="modal fade bs-example-modal-lg"
-		tabindex="-1"
-		role="dialog"
-		id="contactOwner"
-		aria-labelledby="myLargeModalLabel"
-		aria-hidden="true"
-		style="display: none;">
+<div 	class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="contactOwner"
+			aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title" id="myLargeModalLabel"> Contactar dueño/a </h4>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
-			<form [formGroup]="message" (ngSubmit)="sendMessage()">
+			<form [formGroup]="form" (ngSubmit)="sendMessage()">
 				<div class="modal-body">
 					<!-- Transaction -- Ambos -->
 					<div *ngIf="book_modal.transaction == 'Ambos'" >
@@ -186,7 +176,8 @@
 					<!-- https://www.lawebdelprogramador.com/foros/JavaScript/1495600-seleccionar-una-o-varias-filas-de-una-tabla-y-marcar-o-desmarcar-el-check-de-la-fila-correspondiente.html -->
 					<label>Seleccione la preferencia que más le acomode</label>
 					<select class="form-control" formControlName="pref">
-						<option value="{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}" *ngFor="let p of book_modal.user.preferences">{{ p.subway_station }} {{ p.day }} {{ p.hour  }}</option>
+						<option value="{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}" *ngFor="let p of book_modal.user.preferences">{{ p.subway_station }} - {{ p.day }} - {{ p.hour  }}</option>
+						<option value="dislike_preferences">Ninguna me acomoda</option>
 					</select><br>
 					<!-- <div class="table-responsive">
 						<table class="table color-table info-table">
@@ -214,38 +205,91 @@
 						</table>
 					</div> -->
 					<br>
-					<!-- Message -- Venta -->
-					<div *ngIf="book_modal.transaction == 'Venta' || message.value.transaction == 'sale'">
-						<label>Elija el mensaje a enviar</label>
-						<select class="form-control" formControlName="text">
-							<option value="transaction">Deseo establecer la transacción</option>
-							<option value="message">Deseo contactarte personalmente</option>
-							<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
-							<option value="dislike-price">No me acomoda el precio</option>
-						</select>
-					</div>
 					
-					<!-- Message -- Intercambio -->
-					<div *ngIf="book_modal.transaction == 'Intercambio' || message.value.transaction == 'exchange'">
-						<label>Elija el mensaje a enviar</label>
-						<select class="form-control" formControlName="text">
-							<option value="transaction">Deseo establecer la transacción</option>
-							<option value="message">Deseo contactarte personalmente</option>
-							<option value="dislike-preferences">No me acomodan las preferencias de horario</option>
-						</select>
+					<!-- Custom preferences -->
+					<div *ngIf="form.value.pref === 'dislike_preferences'">
+						<label>Seleccione el horario que desea proponer</label>
+						<div class="row">
+							<!-- Station -->
+							<div class="form-group col-4">
+								<label>Estación de metro</label>
+								<!-- TODO: Arreglar esa huea rancia fjdksljfklsdjglksjgks -->
+								<select formControlName="station" id="subway_station" class="form-control">
+									<optgroup label="Línea 1">
+										<option value="República">República</option>
+										<option value="Los Héroes">Los Héroes</option>
+										<option value="La Moneda">La Moneda</option>
+										<option value="Universidad de Chile">Universidad de Chile</option>
+										<option value="Santa Lucía">Santa Lucía</option>
+										<option value="Universidad Católica">Universidad Católica</option>
+										<option value="Baquedano">Baquedano</option>
+										<option value="Salvador">Salvador</option>
+										<option value="Manuel Montt">Manuel Montt</option>
+										<option value="Pedro de Valdivia">Pedro de Valdivia</option>
+										<option value="Los Leones">Los Leones</option>
+										<option value="Tobalaba">Tobalaba</option>
+									</optgroup>
+									<optgroup label="Línea 5">
+										<option value="Quinta Normal">Quinta Normal</option>
+										<option value="Cumming">Cumming</option>
+										<option value="Santa Ana">Santa Ana</option>
+										<option value="Plaza de Armas">Plaza de Armas</option>
+										<option value="Bellas Artes">Bellas Artes</option>
+										<option value="Baquedano">Baquedano</option>
+										<option value="Parque Bustamante">Parque Bustamante</option>
+										<option value="Santa Isabel">Santa Isabel</option>
+									</optgroup>
+								</select>
+							</div>
+							<!-- Day -->
+							<div class="form-group col-md-4">
+									<label>Tipo de elemento</label>
+									<select formControlName="day" id="day" class="form-control">
+										<option value="Lunes">Lunes</option>
+										<option value="Martes">Martes</option>
+										<option value="Miércoles">Miércoles</option>
+										<option value="Jueves">Jueves</option>
+										<option value="Viernes">Viernes</option>
+										<option value="Sábado">Sábado</option>
+										<option value="Domingo">Domingo</option>
+									</select>
+							</div>
+							<!-- Hour -->
+							<div class="form-group col-md-4">
+								<label>Hora</label>
+								<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">
+							</div>
+						</div>
 					</div>
+
+					<!-- Message -->
+					<div >
+						<label>Seleccione el mensaje a enviar</label>
+						<select class="form-control" formControlName="text">
+							<option value="Deseo establecer la transacción">Deseo establecer la transacción</option>
+							<option *ngIf="book_modal.transaction == 'Venta' || form.value.transaction == 'sale'" 
+								value="dislike-price">No me acomoda el precio</option>
+							<option value="new_text">Deseo escribirle un mensajes personalmente</option>
+						</select>
+					</div><br>
 					
-					<!-- FIXME: Revisarlo - Ingresar precio que le acomode -->
-					<div *ngIf="message.value.text == 'dislike-price'">
+					<!-- Custom price -->
+					<div *ngIf="form.value.text == 'dislike-price'">
 						<label>Ingrese el precio que desea proponer</label>
 						<input 	type="text" formControlName="new_price" 
 							class="form-control form-control-line border-input-custom" placeholder="Ej.: 2000">
-					</div>					
-					
+					</div>
+
+					<!-- Custom message -->
+					<div *ngIf="form.value.text == 'new_text'">
+						<label>Mensaje</label>
+						<input 	type="text" formControlName="new_text" 
+							class="form-control form-control-line border-input-custom" placeholder="">
+					</div>
 				</div>
+
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-outline-info waves-effect text-left">Enviar</button>
-					<!-- TODO: Mensaje enviado y que se cierre el modal -->
+					<button type="submit" class="btn btn-outline-info waves-effect text-left" data-dismiss="modal">Enviar</button>
 					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
 				</div>
 			</form>
@@ -253,5 +297,5 @@
 	</div>
 </div>
 <!-- ====================================================================== -->
-<!-- End modal contact owner												sdas-->
+<!-- End modal contact owner																								-->
 <!-- ====================================================================== -->

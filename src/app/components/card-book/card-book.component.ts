@@ -1,10 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 // INTERFACE
-import { Books } from '../../interface/books.interface';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Books, Predet_Message } from '../../interface/books.interface';
+
 import { DatabaseService } from '../../services/database.service';
-// import { DatePipe } from '@angular/common';
+import { DateService } from '../../services/date.service';
+
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-card-book',
@@ -17,9 +20,9 @@ export class CardBookComponent implements OnInit {
 	
 	books:any[]; // array con los books a mostrar
 	loading:boolean = true; // muestra y esconde un loading
-	message:any; 
+	form:any; 
 	uid:string;
-	// date:any;
+	today:any;
 	
 	book_modal: Books = {
 		author: 		'', 
@@ -39,7 +42,8 @@ export class CardBookComponent implements OnInit {
 		date: 			''
 	};
 
-	constructor() {
+	constructor(	private _date:DateService,
+					private _dbService:DatabaseService) {
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
 	}
 
@@ -59,21 +63,59 @@ export class CardBookComponent implements OnInit {
 			}
 		}, 2000);
 
-		this.message = new FormGroup({
+		this.form = new FormGroup({
 			text: 			new FormControl(undefined, Validators.required),
 			transaction: 	new FormControl(undefined, Validators.required),
 			pref: 			new FormControl(undefined, Validators.required),
-			new_price:		new FormControl(0)
+			new_preference: new FormControl(''),
+			station: 		new FormControl(''),
+			hour: 			new FormControl(''),
+			day: 			new FormControl(''),
+			new_price:		new FormControl(0),
+			new_text:		new FormControl(''),
 		})
-
-    	// this.date = this.book_modal.date.transform(this.book_modal.date, 'dd/MM/yyyy');
-
 	 }
 
-	 sendMessage(){
-		 console.log(this.message.valid);
-		 console.log(this.message.value);
-		 
-	 }
+	sendMessage(){
+		let predet_Message:Predet_Message = {
+			transaction:		this.form.value.transaction,
+			pref: 				this.form.value.pref,
+			text:				this.form.value.text,
+			date:				this._date.actual_date(),
+			book:				this.book_modal,
+			uid_owner:			this.book_modal.user.uid,
+			uid_interested:		this.uid,
+			status:				false,
+			price:				this.book_modal.price
+		}
+
+		// Si no le acomoda la preferencia horaria
+		if ( this.form.value.pref === 'dislike_preferences' ){
+			let new_preferences:any =  {
+				station: 	this.form.value.station,
+				day: 		this.form.value.day, 
+				hour: 		this.form.value.hour, 
+			};
+			predet_Message.pref = new_preferences;
+		}
+
+		// Si no le acomoda el precio
+		if ( this.form.value.text === 'dislike-price' ){
+			predet_Message.price = this.form.value.price;
+		}
+
+		// Si no le acomoda el mensaje predeterminado
+		if ( this.form.value.text === 'new_text' ){
+			predet_Message.text = this.form.value.new_text
+		}
+
+		console.log(this.form.valid);
+		console.log(this.form.value);
+		console.log(predet_Message);
+
+		this._dbService.addData('messages-transaction', predet_Message)
+			.then( () => swal('Mensaje enviado', 'Su mensaje ha sido enviado con éxito', 'success') )
+			.catch( () => swal('Error', 'Su mensaje no ha podido enviarse, vuelva a intentarlo', 'error') );
+	}
 
 }
