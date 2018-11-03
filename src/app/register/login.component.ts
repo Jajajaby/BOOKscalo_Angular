@@ -59,26 +59,33 @@ export class LoginComponent implements OnInit {
 				.then( (resp) => {
 					const USER = resp.user;
 
-					let userStorage = {
-						uid: USER.uid,
-						email: USER.email
-					};
-
-					if( this.formulario.value['rememberMe'] ){
-						localStorage.setItem('email', USER.email);
-					}else {
-						localStorage.removeItem('email');
-					}
-
-					localStorage.setItem('user', JSON.stringify(userStorage));
-					localStorage.setItem('session', JSON.stringify({
-						rememberMe: this.formulario.value['rememberMe'],
-						session: true
-					}));
-					
-					this.router.navigate(['/home']);
+					this._db.getDataQuery('users', 'uid', '==', USER.uid)
+						.valueChanges()
+						.subscribe( resp => {
+							let userStorage = {
+								uid: USER.uid,
+								email: USER.email,
+								name: resp[0].name,
+								last_name1: resp[0].last_name1,
+								last_name2: resp[0].last_name2
+							};
+		
+							if( this.formulario.value['rememberMe'] ){
+								localStorage.setItem('email', USER.email);
+							}else {
+								localStorage.removeItem('email');
+							}
+		
+							localStorage.setItem('user', JSON.stringify(userStorage));
+							localStorage.setItem('session', JSON.stringify({
+								rememberMe: this.formulario.value['rememberMe'],
+								session: true
+							}));
+							
+							this.router.navigate(['/home']);
+						});
 				})
-				.catch()
+				.catch( () => console.log('error') )
 		}
 	}
 }

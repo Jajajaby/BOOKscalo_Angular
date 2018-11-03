@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 // INTERFACE
-import { Books, Predet_Message } from '../../interface/books.interface';
+import { Books, Predet_Message, Users } from '../../interface/books.interface';
 
 // SERVICIOS
 import { DatabaseService } from '../../services/database.service';
@@ -22,7 +22,7 @@ export class CardBookComponent implements OnInit {
 	books:any[]; // array con los books a mostrar
 	loading:boolean = true; // muestra y esconde un loading
 	form:any; 
-	uid:string;
+	actual_user:any;
 	today:any;
 	
 	book_modal: Books = {
@@ -45,7 +45,8 @@ export class CardBookComponent implements OnInit {
 
 	constructor(	private _date:DateService,
 					private _dbService:DatabaseService) {
-		this.uid = JSON.parse(localStorage.getItem('user')).uid;
+		this.actual_user = JSON.parse(localStorage.getItem('user'));
+		console.log(this.actual_user);
 	}
 
 	ngOnInit() {
@@ -78,14 +79,17 @@ export class CardBookComponent implements OnInit {
 	 }
 
 	sendMessage(){
+
+		console.log(this.actual_user.Users);
+
 		let predet_Message:Predet_Message = {
 			transaction:		this.form.value.transaction,
 			pref: 				this.form.value.pref,
 			text:				this.form.value.text,
 			date:				this._date.actual_date(),
 			book:				this.book_modal,
-			uid_owner:			this.book_modal.user.uid,
-			uid_interested:		this.uid,
+			user_owner:			this.book_modal.user.uid,
+			uid_interested:		this.actual_user,
 			status:				false,
 			price:				this.book_modal.price
 		}

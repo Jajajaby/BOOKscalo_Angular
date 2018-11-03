@@ -21,9 +21,6 @@ export class MessagesComponent implements OnInit {
 				this.messages = [];
 				this.messages = data;
 				console.log(this.messages);
-				console.log(this.messages[0]);
-				// Provisorio jiji
-				// this.messages = this.messages[0];
 				console.log(this.messages.length);
 			});
 	}

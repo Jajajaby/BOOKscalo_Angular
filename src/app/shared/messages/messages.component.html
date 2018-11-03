@@ -11,11 +11,11 @@
 		<ul>
 			<li>
 				<!-- TODO: Contar mensajes sin leer -->
-  			<div class="drop-title">Tienes {{ messages.length }} mensajes</div>
+  			<div class="drop-title">Tienes {{ messages.length }} mensaje/s</div>
 			</li>
 			<li>
-				<div class="message-center ps ps--theme_default ps--active-y" data-ps-id="5d9236dd-5d99-76c4-56fe-c7629b8cdc1b">
-						<!-- *ngFor="let m of messages; let index = index;"> -->
+				<div class="message-center ps ps--theme_default ps--active-y" data-ps-id="5d9236dd-5d99-76c4-56fe-c7629b8cdc1b"
+						*ngFor="let m of messages; let i = index;">
 					<a href="#">
 						<div class="user-img">
 							<img alt="user" class="img-circle" src="../assets/images/users/1.jpg">
@@ -23,7 +23,7 @@
 							<!-- online es verde, busy es rojo, away es naranjo, offline es naranjo -->
 						</div>
 						<div class="mail-contnet">
-							<h5>Persona 1 </h5>
+							<h5> {{ m[i].name }} </h5>
 							<span class="mail-desc">Just see the my admin!</span>
 							<span class="time">9:30 AM</span>
 						</div>

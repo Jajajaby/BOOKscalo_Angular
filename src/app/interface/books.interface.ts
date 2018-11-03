@@ -40,8 +40,8 @@ export interface Predet_Message{
 	text:				string;
 	date:				any;
 	book:				any;
-	uid_owner:			string;
-	uid_interested:		string;
+	user_owner:			any;
+	uid_interested:		Users;
 	status:				boolean;
 	price?:				number;
 };
