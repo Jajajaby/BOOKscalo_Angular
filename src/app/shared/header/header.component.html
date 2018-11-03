@@ -134,92 +134,22 @@
 				<!-- Messages																												-->
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
-					<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle waves-effect waves-dark" data-toggle="dropdown" href="" id="2">
-						<i class="mdi mdi-email"></i>
-						<div class="notify">
-							<span class="heartbit"></span>
-							<span class="point"></span>
-						</div>
-					</a>
-					<div aria-labelledby="2" class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown">
-						<ul>
-							<li>
-								<div class="drop-title">You have 4 new messages</div>
-							</li>
-							<li>
-									<div class="message-center ps ps--theme_default ps--active-y" data-ps-id="5d9236dd-5d99-76c4-56fe-c7629b8cdc1b">
-									<a href="#">
-										<div class="user-img"><img alt="user" class="img-circle" 							src="../assets/images/users/1.jpg">
-											<span class="profile-status online pull-right"></span>
-										</div>
-										<div class="mail-contnet">
-											<h5>Pavan kumar</h5>
-											<span class="mail-desc">Just see the my admin!</span>
-											<span class="time">9:30 AM</span>
-										</div>
-									</a>
-									<a href="#">
-										<div class="user-img">
-											<img alt="user" class="img-circle" src="../assets/images/users/2.jpg">
-											<span class="profile-status busy pull-right"></span>
-										</div>
-										<div class="mail-contnet">
-											<h5>Sonu Nigam</h5>
-											<span class="mail-desc">I've sung a song! See you at</span>
-											<span class="time">9:10 AM</span>
-										</div>
-									</a>
-									<a href="#">
-										<div class="user-img">
-											<img alt="user" class="img-circle" src="../assets/images/users/3.jpg">
-											<span class="profile-status away pull-right"></span>
-										</div>
-										<div class="mail-contnet">
-											<h5>Arijit Sinh</h5>
-											<span class="mail-desc">I am a singer!</span>
-											<span class="time">9:08 AM</span>
-										</div>
-									</a>
-									<a href="#">
-										<div class="user-img">
-											<img alt="user" class="img-circle" src="../assets/images/users/4.jpg">
-											<span class="profile-status offline pull-right"></span>
-										</div>
-										<div class="mail-contnet">
-											<h5>Pavan kumar</h5>
-											<span class="mail-desc">Just see the my admin!</span>
-											<span class="time">9:02 AM</span>
-										</div>
-									</a>
-									<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-										<div class="ps__scrollbar-x" style="left: 0px; width: 0px;" tabindex="0"></div>
-									</div>
-									<div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;">
-										<div class="ps__scrollbar-y" style="top: 0px; height: 0px;" tabindex="0"></div>
-									</div>
-									<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-										<div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-									</div>
-									<div class="ps__scrollbar-y-rail" style="top: 0px; height: 200px; right: 0px;">
-										<div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 119px;"></div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<a class="nav-link text-center" href="javascript:void(0);">
-									<strong>See all e-Mails</strong>
-									<i class="fa fa-angle-right"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+						<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle waves-effect waves-dark" 
+								data-toggle="dropdown" href="" id="2">
+							<i class="mdi mdi-email"></i>
+							<div class="notify">
+								<span class="heartbit"></span>
+								<span class="point"></span>
+							</div>
+						</a>
+						<app-messages></app-messages>
 				</li>
 				<!-- ============================================================== -->
-				<!-- End messages 														-->
+				<!-- End messages 																									-->
 				<!-- ============================================================== -->
 
 				<!-- ============================================================== -->
-				<!-- Add book 														-->
+				<!-- Add book 																											-->
 				<!-- ============================================================== -->
 				<li class="nav-item">
 					<a [routerLink]="['/addBook']" class="nav-link waves-effect waves-dark">
@@ -228,7 +158,7 @@
 
 				</li>
 				<!-- ============================================================== -->
-				<!-- End Add book 													-->
+				<!-- End Add book 																									-->
 				<!-- ============================================================== -->
 
 				<!-- ============================================================== -->

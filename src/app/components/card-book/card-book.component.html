@@ -1,10 +1,13 @@
-<!-- TODO: TIENE QUE ABRIR MODAL CON EL LIBRO O PÁGINA CON CONTACTO PARA HACER LA TRANSACCIÓN -->
-
-<!-- LOADER -->
+<!-- ============================================================================== -->
+<!-- Loader 																																				-->
+<!-- ============================================================================== -->
 <div *ngIf="loading" class="loader-contenedor">
 		<h3> <i class="fa fa-refresh fa-2x fa-spin"></i> </h3>
 		<p> Buscando libros... </p>
 </div>
+<!-- ============================================================================== -->
+<!-- End loader 																																		-->
+<!-- ============================================================================== -->
 
 <!-- ============================================================================== -->
 <!-- Card book 																																			-->
@@ -27,8 +30,9 @@
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						</a>
 					 </div>
-					<!-- CARROUSEL BOOK IMAGES -->
+					<!-- END CARROUSEL BOOK IMAGES -->
 			
+					<!-- TEXT CARD -->
 					<div class="card-body">
 						<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>
 						<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
@@ -44,6 +48,7 @@
 								class="btn btn-outline-info col-md-6" data-toggle="modal" 
 								data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>
 					</div>
+					<!-- END TEXT CARD -->
 				</div>
 			</div>
 	</div>

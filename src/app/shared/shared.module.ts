@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 // Componentes
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MessagesComponent } from './messages/messages.component';
 // import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
    ],
    declarations: [
       HeaderComponent,
-      SidebarComponent
+      SidebarComponent,
+      MessagesComponent
       // NopagefoundComponent
    ],
    exports: [
