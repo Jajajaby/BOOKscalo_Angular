@@ -315,7 +315,7 @@
 							<!-- Inicio col 1 -->
 							<div class="form-group col-12">
 								<label>Estación de metro</label>
-								<select [(ngModel)]="preferences_modal.subway_station" id="subway_station" class="form-control">
+								<select name="subway_station" [(ngModel)]="preferences_modal.subway_station" class="form-control">
 									<optgroup label="Línea 1">
 										<option value="República">República</option>
 										<option value="Los Héroes">Los Héroes</option>
@@ -344,7 +344,7 @@
 							</div>
 								<div class="form-group col-md-6">
 								<label>Tipo de elemento</label>
-								<select [(ngModel)]="preferences_modal.day" id="day" class="form-control">
+								<select name="day" [(ngModel)]="preferences_modal.day"  class="form-control">
 									<option value="Lunes">Lunes</option>
 									<option value="Martes">Martes</option>
 									<option value="Miércoles">Miércoles</option>
@@ -357,7 +357,7 @@
 
 							<div class="form-group col-md-6">
 								<label>Hora</label>
-								<input type="email" [(ngModel)]="preferences_modal.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
+								<input type="email" name="hour" [(ngModel)]="preferences_modal.hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
 							</div>
 						</div>
 					</form>
