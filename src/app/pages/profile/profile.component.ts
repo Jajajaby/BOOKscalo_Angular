@@ -18,8 +18,8 @@ export class ProfileComponent implements OnInit {
 	user_profile: any;
 	form:FormGroup;
 	preferences:any; 
-	p_selected:any; 
-	preference_modal:any;
+	p_selected:any;
+	preferences_modal:any;
 
   	constructor( private _dbService:DatabaseService ) {
 		let user = JSON.parse( localStorage.getItem( "user" ) );

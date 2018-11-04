@@ -172,8 +172,7 @@
 										<td> {{ p.hour }} </td>
 										<td class="text-nowrap">
 											<!-- TODO: Falta hacer que esto funcione -->
-											<a data-toggle="modal"  data-target="#editPreferences"
-												(click)="preference_modal = p">
+											<a data-toggle="modal" data-target="#editPreferences" (click)="preferences_modal = p">
 												<i class="fa fa-pencil text-inverse m-r-10"></i>
 											</a>
 											<a data-toggle="modal" data-target="#deletePreferences">
@@ -184,7 +183,9 @@
 								</tbody>
 							</table>
 						</div>
-						<button type="button" class="btn btn-outline-info" data-toggle="modal"
+						<button type="button"
+								class="btn btn-outline-info"
+								data-toggle="modal"
 								data-target="#addPreferences">Agregar nueva preferencia</button>
 					</div>
 				</div>
@@ -213,7 +214,7 @@
 				</div>
 			</div>
 			<!-- ============================================================================================== -->
-			<!-- End delete user account																																				-->
+			<!-- End delete user account																		-->
 			<!-- ============================================================================================== -->
 		</div>
 	</div>
@@ -237,7 +238,7 @@
 						<!-- Inicio col 1 -->
 						<div class="form-group col-12">
 							<label>Estación de metro</label>
-							<select [(ngModel)]="preference_modal.subway_station" id="subway_station" class="form-control">
+							<select formControlName="subway_station" id="subway_station" class="form-control">
 								<optgroup label="Línea 1">
 									<option value="República">República</option>
 									<option value="Los Héroes">Los Héroes</option>
@@ -266,7 +267,7 @@
 						</div>
 							<div class="form-group col-md-6">
 							<label>Tipo de elemento</label>
-							<select [(ngModel)]="profile.preferences.day" id="day" class="form-control">
+							<select formControlName="day" id="day" class="form-control">
 								<option value="Lunes">Lunes</option>
 								<option value="Martes">Martes</option>
 								<option value="Miércoles">Miércoles</option>
@@ -279,7 +280,7 @@
 
 						<div class="form-group col-md-6">
 							<label>Hora</label>
-							<input [(ngModel)]="profile.preferences.hour" class="form-control" type="time" value="12:00" id="hour">
+							<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">
 						</div>
 					</div>
 				</form>
@@ -314,7 +315,7 @@
 							<!-- Inicio col 1 -->
 							<div class="form-group col-12">
 								<label>Estación de metro</label>
-								<select [(ngModel)]="profile.preferences.subway_station" id="subway_station" class="form-control">
+								<select [(ngModel)]="preferences_modal.subway_station" id="subway_station" class="form-control">
 									<optgroup label="Línea 1">
 										<option value="República">República</option>
 										<option value="Los Héroes">Los Héroes</option>
@@ -343,7 +344,7 @@
 							</div>
 								<div class="form-group col-md-6">
 								<label>Tipo de elemento</label>
-								<select [(ngModel)]="profile.preferences.day" id="day" class="form-control">
+								<select [(ngModel)]="preferences_modal.day" id="day" class="form-control">
 									<option value="Lunes">Lunes</option>
 									<option value="Martes">Martes</option>
 									<option value="Miércoles">Miércoles</option>
@@ -356,7 +357,7 @@
 
 							<div class="form-group col-md-6">
 								<label>Hora</label>
-								<input type="email" [(ngModel)]="profile.preferences.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
+								<input type="email" [(ngModel)]="preferences_modal.hour" name="hour" class="form-control form-control-line" type="time" value="12:00" id="hour">
 							</div>
 						</div>
 					</form>
