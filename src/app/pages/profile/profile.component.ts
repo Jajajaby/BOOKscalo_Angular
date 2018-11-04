@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
 	form:FormGroup;
 	preferences:any; 
 	p_selected:any; 
+	preference_modal:any;
 
   	constructor( private _dbService:DatabaseService ) {
 		let user = JSON.parse( localStorage.getItem( "user" ) );
@@ -74,7 +75,6 @@ export class ProfileComponent implements OnInit {
 	}
 
 	addPreference(){
-		
 		// Si la formulario no es valida no se realiza la carga a firebase
 		if( this.form.invalid ){
 			swal(
@@ -105,29 +105,6 @@ export class ProfileComponent implements OnInit {
 	aaa(){
 		console.log(this.form.value);
 	}
-
-	// saveBook(){
-
-
-	// 	// Se guarda el libro 
-	// 	this._dbService.addData('books', book)
-	// 		.then( () => {
-	// 			console.log("se guardó el libro"); 
-	// 			swal('Libro registrado con éxito', book.title, 'success');
-	// 			this.router.navigate([ '/home' ]);
-	// 		})
-	// 		.catch( (err) => {
-	// 			console.log("error al guardar libros", err) 
-	// 			swal("Error", "No se ha podido guardar el nuevo libro", "warning");
-	// 		});
-	// }
-
-
-
-
-
-
-
 
 	deleteAccount(){
 

@@ -172,8 +172,8 @@
 										<td> {{ p.hour }} </td>
 										<td class="text-nowrap">
 											<!-- TODO: Falta hacer que esto funcione -->
-											<a data-toggle="modal" data-target="#editPreferences">
-											<!-- (click)="book_modal = book"> -->
+											<a data-toggle="modal"  data-target="#editPreferences"
+												(click)="preference_modal = p">
 												<i class="fa fa-pencil text-inverse m-r-10"></i>
 											</a>
 											<a data-toggle="modal" data-target="#deletePreferences">
@@ -213,7 +213,7 @@
 				</div>
 			</div>
 			<!-- ============================================================================================== -->
-			<!-- End delete user account																		-->
+			<!-- End delete user account																																				-->
 			<!-- ============================================================================================== -->
 		</div>
 	</div>
@@ -237,7 +237,7 @@
 						<!-- Inicio col 1 -->
 						<div class="form-group col-12">
 							<label>Estación de metro</label>
-							<select formControlName="subway_station" id="subway_station" class="form-control">
+							<select [(ngModel)]="preference_modal.subway_station" id="subway_station" class="form-control">
 								<optgroup label="Línea 1">
 									<option value="República">República</option>
 									<option value="Los Héroes">Los Héroes</option>
@@ -266,7 +266,7 @@
 						</div>
 							<div class="form-group col-md-6">
 							<label>Tipo de elemento</label>
-							<select formControlName="day" id="day" class="form-control">
+							<select [(ngModel)]="profile.preferences.day" id="day" class="form-control">
 								<option value="Lunes">Lunes</option>
 								<option value="Martes">Martes</option>
 								<option value="Miércoles">Miércoles</option>
@@ -279,7 +279,7 @@
 
 						<div class="form-group col-md-6">
 							<label>Hora</label>
-							<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">
+							<input [(ngModel)]="profile.preferences.hour" class="form-control" type="time" value="12:00" id="hour">
 						</div>
 					</div>
 				</form>
@@ -369,7 +369,7 @@
 		</div>
 	</div>
 <!-- ================================================================================================== -->
-<!-- End modal edit preferences																				-->
+<!-- End modal edit preferences																																					-->
 <!-- ================================================================================================== -->
 
 

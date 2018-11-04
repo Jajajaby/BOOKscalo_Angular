@@ -79,9 +79,6 @@ export class CardBookComponent implements OnInit {
 	 }
 
 	sendMessage(){
-
-		console.log(this.actual_user.Users);
-
 		let predet_Message:Predet_Message = {
 			transaction:		this.form.value.transaction,
 			pref: 				this.form.value.pref,

@@ -40,11 +40,11 @@
 						<p class="card-text">Fecha publicación: {{ book.date }}</p>
 						<p class="card-text" *ngIf="book.transaction == 'Ambos' || book.transaction == 'Venta'">Price: ${{ book.price }}</p>
 						<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
-						<button *ngIf="book.uid === uid" class="btn btn-outline-info col-md-12" data-toggle="modal" 
+						<button *ngIf="book.uid === actual_user.uid" class="btn btn-outline-info col-md-12" data-toggle="modal" 
 								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
-						<button *ngIf="book.uid !== uid" class="btn btn-outline-info col-md-6" data-toggle="modal" 
+						<button *ngIf="book.uid !== actual_user.uid" class="btn btn-outline-info col-md-6" data-toggle="modal" 
 								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
-						<button *ngIf="book.uid !== uid" 
+						<button *ngIf="book.uid !== actual_user.uid" 
 								class="btn btn-outline-info col-md-6" data-toggle="modal" 
 								data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>
 					</div>
@@ -294,7 +294,7 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-outline-info waves-effect text-left" data-dismiss="modal">Enviar</button>
+					<button type="submit" class="btn btn-outline-info waves-effect text-left">Enviar</button>
 					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
 				</div>
 			</form>

@@ -14,8 +14,8 @@ export class MessagesComponent implements OnInit {
 
 	constructor( private _dbService:DatabaseService ) { 
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
-
-		this._dbService.getData('messages-transaction')
+		this.messages = [];
+		this._dbService.getDataQuery('messages-transaction', 'user_owner', '==', this.uid)
 			.valueChanges()
 			.subscribe( data => {
 				this.messages = [];
