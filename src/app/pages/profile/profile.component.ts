@@ -22,6 +22,12 @@ export class ProfileComponent implements OnInit {
 	preferences_modal:any;
 
   	constructor( private _dbService:DatabaseService ) {
+			this.preferences_modal = {
+				hour: '',
+				day: '',
+				subway_station: ''
+			};
+
 		let user = JSON.parse( localStorage.getItem( "user" ) );
 		  
 		this._dbService.getDataQuery( "users", "uid", "==", user.uid)
@@ -34,9 +40,7 @@ export class ProfileComponent implements OnInit {
 				}))
 			).subscribe( data => {
 				this.profile = data[0];
-				console.log(this.profile);
 				this.preferences =  this.profile.preferences;
-				console.log(this.preferences);
 			});
  	}
 
@@ -76,7 +80,7 @@ export class ProfileComponent implements OnInit {
 
 	addPreference(){
 		// Si la formulario no es valida no se realiza la carga a firebase
-		if( this.form.invalid ){
+		if ( this.form.invalid ) {
 			swal(
 				'Debe completar el formulario', 
 				'Debe ingresar todos los campos de este formulario',
