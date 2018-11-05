@@ -7,6 +7,7 @@ import { Books } from "../../interface/books.interface";
 
 // SERVICE
 import { DatabaseService } from "../../services/database.service";
+import { DateService } from 'src/app/services/date.service';
 
 // ANGULARFIRE2
 import { AngularFireStorage } from 'angularfire2/storage';
@@ -24,32 +25,14 @@ export class AddBookComponent implements OnInit {
 	form:FormGroup;
 	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
 	uid:string; // uid del usuario
+	today:any;
 
 	constructor( 	private _dbService:DatabaseService,
-					private storage: AngularFireStorage,
+					private _date:DateService,
 					public router: Router ) { 			
 	}
 
 	ngOnInit() {
-		let date = new Date();
-		let dd, mm;
-		let day = date.getDate(); 
-		let month = (date.getMonth().valueOf() + 1); 
-		let year = date.getFullYear();
-
-		if( day < 10 ) {
-			dd = '0'+ day;  
-		} else{ 
-			dd = day;  }
-		if( month < 10 ) { 
-			mm = '0'+ month;
-		} else{ 
-			mm = month;  
-		}
-
-		let today = `${ dd }-${ mm }-${ year }`;
-
-		// Inicializando el formulario
 		this.form = new FormGroup({
 			title: 			new FormControl(undefined, Validators.required),
 			author: 		new FormControl(undefined, Validators.required),
@@ -63,9 +46,9 @@ export class AddBookComponent implements OnInit {
 			num_page: 		new FormControl(undefined, Validators.required),
 			comment: 		new FormControl(undefined),
 			images: 		new FormControl(undefined),
-			date: 			new FormControl(today)
+			date: 			new FormControl(this._date.actual_date())
 		});
-
+		console.log(this._date.actual_date());
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
 	}
 
