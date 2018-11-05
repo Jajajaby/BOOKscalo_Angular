@@ -32,7 +32,7 @@ export interface Users{
 	preferences?:	Array<string>;
 	commune?:		string;
 	phone?:			string;
-	ranking?:		number;
+	// ranking?:		number;
 };
 
 export interface Predet_Message{

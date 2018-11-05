@@ -20,17 +20,18 @@ export class ProfileComponent implements OnInit {
 	preferences:any; 
 	p_selected:any;
 	preferences_modal:any;
+	count_book:any;
 
   	constructor( private _dbService:DatabaseService ) {
-			this.preferences_modal = {
-				hour: '',
-				day: '',
-				subway_station: ''
-			};
+		this.preferences_modal = {
+			hour: '',
+			day: '',
+			subway_station: ''
+		};
 
 		let user = JSON.parse( localStorage.getItem( "user" ) );
 		  
-		this._dbService.getDataQuery( "users", "uid", "==", user.uid)
+		this._dbService.getDataQuery( "users", "uid", "==", user.uid )
 			.snapshotChanges()
 			.pipe(
 				map(actions => actions.map(a => {
@@ -42,6 +43,10 @@ export class ProfileComponent implements OnInit {
 				this.profile = data[0];
 				this.preferences =  this.profile.preferences;
 			});
+
+		this._dbService.getDataQuery( "books", "uid", "==", user.uid )
+			.valueChanges()
+			.subscribe( data => this.count_book = data.length );
  	}
 
   	ngOnInit() {
@@ -53,7 +58,6 @@ export class ProfileComponent implements OnInit {
 			last_name2: 	'', 
 			email: 			[], 
 			phone: 			'', 
-			ranking: 		0,
 			favs_genres:	[], 
 			commune: 		'',
 			status:			true

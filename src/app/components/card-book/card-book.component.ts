@@ -24,6 +24,12 @@ export class CardBookComponent implements OnInit {
 	form:any; 
 	actual_user:any;
 	today:any;
+
+	// FIXME: Hacer que eso funcione, no sé dónde
+	count_book:number;
+	// this._dbService.getDataQuery( "books", "uid", "==", this.book_modal.user.uid )
+	// .valueChanges()
+	// .subscribe( data => this.count_book = data.length );
 	
 	book_modal: Books = {
 		author: 		'', 
