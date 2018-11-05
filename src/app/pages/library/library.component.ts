@@ -34,22 +34,7 @@ export class LibraryComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.book_modal = {
-			author: 		'', 
-			title: 			'', 
-			editorial: 		'', 
-			type: 			'', 
-			genres: 		[], 
-			language: 		'', 
-			num_page: 		'',
-			original: 		false, 
-			transaction: 	'', 	
-			user: 			'', 
-			id: 			'', 
-			comment: 		'', 
-			price: 			0, 
-			images: 		[]
-		};
+		this.resetBook();
 	}
 
 	updateBook(){
@@ -66,10 +51,30 @@ export class LibraryComponent implements OnInit {
 		this._dbService.deleteData( "books", this.book_modal.key )
 			.then( () => {
 				swal('Libro eliminado', 'El libro seleccionado ha sido eliminado', 'success');
+				this.resetBook();
 			})
 			.catch( () => {
 				swal('Error al eliminar', 'Por favor, vuelva a intentarlo', 'error');
 			});
+	}
+
+	resetBook(){
+		this.book_modal = {
+			author: 		'', 
+			title: 			'', 
+			editorial: 		'', 
+			type: 			'', 
+			genres: 		[], 
+			language: 		'', 
+			num_page: 		'',
+			original: 		false, 
+			transaction: 	'', 	
+			user: 			'', 
+			id: 			'', 
+			comment: 		'', 
+			price: 			0, 
+			images: 		[]
+		};
 	}
 
 }
