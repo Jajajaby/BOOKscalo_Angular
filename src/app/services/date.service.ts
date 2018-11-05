@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class DateService {
 
   constructor() { }
-
+// FIXME: Limpiar esto
     // Extrae y retorna la fecha actual con un formato correcto
     actual_date():string{
         let date = new Date();
