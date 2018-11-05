@@ -19,8 +19,8 @@ import swal from 'sweetalert';
 })
 export class LoginComponent implements OnInit {
 
-	formulario:FormGroup;  
-	public usuario:any = {};
+	form:FormGroup;  
+	public user:any = {};
 
 	constructor( private afAuth: AngularFireAuth, 
 					 private router:Router,
@@ -31,15 +31,15 @@ export class LoginComponent implements OnInit {
 				if( !user ){
 					return;
 				}
-				this.usuario.nombre = user.displayName;
-				this.usuario.uid 	= user.uid;
-				this.usuario.email 	= user.email;
+				this.user.name = user.displayName;
+				this.user.uid 	= user.uid;
+				this.user.email 	= user.email;
 		});
 	}
 
 	ngOnInit() {
-		this.formulario = new FormGroup({
-			email: 			new FormControl(localStorage.getItem('email') || undefined, [Validators.required, Validators.email]),
+		this.form = new FormGroup({
+			email: 				new FormControl(localStorage.getItem('email') || undefined, [Validators.required, Validators.email]),
 			password: 		new FormControl(undefined, [Validators.required,Validators.minLength(6)]),
 			rememberMe: 	new FormControl(JSON.parse(localStorage.getItem('session')).rememberMe)
 		});
@@ -54,35 +54,40 @@ export class LoginComponent implements OnInit {
 	}
 	
 	loginUser(){
-		if( this.formulario.valid ){
-			this.afAuth.auth.signInWithEmailAndPassword(this.formulario.value['email'], this.formulario.value['password'])
+		if( this.form.valid ){
+			this.afAuth.auth.signInWithEmailAndPassword(this.form.value['email'], this.form.value['password'])
 				.then( (resp) => {
 					const USER = resp.user;
 
 					this._db.getDataQuery('users', 'uid', '==', USER.uid)
 						.valueChanges()
 						.subscribe( resp => {
-							let userStorage = {
-								uid: USER.uid,
-								email: USER.email,
-								name: resp[0].name,
-								last_name1: resp[0].last_name1,
-								last_name2: resp[0].last_name2
-							};
-		
-							if( this.formulario.value['rememberMe'] ){
-								localStorage.setItem('email', USER.email);
-							}else {
-								localStorage.removeItem('email');
+							if (!resp[0].status){
+								this.afAuth.auth.signOut();
+								swal('Su cuenta no se encuentra activa', 'Si desea activar su cuenta comunicarse con la administradora al siguiente email: JavieraOrmeno.L@gmail.com', 'warning');
+							}else{
+								let userStorage = {
+									uid: USER.uid,
+									email: USER.email,
+									name: resp[0].name,
+									last_name1: resp[0].last_name1,
+									last_name2: resp[0].last_name2
+								};
+			
+								if( this.form.value['rememberMe'] ){
+									localStorage.setItem('email', USER.email);
+								}else {
+									localStorage.removeItem('email');
+								}
+			
+								localStorage.setItem('user', JSON.stringify(userStorage));
+								localStorage.setItem('session', JSON.stringify({
+									rememberMe: this.form.value['rememberMe'],
+									session: true
+								}));
+								
+								this.router.navigate(['/home']);
 							}
-		
-							localStorage.setItem('user', JSON.stringify(userStorage));
-							localStorage.setItem('session', JSON.stringify({
-								rememberMe: this.formulario.value['rememberMe'],
-								session: true
-							}));
-							
-							this.router.navigate(['/home']);
 						});
 				})
 				.catch( () => console.log('error') )

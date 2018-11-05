@@ -34,17 +34,13 @@ export class RegisterComponent implements OnInit {
 	// TODO: Falta agregar ROLE: USER o ADMIN
 
 	ngOnInit() {
-		// FIXME: Validar
-		// FIXME: Revisar los comentarios
 		this.form = 	new FormGroup({
-			// name: 			new FormControl(undefined, Validators.required),
-			name: 			new FormControl(undefined, [Validators.required, Validators.pattern("^([a-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
-			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([a-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
-			last_name2: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([a-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
-			rut: 			new FormControl(undefined, Validators.required),
-			// rut: 			new FormControl(undefined, [Validators.required, Validators.pattern('\d{1,2}\.?\d{3}\.?\d{3}\-?[0-9kK]{1}'),
-			phone: 			new FormControl(undefined),
-			// phone: 			new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
+			name: 			new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
+			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
+			last_name2: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
+			rut: 			new FormControl(undefined, [Validators.required, Validators.pattern('^[.0-9]{6,11}\-?[kK0-9]{1}$')]),
+			phone: 			new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
+			// TODO: Validar los géneros 
 			favs_genres: 	new FormControl([], Validators.required),
 			email: 			new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
 			password: 		new FormControl(undefined, Validators.required),
@@ -92,7 +88,8 @@ export class RegisterComponent implements OnInit {
 						favs_genres:	this.selected_categories, 
 						phone: 			form.phone,
 						ranking: 		0,
-						google:        	false
+						google:        	false,
+						status:			true
 					};
 
 					if( !this.form.value.conditions ){

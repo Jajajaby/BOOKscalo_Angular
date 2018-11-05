@@ -51,6 +51,7 @@ export class DatabaseService {
 		return this.afs.collection<any>( collection ).doc( id ).delete();
 	}
 
+	// TODO: :eyeroll
 	seachBooks ( input:string ){
 		let booksArr:Books[] = [];
 		input = input.toLowerCase();
@@ -64,18 +65,3 @@ export class DatabaseService {
 		return booksArr;
 	}
 }
-
-
-		// consulta con query
-		// this._booksService.getDataQuery('books', 'original', '==', false)
-		// 	.valueChanges()
-		// 	.subscribe( data => console.log(data) );
-
-
-		// Agrega un documento con id personalizado
-		// this._booksService.addDataIdCustom('books', 'libro2', {name: 'hola'})
-		// 	.then();
-
-
-		// Agrega un documento con id generado automaticamente
-		// this._booksService.addData('books', {name: 'aa'}).then();

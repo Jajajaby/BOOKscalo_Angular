@@ -55,7 +55,8 @@ export class ProfileComponent implements OnInit {
 			phone: 			'', 
 			ranking: 		0,
 			favs_genres:	[], 
-			commune: 		''
+			commune: 		'',
+			status:			true
 		};
 
 		this.form = new FormGroup({
@@ -63,8 +64,6 @@ export class ProfileComponent implements OnInit {
 			day: 			new FormControl(undefined, Validators.required),
 			hour: 			new FormControl(undefined, Validators.required)
 		});
-
-
 	}
 	
 	updateProfile(){
@@ -111,7 +110,26 @@ export class ProfileComponent implements OnInit {
 	}
 
 	deleteAccount(){
-
+		this.profile.status = false;
+		this._dbService.updateData( "users", this.profile.key, this.profile )
+			.then( () => {
+				swal('Cuenta eliminada', 'Su cuenta ha sido eliminada con éxito', 'success');
+			})
+			.catch( () => {
+				swal('Error al elminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
+			});
 	}
+
+	deletePreference(index:number){
+		this.profile.preferences.splice(index, 1);
+		this._dbService.updateData( "users", this.profile.key, this.profile )
+			.then( () => {
+				swal('Preferencia eliminada', 'La preferencia seleccionada ha sido eliminada con éxito', 'success');
+			})
+			.catch( () => {
+				swal('Error al eliminar', 'Por favor, vuelva a intentarlo', 'error');
+			});
+	}
+
 
 }

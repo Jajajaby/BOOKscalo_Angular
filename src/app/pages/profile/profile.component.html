@@ -166,7 +166,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr *ngFor="let p of preferences">
+									<tr *ngFor="let p of preferences; let i = index;">
 										<td> {{ p.subway_station }} </td>
 										<td> {{ p.day }} </td>
 										<td> {{ p.hour }} </td>
@@ -175,7 +175,7 @@
 											<a data-toggle="modal" data-target="#editPreferences" (click)="preferences_modal = p">
 												<i class="fa fa-pencil text-inverse m-r-10"></i>
 											</a>
-											<a data-toggle="modal" data-target="#deletePreferences">
+											<a data-toggle="modal" data-target="#deletePreferences" (click)="deletePreference(i)">
 												<i class="fa fa-close text-danger"></i>
 											</a>
 										</td>
@@ -214,7 +214,7 @@
 				</div>
 			</div>
 			<!-- ============================================================================================== -->
-			<!-- End delete user account																		-->
+			<!-- End delete user account																																				-->
 			<!-- ============================================================================================== -->
 		</div>
 	</div>
@@ -363,7 +363,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-outline-info" (click)="editPreference()">Editar</button>
+					<button type="button" class="btn btn-outline-info" (click)="updateProfile()">Editar</button>
 					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Cerrar</button>
 				</div>
 			</div>

@@ -28,6 +28,7 @@ export interface Users{
 	email:			string;
 	favs_genres:	Array<string>;
 	google:			boolean;
+	status: 		boolean;
 	preferences?:	Array<string>;
 	commune?:		string;
 	phone?:			string;
