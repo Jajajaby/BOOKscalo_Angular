@@ -17,7 +17,7 @@ import swal from 'sweetalert';
 })
 export class HeaderComponent implements OnInit {
 
-	profile:any;  
+	profile:any;
 
 	constructor( 	private router:Router, 
 					private auth: AngularFireAuth,
@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
 	}
 
 	searchBook( input:string ){
-		this.router.navigate( ['/search', input] );
+		this.router.navigate(['/search', input]);
 	}
 
 	logout(){

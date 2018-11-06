@@ -1,3 +1,26 @@
-<p>
-  search works!
-</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2> Libros </h2>
+
+      <ul>
+        <li *ngFor="let book of books"> {{ book.title }} </li>
+      </ul>
+    </div>
+
+    <div class="col-4">
+      <h2> Autores </h2>
+      <ul>
+        <li *ngFor="let author of authors"> {{ author.author }} </li>
+      </ul>
+    </div>
+
+    <div class="col-4">
+      <h2> Categorias </h2>
+      <ul>
+        <li *ngFor="let category of categories"> {{ category.title }} </li>
+      </ul>
+    </div>
+  </div>
+</div>
