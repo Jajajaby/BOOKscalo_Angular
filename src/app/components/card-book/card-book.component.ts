@@ -16,9 +16,10 @@ import swal from 'sweetalert';
 })
 export class CardBookComponent implements OnInit {
 
-	@Input() type:string; // el tipo que se mostrara en pantalla
-	@Input() booksHome:any[]; // Trae los books desde el home
-	
+	// Input desde el Home, traen el elemento a mostrar
+	@Input() type:string; 
+	@Input() booksHome:any[]; 
+
 	books:any[]; // array con los books a mostrar
 	loading:boolean = true; // muestra y esconde un loading
 	form:any; 
@@ -71,6 +72,8 @@ export class CardBookComponent implements OnInit {
 			}
 		}, 2000);
 
+		
+
 		this.form = new FormGroup({
 			text: 			new FormControl(undefined, Validators.required),
 			transaction: 	new FormControl(undefined, Validators.required),
@@ -84,6 +87,7 @@ export class CardBookComponent implements OnInit {
 		})
 	 }
 
+	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
 	sendMessage(){
 		let predet_Message:Predet_Message = {
 			transaction:		this.form.value.transaction,
@@ -97,7 +101,6 @@ export class CardBookComponent implements OnInit {
 			price:				this.book_modal.price
 		}
 
-		// Si no le acomoda la preferencia horaria
 		if ( this.form.value.pref === 'dislike_preferences' ){
 			let new_preferences:any =  {
 				station: 	this.form.value.station,
@@ -107,20 +110,15 @@ export class CardBookComponent implements OnInit {
 			predet_Message.pref = new_preferences;
 		}
 
-		// Si no le acomoda el precio
 		if ( this.form.value.text === 'dislike-price' ){
 			predet_Message.price = this.form.value.price;
 		}
 
-		// Si no le acomoda el mensaje predeterminado
 		if ( this.form.value.text === 'new_text' ){
 			predet_Message.text = this.form.value.new_text
 		}
 
-		console.log(this.form.valid);
-		console.log(this.form.value);
-		console.log(predet_Message);
-
+		// Envía el mensaje a la DB.
 		this._dbService.addData('messages-transaction', predet_Message)
 			.then( () => swal('Mensaje enviado', 'Su mensaje ha sido enviado con éxito', 'success') )
 			.catch( () => swal('Error', 'Su mensaje no ha podido enviarse, vuelva a intentarlo', 'error') );

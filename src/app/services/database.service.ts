@@ -50,18 +50,4 @@ export class DatabaseService {
 	public deleteData( collection:string, id:string ){
 		return this.afs.collection<any>( collection ).doc( id ).delete();
 	}
-
-	// TODO: :eyeroll
-	seachBooks ( input:string ){
-		let booksArr:Books[] = [];
-		input = input.toLowerCase();
-
-		for ( let book of this.books ){
-			let title = book.title.toLowerCase();
-			if ( title.indexOf( input ) >= 0 ){
-				booksArr.push( book )
-			}      
-		}
-		return booksArr;
-	}
 }

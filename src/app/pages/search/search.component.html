@@ -3,10 +3,11 @@
   <div class="row">
     <div class="col-4">
       <h2> Libros </h2>
-
       <ul>
         <li *ngFor="let book of books"> {{ book.title }} </li>
       </ul>
+		  <!-- <app-card-book name="nameBook" [booksSearch]="books"></app-card-book> -->
+
     </div>
 
     <div class="col-4">
@@ -14,13 +15,17 @@
       <ul>
         <li *ngFor="let author of authors"> {{ author.author }} </li>
       </ul>
-    </div>
+      <!-- <app-card-book author="author" [authorsSearch]="authors"></app-card-book> -->
 
+    </div>
+    <!-- TODO: Eliminar categorías, cambiar por algo más -->
+    <!-- TODO: Las categorías deben ir en el sidebar -->
     <div class="col-4">
       <h2> Categorias </h2>
       <ul>
         <li *ngFor="let category of categories"> {{ category.title }} </li>
       </ul>
+      <!-- <app-card-book fav_genres="category" [categoriesSearch]="categories"></app-card-book> -->
     </div>
   </div>
 </div>

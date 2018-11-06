@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+// SERVICES 
 import { DatabaseService } from "../../services/database.service";
-
 
 @Component({
 	selector: 'app-search',
@@ -24,9 +24,12 @@ export class SearchComponent implements OnInit {
 			this._dbService.getData('books')
 				.valueChanges()
 				.subscribe( resp => {
-					this.books = this.searchBook(resp, input);
-					this.authors = this.searchAuthor(resp, input);
-					this.categories = this.searchCategories(resp, input);
+					// this.books = this.searchBook(resp, input);
+					// this.authors = this.searchAuthor(resp, input);
+					// this.categories = this.searchCategories(resp, input);
+					this.books = this.search(1, resp, input);
+					this.authors = this.search(2, resp, input);
+					this.categories = this.search(3, resp, input);
 				});
 			
 		});
@@ -69,6 +72,40 @@ export class SearchComponent implements OnInit {
 			}
 		}
 		return searchCategories;
+	}
+
+	// Busca. Si es 1 el libro, 2 autor y 3 categoría.
+	search (i:number, books:any[], search:string){
+		let searchBook = [];
+		let searchAuthor = [];
+		let searchCategories = [];
+
+		for( let book of books ){
+			let title = book.title.toLowerCase();
+			let author = book.author.toLowerCase();
+			let categories = book.genres;
+
+			if( i == 1 && title.indexOf(search.toLowerCase()) >= 0 ) {
+				searchBook.push(book);
+				return searchBook;
+			}else if( i == 2 ){
+				for( let book of books ){
+					if( author.indexOf(search.toLowerCase()) >= 0 ) {
+						searchAuthor.push(book);
+					}
+				}
+				return searchAuthor;
+			}else if( i == 3 ){
+				for( let category of categories ){
+					let cat = category.toLowerCase();
+					if( cat.indexOf(search.toLowerCase()) >= 0 ) {
+						searchCategories.push(book);
+					}
+				}
+				return searchCategories;
+			}
+		}
+		
 	}
 
 }
