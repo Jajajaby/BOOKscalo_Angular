@@ -11,6 +11,7 @@ import { auth } from 'firebase';
 
 // Plugins
 import swal from 'sweetalert';
+import * as firebase from 'firebase';
 
 @Component({
 	selector: 'app-login',
@@ -22,9 +23,9 @@ export class LoginComponent implements OnInit {
 	form:FormGroup;  
 	public user:any = {};
 
-	constructor( private afAuth: AngularFireAuth, 
-					 private router:Router,
-					 private _db:DatabaseService ) { 
+	constructor( 	private afAuth: AngularFireAuth, 
+					private router:Router,
+					private _db:DatabaseService ) { 
 
 			this.afAuth.authState.subscribe( user => {
 				console.log( 'Estado del usuario', user );
@@ -92,5 +93,15 @@ export class LoginComponent implements OnInit {
 				})
 				.catch( () => console.log('error') )
 		}
+	}
+
+	forgotPassword(){
+		let auth = firebase.auth();
+
+		auth.sendPasswordResetEmail(this.form.value['email']).then(function() {
+		// Email sent.
+		}).catch(function(error) {
+		// An error happened.
+		});
 	}
 }
