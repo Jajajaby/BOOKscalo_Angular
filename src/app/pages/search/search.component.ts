@@ -24,12 +24,12 @@ export class SearchComponent implements OnInit {
 			this._dbService.getData('books')
 				.valueChanges()
 				.subscribe( resp => {
-					// this.books = this.searchBook(resp, input);
-					// this.authors = this.searchAuthor(resp, input);
-					// this.categories = this.searchCategories(resp, input);
-					this.books = this.search(1, resp, input);
-					this.authors = this.search(2, resp, input);
-					this.categories = this.search(3, resp, input);
+					this.books = this.searchBook(resp, input);
+					this.authors = this.searchAuthor(resp, input);
+					// this.categories = this.searchOwner(resp, input);
+					// this.books = this.search(1, resp, input);
+					// this.authors = this.search(2, resp, input);
+					// this.categories = this.search(3, resp, input);
 				});
 			
 		});
@@ -59,20 +59,18 @@ export class SearchComponent implements OnInit {
 		return searchAuthor;
 	}
 
-	searchCategories(books:any[], search:string){
-		let searchCategories = [];
+	// TODO: hay que hacer la busqueda por dueño queda pendiente
+	// searchOwner(books:any[], search:string){
+	// 	let searchCategories = [];
 		
-		for( let book of books ){	
-			let categories = book.genres;
-			for( let category of categories ){
-				let cat = category.toLowerCase();
-				if( cat.indexOf(search.toLowerCase()) >= 0 ) {
-					searchCategories.push(book);
-				}
-			}
-		}
-		return searchCategories;
-	}
+	// 	for( let book of books ){	
+	// 		let owner = book.genres;
+	// 			if( owner.indexOf(search.toLowerCase()) >= 0 ) {
+	// 				searchCategories.push(book);
+	// 			}
+	// 	}
+	// 	return searchCategories;
+	// }
 
 	// Busca. Si es 1 el libro, 2 autor y 3 categoría.
 	search (i:number, books:any[], search:string){
