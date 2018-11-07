@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
 
+// INTERFACE
 import { Users } from "../interface/books.interface";
+
+// SERVICES
 import { DatabaseService } from "../services/database.service";
+import { DateService } from '../services/date.service';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -28,21 +32,22 @@ export class RegisterComponent implements OnInit {
 	selected_categories:string[] = [];
 
 	constructor( 	private _dbService:DatabaseService,
-					private afAuth: AngularFireAuth,
-					public router: Router ) { }
+								private _dateService:DateService
+								private afAuth: AngularFireAuth,
+								public router: Router ) { }
 
 	// TODO: Falta agregar ROLE: USER o ADMIN
 
 	ngOnInit() {
-		this.form = 	new FormGroup({
-			name: 			new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
+		this.form = 		new FormGroup({
+			name: 				new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			last_name2: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
-			rut: 			new FormControl(undefined, [Validators.required, Validators.pattern('^[.0-9]{6,11}\-?[kK0-9]{1}$')]),
-			phone: 			new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
+			rut: 					new FormControl(undefined, [Validators.required, Validators.pattern('^[.0-9]{6,11}\-?[kK0-9]{1}$')]),
+			phone: 				new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
 			// TODO: Validar los géneros 
 			favs_genres: 	new FormControl([], Validators.required),
-			email: 			new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
+			email: 				new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
 			password: 		new FormControl(undefined, Validators.required),
 			password2: 		new FormControl(undefined, Validators.required),
 			conditions: 	new FormControl(false, Validators.required),
@@ -79,16 +84,18 @@ export class RegisterComponent implements OnInit {
 
 					// Se guarda el form para validar
 					const USER:Users = {
-						uid: 			resp.user.uid,
-						rut: 			form.rut,
-						name: 			form.name.toLowerCase(),
+						uid: 					resp.user.uid,
+						rut: 					form.rut,
+						name: 				form.name.toLowerCase(),
 						last_name1: 	form.last_name1.toLowerCase(),
 						last_name2: 	form.last_name2.toLowerCase(),
-						email: 			form.email.toLowerCase(),
+						email: 				form.email.toLowerCase(),
 						favs_genres:	this.selected_categories, 
-						phone: 			form.phone,
-						google:        	false,
-						status:			true
+						phone: 				form.phone,
+						google:      	false,
+						status:				true,
+						role:					'normal',
+						created_date: this._dateService.actual_date()
 					};
 
 					if( !this.form.value.conditions ){

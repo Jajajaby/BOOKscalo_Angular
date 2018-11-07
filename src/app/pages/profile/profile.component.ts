@@ -23,30 +23,30 @@ export class ProfileComponent implements OnInit {
 	count_book:any;
 
   	constructor( private _dbService:DatabaseService ) {
-		this.preferences_modal = {
-			hour: '',
-			day: '',
-			subway_station: ''
-		};
+			this.preferences_modal = {
+				hour: '',
+				day: '',
+				subway_station: ''
+			};
 
-		let user = JSON.parse( localStorage.getItem( "user" ) );
-		  
-		this._dbService.getDataQuery( "users", "uid", "==", user.uid )
-			.snapshotChanges()
-			.pipe(
-				map(actions => actions.map(a => {
-					const data = a.payload.doc.data();
-					const key = a.payload.doc.id;
-					return { key, ...data };
-				}))
-			).subscribe( data => {
-				this.profile = data[0];
-				this.preferences =  this.profile.preferences;
-			});
+			let user = JSON.parse( localStorage.getItem( "user" ) );
+				
+			this._dbService.getDataQuery( "users", "uid", "==", user.uid )
+				.snapshotChanges()
+				.pipe(
+					map(actions => actions.map(a => {
+						const data = a.payload.doc.data();
+						const key = a.payload.doc.id;
+						return { key, ...data };
+					}))
+				).subscribe( data => {
+					this.profile = data[0];
+					this.preferences =  this.profile.preferences;
+				});
 
-		this._dbService.getDataQuery( "books", "uid", "==", user.uid )
-			.valueChanges()
-			.subscribe( data => this.count_book = data.length );
+			this._dbService.getDataQuery( "books", "uid", "==", user.uid )
+				.valueChanges()
+				.subscribe( data => this.count_book = data.length );
  	}
 
   	ngOnInit() {

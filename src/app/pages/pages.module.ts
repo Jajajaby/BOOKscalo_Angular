@@ -5,15 +5,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // MODULOS
 import { SharedModule } from '../shared/shared.module';
-// import { PipesModule } from '../pipes/pipes.module';
+
+// PIPES
+import { ThousandsPipe } from '../pipes/thousands.pipe';
 
 //SERVICIOS
 import { DatabaseService } from "./../services/database.service";
 import { DateService } from "./../services/date.service";
 
-
 // RUTAS
 import { PAGES_ROUTES } from './pages.routes';
+
+// ANGULARFIRE2
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// ENVIRONMENT
+import { environment } from '../../environments/environment';
 
 // PAGES-COMPONENTS
 import { PagesComponent } from './pages.component';
@@ -24,22 +34,11 @@ import { MessagesComponent } from './messages/messages.component';
 import { LibraryComponent } from './library/library.component';
 import { OneBookComponent } from './one-book/one-book.component';
 
-// ANGULARFIRE2
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-
-// ENVIRONMENT
-import { environment } from '../../environments/environment';
-// import { RegisterComponent } from './register/register.component';
 
 // COMPONENTS
 import { BooksComponent } from '../components/books/books.component';
 import { CardBookComponent } from '../components/card-book/card-book.component';
 import { SearchComponent } from './search/search.component';
-import { from } from 'rxjs';
-
 
 @NgModule({
   declarations: [
@@ -52,7 +51,8 @@ import { from } from 'rxjs';
     PagesComponent,
     BooksComponent,
     CardBookComponent,
-    SearchComponent
+    SearchComponent,
+    ThousandsPipe
   ],
   imports: [
     BrowserModule,
@@ -68,6 +68,9 @@ import { from } from 'rxjs';
   providers: [
     DatabaseService,
     DateService
+  ],
+  exports:[
+    ThousandsPipe
   ],
   bootstrap: [PagesComponent]
 })

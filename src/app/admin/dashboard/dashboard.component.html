@@ -1,73 +1,151 @@
 <div class="container-fluid">
-	<!-- ============================================================== -->
-	<!-- Stats box -->
-	<!-- ============================================================== -->
+	<!-- =============================================================== -->
+	<!-- Report boxes																										 -->
+	<!-- =============================================================== -->
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-lg-4">
 			<div class="card">
 				<div class="card-body">
 					<div class="d-flex no-block">
 						<div class="m-r-20 align-self-center">
 							<span class="lstick m-r-20"></span>
-							<img src="../assets/images/icon/income.png" alt="Income" />
+							<img src="../assets/images/icon/staff.png" alt="Income" />
 						</div>
 						<div class="align-self-center">
-							<h6 class="text-muted m-t-10 m-b-0">Total Income</h6>
-							<h2 class="m-t-0">953,000</h2>
+							<h6 class="text-muted m-t-10 m-b-0">Total de usuarios</h6>
+							<h2 class="m-t-0">{{ count_users }}</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-			<div class="col-lg-3">
-				<div class="card">
-					<div class="card-body">
-						<div class="d-flex no-block">
-							<div class="m-r-20 align-self-center">
-								<span class="lstick m-r-20"></span>
-								<img src="../assets/images/icon/expense.png" alt="Income" />
-							</div>
-							<div class="align-self-center">
-								<h6 class="text-muted m-t-10 m-b-0">Total Expense</h6>
-								<h2 class="m-t-0">236,000</h2>
-							</div>
+		<div class="col-lg-4">
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex no-block">
+						<div class="m-r-20 align-self-center">
+							<span class="lstick m-r-20"></span>
+							<img src="../assets/images/icon/expense.png" alt="Income" />
+						</div>
+						<div class="align-self-center">
+							<h6 class="text-muted m-t-10 m-b-0">Total de libros</h6>
+							<h2 class="m-t-0">{{ count_books }}</h2>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
-				<div class="card">
-					<div class="card-body">
-						<div class="d-flex no-block">
-							<div class="m-r-20 align-self-center">
-								<span class="lstick m-r-20"></span>
-								<img src="../assets/images/icon/assets.png" alt="Income" />
-							</div>
-							<div class="align-self-center">
-								<h6 class="text-muted m-t-10 m-b-0">Total Assets</h6>
-								<h2 class="m-t-0">987,563</h2>
-							</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex no-block">
+						<div class="m-r-20 align-self-center">
+							<span class="lstick m-r-20"></span>
+							<img src="../assets/images/icon/assets.png" alt="Income" />
+						</div>
+						<div class="align-self-center">
+							<h6 class="text-muted m-t-10 m-b-0">Mensajes enviados</h6>
+							<h2 class="m-t-0">{{ count_messages }}</h2>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
-				<div class="card">
-					<div class="card-body">
-						<div class="d-flex no-block">
-							<div class="m-r-20 align-self-center">
-								<span class="lstick m-r-20"></span>
-								<img src="../assets/images/icon/staff.png" alt="Income" />
-							</div>
-							<div class="align-self-center">
-								<h6 class="text-muted m-t-10 m-b-0">Total Staff</h6>
-								<h2 class="m-t-0">987,563</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
 	</div>
+	<!-- =============================================================== -->
+	<!-- End report boxes																								 -->
+	<!-- =============================================================== -->
+
+	<!-- =============================================================== -->
+	<!-- Users status																										 -->
+	<!-- =============================================================== -->
+	<div class="row">
+		<div class="col-lg-8 col-md-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div>
+							<h4 class="card-title"><span class="lstick"></span>Estado de usuarios</h4>
+						</div>
+						<div class="ml-auto">
+							<select class="custom-select b-0">
+								<option selected="">January 2017</option>
+								<option value="1">February 2017</option>
+								<option value="2">March 2017</option>
+								<option value="3">April 2017</option>
+							</select>
+						</div>
+					</div>
+					<div class="table-responsive m-t-20">
+						<table class="table vm no-th-brd no-wrap pro-of-month">
+							<thead>
+								<tr>
+									<th colspan="2">Usuario</th>
+									<th>Tipo de usuario</th>
+									<th>Estado</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let u of users">
+									<td style="width:50px;"><span class="round">
+										<img src="../assets/images/users/1.jpg" alt="user" width="50"></span>
+									</td>
+									<td>
+										<h6>{{ u.name | titlecase }} {{ u.last_name1 | titlecase }} {{ u.last_name2 | titlecase }}</h6>
+										<small class="text-muted">Creado el: {{ u.created_date }}</small>
+									</td>
+									<td>{{ u.role | titlecase }}</td>
+									<td>
+										<!-- TODO: If u.status == false es label-danger -->
+										<!-- TODO: If u.status == true es label-success -->
+										<!-- Success y danger... label-success, label-danger, label-info -->
+										<span class="label label-success label-rounded">Low</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- =============================================================== -->
+		<!-- End users status																								 -->
+		<!-- =============================================================== -->
+
+		<!-- =============================================================== -->
+		<!-- Donnut chart																										 -->
+		<!-- =============================================================== -->
+		<!-- TODO: Gráfico de dona de libros vs mensajes (?) -->
+		<div class="col-lg-4 col-md-10">
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<h4 class="card-title"><span class="lstick"></span>Website Visit</h4>
+						<ul class="list-inline m-b-0 ml-auto">
+							<li>
+								<h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>Site A view</h6> 
+							</li>
+							<li>
+								<h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10"></i>Site B view</h6> 
+							</li>
+						</ul>
+					</div>
+					<div class="text-center m-t-30">
+						<div class="btn-group " role="group" aria-label="Basic example">
+							<button type="button" class="btn btn-sm btn-secondary">PAGEVIEWS</button>
+							<button type="button" class="btn btn-sm btn-secondary">REFERRALS</button>
+						</div>
+					</div>
+					<div class="website-visitor p-relative m-t-30" style="width:100%;"></div>
+				</div>
+			</div>
+		</div>
+		<!-- =============================================================== -->
+		<!-- End donnut chart																										 -->
+		<!-- =============================================================== -->
+	</div>
+
+
 	<!-- ============================================================== -->
 	<!-- Sales overview chart -->
 	<!-- ============================================================== -->
@@ -149,119 +227,14 @@
 			</div>
 		</div>
 	</div>
-	<!-- ============================================================== -->
-	<!-- Projects of the month -->
-	<!-- ============================================================== -->
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<div class="card">
-				<div class="card-body">
-					<div class="d-flex">
-						<div>
-							<h4 class="card-title"><span class="lstick"></span>Projects of the Month</h4>
-						</div>
-						<div class="ml-auto">
-							<select class="custom-select b-0">
-								<option selected="">January 2017</option>
-								<option value="1">February 2017</option>
-								<option value="2">March 2017</option>
-								<option value="3">April 2017</option>
-							</select>
-						</div>
-					</div>
-					<div class="table-responsive m-t-20">
-						<table class="table vm no-th-brd no-wrap pro-of-month">
-							<thead>
-								<tr>
-									<th colspan="2">Assigned</th>
-									<th>Name</th>
-									<th>Priority</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td style="width:50px;"><span class="round">
-										<img src="../assets/images/users/1.jpg" alt="user" width="50"></span>
-									</td>
-									<td>
-										<h6>Sunil Joshi</h6><small class="text-muted">Web Designer</small>
-									</td>
-									<td>Elite Admin</td>
-									<td><span class="label label-success label-rounded">Low</span></td>
-								</tr>
-								<tr class="active">
-									<td><span class="round"><img src="../assets/images/users/2.jpg" alt="user" width="50"></span></td>
-									<td>
-										<h6>Andrew</h6><small class="text-muted">Project Manager</small></td>
-									<td>Real Homes</td>
-									<td><span class="label label-info label-rounded">Medium</span></td>
-								</tr>
-								<tr>
-									<td><span class="round round-success"><img src="../assets/images/users/3.jpg" alt="user" width="50"></span></td>
-									<td>
-										<h6>Bhavesh patel</h6><small class="text-muted">Developer</small></td>
-									<td>MedicalPro Theme</td>
-									<td><span class="label label-primary label-rounded">High</span></td>
-								</tr>
-								<tr>
-									<td><span class="round round-primary"><img src="../assets/images/users/4.jpg" alt="user" width="50"></span></td>
-									<td>
-									<h6>Nirav Joshi</h6><small class="text-muted">Frontend Eng</small></td>
-									<td>Elite Admin</td>
-									<td><span class="label label-danger label-rounded">Low</span></td>
-								</tr>
-								<tr>
-									<td><span class="round round-warning"><img src="../assets/images/users/5.jpg" alt="user" width="50"></span></td>
-									<td>
-										<h6>Micheal Doe</h6><small class="text-muted">Content Writer</small></td>
-									<td>Helping Hands</td>
-									<td><span class="label label-success label-rounded">High</span></td>
-								</tr>
-								<tr>
-									<td><span class="round round-danger"><img src="../assets/images/users/6.jpg" alt="user" width="50"></span></td>
-									<td>
-										<h6>Johnathan</h6><small class="text-muted">Graphic</small></td>
-									<td>Digital Agency</td>
-									<td><span class="label label-info label-rounded">High</span></td>
-								</tr>
-								<tr>
-									<td><span class="round round-primary"><img src="../assets/images/users/4.jpg" alt="user" width="50"></span></td>
-									<td>
-									<h6>Nirav Joshi</h6><small class="text-muted">Frontend Eng</small></td>
-									<td>Elite Admin</td>
-									<td><span class="label label-danger label-rounded">Low</span></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-6 col-md-12">
-			<div class="card">
-				<div class="card-body">
-					<div class="d-flex">
-						<h4 class="card-title"><span class="lstick"></span>Website Visit</h4>
-						<ul class="list-inline m-b-0 ml-auto">
-							<li>
-								<h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>Site A view</h6> 
-							</li>
-							<li>
-								<h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10"></i>Site B view</h6> 
-							</li>
-						</ul>
-					</div>
-					<div class="text-center m-t-30">
-						<div class="btn-group " role="group" aria-label="Basic example">
-							<button type="button" class="btn btn-sm btn-secondary">PAGEVIEWS</button>
-							<button type="button" class="btn btn-sm btn-secondary">REFERRALS</button>
-						</div>
-					</div>
-					<div class="website-visitor p-relative m-t-30" style="width:100%;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
+
+
+
+
+
+
+
 	<!-- ============================================================== -->
 	<!-- Blog and website visit -->
 	<!-- ============================================================== -->
@@ -338,8 +311,10 @@
 			</div>
 		</div>
 	</div>
+
+
 	<!-- ============================================================== -->
-	<!-- Tod do and profile -->
+	<!-- Todo list 																											-->
 	<!-- ============================================================== -->
 	<div class="row">
 		<div class="col-lg-6 col-xlg-8">
@@ -353,39 +328,41 @@
 							<button class="pull-right btn btn-circle btn-success" data-toggle="modal" data-target="#myModal"><i class="ti-plus"></i></button>
 						</div>
 					</div>
-					<!-- ============================================================== -->
-					<!-- To do list widgets -->
-					<!-- ============================================================== -->
+					
 					<div class="to-do-widget m-t-20">
-						<!-- .modal for add task -->
+						<!-- ============================================================== -->
+						<!-- Modal for add tasks     -->
+						<!-- ============================================================== -->
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title">Add Task</h4>
+										<h4 class="modal-title">Agregar tarea</h4>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
 									</div>
 									<div class="modal-body">
 										<form>
 											<div class="form-group">
-												<label>Task name</label>
-												<input type="text" class="form-control" placeholder="Enter Task Name"> 
+												<label>Nombre de la tarea</label>
+												<input type="text" class="form-control" placeholder="Revisar mensajes"> 
 											</div>
 											<div class="form-group">
-												<label>Assign to</label>
+												<label>Descripción de la tarea</label>
+												<input type="text" class="form-control" placeholder="Revisar la lista de mensajes que están pendientes"> 
+											</div>
+											<div class="form-group">
+												<label>Prioridad</label>
 												<select class="custom-select form-control pull-right">
-													<option selected="">Sachin</option>
-													<option value="1">Sehwag</option>
-													<option value="2">Pritam</option>
-													<option value="3">Alia</option>
-													<option value="4">Varun</option>
+													<option value="Alta">Alta</option>
+													<option value="Media">Media</option>
+													<option value="Baja">Baja</option>
 												</select>
 											</div>
 										</form>
 									</div>
 									<div class="modal-footer">
+										<button type="button" class="btn btn-success" data-dismiss="modal" (click)="addTask()">Submit</button>
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
 									</div>
 							</div>
 							<!-- /.modal-content -->
@@ -402,42 +379,35 @@
 										<span class="label label-rounded label-danger pull-right">Today</span>
 									</label>
 								</div>
-									<ul class="assignedto">
-										<li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
-										<li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
-										<li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-										<li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-									</ul>
-								</li>
-								<li class="list-group-item" data-role="task">
-									<div class="checkbox checkbox-info">
-										<input type="checkbox" id="inputBook" name="inputCheckboxesBook">
-										<label for="inputBook" class=""> 
-											<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span>
-											<span class="label label-primary label-rounded pull-right">1 week </span> 
-										</label>
-									</div>
-									<div class="item-date"> 26 jun 2017</div>
-								</li>
-								<li class="list-group-item" data-role="task">
-									<div class="checkbox checkbox-info">
-										<input type="checkbox" id="inputCall" name="inputCheckboxesCall">
-										<label for="inputCall" class=""> <span>Give Purchase report to</span> <span class="label label-info label-rounded pull-right">Yesterday</span> </label>
-									</div>
-									<ul class="assignedto">
-										<li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-										<li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-									</ul>
-								</li>
-								<li class="list-group-item" data-role="task">
-									<div class="checkbox checkbox-info">
-										<input type="checkbox" id="inputForward" name="inputCheckboxesForward">
-										<label for="inputForward" class=""> 
-											<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span> 
-											<span class="label label-warning label-rounded pull-right">2 weeks</span> 
-										</label>
-									</div>
+							</li>
+							<li class="list-group-item" data-role="task">
+								<div class="checkbox checkbox-info">
+									<input type="checkbox" id="inputBook" name="inputCheckboxesBook">
+									<label for="inputBook" class=""> 
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span>
+										<span class="label label-primary label-rounded pull-right">1 week </span> 
+									</label>
+								</div>
 								<div class="item-date"> 26 jun 2017</div>
+							</li>
+							<li class="list-group-item" data-role="task">
+								<div class="checkbox checkbox-info">
+									<input type="checkbox" id="inputCall" name="inputCheckboxesCall">
+									<label for="inputCall" class=""> 
+										<span>Give Purchase report to</span> 
+										<span class="label label-info label-rounded pull-right">Yesterday</span> 
+									</label>
+								</div>
+							</li>
+							<li class="list-group-item" data-role="task">
+								<div class="checkbox checkbox-info">
+									<input type="checkbox" id="inputForward" name="inputCheckboxesForward">
+									<label for="inputForward" class=""> 
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span> 
+										<span class="label label-warning label-rounded pull-right">2 weeks</span> 
+										</label>
+								</div>
+							<div class="item-date"> 26 jun 2017</div>
 							</li>
 						</ul>
 					</div>
@@ -447,7 +417,6 @@
 		<!-- ============================================================== -->
 		<!-- My contct and feed -->
 		<!-- ============================================================== -->
-		<!-- !contact -->
 		<div class="col-lg-6">
 			<div class="card">
 				<div class="card-body">

@@ -55,7 +55,7 @@
 				   <div class="form-group row" *ngIf="book.transaction == 'Venta' || book.transaction == 'Both'">
 					<label class="control-label text-left col-md-6">Precio:</label>
 					<div class="col-md-6">
-					   <p class="form-control-static"> {{ book.price }} </p>
+					   <p class="form-control-static"> {{ book.price | thousands }} </p>
 					</div>
 				   </div>
 

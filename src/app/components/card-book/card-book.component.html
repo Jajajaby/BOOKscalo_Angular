@@ -1,10 +1,10 @@
 <!-- ============================================================================== -->
 <!-- Loader 																																				-->
 <!-- ============================================================================== -->
-<!-- <div *ngIf="loading" class="loader-contenedor">
+<div *ngIf="loading" class="loader-contenedor">
 	<h3> <i class="fa fa-refresh fa-2x fa-spin"></i> </h3>
 	<p> Buscando libros... </p>
-</div> -->
+</div>
 <!-- ============================================================================== -->
 <!-- End loader 																																		-->
 <!-- ============================================================================== -->
@@ -38,7 +38,7 @@
 						<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>
 						<p class="card-text">Editorial: {{ book.editorial | titlecase }}</p>
 						<p class="card-text">Fecha publicación: {{ book.date }}</p>
-						<p class="card-text" *ngIf="book.transaction == 'Ambos' || book.transaction == 'Venta'">Price: ${{ book.price }}</p>
+						<p class="card-text" *ngIf="book.transaction == 'Ambos' || book.transaction == 'Venta'">Price: ${{ book.price | thousands }}</p>
 						<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
 						<button *ngIf="book.uid === actual_user.uid" class="btn btn-outline-info col-md-12" data-toggle="modal" 
 								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>

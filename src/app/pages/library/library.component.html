@@ -75,7 +75,7 @@
 													*ngIf="book_modal.transaction === 'Venta' || book_modal.transaction === 'Ambos'">
 												<label class="control-label text-left col-md-6">Precio:</label>
 												<div class="col-md-6">
-													<p class="form-control-static"> {{ book_modal.price }} </p>
+													<p class="form-control-static"> ${{ book_modal.price | thousands }} </p>
 												</div>
 											</div>
 										</div>
