@@ -17,40 +17,40 @@
 								<div class="col-xs-12">
 									<input formControlName="name" class="form-control" type="text" placeholder="Nombre">
 								</div>
-								<div *ngIf="form.controls.name.errors?.required"><p class="text-danger">El nombre es requerido</p></div>
-								<div *ngIf="form.controls.name.errors?.pattern"><p class="text-danger">El nombre ingresado no es válido</p></div>
+								<div *ngIf="form.controls['name'].errors?.required"><p class="text-danger">El nombre es requerido</p></div>
+								<div *ngIf="form.controls['name'].errors?.pattern"><p class="text-danger">El nombre ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
 									<input formControlName="last_name1" class="form-control" type="text" placeholder="Apellido paterno">
 								</div>
-								<div *ngIf="form.controls.last_name1.errors?.required"><p class="text-danger">El apellido es requerido</p></div>
-								<div *ngIf="form.controls.last_name1.errors?.pattern"><p class="text-danger">El apellido ingresado no es válido</p></div>
+								<div *ngIf="form.controls['last_name1'].errors?.required"><p class="text-danger">El apellido es requerido</p></div>
+								<div *ngIf="form.controls['last_name1'].errors?.pattern"><p class="text-danger">El apellido ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
 									<input formControlName="last_name2" class="form-control" type="text" placeholder="Apellido materno">
 								</div>
-								<div *ngIf="form.controls.last_name1.errors?.required"><p class="text-danger">El apellido es requerido</p></div>
-								<div *ngIf="form.controls.last_name1.errors?.pattern"><p class="text-danger">El apellido ingresado no es válido</p></div>
+								<div *ngIf="form.controls['last_name1'].errors?.required"><p class="text-danger">El apellido es requerido</p></div>
+								<div *ngIf="form.controls['last_name1'].errors?.pattern"><p class="text-danger">El apellido ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
 									<input formControlName="rut" class="form-control"	type="text" placeholder="RUT">
 								</div>
-								<div *ngIf="form.controls.rut.errors?.required"><p class="text-danger">El RUT es requerido</p></div>
-								<div *ngIf="form.controls.rut.errors?.pattern"><p class="text-danger">El RUT ingresado no es válido</p></div>
+								<div *ngIf="form.controls['rut'].errors?.required"><p class="text-danger">El RUT es requerido</p></div>
+								<div *ngIf="form.controls['rut'].errors?.pattern"><p class="text-danger">El RUT ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
 									<input formControlName="phone" class="form-control" type="text" placeholder="Teléfono opcional">
 								</div>
-								<div *ngIf="form.controls.phone.errors?.required"><p class="text-danger">El teléfono es requerido</p></div>
-								<div *ngIf="form.controls.phone.errors?.pattern"><p class="text-danger">El teléfono ingresado no es válido</p></div>
+								<div *ngIf="form.controls['phone'].errors?.required"><p class="text-danger">El teléfono es requerido</p></div>
+								<div *ngIf="form.controls['phone'].errors?.pattern"><p class="text-danger">El teléfono ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group text-center m-t-20">
@@ -78,8 +78,6 @@
 
 							<h2>Categorías de interés</h2>
 							<h5 class="box-title">Pre-selected options</h5>
-							<!-- FIXME: Que no se cierre cuando no hay nada -->
-							<!-- FIXME: Que quede bonito y no se quede chiquito -->
 							<div class="ms-container" id="ms-pre-selected-options">
 								<div class="ms-selectable">
 									<select class="ms-list contenedor" multiple='multiple' formControlName="favs_genres">
@@ -114,8 +112,8 @@
 								<div class="col-xs-12">
 									<input formControlName="email" class="form-control" type="text" placeholder="Correo electrónico">
 								</div>
-								<div *ngIf="form.controls.email.errors?.required"><p class="text-danger">El email es requerido</p></div>
-								<div *ngIf="form.controls.email.errors?.email"><p class="text-danger">El email ingresado no es válido</p></div>
+								<div *ngIf="form.controls['email'].errors?.required"><p class="text-danger">El email es requerido</p></div>
+								<div *ngIf="form.controls['email'].errors?.email"><p class="text-danger">El email ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group ">
