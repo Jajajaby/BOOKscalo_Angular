@@ -31,19 +31,20 @@ export interface Users{
 	status: 			boolean;
 	role:					string;
 	created_date: any;
+	img?:					any;
 	preferences?:	Array<string>;
 	commune?:			string;
 	phone?:				string;
 };
 
 export interface Predet_Message{
-	transaction:		string;
-	pref: 				any;
-	text:				string;
-	date:				any;
-	book:				any;
-	user_owner:			any;
+	transaction:			string;
+	pref: 						any;
+	text:							string;
+	date:							any;
+	book:							any;
+	user_owner:				any;
 	uid_interested:		Users;
-	status:				boolean;
-	price?:				number;
+	status:						boolean;
+	price?:						number;
 };

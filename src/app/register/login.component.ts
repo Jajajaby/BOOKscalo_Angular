@@ -95,13 +95,12 @@ export class LoginComponent implements OnInit {
 		}
 	}
 
+	// TODO: Cambiar a función de flecha(?)
 	forgotPassword(){
 		let auth = firebase.auth();
 
 		auth.sendPasswordResetEmail(this.form.value['email']).then(function() {
-		// Email sent.
 		}).catch(function(error) {
-		// An error happened.
 		});
 	}
 }

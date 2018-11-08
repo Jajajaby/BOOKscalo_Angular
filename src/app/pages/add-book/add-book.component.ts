@@ -28,8 +28,8 @@ export class AddBookComponent implements OnInit {
 	today:any;
 
 	constructor( 	private _dbService:DatabaseService,
-					private _date:DateService,
-					public router: Router ) { 			
+								private _date:DateService,
+								public router: Router ) { 			
 	}
 
 	ngOnInit() {
@@ -112,7 +112,7 @@ export class AddBookComponent implements OnInit {
 			if( typeValid.indexOf( extension ) <= -1 ){
 				swal(
 					'Error al ingresar imagen',
-					'Extensiones validas [png, jpg, jpeg], vuelva a intentarlo',
+					'Extensiones válidas (png, jpg, jpeg), vuelva a intentarlo',
 					'error'
 				);
 				aux = true;

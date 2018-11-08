@@ -7,6 +7,8 @@ import { DatabaseService } from "../../services/database.service";
 
 import { Users } from '../../interface/books.interface';
 
+import * as firebase from 'firebase';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html'
@@ -21,6 +23,8 @@ export class ProfileComponent implements OnInit {
 	p_selected:any;
 	preferences_modal:any;
 	count_book:any;
+	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
+
 
   	constructor( private _dbService:DatabaseService ) {
 			this.preferences_modal = {
@@ -133,6 +137,53 @@ export class ProfileComponent implements OnInit {
 			.catch( () => {
 				swal('Error al eliminar', 'Por favor, vuelva a intentarlo', 'error');
 			});
+	}
+
+	// Carga las imagenes al storage de Firebase
+	uploadFile(event) {
+		let file = event.target.files;
+		let url = []; // guarda las imagenes correctas para luego subirlas
+		let aux = false; // para que no se cargen imagenes si existe aunque sea 1 mala
+
+		// const separatedFile = file.name.split('.');
+		const extension = file[file.length - 1];
+		console.log(extension.type);
+				
+		const typeValid = ['jpg', 'jpeg', 'png'];
+
+		// Valida las extensiones de las imagenes
+		if( extension.type == 'image/jpg'){
+			swal(
+				'Error al ingresar imagen',
+				'Extensiones válidas (png, jpg, jpeg), vuelva a intentarlo',
+				'error'
+			);
+			aux = true;
+			return;
+		}
+
+		if( !aux ){
+			const storageRef = firebase.storage().ref();
+			let filePath = `${this.profile.uid}-${new Date().valueOf()}`; 
+			// console.log(filePath);
+					 
+			const uploadTask:firebase.storage.UploadTask = storageRef.child(`images/${ filePath }`).put(file)
+
+			uploadTask.on('state_changed', () => {}, // Manejo de carga
+				(error) => { // Manejo de errores
+					console.log('Error al cargar imagen' ,error);
+			  	swal('Error al cargar imagenes', 'Por favor, vueva a intentarlo', 'error');
+				}, 
+				() => { // todo salio bien
+				  uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+					url.push( downloadURL );
+					console.log("Imagenes cargadas");
+					swal('Éxito', 'Imagenes cargadas con exito', 'success');
+		  		});
+				}
+			);
+		this.urlImgs = url;
+		}
 	}
 
 
