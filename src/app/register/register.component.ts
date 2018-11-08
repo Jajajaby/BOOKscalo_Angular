@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
 	selected_categories:string[] = [];
 
 	constructor( 	private _dbService:DatabaseService,
-								private _dateService:DateService
+								private _dateService:DateService,
 								private afAuth: AngularFireAuth,
 								public router: Router ) { }
 

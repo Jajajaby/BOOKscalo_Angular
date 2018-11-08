@@ -60,9 +60,8 @@ export class CardBookComponent implements OnInit {
 	};
 
 	constructor(	private _date:DateService,
-					private _dbService:DatabaseService) {
+								private _dbService:DatabaseService) {
 		this.actual_user = JSON.parse(localStorage.getItem('user'));
-		console.log(this.actual_user);
 	}
 
 	ngOnInit() {

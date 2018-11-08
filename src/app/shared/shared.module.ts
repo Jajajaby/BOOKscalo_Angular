@@ -6,23 +6,21 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MessagesComponent } from './messages/messages.component';
-// import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 @NgModule({
-   imports: [
+    imports: [
       RouterModule,
       CommonModule,
-   ],
-   declarations: [
+    ],
+    declarations: [
       HeaderComponent,
       SidebarComponent,
-      MessagesComponent
-      // NopagefoundComponent
-   ],
-   exports: [
+      MessagesComponent,
+    ],
+    exports: [
       HeaderComponent,
-      SidebarComponent
-      // NopagefoundComponent
-   ]
+      SidebarComponent,
+      MessagesComponent,
+    ]
 })
 export class SharedModule { }

@@ -20,8 +20,6 @@ export class MessagesComponent implements OnInit {
 			.subscribe( data => {
 				this.messages = [];
 				this.messages = data;
-				console.log(this.messages);
-				console.log(this.messages.length);
 			});
 	}
 

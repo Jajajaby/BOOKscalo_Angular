@@ -30,7 +30,6 @@ import { PagesComponent } from './pages.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
-import { MessagesComponent } from './messages/messages.component';
 import { LibraryComponent } from './library/library.component';
 import { OneBookComponent } from './one-book/one-book.component';
 
@@ -45,7 +44,6 @@ import { SearchComponent } from './search/search.component';
     AddBookComponent,
     ProfileComponent,
     HomeComponent,
-    MessagesComponent,
     LibraryComponent,
     OneBookComponent,
     PagesComponent,
