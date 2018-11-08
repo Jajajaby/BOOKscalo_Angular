@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 // INTERFACE
 import { Books } from "../../interface/books.interface";
@@ -23,9 +23,11 @@ import swal from 'sweetalert';
 export class AddBookComponent implements OnInit {
 
 	form:FormGroup;
-	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
-	uid:string; // uid del usuario
+	urlImgs:any[]; // Almacena las rutas de imagenes, para ser guardadas en Storage
+	uid:string; // uid usuario actual
 	today:any;
+	categories:Array<string>=["Antiguedades y Coleccionables", "Arquitectura", "Arte", "Artes Escénicas", "Biografía y Autobiografía", "Casa y Hogar", "Ciencia", "Ciencias Políticas", "Ciencias Sociales", "Cocina", "Comida y Bebestibles", "Colecciones Literarias", "Cómics y Novelas Gráficas", "Computación e Internet", "Crímenes", "Crítica Literaria", "Cuerpo", "Mente y Espíritu", "Deportes y Recreación", "Drama", "Educación", "Estudio de Lenguas Extranjeras", "Ensayos Académicos", "Familia y Relaciones", "Ficción", "Ficción Adolescente", "Ficción para Niños", "Filosofía", "Fotografía", "Historia y Geografía", "Humor", "Jardinería", "Juegos", "Lectura escolar", "Lengua y Literatura", "Leyes", "Manualidades y Hobbies", "Mascotas y Animales", "Matemáticas", "Medicina", "Música", "Naturaleza y Aire libre", "Negocios y Economía", "Niños y Jóvenes", "Papelería", "Poesía", "Psicología", "Religión y Espiritualidad", "Salud y Bienestar", "Tecnología", "Transporte", "Viajes"];
+	selected_categories:string[] = [];
 
 	constructor( 	private _dbService:DatabaseService,
 								private _date:DateService,
@@ -34,27 +36,26 @@ export class AddBookComponent implements OnInit {
 
 	ngOnInit() {
 		this.form = new FormGroup({
-			title: 			new FormControl(undefined, Validators.required),
-			author: 		new FormControl(undefined, Validators.required),
+			title: 				new FormControl(undefined, Validators.required),
+			author: 			new FormControl(undefined, Validators.required),
 			editorial: 		new FormControl(undefined, Validators.required),
-			type: 			new FormControl(undefined, Validators.required),
-			genres: 		new FormControl(undefined, Validators.required),
+			type: 				new FormControl(undefined, Validators.required),
+			genres: 			new FormControl(undefined, Validators.required),
 			transaction: 	new FormControl(undefined, Validators.required),
-			price: 			new FormControl(undefined),
+			price: 				new FormControl(undefined),
 			language: 		new FormControl(undefined, Validators.required),
 			original: 		new FormControl(undefined, Validators.required),
 			num_page: 		new FormControl(undefined, Validators.required),
-			comment: 		new FormControl(undefined),
-			images: 		new FormControl(undefined),
-			date: 			new FormControl(this._date.actual_date())
+			comment: 			new FormControl(undefined),
+			images: 			new FormControl(undefined),
+			date: 				new FormControl(this._date.actual_date())
 		});
-		console.log(this._date.actual_date());
+
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
 	}
 
-	// Función para guardar el libro
+	// Guarda un libro nuevo en la DB
 	saveBook(){
-		// Si el formulario no es valido no se realiza la carga a firebase
 		console.log(this.form.value);
 		if( this.form.invalid ){
 			swal(
@@ -65,23 +66,22 @@ export class AddBookComponent implements OnInit {
 			return;
 		}
 		
-		// Se ponen las imagenes en la formulario para luego subirlas
+		// Carga las imagenes en el formulario para luego subirlas
 		this.form.patchValue({
 			images: this.urlImgs
 		});
 
-		// Se guarda el formulario para validar
-		let book:Books = this.form.value; 
+		let book:Books = this.form.value;  // Guarda el formulario para validar
 
-		// Para agregar la referencia al usuario propietario del libro
+		// Agrega la referencia al usuario propietario del libro
 		let user = JSON.parse( localStorage.getItem( "user" ));
 		book.user = this._dbService.afs.collection('users').doc(user.uid).ref;
 
-		// Para que el id de Firebase sea el uid + fechahora 
+		// Convierte el id de Firebase en uid + fechahora 
 		book.id = user.uid + "-" + new Date().valueOf() ;
 		book.uid = user.uid;
 
-		// Se guarda el libro 
+		// Guarda el libro
 		this._dbService.addData('books', book)
 			.then( () => {
 				console.log("se guardó el libro"); 
@@ -94,12 +94,11 @@ export class AddBookComponent implements OnInit {
 			});
 	}
 
-
 	// Carga las imagenes al storage de Firebase
 	uploadFile(event) {
 		let files = event.target.files;
-		let url = []; // guarda las imagenes correctas para luego subirlas
-		let aux = false; // para que no se cargen imagenes si existe aunque sea 1 mala
+		let url = []; // Guarda las imagenes correctas para luego subirlas
+		let aux = false; // Sirve para que no se cargen imagenes si existe aunque sea una incorrecta
 
 		for( let i=0; i<files.length; i++ ){
 			const separatedFile = files[i].name.split('.');
@@ -137,7 +136,7 @@ export class AddBookComponent implements OnInit {
 						console.log('Error al cargar imagen' ,error);
 				  		swal('Error al cargar imagenes', 'Por favor, vueva a intentarlo', 'error');
 					}, 
-					() => { // todo salio bien
+					() => { // Éxito
 					   uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
 							url.push( downloadURL );
 							if(i === files.length-1) {
@@ -150,6 +149,19 @@ export class AddBookComponent implements OnInit {
 			}
 			this.urlImgs = url;
 		}
+	}
+
+	// Agrega una categoría al cuadro de categorías del libro
+	addCategory(index:number){
+		this.selected_categories.push(this.categories[index]);
+		this.categories.splice(index, 1);				
+		// TODO: Ordenar por index
+	}
+
+	// Remueve una categoría del cuadro de categorías del libro
+	removeCategory(index:number){
+		this.categories.push(this.selected_categories[index]);
+		this.selected_categories.splice(index, 1);				
 	}
 }
 

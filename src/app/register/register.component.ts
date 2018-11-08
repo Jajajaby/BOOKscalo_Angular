@@ -22,12 +22,8 @@ import swal from 'sweetalert';
 })
 export class RegisterComponent implements OnInit {
 
-	// Para el form
 	form:FormGroup;
-
-	// Para que se muestre la primera página del registro
-	register_pages:string = "page_1";
-
+	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
 	categories:Array<string>=["Antiguedades y Coleccionables", "Arquitectura", "Arte", "Artes Escénicas", "Biografía y Autobiografía", "Casa y Hogar", "Ciencia", "Ciencias Políticas", "Ciencias Sociales", "Cocina", "Comida y Bebestibles", "Colecciones Literarias", "Cómics y Novelas Gráficas", "Computación e Internet", "Crímenes", "Crítica Literaria", "Cuerpo", "Mente y Espíritu", "Deportes y Recreación", "Drama", "Educación", "Estudio de Lenguas Extranjeras", "Ensayos Académicos", "Familia y Relaciones", "Ficción", "Ficción Adolescente", "Ficción para Niños", "Filosofía", "Fotografía", "Historia y Geografía", "Humor", "Jardinería", "Juegos", "Lectura escolar", "Lengua y Literatura", "Leyes", "Manualidades y Hobbies", "Mascotas y Animales", "Matemáticas", "Medicina", "Música", "Naturaleza y Aire libre", "Negocios y Economía", "Niños y Jóvenes", "Papelería", "Poesía", "Psicología", "Religión y Espiritualidad", "Salud y Bienestar", "Tecnología", "Transporte", "Viajes"];
 	selected_categories:string[] = [];
 
@@ -35,8 +31,6 @@ export class RegisterComponent implements OnInit {
 								private _dateService:DateService,
 								private afAuth: AngularFireAuth,
 								public router: Router ) { }
-
-	// TODO: Falta agregar ROLE: USER o ADMIN
 
 	ngOnInit() {
 		this.form = 		new FormGroup({
@@ -54,8 +48,7 @@ export class RegisterComponent implements OnInit {
 		}, { validators: this.areEquals( 'password', 'password2') });
 	}
 
-
-	// Para verificar que ambas constraseñas ingresadas sean iguales
+	// Verifica que ambas contraseñas ingresadas sean iguales
 	areEquals(input1:string, input2:string){
 		return (group: FormGroup) => {
 			let pass1 = group.controls[input1].value;
@@ -71,18 +64,15 @@ export class RegisterComponent implements OnInit {
 		}
 	}
 
+	// Guarda un usuario nuevo, en DB
 	saveUser(){
-		console.log(this.form.controls.name);
-		// console.log(this.form.controls.name.status);
-		// console.log(this.form.controls);
-
 		if (this.form.valid) {
 			let form=this.form.value;
 
 			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
 				.then( (resp:any) => {
 
-					// Se guarda el form para validar
+					// Guarda el form para validarlo
 					const USER:Users = {
 						uid: 					resp.user.uid,
 						rut: 					form.rut,
@@ -103,7 +93,7 @@ export class RegisterComponent implements OnInit {
 						return;
 					}
 
-					// Se guarda el usuario
+					// Guarda al usuario en DB
 					this._dbService.addDataIdCustom('users', USER.uid, USER)
 						.then( () => {
 							console.log("Se guardó el usuario");
@@ -122,12 +112,14 @@ export class RegisterComponent implements OnInit {
 		}
 	}
 
+	// Agrega una categoría al cuadro de categorías favoritas del usuario
 	addCategory(index:number){
 		this.selected_categories.push(this.categories[index]);
 		this.categories.splice(index, 1);				
 		// TODO: Ordenar por index
 	}
 
+	// Remueve una categoría del cuadro de categorías favoritas del usuario
 	removeCategory(index:number){
 		this.categories.push(this.selected_categories[index]);
 		this.selected_categories.splice(index, 1);				

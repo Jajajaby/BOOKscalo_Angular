@@ -89,6 +89,26 @@
 						<option value="Transporte">Transporte</option>
 						<option value="Viajes">Viajes</option>
 					</select>
+
+
+<!-- FIXME: Revisar po jjj -->
+					<div class="ms-container" id="ms-pre-selected-options">
+						<div class="ms-selectable">
+							<select class="ms-list contenedor" multiple='multiple' formControlName="favs_genres">
+								<option [value]='c' class="ms-elem-selectable" *ngFor="let c of categories; let i = index;"
+									(click)="addCategory(i)"> {{ c }} </option>
+							</select>
+						</div>
+						<div class="ms-selection">
+							<select class="ms-list contenedor" multiple='multiple' formControlName="favs_genres">
+								<option [value]='sc' class="ms-elem-selection" *ngFor="let sc of selected_categories; let i = index;"
+									(click)="removeCategory(i)"> {{ sc }} </option>
+							</select>
+						</div>								
+					</div>
+
+
+
 				</div>
 			</div>
 			<!-- Fin col 1  -->
