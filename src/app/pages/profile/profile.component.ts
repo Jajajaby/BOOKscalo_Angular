@@ -167,6 +167,7 @@ export class ProfileComponent implements OnInit {
 			let filePath = `${this.profile.uid}-${new Date().valueOf()}`; 
 			// console.log(filePath);
 					 
+			// TODO: De aquí en adelante se rompe
 			const uploadTask:firebase.storage.UploadTask = storageRef.child(`images/${ filePath }`).put(file)
 
 			uploadTask.on('state_changed', () => {}, // Manejo de carga
