@@ -14,7 +14,6 @@ export class AdminGuard implements CanActivate {
 		const admin = JSON.parse(localStorage.getItem('user')).role;
 
 		if( admin === 'administrador' ) {
-			console.log('PASO EL ADMINGUARD');
 			return true;
 		}else {
 			console.error('Bloqueado por el AdminGuard');

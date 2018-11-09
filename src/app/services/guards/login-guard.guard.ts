@@ -14,7 +14,6 @@ export class LoginGuardGuard implements CanActivate {
 		const session = JSON.parse(localStorage.getItem('session')).session;
 
 		if(session) {
-			console.log('PASO EL GUARD');
 			return true;
 		}else {
 			console.error('Bloqueado por el Guard');
