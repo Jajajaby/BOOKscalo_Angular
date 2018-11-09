@@ -170,7 +170,7 @@ export class ProfileComponent implements OnInit {
 
 		if( !aux ){
 			const storageRef = firebase.storage().ref();
-			let filePath = `${this.uid}-${new Date().valueOf()}`; 
+			let filePath = this.uid; 
 					 
 			const uploadTask:firebase.storage.UploadTask = 
 			storageRef.child(`profile_img/${ filePath }`)

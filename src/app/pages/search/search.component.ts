@@ -9,9 +9,9 @@ import { DatabaseService } from "../../services/database.service";
 	templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
-	books:any[];
-	authors:any[];
-	owner:any[];
+	books:any[] = [];
+	authors:any[] = [];
+	owners:any[] = [];
 
 	constructor( private activatedRoute:ActivatedRoute,
 				 private _dbService: DatabaseService ) { }
@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
 
 			this._dbService.getData('users')
 				.valueChanges()
-				.subscribe( users => this.owner = this.searchOwner(users, input) );
+				.subscribe( users => this.owners = this.searchOwner(users, input) );
 		});
 	}
 
