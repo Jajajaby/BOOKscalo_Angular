@@ -9,7 +9,6 @@ import { DatabaseService } from "../../services/database.service";
 	templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
-
 	books:any[];
 	authors:any[];
 	owner:any[];

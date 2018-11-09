@@ -2,7 +2,7 @@
   <div class="card col-12 col-lg-4">
     <div class="card-body">
       <h4 class="card-title">Libros</h4>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled" *ngIf="books.length > 0; else noBooks;">
         <li class="media border p-1" *ngFor="let book of books">
           <img class="d-flex mr-3"
                [src]="book.images[0]"
@@ -18,12 +18,19 @@
           </div>
         </li>
       </ul>
+
+      <ng-template #noBooks>
+        <div class="alert alert-primary" role="alert">
+            no se encontraron coincidencias
+        </div>
+      </ng-template>
+
     </div>
   </div>
   <div class="card col-12 col-lg-4">
     <div class="card-body">
       <h4 class="card-title">Autores</h4>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled" *ngIf="authors.length > 0; else noAuth;">
         <li class="media media border p-1" *ngFor="let auth of authors">
           <img class="d-flex mr-3"
                [src]="auth.images[0]"
@@ -34,12 +41,19 @@
           </div>
         </li>
       </ul>
+
+      <ng-template #noAuth>
+        <div class="alert alert-primary" role="alert">
+            no se encontraron coincidencias
+        </div>
+      </ng-template>
     </div>
   </div>
+
   <div class="card col-12 col-lg-4">
     <div class="card-body">
       <h4 class="card-title">Dueños</h4>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled" *ngIf="owner.length > 0; else noOwner">
         <li class="media media border p-1" *ngFor="let user of owner">
           <img class="d-flex mr-3"
                [src]="user.img"
@@ -50,6 +64,12 @@
           </div>
         </li>
       </ul>
+
+      <ng-template #noOwner>
+        <div class="alert alert-primary" role="alert">
+          no se encontraron coincidencias
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
