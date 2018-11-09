@@ -4,6 +4,8 @@ import {  RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { AdminGuard } from '../services/guards/admin.guard';
 
 // GUARD
 // import { LoginGuardGuard } from '../services/guards/login-guard.guard';
@@ -13,6 +15,7 @@ const ADMIN_ROUTE: Routes = [
 	{
 		path: 'admin',
     component: AdminComponent,
+    canActivate: [ LoginGuardGuard, AdminGuard ],
       children: [
         { path: 'dashboard', component: DashboardComponent },
         { path: '', pathMatch: 'full', redirectTo: 'dashboard' }

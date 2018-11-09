@@ -72,7 +72,8 @@ export class LoginComponent implements OnInit {
 									email: USER.email,
 									name: resp[0].name,
 									last_name1: resp[0].last_name1,
-									last_name2: resp[0].last_name2
+									last_name2: resp[0].last_name2,
+									role: resp[0].role
 								};
 			
 								if( this.form.value['rememberMe'] ){
