@@ -40,15 +40,13 @@
     <div class="card-body">
       <h4 class="card-title">Dueños</h4>
       <ul class="list-unstyled">
-        <li class="media media border p-1">
+        <li class="media media border p-1" *ngFor="let user of owner">
           <img class="d-flex mr-3"
-               src="assets/images/users/1.jpg"
+               [src]="user.img"
                width="60">
         <div class="media-body">
-            <h5 class="mt-0 mb-2">Pendiente</h5>
-            <h5 class="mt-0 mb-2">Pendiente</h5>
-            <h5 class="mt-0 mb-2">Pendiente</h5>
-            <h5 class="mt-0 mb-2">Pendiente</h5>
+            <h5 class="mt-0 mb-2">{{ user.name }}</h5>
+            <h5 class="mt-0 mb-2"> {{ user.last_name1 }} {{ user.last_name2 }} </h5>
           </div>
         </li>
       </ul>

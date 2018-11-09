@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
 
 	books:any[];
 	authors:any[];
-	categories:any[];
+	owner:any[];
 
 	constructor( private activatedRoute:ActivatedRoute,
 				 private _dbService: DatabaseService ) { }
@@ -31,7 +31,10 @@ export class SearchComponent implements OnInit {
 					// this.authors = this.search(2, resp, input);
 					// this.categories = this.search(3, resp, input);
 				});
-			
+
+			this._dbService.getData('users')
+				.valueChanges()
+				.subscribe( users => this.owner = this.searchOwner(users, input) );
 		});
 	}
 
@@ -60,17 +63,17 @@ export class SearchComponent implements OnInit {
 	}
 
 	// TODO: hay que hacer la busqueda por dueño queda pendiente
-	// searchOwner(books:any[], search:string){
-	// 	let searchCategories = [];
+	searchOwner(users:any[], search:string){
+		let owners = [];
 		
-	// 	for( let book of books ){	
-	// 		let owner = book.genres;
-	// 			if( owner.indexOf(search.toLowerCase()) >= 0 ) {
-	// 				searchCategories.push(book);
-	// 			}
-	// 	}
-	// 	return searchCategories;
-	// }
+		for( let user of users ){	
+			let owner = user.name;
+				if( owner.indexOf(search.toLowerCase()) >= 0 ) {
+					owners.push(user);
+				}
+		}
+		return owners;
+	}
 
 	// Busca. Si es 1 el libro, 2 autor y 3 categoría.
 	search (i:number, books:any[], search:string){
