@@ -4,7 +4,7 @@ export interface Books{
 	title:				string;
 	editorial:		string;
 	type:					string;
-	genres:				Array<string>;
+	categories:		Array<string>;
 	language:			string;
 	comment:			string;
 	num_page:			number;
@@ -26,14 +26,13 @@ export interface Users{
 	last_name1:		string;
 	last_name2:		string;
 	email:				string;
-	favs_genres:	Array<string>;
+	categories:		Array<string>;
 	google:				boolean;
 	status: 			boolean;
 	role:					string;
 	created_date: any;
-	img?:					any;
+	img?:					string;
 	preferences?:	Array<string>;
-	commune?:			string;
 	phone?:				string;
 };
 

@@ -26,7 +26,6 @@ export class CardBookComponent implements OnInit {
 	// @Input() categoriesSearch:any[];
 	// @Input() name:string;
 	// @Input() author:string;
-	// @Input() fav_genres:string;
 
 
 	books:any[]; // array con los books a mostrar
@@ -42,21 +41,21 @@ export class CardBookComponent implements OnInit {
 	// .subscribe( data => this.count_book = data.length );
 	
 	book_modal: Books = {
-		author: 		'', 
-		title: 			'', 
+		author: 			'', 
+		title: 				'', 
 		editorial: 		'', 
-		type: 			'', 
-		genres: 		[], 
+		type: 				'', 
+		categories: 	[], 
 		language: 		'', 
 		num_page: 		0,
 		original: 		false, 
 		transaction:	'', 	
-		user: 			'', 
-		id: 			'', 
-		comment: 		'', 
-		price: 			0, 
-		images: 		[],
-		date: 			''
+		user: 				'', 
+		id: 					'', 
+		comment: 			'', 
+		price: 				0, 
+		images: 			[],
+		date: 				''
 	};
 
 	constructor(	private _date:DateService,

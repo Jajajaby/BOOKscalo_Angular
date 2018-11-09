@@ -10,7 +10,6 @@ import { DatabaseService } from "../../services/database.service";
 import { DateService } from 'src/app/services/date.service';
 
 // ANGULARFIRE2
-import { AngularFireStorage } from 'angularfire2/storage';
 import * as firebase from 'firebase';
 
 // SWEET ALERT
@@ -31,7 +30,7 @@ export class AddBookComponent implements OnInit {
 
 	constructor( 	private _dbService:DatabaseService,
 								private _date:DateService,
-								public router: Router ) { 			
+								public router:Router ) { 			
 	}
 
 	ngOnInit() {
@@ -40,7 +39,7 @@ export class AddBookComponent implements OnInit {
 			author: 			new FormControl(undefined, Validators.required),
 			editorial: 		new FormControl(undefined, Validators.required),
 			type: 				new FormControl(undefined, Validators.required),
-			genres: 			new FormControl(undefined, Validators.required),
+			genres: 			new FormControl(this.selected_categories),
 			transaction: 	new FormControl(undefined, Validators.required),
 			price: 				new FormControl(undefined),
 			language: 		new FormControl(undefined, Validators.required),
@@ -125,6 +124,7 @@ export class AddBookComponent implements OnInit {
 			for(let i=0; i<files.length; i++){
 				
 				let filePath = `${this.uid}-${new Date().valueOf()}`; 
+				console.log(filePath)
 					 
 				const uploadTask:firebase.storage.UploadTask = 
 					storageRef.child(`images/${ filePath }`)
@@ -134,7 +134,7 @@ export class AddBookComponent implements OnInit {
 					() => {}, // Manejo de carga
 					(error) => { // Manejo de errores
 						console.log('Error al cargar imagen' ,error);
-				  		swal('Error al cargar imagenes', 'Por favor, vueva a intentarlo', 'error');
+				  	swal('Error al cargar imagenes', 'Por favor, vueva a intentarlo', 'error');
 					}, 
 					() => { // Éxito
 					   uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
@@ -161,7 +161,8 @@ export class AddBookComponent implements OnInit {
 	// Remueve una categoría del cuadro de categorías del libro
 	removeCategory(index:number){
 		this.categories.push(this.selected_categories[index]);
-		this.selected_categories.splice(index, 1);				
+		this.selected_categories.splice(index, 1);
+		console.log(this.selected_categories);				
 	}
 }
 

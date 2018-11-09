@@ -5,8 +5,7 @@ import { map } from 'rxjs/operators';
 // SERVICE
 import { DatabaseService } from "../../services/database.service";
 
-import { Users } from '../../interface/books.interface';
-
+// ANGULARFIRE2
 import * as firebase from 'firebase';
 
 @Component({
@@ -18,12 +17,13 @@ export class ProfileComponent implements OnInit {
 	profile_options:string = 'my_profile';
 	profile:any;  
 	user_profile: any;
+	uid:string; // uid usuario actual
 	form:FormGroup;
 	preferences:any; 
 	p_selected:any;
 	preferences_modal:any;
 	count_book:any;
-	urlImgs:any[]; // aquí se guardan las rutas de las imagenes para guardar en firebase
+	urlImgs:string; //  Guarda la ruta de la imagen para guardar en DB
 
 
   	constructor( private _dbService:DatabaseService ) {
@@ -55,27 +55,34 @@ export class ProfileComponent implements OnInit {
 
   	ngOnInit() {
   		this.profile = {
-			uid: 			'', 
-			rut: 			'', 
-			name: 			'', 
+			uid: 					'', 
+			rut: 					'', 
+			name: 				'', 
 			last_name1: 	'', 
 			last_name2: 	'', 
-			email: 			[], 
-			phone: 			'', 
-			favs_genres:	[], 
-			commune: 		'',
-			status:			true
+			email: 				[], 
+			phone: 				'', 
+			categories:		[], 
+			commune: 			'',
+			status:				true,
+			img: 					''
 		};
 
 		this.form = new FormGroup({
 			subway_station: new FormControl(undefined, Validators.required),
-			day: 			new FormControl(undefined, Validators.required),
-			hour: 			new FormControl(undefined, Validators.required)
+			day: 						new FormControl(undefined, Validators.required),
+			hour: 					new FormControl(undefined, Validators.required)
 		});
+
+		this.uid = JSON.parse(localStorage.getItem('user')).uid;
+
 	}
 	
 	updateProfile(){
 		// Actualiza la data según el id y el documento a modificar
+		console.log(this.urlImgs);
+		this.profile.img = this.urlImgs;
+
 		this._dbService.updateData( "users", this.profile.key, this.profile )
 			.then( () => {
 				swal('Cambios guardados', 'Sus cambios han sidos guardados con éxito', 'success');
@@ -142,17 +149,16 @@ export class ProfileComponent implements OnInit {
 	// Carga las imagenes al storage de Firebase
 	uploadFile(event) {
 		let file = event.target.files;
-		let url = []; // guarda las imagenes correctas para luego subirlas
+		let url:string; // guarda las imagenes correctas para luego subirlas
 		let aux = false; // para que no se cargen imagenes si existe aunque sea 1 mala
 
-		// const separatedFile = file.name.split('.');
-		const extension = file[file.length - 1];
-		console.log(extension.type);
+		const separatedFile = file[0].name.split('.');
+		const extension = separatedFile[separatedFile.length - 1];
 				
 		const typeValid = ['jpg', 'jpeg', 'png'];
 
 		// Valida las extensiones de las imagenes
-		if( extension.type == 'image/jpg'){
+		if( typeValid.indexOf( extension ) <= -1){
 			swal(
 				'Error al ingresar imagen',
 				'Extensiones válidas (png, jpg, jpeg), vuelva a intentarlo',
@@ -164,26 +170,27 @@ export class ProfileComponent implements OnInit {
 
 		if( !aux ){
 			const storageRef = firebase.storage().ref();
-			let filePath = `${this.profile.uid}-${new Date().valueOf()}`; 
-			// console.log(filePath);
+			let filePath = `${this.uid}-${new Date().valueOf()}`; 
 					 
-			// TODO: De aquí en adelante se rompe
-			const uploadTask:firebase.storage.UploadTask = storageRef.child(`images/${ filePath }`).put(file)
-
-			uploadTask.on('state_changed', () => {}, // Manejo de carga
+			const uploadTask:firebase.storage.UploadTask = 
+			storageRef.child(`profile_img/${ filePath }`)
+			.put(file[0])
+			
+			uploadTask.on('state_changed', 
+				() => {}, // Manejo de carga
 				(error) => { // Manejo de errores
 					console.log('Error al cargar imagen' ,error);
 			  	swal('Error al cargar imagenes', 'Por favor, vueva a intentarlo', 'error');
 				}, 
-				() => { // todo salio bien
+				() => { // Éxito
 				  uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-					url.push( downloadURL );
+					url = downloadURL;
 					console.log("Imagenes cargadas");
 					swal('Éxito', 'Imagenes cargadas con exito', 'success');
+					this.urlImgs = url;
 		  		});
 				}
 			);
-		this.urlImgs = url;
 		}
 	}
 

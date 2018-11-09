@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
 	form:FormGroup;
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
 	categories:Array<string>=["Antiguedades y Coleccionables", "Arquitectura", "Arte", "Artes Escénicas", "Biografía y Autobiografía", "Casa y Hogar", "Ciencia", "Ciencias Políticas", "Ciencias Sociales", "Cocina", "Comida y Bebestibles", "Colecciones Literarias", "Cómics y Novelas Gráficas", "Computación e Internet", "Crímenes", "Crítica Literaria", "Cuerpo", "Mente y Espíritu", "Deportes y Recreación", "Drama", "Educación", "Estudio de Lenguas Extranjeras", "Ensayos Académicos", "Familia y Relaciones", "Ficción", "Ficción Adolescente", "Ficción para Niños", "Filosofía", "Fotografía", "Historia y Geografía", "Humor", "Jardinería", "Juegos", "Lectura escolar", "Lengua y Literatura", "Leyes", "Manualidades y Hobbies", "Mascotas y Animales", "Matemáticas", "Medicina", "Música", "Naturaleza y Aire libre", "Negocios y Economía", "Niños y Jóvenes", "Papelería", "Poesía", "Psicología", "Religión y Espiritualidad", "Salud y Bienestar", "Tecnología", "Transporte", "Viajes"];
-	selected_categories:string[] = [];
+	selected_categories:Array<string> = [];
 
 	constructor( 	private _dbService:DatabaseService,
 								private _dateService:DateService,
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
 			rut: 					new FormControl(undefined, [Validators.required, Validators.pattern('^[.0-9]{6,11}\-?[kK0-9]{1}$')]),
 			phone: 				new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
 			// TODO: Validar los géneros 
-			favs_genres: 	new FormControl([], Validators.required),
+			categories: 	new FormControl([], Validators.required),
 			email: 				new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
 			password: 		new FormControl(undefined, Validators.required),
 			password2: 		new FormControl(undefined, Validators.required),
@@ -80,7 +80,7 @@ export class RegisterComponent implements OnInit {
 						last_name1: 	form.last_name1.toLowerCase(),
 						last_name2: 	form.last_name2.toLowerCase(),
 						email: 				form.email.toLowerCase(),
-						favs_genres:	this.selected_categories, 
+						categories:		this.selected_categories, 
 						phone: 				form.phone,
 						google:      	false,
 						status:				true,

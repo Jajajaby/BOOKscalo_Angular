@@ -200,36 +200,25 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label>Título</label>
-								<input type="text" 
-										[(ngModel)]="book_modal.title"
-										name="title"
-										class="form-control form-control-line border-input-custom" 
-										placeholder="Ej.: Harry Potter">
+								<input type="text" [(ngModel)]="book_modal.title" name="title" 
+										class="form-control form-control-line border-input-custom" placeholder="Ej.: Harry Potter">
 							</div>
 
 							<div class="form-group">
 								<label>Autor/a</label>
-								<input type="text" 
-										[(ngModel)]="book_modal.author"
-										name="author"
-										class="form-control form-control-line border-input-custom" 
-										placeholder="Ej.: J. K. Rowling">
+								<input type="text" [(ngModel)]="book_modal.author" name="author"
+										class="form-control form-control-line border-input-custom" placeholder="Ej.: J. K. Rowling">
 							</div>
 
 							<div class="form-group">
 								<label>Editorial</label>
-								<input type="text" 
-										[(ngModel)]="book_modal.editorial"
-										name="editorial"
-										class="form-control form-control-line border-input-custom" 
-										placeholder="Ej.: Salamandra">
+								<input type="text" [(ngModel)]="book_modal.editorial" name="editorial"
+										class="form-control form-control-line border-input-custom" placeholder="Ej.: Salamandra">
 							</div>
 
 							<div class="form-group border-input-custom">
 								<label>Tipo de transacción</label>
-								<select class="form-control" 
-												[(ngModel)]="book_modal.transaction"
-												name="transaction">
+								<select class="form-control" [(ngModel)]="book_modal.transaction"	name="transaction">
 									<option value="Intercambio">Intercambio</option>
 									<option value="Venta">Venta</option>
 									<option value="Ambos">Ambos</option>
@@ -239,21 +228,13 @@
 							<div class="form-group" 
 										*ngIf="book_modal.transaction === 'Venta' || book_modal.transaction === 'Ambos'">
 								<label>Precio</label>
-								<input [(ngModel)]="book_modal.price" 
-										name="price"
-										onlynumber="true" 
-										minlength="3" 
-										maxlength="6" 
-										class="form-control form-control-line border-input-custom" 
-										placeholder="Ej.: 5000" 
-										required>
+								<input [(ngModel)]="book_modal.price" name="price" onlynumber="true" minlength="3" maxlength="6" 
+										class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000" required>
 							</div>
 
 							<div class="form-group border-input-custom">
 								<label>Tipo de elemento</label>
-								<select class="form-control" 
-												[(ngModel)]="book_modal.type"
-												name="type">
+								<select class="form-control" [(ngModel)]="book_modal.type" name="type">
 									<option value="Libro">Libro</option>
 									<option value="Cómic">Cómic</option>
 									<option value="Lectura especializada">Lectura especializada</option>
@@ -267,9 +248,7 @@
 						<div class="col-6">
 							<div class="form-group border-input-custom">
 								<label>Género al que pertenece</label>
-								<select class="form-control" 
-												[(ngModel)]="book_modal.genres"
-												name="genres" multiple>
+								<select class="form-control" [(ngModel)]="book_modal.genres" name="genres" multiple>
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="Lectura especializada">Lectura especializada</option>
@@ -280,9 +259,7 @@
 
 							<div class="form-group border-input-custom">
 								<label>Idioma</label>
-								<select class="form-control" 
-												[(ngModel)]="book_modal.language"
-												name="language">
+								<select class="form-control" [(ngModel)]="book_modal.language" name="language">
 									<option value="Español">Español</option>
 									<option value="Inglés">Inglés</option>
 									<option value="Otro">Otro</option>
@@ -291,9 +268,7 @@
 
 							<div class="form-group border-input-custom">
 								<label>Texto original</label>
-								<select class="form-control" 
-												[(ngModel)]="book_modal.original"
-												name="original">
+								<select class="form-control" [(ngModel)]="book_modal.original" name="original">
 									<option value="Sí">Sí</option>
 									<option value="No">No</option>
 								</select>
@@ -301,26 +276,19 @@
 
 							<div class="form-group">
 								<label>Cantidad de páginas</label>
-								<input 	[(ngModel)]="book_modal.num_page"
-												name="num_pages" 
-												onlynumber="true" 
-												minlength="2" 
-												maxlength="5" 
-												class="form-control form-control-line border-input-custom" 
-												placeholder="Ej.: 324" 
-												required>
+								<input 	[(ngModel)]="book_modal.num_page"	name="num_pages" onlynumber="true" minlength="2" maxlength="5" 
+												class="form-control form-control-line border-input-custom" placeholder="Ej.: 324"	required>
 							</div>
 								
 							<div class="form-group">
 								<label>Comentario</label>
-								<textarea class="form-control border-input-custom" 
-													[(ngModel)]="book_modal.comment" 
-													name="comment"
-													rows="2" 
+								<textarea class="form-control border-input-custom" [(ngModel)]="book_modal.comment" name="comment" rows="2" 
 													placeholder="Ej.: El libro se encuentra en buen estado, leído solo una vez.">
 								</textarea>
 							</div>
 						</div>
+
+						<!-- TODO: Agregar el editar las categorías -->
 							
 					</div>
 				</form>
@@ -333,5 +301,5 @@
 	</div>
 </div>
 <!-- ================================================================================================== -->
-<!-- End modal edit/delete book																				-->
+<!-- End modal edit/delete book																																					-->
 <!-- ================================================================================================== -->

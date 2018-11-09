@@ -33,83 +33,16 @@
 					</select>
 				</div>
 
-				<!-- TODO:Limpiar -->
-				<!-- TODO: Cambiar por lo del register -->
-				<div class="form-group border-input-custom">
-					<label>Género al que pertenece</label>
-					<select class="form-control" formControlName="genres" multiple>
-						<option value="Antiguedades y Coleccionables">Antiguedades y Coleccionables</option>
-						<option value="Arquitectura">Arquitectura</option>
-						<option value="Arte">Arte</option>
-						<option value="Artes Escénicas">Artes Escénicas</option>
-						<option value="Biografía y Autobiografía">Biografía y Autobiografía</option>
-						<option value="Casa y Hogar">Casa y Hogar</option>
-						<option value="Ciencia">Ciencia</option>
-						<option value="Ciencias Políticas">Ciencias Políticas</option>
-						<option value="Ciencias Sociales">Ciencias Sociales</option>
-						<option value="Cocina, Comida y Bebestibles">Cocina, Comida y Bebestibles</option>
-						<option value="Colecciones Literarias">Colecciones Literarias</option>
-						<option value="Computación e Internet">Computación e Internet</option>
-						<option value="Crímenes Verdaderos">Crímenes Verdaderos</option>
-						<option value="Crítica Literaria">Crítica Literaria</option>
-						<option value="Cuerpo, Mente y Espíritu">Cuerpo, Mente y Espíritu</option>
-						<option value="Cómics y Novelas Gráficas">Cómics y Novelas Gráficas</option>
-						<option value="Deportes y Recreación">Deportes y Recreación</option>
-						<option value="Drama">Drama</option>
-						<option value="Educación">Educación</option>
-						<option value="Ensayos Académicos">Ensayos Académicos</option>
-						<option value="Estudio de Lenguas Extranjeras">Estudio de Lenguas Extranjeras</option>
-						<option value="Familia y Relaciones">Familia y Relaciones</option>
-						<option value="Ficción">Ficción</option>
-						<option value="Ficción Adolescente">Ficción Adolescente</option>
-						<option value="Ficción para Niños">Ficción para Niños</option>
-						<option value="Filosofía">Filosofía</option>
-						<option value="Fotografía">Fotografía</option>
-						<option value="Historia y Geografía">Historia y Geografía</option>
-						<option value="Humor">Humor</option>
-						<option value="Jardinería">Jardinería</option>
-						<option value="Juegos">Juegos</option>
-						<option value="Lectura Escolar">Lectura Escolar</option>
-						<option value="Lengua y Literatura">Lengua y Literatura</option>
-						<option value="Leyes">Leyes</option>
-						<option value="Manualidades y Hobbies">Manualidades y Hobbies</option>
-						<option value="Mascotas y Animales">Mascotas y Animales</option>
-						<option value="Matemáticas">Matemáticas</option>
-						<option value="Medicina">Medicina</option>
-						<option value="Música">Música</option>
-						<option value="Naturaleza y Aire libre">Naturaleza y Aire libre</option>
-						<option value="Negocios y Economía">Negocios y Economía</option>
-						<option value="Niños y Jóvenes">Niños y Jóvenes</option>
-						<option value="Papelería">Papelería</option>
-						<option value="Poesía">Poesía</option>
-						<option value="Psicología">Psicología</option>
-						<option value="Religión y Espiritualidad">Religión y Espiritualidad</option>
-						<option value="Salud y Bienestar">Salud y Bienestar</option>
-						<option value="Tecnología">Tecnología</option>
-						<option value="Transporte">Transporte</option>
-						<option value="Viajes">Viajes</option>
-					</select>
-
-
-<!-- FIXME: Revisar po jjj -->
-					<div class="ms-container" id="ms-pre-selected-options">
-						<div class="ms-selectable">
-							<select class="ms-list contenedor" multiple='multiple' formControlName="favs_genres">
-								<option [value]='c' class="ms-elem-selectable" *ngFor="let c of categories; let i = index;"
-									(click)="addCategory(i)"> {{ c }} </option>
-							</select>
-						</div>
-						<div class="ms-selection">
-							<select class="ms-list contenedor" multiple='multiple' formControlName="favs_genres">
-								<option [value]='sc' class="ms-elem-selection" *ngFor="let sc of selected_categories; let i = index;"
-									(click)="removeCategory(i)"> {{ sc }} </option>
-							</select>
-						</div>								
+				<!-- <div class="row"> -->
+					<div class="form-group">
+						<input id="file" type="file" style="padding-top: 25px;" (change)="uploadFile($event)" multiple>
 					</div>
+				<!-- </div> -->
+		
 
 
 
-				</div>
+				<!-- </div> -->
 			</div>
 			<!-- Fin col 1  -->
 				
@@ -171,18 +104,28 @@
 			<!-- Fin col 2  -->
 		</div>
 
-		<div class="row">
-			<div class="form-group">
-				<input type="file" (change)="uploadFile($event)" id="file" multiple>
+		<div class="form-group border-input-custom">
+			<label>Categoría a la que pertenece</label>
+			<!-- FIXME: Revisar po jjj -->
+			<div class="ms-container" id="ms-pre-selected-options">
+				<div class="ms-selectable">
+					<select class="ms-list contenedor" multiple='multiple'>
+						<option [value]='c' class="ms-elem-selectable" *ngFor="let c of categories; let i = index;"
+							(click)="addCategory(i)"> {{ c }} </option>
+					</select>
+				</div>
+				<div class="ms-selection">
+					<select class="ms-list contenedor" multiple='multiple' formControlName="genres" style="margin-left: 35px;">
+						<option [value]='sc' class="ms-elem-selection" *ngFor="let sc of selected_categories; let i = index;"
+							(click)="removeCategory(i)"> {{ sc }} </option>
+					</select>
+				</div>								
 			</div>
 		</div>
-
+		
 		<div class="row justify-content-md-center">
 			<div class="form-group">
-				<button type="submit" 
-						class="btn btn-outline-info">
-					Guardar
-				</button>
+				<button type="submit" class="btn btn-outline-info">Guardar</button>
 			</div>
 		</div>
 	</form>
