@@ -1,5 +1,7 @@
 <section id="wrapper">
-	<div class="login-register" style="background-image:url(../../assets/images/background/book-2.jpg);">
+	<!-- <div class="login-register" [ngStyle]="{'background-image':register_pages === 'page_1' ? 'url(../../assets/images/background/book-2.jpg)' : 'url(../../assets/images/background/book-3.jpg)' }" style="background-image:url(../../assets/images/background/book-2.jpg);"> -->
+		<div class="login-register" 
+				[ngStyle]="{'background-image':getBackground(register_pages)}" >
 		<div class="login-box card">
 			<div class="card-body" >
 				<form class="form-horizontal form-material" novalidate="novalidate" action="index.html"
@@ -9,7 +11,7 @@
 						<!-- ================================================================== -->
 						<!-- PAGE 1													                      							-->
 						<!-- ================================================================== -->
-						<div *ngSwitchCase="'page_1'"  style="background-image:url(../../assets/images/background/book-1.jpg);">
+						<div *ngSwitchCase="'page_1'">
 							<h3 class="box-title m-t-40 m-b-0">Datos de perfil</h3>
 							<small>Crea tu cuenta para ingresar</small>
 
@@ -74,7 +76,7 @@
 						<!-- ================================================================================== -->
 						<!-- PAGE 2													                                      							-->
 						<!-- ================================================================================== -->
-						<div *ngSwitchCase="'page_2'"  style="background-image:url(../../assets/images/background/book-2.jpg);">
+						<div *ngSwitchCase="'page_2'">
 
 							<h3 class="box-title m-t-40 m-b-0">Categorías de interés</h3>
 							<div class="ms-container" id="ms-pre-selected-options">
@@ -104,7 +106,7 @@
 						<!-- ================================================================================== -->
 						<!-- PAGE 3																																							-->
 						<!-- ================================================================================== -->
-						<div *ngSwitchCase="'page_3'" style="background-image:url(../../assets/images/background/book-3.jpg);">
+						<div *ngSwitchCase="'page_3'">
 
 							<h3 class="box-title m-t-40 m-b-0">Datos de la cuenta</h3>
 							<div class="form-group ">

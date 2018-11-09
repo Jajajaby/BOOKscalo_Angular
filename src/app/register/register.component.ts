@@ -124,4 +124,16 @@ export class RegisterComponent implements OnInit {
 		this.categories.push(this.selected_categories[index]);
 		this.selected_categories.splice(index, 1);				
 	}
+
+	// Cambia el fondo del register dependiendo de en qué etapa se encuentre
+	getBackground(page) { 
+		switch (page) {
+		  case 'page_1':
+			return 'url(../../assets/images/background/book-5.jpg)';
+		  case 'page_2':
+			return 'url(../../assets/images/background/book-3.jpg)';
+		  case 'page_3':
+			return 'url(../../assets/images/background/book-1.jpg)';
+		}
+	  }
 }
