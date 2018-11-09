@@ -68,6 +68,7 @@ export class CardBookComponent implements OnInit {
 			if( this.type === 'all' ){
 				this.loading = false;
 				this.books = this.booksHome;
+				this.count_book = this.booksHome.length;
 			}else {
 				let aux = [];
 
@@ -76,6 +77,7 @@ export class CardBookComponent implements OnInit {
 				}
 				this.loading = false;
 				this.books = aux;
+				this.count_book = aux.length;
 			}
 		}, 2000);
 

@@ -6,17 +6,25 @@
 		<div class="col-auto col-md-3 col-lg-4"></div>
 		<div class="col-12 col-md-6 col-lg-4">
 			<div class="btn-group mr-2" role="group">
-				<button type="button" class="btn btn-secondary" [ngClass]="{'active': view_bar === 'all'}">
-			    	<a class="" (click)="view_bar = 'all'">Todos</a>
+				<button type="button" class="btn btn-secondary" 
+								[ngClass]="{'active': view_bar === 'all'}"
+								(click)="view_bar = 'all'">
+			    	Todos
 				</button>
-				<button type="button" class="btn btn-secondary" [ngClass]="{'active': view_bar === 'exchange'}">
-			    	<a class="" (click)="view_bar = 'exchange'">Intercambio</a>
+				<button type="button" class="btn btn-secondary" 
+								[ngClass]="{'active': view_bar === 'exchange'}"
+								(click)="view_bar = 'exchange'">
+			    	Intercambio
 				</button>
-				<button type="button" class="btn btn-secondary" [ngClass]="{'active': view_bar === 'sales'}">
-			    	<a class="" (click)="view_bar = 'sales'">Ventas</a>
+				<button type="button" class="btn btn-secondary" 
+								[ngClass]="{'active': view_bar === 'sales'}"
+								(click)="view_bar = 'sales'">
+			    	Ventas
 				</button>
-				<button type="button" class="btn btn-secondary" [ngClass]="{'active': view_bar === 'both'}">
-					<a class="" (click)="view_bar = 'both'">Ambos</a>
+				<button type="button" class="btn btn-secondary" 
+								[ngClass]="{'active': view_bar === 'both'}"
+								(click)="view_bar = 'both'">
+					Ambos
 				</button>
 			</div>
 		</div>
