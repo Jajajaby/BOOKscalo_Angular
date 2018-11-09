@@ -25,21 +25,21 @@ export class SidebarComponent implements OnInit {
   // Busca los libros según el search, que es la categoría.
   searchCategory( search:string ){
     let searchCategories = [];
-    
-    for(let book of this.books){
+
+    for( let book of this.books ) {
       let categories = book.genres;
       let flag = false; // con esto valido que se agregue solo 1 vez el mismo libro
-
+      
       for( let category of categories ){
         let cat = category.toLowerCase();
+
         if( cat.indexOf(search.toLowerCase()) >= 0 && !flag ) {
           flag = true;
           searchCategories.push(book);
         }
       }
-      console.log(searchCategories);
-      return searchCategories;
     }
+    return searchCategories;
   }
 
 }
