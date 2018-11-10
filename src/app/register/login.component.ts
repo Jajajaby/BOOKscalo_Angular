@@ -87,8 +87,13 @@ export class LoginComponent implements OnInit {
 									rememberMe: this.form.value['rememberMe'],
 									session: true
 								}));
-								
-								this.router.navigate(['/home']);
+
+								// Redirige a dashboard o home según el rol del usuario
+								if ( userStorage.role == 'admin' ){
+									this.router.navigate(['/admin']);
+								}else if ( userStorage.role == 'normal' ){
+									this.router.navigate(['/home']);
+								}
 							}
 						});
 				})

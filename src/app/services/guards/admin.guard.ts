@@ -13,9 +13,10 @@ export class AdminGuard implements CanActivate {
 	canActivate() {
 		const admin = JSON.parse(localStorage.getItem('user')).role;
 
-		if( admin === 'administrador' ) {
+		if( admin === 'admin' ) {
 			return true;
 		}else {
+			// TODO: Mostrar un 403
 			console.error('Bloqueado por el AdminGuard');
 			this.router.navigate(['/']);
 			return false;
