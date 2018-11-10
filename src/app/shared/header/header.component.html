@@ -1,7 +1,7 @@
 <header class="topbar">
 	<nav class="navbar top-navbar navbar-expand-md navbar-light">
 		<!-- ============================================================== -->
-		<!-- Logo 															-->
+		<!-- Logo 																													-->
 		<!-- ============================================================== -->
 		<div class="navbar-header">
 			<a class="navbar-brand" [routerLink]="['/home']">
@@ -20,7 +20,7 @@
 		<!-- ============================================================== -->
 		<div class="navbar-collapse">
 			<!-- ============================================================== -->
-			<!-- Toggle and nav items 											-->
+			<!-- Toggle and nav items 																					-->
 			<!-- ============================================================== -->
 			<ul class="navbar-nav mr-auto">
 				<!-- This is  -->
@@ -37,11 +37,11 @@
 				<li class="nav-item"></li>
 			</ul>
 			<!-- ============================================================== -->
-			<!-- User profile, notifications, add book and search 				-->
+			<!-- User profile, notifications, add book and search 							-->
 			<!-- ============================================================== -->
 			<ul class="navbar-nav my-lg-0">
 				<!-- ============================================================== -->
-				<!-- Search 														-->
+				<!-- Search 																												-->
 				<!-- ============================================================== -->
 				<li class="nav-item search-box">
 					<a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
@@ -59,14 +59,15 @@
 					</div>
 				</li>
 				<!-- ============================================================== -->
-				<!-- End search 													-->
+				<!-- End search 																										-->
 				<!-- ============================================================== -->
 
 				<!-- ============================================================== -->
-				<!-- Notifications 													-->
+				<!-- Notifications 																									-->
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" 				aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" 
+								aria-haspopup="true" aria-expanded="false">
 						<i class="mdi mdi-message"></i>
 						<div class="notify">
 							<span class="heartbit"></span>
@@ -166,14 +167,14 @@
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img src="../assets/images/users/profile.jpg" alt="user" class="profile-pic" />
+						<img [src]="profile.img" alt="user" class="profile-pic" />
 					</a>
 					<div class="dropdown-menu dropdown-menu-right fadeIn animated">
 						<ul class="dropdown-user">
 							<li>
 								<div class="dw-user-box">
 									<div class="u-img">
-										<img src="../assets/images/users/1.jpg" alt="user">
+										<img [src]="profile.img" alt="user">
 									</div>
 									<div class="u-text">
 										<h4>{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }}</h4>
