@@ -38,6 +38,7 @@ import { OneBookComponent } from './one-book/one-book.component';
 import { BooksComponent } from '../components/books/books.component';
 import { CardBookComponent } from '../components/card-book/card-book.component';
 import { SearchComponent } from './search/search.component';
+import { ChatsComponent } from './chats/chats.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SearchComponent } from './search/search.component';
     BooksComponent,
     CardBookComponent,
     SearchComponent,
-    ThousandsPipe
+    ThousandsPipe,
+    ChatsComponent
   ],
   imports: [
     BrowserModule,

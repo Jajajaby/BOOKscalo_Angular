@@ -68,12 +68,13 @@ export class LoginComponent implements OnInit {
 								swal('Su cuenta no se encuentra activa', 'Si desea activar su cuenta comunicarse con la administradora al siguiente email: JavieraOrmeno.L@gmail.com', 'warning');
 							}else{
 								let userStorage = {
-									uid: USER.uid,
-									email: USER.email,
-									name: resp[0].name,
-									last_name1: resp[0].last_name1,
-									last_name2: resp[0].last_name2,
-									role: resp[0].role
+									uid: 					USER.uid,
+									email: 				USER.email,
+									name: 				resp[0].name,
+									last_name1:		resp[0].last_name1,
+									last_name2: 	resp[0].last_name2,
+									role: 				resp[0].role,
+									img: 					resp[0].img
 								};
 			
 								if( this.form.value['rememberMe'] ){

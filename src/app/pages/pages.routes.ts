@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 
 // GUARD
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { ChatsComponent } from './chats/chats.component';
 
 const PAGES_ROUTE: Routes = [
 	{
@@ -24,6 +25,7 @@ const PAGES_ROUTE: Routes = [
 					{ path: 'library', component: LibraryComponent },
 					{ path: 'book', component: OneBookComponent },
 					{ path: 'search/:input', component: SearchComponent },
+					{ path: 'messages', component: ChatsComponent },
 					{ path: '', pathMatch: 'full', redirectTo: 'home' }
 		] 
    }

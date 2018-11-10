@@ -39,7 +39,7 @@ export interface Users{
 export interface Predet_Message{
 	transaction:			string;
 	pref: 						any;
-	text:							string;
+	text:							Array<any>;
 	date:							any;
 	book:							any;
 	user_owner:				any;

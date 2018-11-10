@@ -92,37 +92,37 @@ export class CardBookComponent implements OnInit {
 
 		
 
-		this.form = new FormGroup({
-			text: 			new FormControl(undefined, Validators.required),
-			transaction: 	new FormControl(undefined, Validators.required),
-			pref: 			new FormControl(undefined, Validators.required),
-			new_preference: new FormControl(''),
-			station: 		new FormControl(''),
-			hour: 			new FormControl(''),
-			day: 			new FormControl(''),
-			new_price:		new FormControl(0),
-			new_text:		new FormControl(''),
+		this.form = 				new FormGroup({
+			text: 						new FormControl([], Validators.required),
+			transaction: 			new FormControl(undefined, Validators.required),
+			pref: 						new FormControl(undefined, Validators.required),
+			new_preference: 	new FormControl(''),
+			station: 					new FormControl(''),
+			hour: 						new FormControl(''),
+			day: 							new FormControl(''),
+			new_price:				new FormControl(0),
+			new_text:					new FormControl(''),
 		})
 	 }
 
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
 	sendMessage(){
 		let predet_Message:Predet_Message = {
-			transaction:		this.form.value.transaction,
-			pref: 				this.form.value.pref,
-			text:				this.form.value.text,
-			date:				this._date.actual_date(),
-			book:				this.book_modal,
-			user_owner:			this.book_modal.user.uid,
+			transaction:			this.form.value.transaction,
+			pref: 						this.form.value.pref,
+			text:							[{ [this.actual_user.uid]: this.form.value.text }],
+			date:							this._date.actual_date(),
+			book:							this.book_modal,
+			user_owner:				this.book_modal.user.uid,
 			uid_interested:		this.actual_user,
-			status:				false,
-			price:				this.book_modal.price
+			status:						false,
+			price:						this.book_modal.price
 		}
 
 		if ( this.form.value.pref === 'dislike_preferences' ){
 			let new_preferences:any =  {
 				station: 	this.form.value.station,
-				day: 		this.form.value.day, 
+				day: 			this.form.value.day, 
 				hour: 		this.form.value.hour, 
 			};
 			predet_Message.pref = new_preferences;
