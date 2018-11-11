@@ -101,7 +101,7 @@ export class CardBookComponent implements OnInit {
 			hour: 						new FormControl(''),
 			day: 							new FormControl(''),
 			new_price:				new FormControl(0),
-			new_text:					new FormControl(''),
+			new_text:					new FormControl([], Validators.required),
 		})
 	 }
 

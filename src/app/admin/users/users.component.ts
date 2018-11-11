@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
   constructor( private _dbService:DatabaseService) { 
     this._dbService.getData( "users")
 			.valueChanges()
-			.subscribe( data => this.users = data; );
+			.subscribe( data => this.users = data );
   }
 
   ngOnInit() {
