@@ -119,6 +119,10 @@ export class CardBookComponent implements OnInit {
 			price:						this.book_modal.price
 		}
 
+		if ( this.form.value.transaction == undefined || this.form.value.transaction === null){
+			predet_Message.transaction = this.book_modal.transaction;
+		}
+
 		if ( this.form.value.pref === 'dislike_preferences' ){
 			let new_preferences:any =  {
 				station: 	this.form.value.station,
@@ -140,6 +144,40 @@ export class CardBookComponent implements OnInit {
 		this._dbService.addData('messages-transaction', predet_Message)
 			.then( () => swal('Mensaje enviado', 'Su mensaje ha sido enviado con éxito', 'success') )
 			.catch( () => swal('Error', 'Su mensaje no ha podido enviarse, vuelva a intentarlo', 'error') );
+	}
+
+	reportUser( book_m:any ){
+		let report:any;
+
+		report = {
+			date: this._date.actual_date(),
+			user: this.actual_user,
+			user_reported: book_m.user,
+			type: "Reporte de usuario"
+		}
+		console.log(report);	
+		// Envía el mensaje a la DB.
+		this._dbService.addData('reports', report)
+			.then( () => swal('Reporte enviado', 'Muchas gracias por reportar, lo revisaremos en seguida', 'success') )
+			.catch( () => swal('Error', 'Su reporte no ha podido enviarse', 'error') );
+	}
+
+	reportImage( book_m:any ){
+		let report:any;
+
+		report = {
+			day: this._date.actual_day(),
+			hour: this._date.actual_hour(),
+			user: this.actual_user,
+			img: book_m.images,
+			type: "Reporte de imagen",
+			status: "No revisado"
+		}
+		console.log(report);	
+		// Envía el mensaje a la DB.
+		this._dbService.addData('reports', report)
+			.then( () => swal('Reporte enviado', 'Muchas gracias por reportar, lo revisaremos en seguida', 'success') )
+			.catch( () => swal('Error', 'Su reporte no ha podido enviarse', 'error') );
 	}
 
 }

@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 // Componentes
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   declarations: [
     AdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersComponent
   ]
 })
 export class AdminModule { }

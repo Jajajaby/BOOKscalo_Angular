@@ -108,3 +108,8 @@
 .topbar .profile-pic {
     width: 50px !important; 
 }
+
+/* Dashboard */
+.container-dashboard{
+    margin-left: 0 !important;
+}

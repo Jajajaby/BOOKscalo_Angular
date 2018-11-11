@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-dashboard">
 	<!-- =============================================================== -->
 	<!-- Report boxes																										 -->
 	<!-- =============================================================== -->
@@ -60,21 +60,19 @@
 	<!-- Users status																										 -->
 	<!-- =============================================================== -->
 	<div class="row">
-		<div class="col-lg-8 col-md-12">
+		<div class="col-lg-12 col-md-12">
 			<div class="card">
 				<div class="card-body">
 					<div class="d-flex">
 						<div>
 							<h4 class="card-title"><span class="lstick"></span>Estado de usuarios</h4>
 						</div>
-						<div class="ml-auto">
-							<select class="custom-select b-0">
-								<option selected="">January 2017</option>
-								<option value="1">February 2017</option>
-								<option value="2">March 2017</option>
-								<option value="3">April 2017</option>
-							</select>
-						</div>
+						<!-- TODO: ??? Agregar admin -->
+						<!-- <div class="ml-auto">
+							<button class="pull-right btn btn-circle btn-info" data-toggle="modal" data-target="#addAdmin">
+								<i class="ti-plus"></i>
+							</button>
+						</div> -->
 					</div>
 					<div class="table-responsive m-t-20">
 						<table class="table vm no-th-brd no-wrap pro-of-month">
@@ -83,6 +81,7 @@
 									<th colspan="2">Usuario</th>
 									<th>Tipo de usuario</th>
 									<th>Estado</th>
+									<th>Cambiar estado</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -96,10 +95,12 @@
 									</td>
 									<td>{{ u.role | titlecase }}</td>
 									<td>
-										<!-- TODO: If u.status == false es label-danger -->
-										<!-- TODO: If u.status == true es label-success -->
-										<!-- Success y danger... label-success, label-danger, label-info -->
-										<span class="label label-success label-rounded">Low</span>
+										<span *ngIf="[u.status] == 'true'" class="label label-success label-rounded">Activo</span>
+										<span *ngIf="[u.status] == 'false'" class="label label-danger label-rounded">Inactivo</span>
+									</td>
+									<!-- TODO: Hacer algo con esto -->
+									<td>
+										Cambiar jjj
 									</td>
 								</tr>
 							</tbody>
@@ -108,210 +109,76 @@
 				</div>
 			</div>
 		</div>
-		<!-- =============================================================== -->
-		<!-- End users status																								 -->
-		<!-- =============================================================== -->
-
-		<!-- =============================================================== -->
-		<!-- Donnut chart																										 -->
-		<!-- =============================================================== -->
-		<!-- TODO: Gráfico de dona de libros vs mensajes (?) -->
-		<div class="col-lg-4 col-md-10">
-			<div class="card">
-				<div class="card-body">
-					<div class="d-flex">
-						<h4 class="card-title"><span class="lstick"></span>Website Visit</h4>
-						<ul class="list-inline m-b-0 ml-auto">
-							<li>
-								<h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>Site A view</h6> 
-							</li>
-							<li>
-								<h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10"></i>Site B view</h6> 
-							</li>
-						</ul>
-					</div>
-					<div class="text-center m-t-30">
-						<div class="btn-group " role="group" aria-label="Basic example">
-							<button type="button" class="btn btn-sm btn-secondary">PAGEVIEWS</button>
-							<button type="button" class="btn btn-sm btn-secondary">REFERRALS</button>
-						</div>
-					</div>
-					<div class="website-visitor p-relative m-t-30" style="width:100%;"></div>
-				</div>
-			</div>
-		</div>
-		<!-- =============================================================== -->
-		<!-- End donnut chart																										 -->
-		<!-- =============================================================== -->
 	</div>
+	<!-- =============================================================== -->
+	<!-- End users status																								 -->
+	<!-- =============================================================== -->
 
 
 	<!-- ============================================================== -->
-	<!-- Sales overview chart -->
+	<!-- Sales overview chart 																					-->
 	<!-- ============================================================== -->
 	<div class="row">
-		<div class="col-lg-9 col-md-12">
+		<div class="col-lg-12 col-md-12">
 			<div class="card">
 				<div class="card-body">
 					<div class="d-flex">
 						<div>
 							<h3 class="card-title m-b-5">
-							<span class="lstick"></span>Sales Overview 
+							<span class="lstick"></span>Reportes 
 							</h3>
 						</div>
 						<div class="ml-auto">
-							<select class="custom-select b-0">
-								<option selected="">January 2017</option>
-								<option value="1">February 2017</option>
-								<option value="2">March 2017</option>
-								<option value="3">April 2017</option>
+							<!-- FIXME: -->
+							<!-- TODO: Hacer que funcione por fechas -->
+							<label>Fecha</label>
+							<select class="custom-select b-0" formControlName="date">Fecha
+								<option value="all">Todas</option>
+								<option *ngFor="let r of reports">{{ r.day }}</option>
 							</select>
 						</div>
 					</div>
 				</div>
-				<div class="bg-theme stats-bar">
-					<div class="row">
-						<div class="col-lg-3 col-md-4">
-							<div class="p-20 active">
-								<h6 class="text-white">Total Sales</h6>
-								<h3 class="text-white m-b-0">$10,345</h3>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4">
-							<div class="p-20">
-								<h6 class="text-white">This Month</h6>
-								<h3 class="text-white m-b-0">$7,589</h3>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4">
-							<div class="p-20">
-								<h6 class="text-white">This Week</h6>
-								<h3 class="text-white m-b-0">$1,476</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-body">
-					<div id="sales-overview2" class="p-relative" style="height:360px;">
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ============================================================== -->
-		<!-- visit charts-->
-		<!-- ============================================================== -->
-		<div class="col-lg-3 col-md-12">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title"><span class="lstick"></span>Visit Separation</h4>
-				<div id="visitor" style="height:290px; width:100%;"></div>
-					<table class="table vm font-14">
+				<table class="table vm no-th-brd no-wrap pro-of-month">
+					<thead>
 						<tr>
-							<td class="b-0">Mobile</td>
-							<td class="text-right font-medium b-0">38.5%</td>
+							<th>Usuario que reporta</th>
+							<th>Tipo de reporte</th>
+							<th>Fecha</th>
+							<th>Hora</th>
+							<th>Reporte</th>
+							<th>Estado</th>
 						</tr>
-						<tr>
-							<td>Tablet</td>
-							<td class="text-right font-medium">30.8%</td>
+					</thead>
+					<tbody>
+						<tr *ngFor="let r of reports">
+							<td>
+								<h6>{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}</h6>
+							</td>
+							<td>
+								<h6>{{ r.type }}</h6>
+							</td>
+							<td>
+								<h6>{{ r.day }}</h6>
+							</td>
+							<td>
+								<h6>{{ r.hour }}</h6>
+							</td>
+							<td>
+								<!-- FIXME: Alinear el link de la img para que quede justificado o algo así, a la columna -->
+								<!-- <h6 *ngIf="r.type == 'Reporte de imagen'">Se reportan las imagenes contenidas en el siguiente link {{ r.img }}</h6> -->
+								<h6 *ngIf="r.type == 'Reporte de usuario'">Se reporta al usuario {{ r.user_reported.name | titlecase }} {{ r.user_reported.last_name1 | titlecase }} {{ r.user_reported.last_name2 | titlecase }}</h6>
+							</td>
+							<td>
+								<span *ngIf="[r.status] == 'Revisado'" class="label label-success label-rounded">Revisado</span>
+								<span *ngIf="[r.status] == 'No revisado'" class="label label-danger label-rounded">No revisado</span>
+							</td>
 						</tr>
-						<tr>
-							<td>Desktop</td>
-							<td class="text-right font-medium">7.7%</td>
-						</tr>
-						<tr>
-							<td>Other</td>
-							<td class="text-right font-medium">23.1%</td>
-						</tr>
-					</table>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
-	
-
-
-
-
-
-
-
-	<!-- ============================================================== -->
-	<!-- Blog and website visit -->
-	<!-- ============================================================== -->
-	<!-- <div class="row">
-		<div class="col-lg-8 col-xlg-9">
-			<div class="card">
-				<div class="card-body">
-					<div class="d-flex">
-						<h4 class="card-title"><span class="lstick"></span>Website Visit</h4>
-						<ul class="list-inline m-b-0 ml-auto">
-							<li>
-								<h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>Site A view</h6> 
-							</li>
-							<li>
-								<h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10"></i>Site B view</h6> 
-							</li>
-						</ul>
-					</div>
-					<div class="text-center m-t-30">
-						<div class="btn-group " role="group" aria-label="Basic example">
-							<button type="button" class="btn btn-sm btn-secondary">PAGEVIEWS</button>
-							<button type="button" class="btn btn-sm btn-secondary">REFERRALS</button>
-						</div>
-					</div>
-					<div class="website-visitor p-relative m-t-30" style="width:100%;"></div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- ============================================================== -->
-	<!-- Twitter facebook and mail boxes -->
-	<!-- ============================================================== -->
-	<div class="row">
-		<div class="col-lg-4">
-			<div class="card bg-info text-white">
-				<div class="card-body">
-					<div class="d-flex">
-						<div class="stats">
-							<h1 class="text-white">3257+</h1>
-							<h6 class="text-white">Twitter Followers</h6>
-							<button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Check list</button>
-						</div>
-						<div class="stats-icon text-right ml-auto"><i class="fa fa-twitter display-5 op-3 text-dark"></i></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="card bg-primary text-white">
-				<div class="card-body">
-					<div class="d-flex">
-						<div class="stats">
-							<h1 class="text-white">6509+</h1>
-							<h6 class="text-white">Facebook Likes</h6>
-							<button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Check list</button>
-						</div>
-						<div class="stats-icon text-right ml-auto"><i class="fa fa-facebook display-5 op-3 text-dark"></i></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="card bg-success text-white">
-				<div class="card-body">
-					<div class="d-flex">
-						<div class="stats">
-							<h1 class="text-white">9062+</h1>
-							<h6 class="text-white">Subscribe</h6>
-							<button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Check list</button>
-						</div>
-						<div class="stats-icon text-right ml-auto"><i class="fa fa-envelope display-5 op-3 text-dark"></i></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<!-- ============================================================== -->
 	<!-- Todo list 																											-->
@@ -325,7 +192,9 @@
 							<h4 class="card-title"><span class="lstick"></span>To Do list</h4>
 						</div>
 						<div class="ml-auto">
-							<button class="pull-right btn btn-circle btn-success" data-toggle="modal" data-target="#myModal"><i class="ti-plus"></i></button>
+							<button class="pull-right btn btn-circle btn-success" data-toggle="modal" data-target="#myModal">
+								<i class="ti-plus"></i>
+							</button>
 						</div>
 					</div>
 					
@@ -364,11 +233,11 @@
 										<button type="button" class="btn btn-success" data-dismiss="modal" (click)="addTask()">Submit</button>
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									</div>
+								</div>
+								<!-- /.modal-content -->
 							</div>
-							<!-- /.modal-content -->
+							<!-- /.modal-dialog -->
 						</div>
-						<!-- /.modal-dialog -->
-					</div>
 					<!-- /.modal -->
 						<ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
 							<li class="list-group-item" data-role="task">
