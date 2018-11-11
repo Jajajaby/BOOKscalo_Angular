@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 
 // SERVICES
 import { DatabaseService } from '../../services/database.service';
-import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'app-dashboard',
