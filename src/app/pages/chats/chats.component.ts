@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { map } from 'rxjs/operators';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-chats',
@@ -17,9 +18,15 @@ export class ChatsComponent implements OnInit {
 
   // Observables a las colecciones
   chats: Observable<any[]>;
-  selected_chat_obs: Observable<any>;
+  message:any = {
+    uid_interested: ''
+  };
+  
+  uid:string;
   
   constructor( private afs:AngularFirestore ) { 
+
+    this.uid = JSON.parse( localStorage.getItem('user') ).uid;
    
     this.chatsCollection = afs.collection<any>('messages-transaction');
     
@@ -37,11 +44,11 @@ export class ChatsComponent implements OnInit {
   }
 
   showMessages( key:string ){
-    console.log(key);
+    // console.log(key);
     this.selected_chat = this.afs.collection<any>('messages-transaction').doc(key);
-
-    this.selected_chat_obs = this.selected_chat.valueChanges();
-    
+    this.selected_chat
+      .valueChanges()
+      .subscribe( data => this.message = data );
   }
 
 }
