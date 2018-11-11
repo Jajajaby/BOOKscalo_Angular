@@ -153,7 +153,7 @@ export class CardBookComponent implements OnInit {
 			date: this._date.actual_date(),
 			user: this.actual_user,
 			user_reported: book_m.user,
-			type: "user"
+			type: "Reporte de usuario"
 		}
 		console.log(report);	
 		// Envía el mensaje a la DB.
@@ -166,10 +166,12 @@ export class CardBookComponent implements OnInit {
 		let report:any;
 
 		report = {
-			date: this._date.actual_date(),
+			day: this._date.actual_day(),
+			hour: this._date.actual_hour(),
 			user: this.actual_user,
 			img: book_m.images,
-			type: "img"
+			type: "Reporte de imagen",
+			status: "No revisado"
 		}
 		console.log(report);	
 		// Envía el mensaje a la DB.

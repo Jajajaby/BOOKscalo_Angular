@@ -5,52 +5,65 @@ import { DatabaseService } from '../../services/database.service';
 import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styles: []
+	selector: 'app-dashboard',
+	templateUrl: './dashboard.component.html',
+	styles: []
 })
 export class DashboardComponent implements OnInit {
 
-  user:any;
-  users:any;
+	actual_user:any;
 
-  count_users:number;
-  count_books:number;
-  count_messages:number;
+	// Data de la DB
+	users:any;
+	reports:any
 
-  form:any;
+	// Cantidad de 
+	count_users:number;
+	count_books:number;
+	count_messages:number;
 
-  constructor( private _dbService:DatabaseService ) {
-		this.user = JSON.parse( localStorage.getItem( "user" ) );
+	form:any;
 
-    this._dbService.getData( "users")
+	constructor( private _dbService:DatabaseService ) {
+		this.actual_user = JSON.parse( localStorage.getItem( "user" ) );
+
+		this._dbService.getData( "users")
 			.valueChanges()
-      .subscribe( data => {
-        this.users = data;
-        this.count_users = data.length;
-      });
-      
-    this._dbService.getData( "books")
+			.subscribe( data => {
+				this.users = data;
+				this.count_users = data.length;
+			});
+			
+		this._dbService.getData( "books")
 			.valueChanges()
-      .subscribe( data => this.count_books = data.length );
-      
-    this._dbService.getData( "messages-transaction")
+			.subscribe( data => this.count_books = data.length );
+			
+		this._dbService.getData( "messages-transaction")
 			.valueChanges()
 			.subscribe( data => this.count_messages = data.length );
-  }
 
-  ngOnInit() {
-    this.form = new FormGroup({
-      task:         new FormControl(Validators.required),
-      description:  new FormControl(Validators.required),
-      priority:     new FormControl(Validators.required)
-    });
-  
-  }
+		this._dbService.getData( "reports")
+			.valueChanges()
+			.subscribe( data => this.reports = data );
+	}
 
-  addTask(){
-    this._dbService.addDataIdCustom('tasks', this.user, this.form)
-      .then( () => swal('Tarea guardada', 'La tarea ha sido guardada con éxito', 'success') )
+	ngOnInit() {
+		this.form = new FormGroup({
+			task:         new FormControl(Validators.required),
+			description:  new FormControl(Validators.required),
+			priority:     new FormControl(Validators.required)
+		});
+	
+	}
+
+	// TODO: Terminar po jjj
+	addTask(){
+		this._dbService.addDataIdCustom('tasks', this.actual_user, this.form)
+			.then( () => swal('Tarea guardada', 'La tarea ha sido guardada con éxito', 'success') )
 			.catch( () => swal('Error', 'La tarea no ha podido guardarse, vuelva a intentarlo', 'error') );
-  }
+	}
+
+	
+
+
 }
