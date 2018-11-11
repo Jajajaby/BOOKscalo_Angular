@@ -146,4 +146,36 @@ export class CardBookComponent implements OnInit {
 			.catch( () => swal('Error', 'Su mensaje no ha podido enviarse, vuelva a intentarlo', 'error') );
 	}
 
+	reportUser( book_m:any ){
+		let report:any;
+
+		report = {
+			date: this._date.actual_date(),
+			user: this.actual_user,
+			user_reported: book_m.user,
+			type: "user"
+		}
+		console.log(report);	
+		// Envía el mensaje a la DB.
+		this._dbService.addData('reports', report)
+			.then( () => swal('Reporte enviado', 'Muchas gracias por reportar, lo revisaremos en seguida', 'success') )
+			.catch( () => swal('Error', 'Su reporte no ha podido enviarse', 'error') );
+	}
+
+	reportImage( book_m:any ){
+		let report:any;
+
+		report = {
+			date: this._date.actual_date(),
+			user: this.actual_user,
+			img: book_m.images,
+			type: "img"
+		}
+		console.log(report);	
+		// Envía el mensaje a la DB.
+		this._dbService.addData('reports', report)
+			.then( () => swal('Reporte enviado', 'Muchas gracias por reportar, lo revisaremos en seguida', 'success') )
+			.catch( () => swal('Error', 'Su reporte no ha podido enviarse', 'error') );
+	}
+
 }
