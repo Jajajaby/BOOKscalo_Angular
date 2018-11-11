@@ -67,14 +67,12 @@
 						<div>
 							<h4 class="card-title"><span class="lstick"></span>Estado de usuarios</h4>
 						</div>
-						<div class="ml-auto">
-							<select class="custom-select b-0">
-								<option selected="">January 2017</option>
-								<option value="1">February 2017</option>
-								<option value="2">March 2017</option>
-								<option value="3">April 2017</option>
-							</select>
-						</div>
+						<!-- TODO: ??? Agregar admin -->
+						<!-- <div class="ml-auto">
+							<button class="pull-right btn btn-circle btn-info" data-toggle="modal" data-target="#addAdmin">
+								<i class="ti-plus"></i>
+							</button>
+						</div> -->
 					</div>
 					<div class="table-responsive m-t-20">
 						<table class="table vm no-th-brd no-wrap pro-of-month">
@@ -96,10 +94,8 @@
 									</td>
 									<td>{{ u.role | titlecase }}</td>
 									<td>
-										<!-- TODO: If u.status == false es label-danger -->
-										<!-- TODO: If u.status == true es label-success -->
-										<!-- Success y danger... label-success, label-danger, label-info -->
-										<span class="label label-success label-rounded">Low</span>
+										<span *ngIf="[u.status] == 'true'" class="label label-success label-rounded">Activo</span>
+										<span *ngIf="[u.status] == 'false'" class="label label-danger label-rounded">Inactivo</span>
 									</td>
 								</tr>
 							</tbody>
@@ -264,53 +260,7 @@
 			</div>
 		</div>
 	</div> -->
-	<!-- ============================================================== -->
-	<!-- Twitter facebook and mail boxes -->
-	<!-- ============================================================== -->
-	<div class="row">
-		<div class="col-lg-4">
-			<div class="card bg-info text-white">
-				<div class="card-body">
-					<div class="d-flex">
-						<div class="stats">
-							<h1 class="text-white">3257+</h1>
-							<h6 class="text-white">Twitter Followers</h6>
-							<button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Check list</button>
-						</div>
-						<div class="stats-icon text-right ml-auto"><i class="fa fa-twitter display-5 op-3 text-dark"></i></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="card bg-primary text-white">
-				<div class="card-body">
-					<div class="d-flex">
-						<div class="stats">
-							<h1 class="text-white">6509+</h1>
-							<h6 class="text-white">Facebook Likes</h6>
-							<button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Check list</button>
-						</div>
-						<div class="stats-icon text-right ml-auto"><i class="fa fa-facebook display-5 op-3 text-dark"></i></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="card bg-success text-white">
-				<div class="card-body">
-					<div class="d-flex">
-						<div class="stats">
-							<h1 class="text-white">9062+</h1>
-							<h6 class="text-white">Subscribe</h6>
-							<button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Check list</button>
-						</div>
-						<div class="stats-icon text-right ml-auto"><i class="fa fa-envelope display-5 op-3 text-dark"></i></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 
 
 	<!-- ============================================================== -->
@@ -325,7 +275,9 @@
 							<h4 class="card-title"><span class="lstick"></span>To Do list</h4>
 						</div>
 						<div class="ml-auto">
-							<button class="pull-right btn btn-circle btn-success" data-toggle="modal" data-target="#myModal"><i class="ti-plus"></i></button>
+							<button class="pull-right btn btn-circle btn-success" data-toggle="modal" data-target="#myModal">
+								<i class="ti-plus"></i>
+							</button>
 						</div>
 					</div>
 					
@@ -364,11 +316,11 @@
 										<button type="button" class="btn btn-success" data-dismiss="modal" (click)="addTask()">Submit</button>
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									</div>
+								</div>
+								<!-- /.modal-content -->
 							</div>
-							<!-- /.modal-content -->
+							<!-- /.modal-dialog -->
 						</div>
-						<!-- /.modal-dialog -->
-					</div>
 					<!-- /.modal -->
 						<ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
 							<li class="list-group-item" data-role="task">

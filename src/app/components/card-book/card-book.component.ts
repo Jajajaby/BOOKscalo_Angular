@@ -119,6 +119,10 @@ export class CardBookComponent implements OnInit {
 			price:						this.book_modal.price
 		}
 
+		if ( this.form.value.transaction == undefined || this.form.value.transaction === null){
+			predet_Message.transaction = this.book_modal.transaction;
+		}
+
 		if ( this.form.value.pref === 'dislike_preferences' ){
 			let new_preferences:any =  {
 				station: 	this.form.value.station,
