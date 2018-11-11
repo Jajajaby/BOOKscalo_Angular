@@ -20,7 +20,7 @@ const ADMIN_ROUTE: Routes = [
       children: [
         { path: 'dashboard', component: DashboardComponent },
         { path: 'users', component: UsersComponent },
-        // { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
+        { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
       ]
    }
 ];
