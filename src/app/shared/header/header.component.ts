@@ -18,6 +18,7 @@ import swal from 'sweetalert';
 export class HeaderComponent implements OnInit {
 
 	profile:any;
+	loading:boolean = true;
 
 	constructor( 	private router:Router, 
 					private auth: AngularFireAuth,
@@ -35,6 +36,7 @@ export class HeaderComponent implements OnInit {
 			).subscribe( data => {
 				this.profile = [];
 				this.profile = data[0];
+				this.loading = false;
 			});
 	}
 

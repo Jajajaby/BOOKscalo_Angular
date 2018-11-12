@@ -61,6 +61,7 @@ export class CardBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		console.log(this.loading);
 		setTimeout( () => { 
 			if( this.type === 'all' ){
 				this.loading = false;
@@ -89,9 +90,9 @@ export class CardBookComponent implements OnInit {
 		})
 
 		// TODO: Probar
-		this._dbService.getDataQuery( "books", "uid", "==", this.book_modal.user.uid )
-				.valueChanges()
-				.subscribe( data => this.count_book = data.length );
+		// this._dbService.getDataQuery( "books", "uid", "==", this.book_modal.user.uid )
+		// 		.valueChanges()
+		// 		.subscribe( data => this.count_book = data.length );
 	 }
 
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro

@@ -68,14 +68,45 @@
 	<!-- Dropzone plugin -->
 	<script src="assets/plugins/dropzone-master/dist/dropzone.js"></script>
 	<!--Custom JavaScript -->
-	<script src="assets/js/custom.js "></script>
-
+	
 	<!-- FIXME: NO SÉ SI SE USAN -->
 	<script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
 	<script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
 	<!--c3 JavaScript -->
 	<script src="../assets/plugins/d3/d3.min.js"></script>
 	<script src="../assets/plugins/c3-master/c3.min.js"></script>
+
+	<!-- SI SE USA PERO ESTE DEBE IR ABAJO DE TODOS IGUAL -->
+	<script src="assets/js/custom.js "></script>
+
+	<script>
+	function browserSupportsCSSProperty(propertyName) {
+              var elm = document.createElement('div');
+              propertyName = propertyName.toLowerCase();
+
+              if (elm.style[propertyName] != undefined)
+                return true;
+
+              var propertyNameCapital = propertyName.charAt(0).toUpperCase() + propertyName.substr(1),
+                domPrefixes = 'Webkit Moz ms O'.split(' ');
+
+              for (var i = 0; i < domPrefixes.length; i++) {
+                if (elm.style[domPrefixes[i] + propertyNameCapital] != undefined)
+                  return true;
+              }
+
+              return false;
+            }
+
+            if (!browserSupportsCSSProperty('animation')) {
+              $('.bounce1, .bounce2, .bounce3').hide();
+              $('.spinner').css({
+                'background':'transparent url(https://dl.dropboxusercontent.com/u/11510916/fiddles/spinkit/spinner-fallback.gif) no-repeat',
+                'background-size':'70% 70%',
+                'height':'70px'
+              });
+						}
+						</script>
 </body>
 
 </html>

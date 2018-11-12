@@ -8,7 +8,7 @@ import { DatabaseService } from "../../services/database.service";
 export class HomeComponent implements OnInit {
 
 	view_bar:string = 'all';
-	books:any[];
+	books:any[] = [];
 
 	constructor( private _dbService:DatabaseService ) {
 		this._dbService.getData('books')

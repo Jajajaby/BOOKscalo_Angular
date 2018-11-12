@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MessagesComponent } from './messages/messages.component';
+import { LoadingComponent } from '../components/loading/loading.component';
 
 @NgModule({
     imports: [
@@ -16,11 +17,13 @@ import { MessagesComponent } from './messages/messages.component';
       HeaderComponent,
       SidebarComponent,
       MessagesComponent,
+      LoadingComponent
     ],
     exports: [
       HeaderComponent,
       SidebarComponent,
       MessagesComponent,
+      LoadingComponent
     ]
 })
 export class SharedModule { }
