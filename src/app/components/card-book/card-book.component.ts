@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 // INTERFACE
-import { Books, Predet_Message, Users } from '../../interface/books.interface';
+import { Books, Message, Users, Report } from '../../interface/books.interface';
 
 // SERVICIOS
 import { DatabaseService } from '../../services/database.service';
@@ -36,9 +36,6 @@ export class CardBookComponent implements OnInit {
 
 	// FIXME: Hacer que eso funcione, no sé dónde
 	count_book:number;
-	// this._dbService.getDataQuery( "books", "uid", "==", this.book_modal.user.uid )
-	// .valueChanges()
-	// .subscribe( data => this.count_book = data.length );
 	
 	book_modal: Books = {
 		author: 			'', 
@@ -68,7 +65,6 @@ export class CardBookComponent implements OnInit {
 			if( this.type === 'all' ){
 				this.loading = false;
 				this.books = this.booksHome;
-				// this.count_book = this.booksHome.length;
 			}else {
 				let aux = [];
 
@@ -77,20 +73,8 @@ export class CardBookComponent implements OnInit {
 				}
 				this.loading = false;
 				this.books = aux;
-				// this.count_book = aux.length;
 			}
 		}, 2000);
-
-		// setTimeout(() => {
-				// let aux = [];
-				// for(let book of this.booksSearch){
-				// 	if( book.name ===  this.name ) aux.push(book);
-				// }
-				// this.loading = false;
-				// this.books = aux;
-		// }, 2000);
-
-		
 
 		this.form = 				new FormGroup({
 			text: 						new FormControl([], Validators.required),
@@ -103,20 +87,28 @@ export class CardBookComponent implements OnInit {
 			new_price:				new FormControl(0),
 			new_text:					new FormControl([], Validators.required),
 		})
+
+		// TODO: Probar
+		this._dbService.getDataQuery( "books", "uid", "==", this.book_modal.user.uid )
+				.valueChanges()
+				.subscribe( data => this.count_book = data.length );
 	 }
 
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
 	sendMessage(){
-		let predet_Message:Predet_Message = {
-			transaction:			this.form.value.transaction,
-			pref: 						this.form.value.pref,
-			text:							[{ [this.actual_user.uid]: this.form.value.text }],
-			date:							this._date.actual_date(),
-			book:							this.book_modal,
-			user_owner:				this.book_modal.user.uid,
-			uid_interested:		this.actual_user,
-			status:						false,
-			price:						this.book_modal.price
+		let predet_Message:Message = {
+			transaction:								this.form.value.transaction,
+			pref: 											this.form.value.pref,
+			text:									[{ 
+				[this.actual_user.uid]: 	this.form.value.text, 
+				date: 										this._date.actual_date()
+			}],
+			date:												this._date.actual_date(),
+			book:												this.book_modal,
+			user_owner:									this.book_modal.user.uid,
+			uid_interested:							this.actual_user,
+			status:											false,
+			price:											this.book_modal.price
 		}
 
 		if ( this.form.value.transaction == undefined || this.form.value.transaction === null){
@@ -137,7 +129,11 @@ export class CardBookComponent implements OnInit {
 		}
 
 		if ( this.form.value.text === 'new_text' ){
-			predet_Message.text = this.form.value.new_text
+			predet_Message.text = [{
+				[this.actual_user.uid]: this.form.value.new_text,
+				date:										this._date.actual_date()
+			}
+			];
 		}
 
 		// Envía el mensaje a la DB.
@@ -145,15 +141,16 @@ export class CardBookComponent implements OnInit {
 			.then( () => swal('Mensaje enviado', 'Su mensaje ha sido enviado con éxito', 'success') )
 			.catch( () => swal('Error', 'Su mensaje no ha podido enviarse, vuelva a intentarlo', 'error') );
 	}
-
+	
+	// Envía el mensaje de reporte del usuario al admin
 	reportUser( book_m:any ){
-		let report:any;
 
-		report = {
-			date: this._date.actual_date(),
-			user: this.actual_user,
-			user_reported: book_m.user,
-			type: "Reporte de usuario"
+		let report:Report = {
+			id: 						this.actual_user.uid + "-" + new Date().valueOf(),
+			date: 					this._date.actual_date(),
+			user: 					this.actual_user,
+			user_reported: 	book_m.user,
+			type: 					"Reporte de usuario"
 		}
 		console.log(report);	
 		// Envía el mensaje a la DB.
@@ -162,16 +159,17 @@ export class CardBookComponent implements OnInit {
 			.catch( () => swal('Error', 'Su reporte no ha podido enviarse', 'error') );
 	}
 
+	// Envía el mensaje de reporte de imagen al admin
 	reportImage( book_m:any ){
 		let report:any;
 
 		report = {
-			day: this._date.actual_day(),
-			hour: this._date.actual_hour(),
-			user: this.actual_user,
-			img: book_m.images,
-			type: "Reporte de imagen",
-			status: "No revisado"
+			day: 			this._date.actual_day(),
+			hour: 		this._date.actual_hour(),
+			user: 		this.actual_user,
+			img: 			book_m.images,
+			type: 		"Reporte de imagen",
+			status: 	"No revisado"
 		}
 		console.log(report);	
 		// Envía el mensaje a la DB.

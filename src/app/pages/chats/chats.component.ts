@@ -4,7 +4,6 @@ import { map } from 'rxjs/operators';
 
 // ANGULARFIRE2
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 // SERVICES
 import { DateService } from '../../services/date.service';
@@ -30,6 +29,7 @@ export class ChatsComponent implements OnInit {
   
   uid:string;
   actual_user:string;
+  answer_text:any;
   
   constructor(  private _dbService:DatabaseService,
                 private afs:AngularFirestore,
@@ -50,6 +50,9 @@ export class ChatsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.answer_text = new FormGroup({
+      text: 					new FormControl('', Validators.required),
+    });
 
   }
 
@@ -61,20 +64,20 @@ export class ChatsComponent implements OnInit {
   }
 
 
-  // Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
-	sendMessage(){
-     let answer_msg = new FormGroup({
-      text: 						new FormControl([], Validators.required),
-			day: 							new FormControl(this._date.actual_day),
-			hour: 						new FormControl(this._date.actual_hour),
-     });
+  // Envía el mensaje desde el usuario actual hacia la DB
+	sendMessage(message:any){
+    let answer = { 
+      [this.uid]: 	this.answer_text.value.text, 
+      date: 				this._date.actual_date()
+    }
 
-     // Envía el mensaje a la DB.
-    //  updateData( collection:string, id:string, document:any )
-	// 	this._dbService.updateData('messages-transaction', predet_Message)
-	// 		.then( () => swal('Mensaje enviado', 'Su mensaje ha sido enviado con éxito', 'success') )
-	// 		.catch( () => swal('Error', 'Su mensaje no ha podido enviarse, vuelva a intentarlo', 'error') );
-	// }
+     this._dbService.getDataQuery('messages-transaction', 'mesages', '===', 'message.uid' )
+    message = message.text.push(answer);
+
+    console.log(message);
+
+    // this._dbService.updateData('messages-transaction', message.)()
+  // updateData( collection:string, id:string, document:any )
     }
 
 }

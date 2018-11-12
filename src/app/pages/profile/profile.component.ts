@@ -13,17 +13,18 @@ import * as firebase from 'firebase';
   templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
+	
+	form:FormGroup;
 
-	profile_options:string = 'my_profile';
+	profile_options:string = 'my_profile'; // Controla las opciones en Mi Perfil
 	profile:any;  
 	user_profile: any;
-	uid:string; // uid usuario actual
-	form:FormGroup;
-	preferences:any; 
-	p_selected:any;
 	preferences_modal:any;
-	count_book:any;
-	urlImgs:string; //  Guarda la ruta de la imagen para guardar en DB
+	uid:string; // uid usuario actual
+	preferences:any; // Todas las preferencais 
+	p_selected:any; // Proferencias
+	count_book:any; // Contador de libros del usuario actual
+	urlImgs:string; // Guarda la ruta de la imagen para guardar en DB
 
 
   	constructor( private _dbService:DatabaseService ) {
@@ -33,9 +34,9 @@ export class ProfileComponent implements OnInit {
 				subway_station: ''
 			};
 
-			let user = JSON.parse( localStorage.getItem( "user" ) );
+			let actual_user = JSON.parse( localStorage.getItem( "user" ) );
 				
-			this._dbService.getDataQuery( "users", "uid", "==", user.uid )
+			this._dbService.getDataQuery( "users", "uid", "==", actual_user.uid )
 				.snapshotChanges()
 				.pipe(
 					map(actions => actions.map(a => {
@@ -48,7 +49,7 @@ export class ProfileComponent implements OnInit {
 					this.preferences =  this.profile.preferences;
 				});
 
-			this._dbService.getDataQuery( "books", "uid", "==", user.uid )
+			this._dbService.getDataQuery( "books", "uid", "==", actual_user.uid )
 				.valueChanges()
 				.subscribe( data => this.count_book = data.length );
  	}
@@ -118,10 +119,6 @@ export class ProfileComponent implements OnInit {
 			.catch( () => {
 				console.log("cuek");
 			});
-	}
-
-	aaa(){
-		console.log(this.form.value);
 	}
 
 	deleteAccount(){

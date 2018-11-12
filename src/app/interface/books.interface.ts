@@ -1,3 +1,4 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 // Interface libro
 export interface Books{
 	author:				string;
@@ -36,7 +37,8 @@ export interface Users{
 	phone?:				string;
 };
 
-export interface Predet_Message{
+// Interface del mensaje para establecer la transacción
+export interface Message{
 	transaction:			string;
 	pref: 						any;
 	text:							Array<any>;
@@ -46,4 +48,13 @@ export interface Predet_Message{
 	uid_interested:		Users;
 	status:						boolean;
 	price?:						number;
+};
+
+// Interface de los reportes de imagenes y de usuario
+export interface Report{
+	id:							string;
+	user:						any;
+	user_reported:	any;
+	date:						string;
+	type:						string;
 };

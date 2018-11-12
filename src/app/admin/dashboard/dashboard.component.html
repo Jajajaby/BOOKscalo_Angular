@@ -142,6 +142,7 @@
 				<table class="table vm no-th-brd no-wrap pro-of-month">
 					<thead>
 						<tr>
+							<th>ID</th>
 							<th>Usuario que reporta</th>
 							<th>Tipo de reporte</th>
 							<th>Fecha</th>
@@ -152,6 +153,10 @@
 					</thead>
 					<tbody>
 						<tr *ngFor="let r of reports">
+							<!-- TODO: Revisar visualmente y borrar referencis sin ID -->
+							<td>
+								<h6>{{ r.id }}</h6>
+							</td>
 							<td>
 								<h6>{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}</h6>
 							</td>
