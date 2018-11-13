@@ -48,11 +48,7 @@
 						<i class="ti-search"></i>
 					</a>
 					<div class="app-search">
-						<input type="text"
-								class="form-control"
-								placeholder="Buscar..."
-								(keyup.enter)="searchBook(Search.value)"
-								#Search>
+						<input type="text" class="form-control" placeholder="Buscar..." (keyup.enter)="searchBook(Search.value)" #Search>
 						<a class="srh-btn" >
 							<i class="ti-close"></i>
 						</a>
@@ -163,7 +159,7 @@
 				<!-- ============================================================== -->
 
 				<!-- ============================================================== -->
-				<!-- Profile 														-->
+				<!-- Profile 																												-->
 				<!-- ============================================================== -->
 				<li class="nav-item dropdown">
 					<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle waves-effect waves-dark" 
@@ -193,27 +189,23 @@
 							<li role="separator" class="divider"></li>
 							<li>
 								<a [routerLink]="['/profile']">
-									<i class="ti-user"></i>
-									&nbsp; Mi perfil
+									<i class="ti-user"></i> &nbsp; Mi perfil
 								</a>
 							</li>
 							<li>
 								<a [routerLink]="['/library']">
-									<i class="ti-wallet"></i>
-									&nbsp; Mi biblioteca
+									<i class="ti-wallet"></i> &nbsp; Mi biblioteca
 								</a>
 							</li>
 							<li>
 								<a [routerLink]="['/messages']">
-									<i class="ti-email"></i>
-									&nbsp; Mis mensajes
+									<i class="ti-email"></i> &nbsp; Mis mensajes
 								</a>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li>
 								<a (click)="logout()">
-									<i class="fa fa-power-off"></i>
-									&nbsp; Cerrar sesión
+									<i class="fa fa-power-off"></i> &nbsp; Cerrar sesión
 								</a>
 							</li>
 						</ul>

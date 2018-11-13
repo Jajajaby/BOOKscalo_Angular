@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// MODULOS
+// MODULES
 import { SharedModule } from '../shared/shared.module';
 
 // PIPES
 import { ThousandsPipe } from '../pipes/thousands.pipe';
 
-//SERVICIOS
+// SERVICES
 import { DatabaseService } from "./../services/database.service";
 import { DateService } from "./../services/date.service";
 
-// RUTAS
+// ROUTES
 import { PAGES_ROUTES } from './pages.routes';
 
 // ANGULARFIRE2
@@ -31,14 +31,12 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { LibraryComponent } from './library/library.component';
-import { OneBookComponent } from './one-book/one-book.component';
-
+import { ChatsComponent } from './chats/chats.component';
+import { SearchComponent } from './search/search.component';
 
 // COMPONENTS
-import { BooksComponent } from '../components/books/books.component';
 import { CardBookComponent } from '../components/card-book/card-book.component';
-import { SearchComponent } from './search/search.component';
-import { ChatsComponent } from './chats/chats.component';
+import { OneBookComponent } from '../components/one-book/one-book.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +46,6 @@ import { ChatsComponent } from './chats/chats.component';
     LibraryComponent,
     OneBookComponent,
     PagesComponent,
-    BooksComponent,
     CardBookComponent,
     SearchComponent,
     ThousandsPipe,

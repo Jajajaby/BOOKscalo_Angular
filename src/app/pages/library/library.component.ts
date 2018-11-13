@@ -37,6 +37,7 @@ export class LibraryComponent implements OnInit {
 		this.resetBook();
 	}
 
+	// Actualiza el libro en la DB
 	updateBook(){
 		this._dbService.updateData( "books", this.book_modal.key, this.book_modal )
 			.then( () => {
@@ -47,6 +48,7 @@ export class LibraryComponent implements OnInit {
 			});
 	}
 
+	// Elimina un libro de la DB
 	deleteBook(){
 		this._dbService.deleteData( "books", this.book_modal.key )
 			.then( () => {
@@ -58,6 +60,7 @@ export class LibraryComponent implements OnInit {
 			});
 	}
 
+	// Deja los campos de libro en blanco al borrar uno o entrar en Mi Biblioteca
 	resetBook(){
 		this.book_modal = {
 			author: 		'', 

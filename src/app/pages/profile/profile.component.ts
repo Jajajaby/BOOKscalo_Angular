@@ -15,59 +15,46 @@ import * as firebase from 'firebase';
 export class ProfileComponent implements OnInit {
 	
 	form:FormGroup;
-
 	profile_options:string = 'my_profile'; // Controla las opciones en Mi Perfil
 	profile:any;  
 	user_profile: any;
-	preferences_modal:any;
 	uid:string; // uid usuario actual
-	preferences:any; // Todas las preferencais 
-	p_selected:any; // Proferencias
 	count_book:any; // Contador de libros del usuario actual
+	preferences_modal:any;
+	preferences:any; // Todas las preferencais 
+	p_selected:any; // Preferencias seleccionadas
 	urlImgs:string; // Guarda la ruta de la imagen para guardar en DB
 
 
-  	constructor( private _dbService:DatabaseService ) {
-			this.preferences_modal = {
-				hour: '',
-				day: '',
-				subway_station: ''
-			};
-
-			let actual_user = JSON.parse( localStorage.getItem( "user" ) );
-				
-			this._dbService.getDataQuery( "users", "uid", "==", actual_user.uid )
-				.snapshotChanges()
-				.pipe(
-					map(actions => actions.map(a => {
-						const data = a.payload.doc.data();
-						const key = a.payload.doc.id;
-						return { key, ...data };
-					}))
-				).subscribe( data => {
-					this.profile = data[0];
-					this.preferences =  this.profile.preferences;
-				});
-
-			this._dbService.getDataQuery( "books", "uid", "==", actual_user.uid )
-				.valueChanges()
-				.subscribe( data => this.count_book = data.length );
- 	}
-
-  	ngOnInit() {
-  		this.profile = {
-			uid: 					'', 
-			rut: 					'', 
-			name: 				'', 
-			last_name1: 	'', 
-			last_name2: 	'', 
-			email: 				[], 
-			phone: 				'', 
-			categories:		[], 
-			commune: 			'',
-			status:				true,
-			img: 					''
+  constructor( private _dbService:DatabaseService ) {
+		this.preferences_modal = {
+			hour: '',
+			day: '',
+			subway_station: ''
 		};
+
+		let actual_user = JSON.parse( localStorage.getItem( "user" ) );
+			
+		this._dbService.getDataQuery( "users", "uid", "==", actual_user.uid )
+			.snapshotChanges()
+			.pipe(
+				map(actions => actions.map(a => {
+					const data = a.payload.doc.data();
+					const key = a.payload.doc.id;
+					return { key, ...data };
+				}))
+			).subscribe( data => {
+				this.profile = data[0];
+				this.preferences =  this.profile.preferences;
+			});
+
+		this._dbService.getDataQuery( "books", "uid", "==", actual_user.uid )
+			.valueChanges()
+			.subscribe( data => this.count_book = data.length );
+	}
+
+  ngOnInit() {
+  	this.resetUser();
 
 		this.form = new FormGroup({
 			subway_station: new FormControl(undefined, Validators.required),
@@ -76,12 +63,10 @@ export class ProfileComponent implements OnInit {
 		});
 
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
-
 	}
 	
+	// Actualiza los datos de perfil del usuario en la DB
 	updateProfile(){
-		// Actualiza la data según el id y el documento a modificar
-		console.log(this.urlImgs);
 		this.profile.img = this.urlImgs;
 
 		this._dbService.updateData( "users", this.profile.key, this.profile )
@@ -93,8 +78,9 @@ export class ProfileComponent implements OnInit {
 			});
 	}
 
+	// TODO: Falta revisar si la nueva preferencia ya existe.
+	// Agrega la nueva preferencia a la DB 
 	addPreference(){
-		// Si la formulario no es valida no se realiza la carga a firebase
 		if ( this.form.invalid ) {
 			swal(
 				'Debe completar el formulario', 
@@ -104,7 +90,7 @@ export class ProfileComponent implements OnInit {
 			return;
 		}
 
-		let pref:any = this.form.value; 
+		let pref:any = this.form.value; // Asigna la nueva preferencia a la variable a actualizar
 
 		if(this.profile.preferences === undefined ){
 			this.profile.preferences = [pref];
@@ -114,24 +100,45 @@ export class ProfileComponent implements OnInit {
 
 		this._dbService.updateData( "users", this.profile.key, this.profile )
 			.then( () => {
-				console.log("funcionó");
+				swal('Preferencia agregada', 'Su preferencia ha sido agregada con éxito', 'success');
 			})
 			.catch( () => {
-				console.log("cuek");
+				swal('Error al agregar su preferencia', 'Por favor, vuelva a intentarlo', 'error');
 			});
 	}
-
+ 
+	// Invalida la cuenta del usuario, no la borra, solo le cambia el estado
 	deleteAccount(){
 		this.profile.status = false;
+		
+
 		this._dbService.updateData( "users", this.profile.key, this.profile )
 			.then( () => {
 				swal('Cuenta eliminada', 'Su cuenta ha sido eliminada con éxito', 'success');
+				// TODO: Hacer que esto funcione
+				// swal({
+				// 	title: "Está seguro que desea eliminar su cuenta?",
+				// 	text: "Si luego desea volver a restaurar su cuenta, debe enviar un correo a JavieraOrmeno.L@gmail.com",
+				// 	icon: "warning",
+				// 	buttons: true,
+				// 	dangerMode: true,
+				//   })
+				//   .then((willDelete) => {
+				// 	if (willDelete) {
+				// 	  swal("Su cuenta ha sido eliminada con éxito", {
+				// 		icon: "success",
+				// 	  });
+				// 	} else {
+				// 	  swal("Su cuenta sigue activa");
+				// 	}
+				//   });
 			})
 			.catch( () => {
 				swal('Error al elminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
 			});
 	}
 
+	// Elimina la preferencia seleccionada del usuario
 	deletePreference(index:number){
 		this.profile.preferences.splice(index, 1);
 		this._dbService.updateData( "users", this.profile.key, this.profile )
@@ -191,5 +198,21 @@ export class ProfileComponent implements OnInit {
 		}
 	}
 
+	// Deja los campos de usuario en blanco
+	resetUser(){
+		this.profile = {
+			uid: 					'', 
+			rut: 					'', 
+			name: 				'', 
+			last_name1: 	'', 
+			last_name2: 	'', 
+			email: 				[], 
+			phone: 				'', 
+			categories:		[], 
+			commune: 			'',
+			status:				true,
+			img: 					''
+		};
+	}
 
 }

@@ -21,22 +21,10 @@ export class OneBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.editForm = new FormGroup({
-			title: 			new FormControl(this.book.title)
-		// this.editForm = this.formBuilder.group({
-	 //      	title:		[this.book.title]
-			// author: 		['', Validators.required],
-			// editorial: 		['', Validators.required],
-			// type: 			['', Validators.required],
-			// genres: 		['', Validators.required],
-			// transaction: 	['', Validators.required],
-			// price: 			[''],
-			// language: 		['', Validators.required],
-			// original: 		['', Validators.required],
-			// num_pages: 		['', Validators.required],
-			// comment: 		[''],
-			// images: 		['']
-		});
+		// TODO: Ver si eso servía o no fdjlksf
+		// this.editForm = new FormGroup({
+		// 	title: 			new FormControl(this.book.title)
+		// });
 	}
 
 }

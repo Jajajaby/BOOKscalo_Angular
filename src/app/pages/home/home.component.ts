@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 				this.books = [];
 				this.books = data;
 			
-				// cambia la referencia de user por el objeto del usuario
+				// Cambia la referencia del user por el objeto del usuario
 				for(let i=0; i<this.books.length; i++){
 					this._dbService.afs.doc(data[i].user)
 						.valueChanges()

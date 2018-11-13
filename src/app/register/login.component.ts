@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 
-// Services
+// SERVICES
 import { DatabaseService } from '../services/database.service';
 
-// Angularfire2
+// ANGULARFIRE2
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
 
-// Plugins
+// PLUGINS
 import swal from 'sweetalert';
 import * as firebase from 'firebase';
 
@@ -27,14 +27,14 @@ export class LoginComponent implements OnInit {
 					private router:Router,
 					private _db:DatabaseService ) { 
 
-			this.afAuth.authState.subscribe( user => {
-				console.log( 'Estado del usuario', user );
-				if( !user ){
-					return;
-				}
-				this.user.name = user.displayName;
-				this.user.uid 	= user.uid;
-				this.user.email 	= user.email;
+		this.afAuth.authState.subscribe( user => {
+			console.log( 'Estado del usuario', user );
+			if( !user ){
+				return;
+			}
+			this.user.name = user.displayName;
+			this.user.uid 	= user.uid;
+			this.user.email 	= user.email;
 		});
 	}
 
@@ -102,12 +102,16 @@ export class LoginComponent implements OnInit {
 		}
 	}
 
-	// TODO: Cambiar a función de flecha(?)
+	// Envía un correo desde Firebase para restaurar la contraseña
 	forgotPassword(){
 		let auth = firebase.auth();
 
-		auth.sendPasswordResetEmail(this.form.value['email']).then(function() {
-		}).catch(function(error) {
-		});
+		auth.sendPasswordResetEmail(this.form.value['email'])
+			.then(() => {
+				swal('Correo enviado', 'Se ha enviado un correo para restaurar la contraseña', 'success');
+			})
+			.catch( () => {
+				swal('Error al enviar correo', 'Por favor, vuelva a intentarlo', 'error');
+			});
 	}
 }
