@@ -12,28 +12,54 @@ export class SearchComponent implements OnInit {
 	books:any[] = [];
 	authors:any[] = [];
 	owners:any[] = [];
+	typeInput:string[] = [];
 
 	constructor( private activatedRoute:ActivatedRoute,
 				 private _dbService: DatabaseService ) { }
 
 	ngOnInit() {
 		this.activatedRoute.params.subscribe( params => {
-			let input = params['input'];
+			const input:string = params['input'];
+			this.typeInput = input.split('.');
 			
-			this._dbService.getData('books')
-				.valueChanges()
-				.subscribe( resp => {
-					this.books = this.searchBook(resp, input);
-					this.authors = this.searchAuthor(resp, input);
-					// this.categories = this.searchOwner(resp, input);
-					// this.books = this.search(1, resp, input);
-					// this.authors = this.search(2, resp, input);
-					// this.categories = this.search(3, resp, input);
-				});
+			if( this.typeInput[0] === 'sidebar' ) {
+				
 
-			this._dbService.getData('users')
-				.valueChanges()
-				.subscribe( users => this.owners = this.searchOwner(users, input) );
+				// TODO: hacer busqueda en la bd
+
+				let searchCategories = [];
+
+		    for( let book of this.books ) {
+		      let categories = book.genres;
+		      let flag = false; // con esto valido que se agregue solo 1 vez el mismo libro
+		      
+		      for( let category of categories ){
+		        let cat = category.toLowerCase();
+		
+		        if( cat.indexOf(this.typeInput[0].toLowerCase()) >= 0 && !flag ) {
+		          flag = true;
+		          searchCategories.push(book);
+		        }
+		      }
+				}
+			}else {
+				console.log(input);
+				this._dbService.getData('books')
+					.valueChanges()
+					.subscribe( resp => {
+						this.books = this.searchBook(resp, input);
+						this.authors = this.searchAuthor(resp, input);
+						// this.categories = this.searchOwner(resp, input);
+						// this.books = this.search(1, resp, input);
+						// this.authors = this.search(2, resp, input);
+						// this.categories = this.search(3, resp, input);
+					});
+	
+				this._dbService.getData('users')
+					.valueChanges()
+					.subscribe( users => this.owners = this.searchOwner(users, input) );
+			}
+			
 		});
 	}
 

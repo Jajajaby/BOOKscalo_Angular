@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="typeInput[0] !== 'sidebar'; else Sidebar">
   <div class="card col-12 col-lg-4">
     <div class="card-body">
       <h4 class="card-title">Libros</h4>
@@ -73,3 +73,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #Sidebar>
+
+  <h2> Busqueda por sidebar </h2>
+
+</ng-template>

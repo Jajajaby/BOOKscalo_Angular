@@ -3,9 +3,13 @@
 		<nav class="sidebar-nav">
 			<ul id="sidebarnav">
 			 	<li class="nav-small-cap">CATEGORÍAS</li>
-			 	<li class="nav-devider"></li>
-				<li class="nav-small-cap" *ngFor="let c of categories" (click)="searchCategory(c)">
-					<a href="#">{{ c }}</a>
+				 <li class="nav-devider"></li>
+				 <!-- TODO: ponerle estilos -->
+				<li class="nav-small-cap" 
+						style="cursor: pointer;" 
+						*ngFor="let c of categories" 
+						routerLinkActive="active">
+					<a [routerLink]="['/search', 'sidebar.'+c]">{{ c }}</a>
 				</li>               
 			</ul>
 		</nav>

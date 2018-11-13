@@ -61,7 +61,6 @@ export class CardBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log(this.loading);
 		setTimeout( () => { 
 			if( this.type === 'all' ){
 				this.loading = false;
