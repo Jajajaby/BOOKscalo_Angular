@@ -131,3 +131,8 @@
     height: 50px;
     border-radius: 100%;
 }
+
+.sidebar-nav > ul > li > a.active {
+    background: none !important;
+    color: #687384 !important;
+}

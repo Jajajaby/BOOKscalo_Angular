@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
 	books:any[] = [];
 	authors:any[] = [];
 	owners:any[] = [];
+	sidebar:any[] = [];
 	typeInput:string[] = [];
 
 	constructor( private activatedRoute:ActivatedRoute,
@@ -22,43 +23,23 @@ export class SearchComponent implements OnInit {
 			const input:string = params['input'];
 			this.typeInput = input.split('.');
 			
-			if( this.typeInput[0] === 'sidebar' ) {
-				
-
-				// TODO: hacer busqueda en la bd
-
-				let searchCategories = [];
-
-		    for( let book of this.books ) {
-		      let categories = book.genres;
-		      let flag = false; // con esto valido que se agregue solo 1 vez el mismo libro
-		      
-		      for( let category of categories ){
-		        let cat = category.toLowerCase();
-		
-		        if( cat.indexOf(this.typeInput[0].toLowerCase()) >= 0 && !flag ) {
-		          flag = true;
-		          searchCategories.push(book);
-		        }
-		      }
-				}
-			}else {
+			
 				console.log(input);
 				this._dbService.getData('books')
 					.valueChanges()
 					.subscribe( resp => {
-						this.books = this.searchBook(resp, input);
-						this.authors = this.searchAuthor(resp, input);
-						// this.categories = this.searchOwner(resp, input);
-						// this.books = this.search(1, resp, input);
-						// this.authors = this.search(2, resp, input);
-						// this.categories = this.search(3, resp, input);
+						if( this.typeInput[0] === 'sidebar' ) {
+							this.sidebar = this.searchSidebar(resp, this.typeInput[1]);
+						}else {
+							this.books = this.searchBook(resp, input);
+							this.authors = this.searchAuthor(resp, input);
+						}
 					});
 	
 				this._dbService.getData('users')
 					.valueChanges()
 					.subscribe( users => this.owners = this.searchOwner(users, input) );
-			}
+			
 			
 		});
 	}
@@ -87,8 +68,7 @@ export class SearchComponent implements OnInit {
 		return searchAuthor;
 	}
 
-	// TODO: hay que hacer la busqueda por dueño queda pendiente
-	searchOwner(users:any[], search:string){
+	searchOwner(users:any[], search:string) {
 		let owners = [];
 		
 		for( let user of users ){	
@@ -100,38 +80,26 @@ export class SearchComponent implements OnInit {
 		return owners;
 	}
 
-	// Busca. Si es 1 el libro, 2 autor y 3 categoría.
-	search (i:number, books:any[], search:string){
-		let searchBook = [];
-		let searchAuthor = [];
+	searchSidebar(books:any[], input:string) {
 		let searchCategories = [];
 
-		for( let book of books ){
-			let title = book.title.toLowerCase();
-			let author = book.author.toLowerCase();
-			let categories = book.genres;
+		for( let book of books ) {
+		  let categories = book.genres;
+		  let flag = false; // con esto valido que se agregue solo 1 vez el mismo libro
+		  
+		  for( let category of categories ){
+		    let cat = category.toLowerCase();
 
-			if( i == 1 && title.indexOf(search.toLowerCase()) >= 0 ) {
-				searchBook.push(book);
-				return searchBook;
-			}else if( i == 2 ){
-				for( let book of books ){
-					if( author.indexOf(search.toLowerCase()) >= 0 ) {
-						searchAuthor.push(book);
-					}
-				}
-				return searchAuthor;
-			}else if( i == 3 ){
-				for( let category of categories ){
-					let cat = category.toLowerCase();
-					if( cat.indexOf(search.toLowerCase()) >= 0 ) {
-						searchCategories.push(book);
-					}
-				}
-				return searchCategories;
-			}
+		    if( cat.indexOf(input.toLowerCase()) >= 0 && !flag ) {
+		      flag = true;
+		      searchCategories.push(book);
+		    }
+		  }
 		}
-		
+		console.log(searchCategories);
+		return searchCategories;
 	}
+		
+	
 
 }
