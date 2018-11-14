@@ -29,7 +29,8 @@ export class ChatsComponent implements OnInit {
   
   uid:string;
   actual_user:string;
-  answer_text:any;
+  text_answer:any;
+  
   
   constructor(  private _dbService:DatabaseService,
                 private afs:AngularFirestore,
@@ -50,10 +51,6 @@ export class ChatsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.answer_text = new FormGroup({
-      text: 					new FormControl('', Validators.required),
-    });
-
   }
 
   showMessages( key:string ){
@@ -65,18 +62,17 @@ export class ChatsComponent implements OnInit {
 
 
   // Envía el mensaje desde el usuario actual hacia la DB
-	sendMessage(message:any){
-    let answer = { 
-      [this.uid]: 	this.answer_text.value.text, 
-      date: 				this._date.actual_date()
+	sendMessage(message:any, text_answer:any){
+    let answer = {
+      [this.uid]: text_answer,
+			date:				this._date.actual_date()
     }
-
-     this._dbService.getDataQuery('messages-transaction', 'mesages', '===', 'message.uid' )
-    message = message.text.push(answer);
-
+    console.log(answer);
     console.log(message);
-
-    // this._dbService.updateData('messages-transaction', message.)()
+    // message = message.text.push(answer);
+    // console.log(message);
+    // FIXME: 
+    // this._dbService.updateData('messages-transaction', 'message.'.)
   // updateData( collection:string, id:string, document:any )
     }
 
