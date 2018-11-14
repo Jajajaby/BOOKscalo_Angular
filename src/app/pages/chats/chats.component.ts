@@ -44,8 +44,8 @@ export class ChatsComponent implements OnInit {
     this.chats = this.chatsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data();
-        const key = a.payload.doc.id;
-        return { key, ...data };
+        const $key = a.payload.doc.id;
+        return { $key, ...data };
       }))
     );
   }
@@ -62,6 +62,7 @@ export class ChatsComponent implements OnInit {
 
 
   // Envía el mensaje desde el usuario actual hacia la DB
+  // message es el mensaje seleccionado en los chats
 	sendMessage(message:any, text_answer:any){
     let answer = {
       [this.uid]: text_answer,
@@ -70,9 +71,10 @@ export class ChatsComponent implements OnInit {
     console.log(answer);
     console.log(message);
     // message = message.text.push(answer);
-    // console.log(message);
+    // TODO: Probar jeje
     // FIXME: 
-    // this._dbService.updateData('messages-transaction', 'message.'.)
+    console.log(message.key);
+    this._dbService.updateData('messages-transaction', message.key,  this.message);
   // updateData( collection:string, id:string, document:any )
     }
 

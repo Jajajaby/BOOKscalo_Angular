@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit {
 		this.form = new FormGroup({
 			task:         new FormControl(Validators.required),
 			description:  new FormControl(Validators.required),
-			priority:     new FormControl(Validators.required)
+			priority:     new FormControl(Validators.required) //high, medium, low
 		});
 	
 	}
