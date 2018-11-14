@@ -30,6 +30,7 @@ export class ChatsComponent implements OnInit {
   uid:string;
   actual_user:string;
   text_answer:any;
+  key:string;
   
   
   constructor(  private _dbService:DatabaseService,
@@ -44,8 +45,8 @@ export class ChatsComponent implements OnInit {
     this.chats = this.chatsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data();
-        const $key = a.payload.doc.id;
-        return { $key, ...data };
+        const key = a.payload.doc.id;
+        return { key, ...data };
       }))
     );
   }
@@ -54,6 +55,7 @@ export class ChatsComponent implements OnInit {
   }
 
   showMessages( key:string ){
+    this.key = key; // Para que se pueda ver desde el otro método
     this.selected_chat = this.afs.collection<any>('messages-transaction').doc(key);
     this.selected_chat
       .valueChanges()
@@ -62,20 +64,14 @@ export class ChatsComponent implements OnInit {
 
 
   // Envía el mensaje desde el usuario actual hacia la DB
-  // message es el mensaje seleccionado en los chats
 	sendMessage(message:any, text_answer:any){
     let answer = {
       [this.uid]: text_answer,
 			date:				this._date.actual_date()
     }
-    console.log(answer);
-    console.log(message);
-    // message = message.text.push(answer);
-    // TODO: Probar jeje
-    // FIXME: 
-    console.log(message.key);
-    this._dbService.updateData('messages-transaction', message.key,  this.message);
-  // updateData( collection:string, id:string, document:any )
+
+    this.message.text.push(answer);
+    this._dbService.updateData("messages-transaction", this.key, this.message);
     }
 
 }

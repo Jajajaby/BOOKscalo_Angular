@@ -20,23 +20,12 @@ export class CardBookComponent implements OnInit {
 	@Input() type:string; 
 	@Input() booksHome:any[]; 
 
-	// Input desde el Search, traen el elemento a mostrar
-	// @Input() booksSearch:any[];
-	// @Input() authorsSearch:any[];
-	// @Input() categoriesSearch:any[];
-	// @Input() name:string;
-	// @Input() author:string;
-
-
 	books:any[]; // array con los books a mostrar
 	loading:boolean = true; // muestra y esconde un loading
 	form:any; 
 	actual_user:any;
 	today:any;
 
-	// FIXME: Hacer que eso funcione, no sé dónde
-	count_book:number;
-	
 	book_modal: Books = {
 		author: 			'', 
 		title: 				'', 
@@ -88,10 +77,6 @@ export class CardBookComponent implements OnInit {
 			new_text:					new FormControl([], Validators.required),
 		})
 
-		// TODO: Probar
-		// this._dbService.getDataQuery( "books", "uid", "==", this.book_modal.user.uid )
-		// 		.valueChanges()
-		// 		.subscribe( data => this.count_book = data.length );
 	 }
 
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
