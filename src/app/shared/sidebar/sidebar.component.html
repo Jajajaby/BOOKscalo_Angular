@@ -6,10 +6,10 @@
 				 <li class="nav-devider"></li>
 				 <!-- TODO: ponerle estilos -->
 				<li class="nav-small-cap" 
+						routerLinkActive="active"
 						style="cursor: pointer;" 
-						*ngFor="let c of categories" 
-						routerLinkActive="active">
-					<a [routerLink]="['/search', 'sidebar.'+c]">{{ c }}</a>
+						*ngFor="let c of categories">
+					<a [routerLink]="['/search', 'sidebar.'+c]"> {{ c }} </a>
 				</li>               
 			</ul>
 		</nav>
