@@ -10,16 +10,23 @@ import { DatabaseService } from '../../services/database.service';
 export class MessagesComponent implements OnInit {
 
 	uid:string;
-	messages:any[];
+	messages:any = [];
+	new_messages:any = [];
 
 	constructor( private _dbService:DatabaseService ) { 
 		this.uid = JSON.parse(localStorage.getItem('user')).uid;
-		this.messages = [];
+
 		this._dbService.getDataQuery('messages-transaction', 'user_owner', '==', this.uid)
 			.valueChanges()
 			.subscribe( data => {
 				this.messages = [];
 				this.messages = data;
+				
+				for (let m of this.messages){
+					if (m.status === false){
+						this.new_messages.push(m);
+					}
+				}
 			});
 	}
 

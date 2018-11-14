@@ -21,7 +21,7 @@
 
       <ng-template #noBooks>
         <div class="alert alert-primary" role="alert">
-            no se encontraron coincidencias
+          No se encontraron coincidencias
         </div>
       </ng-template>
 
@@ -44,7 +44,7 @@
 
       <ng-template #noAuth>
         <div class="alert alert-primary" role="alert">
-            no se encontraron coincidencias
+            No se encontraron coincidencias
         </div>
       </ng-template>
     </div>
@@ -67,7 +67,7 @@
 
       <ng-template #noOwner>
         <div class="alert alert-primary" role="alert">
-          no se encontraron coincidencias
+          No se encontraron coincidencias
         </div>
       </ng-template>
     </div>
@@ -83,7 +83,7 @@
 <ng-template #Sidebar>
   <div class="card col-12">
     <div class="card-body">
-      <h4 class="card-title">Busqueda por categoria: {{ typeInput[1] }}</h4>
+      <h4 class="card-title">Búsqueda por categoría: {{ typeInput[1] }}</h4>
       <ul class="list-unstyled" *ngIf="sidebar.length > 0; else noSidebar">
         <li class="media media border p-1" *ngFor="let cat of sidebar">
           <img class="d-flex mr-3"
@@ -98,7 +98,7 @@
             <h5 class="mt-0 mb-2 text-success" *ngIf="cat.transaction === 'Ambos'"> ${{ cat.price }} </h5>
             <h5 class="mt-0 mb-2 text-success" *ngIf="cat.transaction === 'Venta'"> ${{ cat.price }} </h5>
             <hr>
-            <h5 class="mt-0 mb-2"> Categorias </h5>
+            <h5 class="mt-0 mb-2"> Otras categorías a las que pertenece </h5>
             <h6 class="mt-0 mb-2" *ngFor="let genres of cat.genres"> {{ genres }} </h6>
           </div>
         </li>
