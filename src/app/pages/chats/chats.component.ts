@@ -56,21 +56,25 @@ export class ChatsComponent implements OnInit {
 
   showMessages( key:string ){
     // Actualiza que el mensaje está leído
-    this.message.status = true;
-    this._dbService.updateData('messages-transaction', key, this.message);
+    // this.message.status = true;
+    // this._dbService.updateData('messages-transaction', key, this.message);
 
     this.key = key; // Para que se pueda ver desde el otro método
     
     this.selected_chat = this.afs.collection<any>('messages-transaction').doc(key);
     this.selected_chat
       .valueChanges()
-      .subscribe( data => this.message = data );
+      .subscribe( data => {
+        console.log('data: ',data);
+        this.message = data;
+      });
   }
 
 
   // Envía el mensaje desde el usuario actual hacia la DB
 	sendMessage(message:any, text_answer:any){
-    if( this.text_answer === undefined ){
+    console.log(this.message);
+    if( this.text_answer === undefined || this.text_answer === null || this.text_answer === "" ){
 			swal( 'Debe ingresar un texto para responder', '', 'warning');
 			return;
 		}
@@ -80,7 +84,8 @@ export class ChatsComponent implements OnInit {
     }
 
     this.message.text.push(answer);
-    this._dbService.updateData('messages-transaction', this.key, this.message);
+    this._dbService.updateData('messages-transaction', this.key, this.message)
+      .then( () => this.text_answer = undefined )
     }
 
 }

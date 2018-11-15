@@ -19,7 +19,7 @@
 							<!-- TODO: Buscar solo los contactos que me han enviado mensaje -->
 							<input class="form-control p-20" type="text" placeholder="Buscar Chat">
 						</div>
-						<ul class="chatonline style-none ">
+						<ul class="chatonline style-none">
 							<li *ngFor="let c of chats | async" (click)="showMessages(c.key)">
 								<a>
 									<!-- TODO: Arreglar los interesados -->
