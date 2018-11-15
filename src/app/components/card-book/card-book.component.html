@@ -62,33 +62,38 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<!-- FIXME: Porfi porfi amorcito -->
-				<h4 class="modal-title" id="myLargeModalLabel" style="padding-right: 515px;"> {{ book_modal.title | titlecase }}</h4>
-				<button type="button" aria-expanded="false" aria-haspopup="true" class="close waves-effect" data-toggle="dropdown">
-					<i class="fa fa-angle-down"></i>
-				</button>
-				<!-- FIXME: Mover eso para que quede debajo del angle-down -->
-				<!-- ====================================================================== -->
-				<!-- Little modal to report																									-->
-				<!-- ====================================================================== -->
-				<div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
-					<ul style="padding: 0%!important;">
-						<div class="message-center">
-							<a (click)=reportUser(book_modal)>
-								<div class="btn btn-danger btn-circle"><i class="ti-user"></i></div>
-								<h5 style="display: inline; margin-left: 20px;">Reportar usuario</h5>
-							</a>
-							<a (click)=reportImage(book_modal)>
-								<div class="btn btn-danger btn-circle"><i class="fa fa-file-image-o"></i></div>
-								<h5 style="display: inline; margin-left: 20px;">Reportar imagen</h5>
-							</a>
-						</div>
-					</ul>
+				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title | titlecase }}</h4>
+				<div class="other-header">
+					
+					<button  type="button" aria-expanded="false" aria-haspopup="true" class="close waves-effect" data-toggle="dropdown">
+						<i class="fa fa-angle-down"></i>
+					</button>
+					<!-- FIXME: Mover eso para que quede debajo del angle-down -->
+					<!-- ====================================================================== -->
+					<!-- Little modal to report																									-->
+					<!-- ====================================================================== -->
+					<div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
+						<ul style="padding: 0%!important;">
+							<div class="message-center">
+								<a (click)=reportUser(book_modal)>
+									<div class="btn btn-danger btn-circle"><i class="ti-user"></i></div>
+									<h5 style="display: inline; margin-left: 20px;">Reportar usuario</h5>
+								</a>
+								<a (click)=reportImage(book_modal)>
+									<div class="btn btn-danger btn-circle"><i class="fa fa-file-image-o"></i></div>
+									<h5 style="display: inline; margin-left: 20px;">Reportar imagen</h5>
+								</a>
+							</div>
+						</ul>
+					</div>
+
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				</div>
+				<!-- FIXME: Porfi porfi amorcito -->
 				<!-- ====================================================================== -->
 				<!-- End little modal to report																							-->
 				<!-- ====================================================================== -->
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				
 			</div>
 
 			<div class="modal-body">
@@ -123,7 +128,7 @@
 												<div class="col-4">
 													<a href="javascript:void(0)" class="link">
 														<i class="fa fa-book"></i>
-														<font class="font-medium"> {{ count_book }}</font>
+														<!-- <font class="font-medium"> {{ count_book }}</font> -->
 													</a>
 												</div>
 											</div>

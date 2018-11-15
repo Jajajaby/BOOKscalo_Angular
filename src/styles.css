@@ -136,3 +136,8 @@
     background: none !important;
     color: #687384 !important;
 }
+
+.other-header .close {
+    float: none;
+    margin-left: 10px;
+}
