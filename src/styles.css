@@ -142,4 +142,12 @@
     margin-left: 10px;
 }
 
+.dropdown-menu.show {
+    display: block;
+    position: absolute !important;
+    top: 40px !important;
+    right: 20px !important;
+    left: auto !important;
+}
+
 .pointer { cursor: pointer; }
