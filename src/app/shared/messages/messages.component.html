@@ -8,14 +8,16 @@
 					*ngFor="let m of messages; let i = index;">
 				<a href="#">
 					<div class="user-img">
-						<img alt="user" class="img-circle" src="../assets/images/users/1.jpg">
+						<img *ngIf="m.uid_interested.uid !== uid" class="img-circle img-circle-40" [src]="m.uid_interested.img">
+						<img *ngIf="m.user_owner !== uid" class="img-circle img-circle-40" [src]="m.book.user.img">
 						<span [ngClass]="{'online': m.status, 'busy': !m.status}" class="profile-status pull-right"></span>
 						<!-- TODO: Estado del mensaje -->
 						<!-- online es verde, busy es rojo, away es naranjo, offline es naranjo -->
 					</div>
 					<div class="mail-contnet">
-						<h5> {{ m.uid_interested.name | titlecase }} {{ m.uid_interested.last_name1 | titlecase }} {{ m.uid_interested.last_name2 | titlecase }} </h5>
-						<span class="mail-desc"> {{ m.text }} </span>
+						<h5 *ngIf="m.uid_interested.uid !== uid"> {{ m.uid_interested.name | titlecase }} {{ m.uid_interested.last_name1 | titlecase }} {{ m.uid_interested.last_name2 | titlecase }} </h5>
+						<h5 *ngIf="m.user_owner !== uid"> {{ m.book.user.name | titlecase }} {{ m.book.user.last_name1 | titlecase }} {{ m.book.user.last_name2 | titlecase }} </h5>
+						<span class="mail-desc"> {{ m.text[m.text.length-1][m.user_owner] }} {{ m.text[m.text.length-1][m.uid_interested.uid] }} </span>
 						<span class="time"> {{ m.date }} </span>
 					</div>
 				</a>

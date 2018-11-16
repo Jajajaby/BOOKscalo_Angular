@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -8,14 +8,13 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 // SERVICES
 import { DateService } from '../../services/date.service';
 import { DatabaseService } from 'src/app/services/database.service';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-chats',
   templateUrl: './chats.component.html',
   styleUrls: ['./chats.component.css']
 })
-export class ChatsComponent implements OnInit {
+export class ChatsComponent {
   
   // Referencias a las colecciones
   private chatsCollection: AngularFirestoreCollection<any>;
@@ -56,20 +55,18 @@ export class ChatsComponent implements OnInit {
       );
   }
 
-  ngOnInit() {
-  }
-
   showMessages( key:string ){
-    // Actualiza que el mensaje está leído
-    // this.message.status = true;
-    // this._dbService.updateData('messages-transaction', key, this.message);
-
     this.key = key; // Para que se pueda ver desde el otro método
     
     this.selected_chat = this.afs.collection<any>('messages-transaction').doc(key);
     this.selected_chat
       .valueChanges()
-      .subscribe( data => this.message = data );
+      .subscribe( data => {
+        this.message = data;
+         // Actualiza que el mensaje está leído
+        this.message.status = true;
+        this._dbService.updateData('messages-transaction', key, this.message);
+      });
   }
 
 
