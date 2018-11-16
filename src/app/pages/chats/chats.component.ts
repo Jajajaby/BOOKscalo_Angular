@@ -82,6 +82,7 @@ export class ChatsComponent {
     }
 
     this.message.text.push(answer);
+    this.message.status = false;
     this._dbService.updateData('messages-transaction', this.key, this.message);
     this.text_answer = undefined;
       
