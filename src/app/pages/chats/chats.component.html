@@ -61,7 +61,7 @@
 				<div class="chat-rbox">
 					<ul class="chat-list p-20">
 						<!--chat Row -->
-						<div *ngFor="let text of message.text">
+						<div *ngFor="let text of message.text; let i = index;">
 
 							<!-- DERECHA USUARIO ACTIVO -->
 							<li class="reverse">
@@ -74,7 +74,8 @@
 											{{ message.book.user.last_name1 | titlecase }} 
 											{{ message.book.user.last_name2 | titlecase }}
 										</h5>
-											<div class="box bg-light-inverse"> {{ text[message.user_owner] }}</div>
+											<div class="box bg-light-inverse">{{ text[message.user_owner] }}
+												</div>
 									</div>
 									<div class="chat-img">
 										<img [src]="message.book.user.img" class="img-circle-40"/>
@@ -90,7 +91,17 @@
 											{{ message.uid_interested.last_name1 | titlecase }} 
 											{{ message.uid_interested.last_name2 | titlecase }}
 										</h5>
-										<div class="box bg-light-inverse"> {{ text[message.uid_interested.uid] }}</div>
+										<div class="box bg-light-inverse" *ngIf="i === 0; else answer;">
+											{{ text[message.uid_interested.uid] }} <br>
+											Libro: {{  message.book.title }} <br>
+											Transacción: {{ message.transaction }} <br>
+											<span *ngIf="message.transaction === 'Venta'">Valor: {{ message.price }} <br></span>
+											Lugar y horario: {{ message.pref }} <br>
+										</div>
+										<ng-template #answer> 
+												<div class="box bg-light-info">
+													 {{ text[message.uid_interested.uid] }} </div>	
+										</ng-template>
 									</div>
 									<div class="chat-img">
 										<img [src]="message.uid_interested.img" class="img-circle-40"/>
@@ -111,7 +122,17 @@
 											{{ message.uid_interested.last_name1 | titlecase }} 
 											{{ message.uid_interested.last_name2 | titlecase }}
 										</h5>
-										<div class="box bg-light-info"> {{ text[message.uid_interested.uid] }} </div>
+										<div class="box bg-light-info" *ngIf="i === 0; else answer;">
+											{{ text[message.uid_interested.uid] }} <br>
+											Libro: {{  message.book.title }} <br>
+											Transacción: {{ message.transaction }} <br>
+											<span *ngIf="message.transaction === 'Venta'">Valor: {{ message.price }} <br></span>
+											Lugar y horario: {{ message.pref }} <br>
+										</div>
+										<ng-template #answer> 
+												<div class="box bg-light-info">
+													 {{ text[message.uid_interested.uid] }} </div>	
+										</ng-template>
 									</div>
 									<div class="chat-time">{{ message.date }}</div>
 								</div>
@@ -127,7 +148,7 @@
 											{{ message.book.user.last_name1 | titlecase }} 
 											{{ message.book.user.last_name2 | titlecase }}
 										</h5>
-										<div class="box bg-light-info"> {{ text[message.user_owner] }} </div>
+										<div class="box bg-light-info">{{ text[message.user_owner] }} </div>
 									</div>
 									<div class="chat-time">{{ message.date }}</div>
 								</div>

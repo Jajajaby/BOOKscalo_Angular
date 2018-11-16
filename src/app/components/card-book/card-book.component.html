@@ -196,8 +196,8 @@
 					<div *ngIf="book_modal.transaction == 'Ambos'" >
 						<label>Elija el tipo de transacción que desea</label>
 						<select class="form-control" formControlName="transaction">
-							<option value="exchange">Deseo intercambiar el libro</option>
-							<option value="sale">Deseo comprar el libro</option>
+							<option value="Intercambio">Deseo intercambiar el libro</option>
+							<option value="Venta">Deseo comprar el libro</option>
 						</select>
 					</div><br>
 
@@ -297,7 +297,7 @@
 						<label>Seleccione el mensaje a enviar</label>
 						<select class="form-control" formControlName="text">
 							<option value="Deseo establecer la transacción">Deseo establecer la transacción</option>
-							<option *ngIf="book_modal.transaction == 'Venta' || form.value.transaction == 'sale'" 
+							<option *ngIf="book_modal.transaction == 'Venta' || form.value.transaction == 'Venta'" 
 								value="dislike-price">No me acomoda el precio</option>
 							<option value="new_text">Deseo escribirle un mensajes personalmente</option>
 						</select>
@@ -314,7 +314,7 @@
 					<div *ngIf="form.value.text == 'new_text'">
 						<label>Mensaje</label>
 						<input 	type="text" formControlName="new_text" 
-							class="form-control form-control-line border-input-custom" placeholder="">
+							class="form-control form-control-line border-input-custom" placeholder="Hola, me gustaría establecer la transacción del libro...">
 					</div>
 				</div>
 

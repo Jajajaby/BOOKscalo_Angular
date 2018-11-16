@@ -69,7 +69,7 @@ export class CardBookComponent implements OnInit {
 			text: 						new FormControl([], Validators.required),
 			transaction: 			new FormControl(undefined, Validators.required),
 			pref: 						new FormControl(undefined, Validators.required),
-			new_preference: 	new FormControl(''),
+			// new_preference: 	new FormControl(''),
 			station: 					new FormControl(''),
 			hour: 						new FormControl(''),
 			day: 							new FormControl(''),
@@ -82,6 +82,7 @@ export class CardBookComponent implements OnInit {
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
 	sendMessage(){
 		console.log(this.actual_user);
+		// console.log(this.form.value.new_preference);
 		let predet_Message:Message = {
 			transaction:								this.form.value.transaction,
 			pref: 											this.form.value.pref,
@@ -96,17 +97,15 @@ export class CardBookComponent implements OnInit {
 			status:											false,
 			price:											this.book_modal.price
 		}
+		console.log(predet_Message.pref);
+	
 
 		if ( this.form.value.transaction == undefined || this.form.value.transaction === null){
 			predet_Message.transaction = this.book_modal.transaction;
 		}
 
 		if ( this.form.value.pref === 'dislike_preferences' ){
-			let new_preferences:any =  {
-				station: 	this.form.value.station,
-				day: 			this.form.value.day, 
-				hour: 		this.form.value.hour, 
-			};
+			let new_preferences = this.form.value.station + ' - ' + this.form.value.day + ' - ' + this.form.value.hour;
 			predet_Message.pref = new_preferences;
 		}
 
@@ -121,6 +120,8 @@ export class CardBookComponent implements OnInit {
 			}
 			];
 		}
+
+		console.log(predet_Message.pref);
 
 		// Envía el mensaje a la DB.
 		this._dbService.addData('messages-transaction', predet_Message)
