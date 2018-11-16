@@ -40,15 +40,20 @@ export class ChatsComponent implements OnInit {
     this.uid = JSON.parse( localStorage.getItem('user') ).uid;
     this.actual_user = JSON.parse( localStorage.getItem('user') );
    
-    this.chatsCollection = afs.collection<any>('messages-transaction');
-    
-    this.chats = this.chatsCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data();
-        const key = a.payload.doc.id;
-        return { key, ...data };
-      }))
-    );
+    this.chatsCollection = afs.collection('messages-transaction')
+
+    this.chats = this.chatsCollection.snapshotChanges()
+      .pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data();
+          const key = a.payload.doc.id;
+          
+          // Filtro los datos para obtener solo en los que aparezco
+          if( data.user_owner === this.uid || data.uid_interested.uid === this.uid ){
+            return { key, ...data };
+          }
+        }))
+      );
   }
 
   ngOnInit() {
@@ -64,16 +69,12 @@ export class ChatsComponent implements OnInit {
     this.selected_chat = this.afs.collection<any>('messages-transaction').doc(key);
     this.selected_chat
       .valueChanges()
-      .subscribe( data => {
-        console.log('data: ',data);
-        this.message = data;
-      });
+      .subscribe( data => this.message = data );
   }
 
 
   // Envía el mensaje desde el usuario actual hacia la DB
 	sendMessage(message:any, text_answer:any){
-    console.log(this.message);
     if( this.text_answer === undefined || this.text_answer === null || this.text_answer === "" ){
 			swal( 'Debe ingresar un texto para responder', '', 'warning');
 			return;
@@ -84,8 +85,9 @@ export class ChatsComponent implements OnInit {
     }
 
     this.message.text.push(answer);
-    this._dbService.updateData('messages-transaction', this.key, this.message)
-      .then( () => this.text_answer = undefined )
+    this._dbService.updateData('messages-transaction', this.key, this.message);
+    this.text_answer = undefined;
+      
     }
 
 }

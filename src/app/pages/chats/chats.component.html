@@ -21,12 +21,24 @@
 						</div>
 						<ul class="chatonline style-none">
 							<li *ngFor="let c of chats | async" (click)="showMessages(c.key)">
-								<a>
-									<!-- TODO: Arreglar los interesados -->
+								<!-- INTERESADO -->
+								<a *ngIf="c !== undefined && uid !== c.uid_interested.uid">
 									<img [src]="c.uid_interested.img" alt="user-img" class="img-circle img-circle-30"> 
-									<span>{{ c.uid_interested.name | titlecase }} 
-												{{ c.uid_interested.last_name1 | titlecase }} 
-												{{ c.uid_interested.last_name2 | titlecase }}
+									<span>
+										{{ c.uid_interested.name | titlecase }} 
+										{{ c.uid_interested.last_name1 | titlecase }} 
+										{{ c.uid_interested.last_name2 | titlecase }}
+										<small class="text-muted">{{ c.book.title | titlecase }}</small>
+									</span>
+								</a>
+
+								<!-- DUENO -->
+								<a *ngIf="c !== undefined && uid !== c.user_owner">
+									<img [src]="c.book.user.img" alt="user-img" class="img-circle img-circle-30"> 
+									<span>
+										{{ c.book.user.name | titlecase }} 
+										{{ c.book.user.last_name1 | titlecase }} 
+										{{ c.book.user.last_name2 | titlecase }}
 										<small class="text-muted">{{ c.book.title | titlecase }}</small>
 									</span>
 								</a>
