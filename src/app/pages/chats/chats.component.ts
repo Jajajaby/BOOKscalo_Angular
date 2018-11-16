@@ -8,6 +8,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 // SERVICES
 import { DateService } from '../../services/date.service';
 import { DatabaseService } from 'src/app/services/database.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chats',
@@ -34,30 +35,38 @@ export class ChatsComponent {
   
   constructor(  private _dbService:DatabaseService,
                 private afs:AngularFirestore,
-                private _date:DateService ) { 
+                private _date:DateService,
+                private route: ActivatedRoute ) { 
 
-    this.uid = JSON.parse( localStorage.getItem('user') ).uid;
-    this.actual_user = JSON.parse( localStorage.getItem('user') );
-   
-    this.chatsCollection = afs.collection('messages-transaction')
+    this.route.params
+    .subscribe( params => {
+      this.uid = JSON.parse( localStorage.getItem('user') ).uid;
+      this.actual_user = JSON.parse( localStorage.getItem('user') );
+      
+      // Si es que viene un mensaje en la ruta lo abrimos
+      if( params['key'] !== undefined && params['key'] !== null ){
+        this.showMessages(params['key']);
+      }
 
-    this.chats = this.chatsCollection.snapshotChanges()
-      .pipe(
-        map(actions => actions.map(a => {
-          const data = a.payload.doc.data();
-          const key = a.payload.doc.id;
-          
-          // Filtro los datos para obtener solo en los que aparezco
-          if( data.user_owner === this.uid || data.uid_interested.uid === this.uid ){
-            return { key, ...data };
-          }
-        }))
-      );
+      this.chatsCollection = afs.collection('messages-transaction')
+      this.chats = this.chatsCollection.snapshotChanges()
+        .pipe(
+          map( actions => actions.map( a => {
+            const data = a.payload.doc.data();
+            const key = a.payload.doc.id;
+            
+            // Filtro los datos para obtener solo en los que aparezco
+            if( data.user_owner === this.uid || data.uid_interested.uid === this.uid ){
+              return { key, ...data };
+            }
+          }))
+        );
+    });
   }
 
   showMessages( key:string ){
     this.key = key; // Para que se pueda ver desde el otro método
-    
+
     this.selected_chat = this.afs.collection<any>('messages-transaction').doc(key);
     this.selected_chat
       .valueChanges()

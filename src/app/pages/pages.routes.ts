@@ -24,6 +24,7 @@ const PAGES_ROUTE: Routes = [
 					{ path: 'library', component: LibraryComponent },
 					{ path: 'search/:input', component: SearchComponent },
 					{ path: 'messages', component: ChatsComponent },
+					{ path: 'messages/:key', component: ChatsComponent },
 					{ path: '', pathMatch: 'full', redirectTo: 'home' }
 		] 
    }

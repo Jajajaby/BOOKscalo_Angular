@@ -141,3 +141,5 @@
     float: none;
     margin-left: 10px;
 }
+
+.pointer { cursor: pointer; }
