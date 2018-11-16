@@ -69,7 +69,8 @@
 	<script src="assets/plugins/sparkline/jquery.sparkline.min.js"></script>
 	<!-- Dropzone plugin -->
 	<script src="assets/plugins/dropzone-master/dist/dropzone.js"></script>
-	<!--Custom JavaScript -->
+	<!-- One Signal -->
+	<link rel="manifest" href="/manifest.json" />
 	
 	<!-- FIXME: NO SÉ SI SE USAN -->
 	<script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
@@ -108,6 +109,17 @@
         'height':'70px'
     	});
 		}
+	</script>
+
+<!-- One Signal -->
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+	<script>
+		var OneSignal = window.OneSignal || [];
+		OneSignal.push(function() {
+			OneSignal.init({
+				appId: "149531af-af09-42b5-b9c6-3270dd0db650",
+			});
+		});
 	</script>
 </body>
 
