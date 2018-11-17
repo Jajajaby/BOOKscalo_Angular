@@ -1,0 +1,61 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="card">
+			<div class="row">
+				<div class="col-xlg-2 col-lg-3 col-md-4 ">
+					<div class="card-body inbox-panel">
+						<a href="app-compose.html" class="btn btn-danger m-b-20 p-10 btn-block waves-effect waves-light">Compose</a>
+						<ul class="list-group list-group-full">
+							<li class="list-group-item active"> 
+								<a href="javascript:void(0)"><i class="mdi mdi-gmail"></i> Bandeja de entrada </a>
+								<span class="badge badge-success ml-auto">6</span></li>
+							<li class="list-group-item">
+								<a href="javascript:void(0)"><i class="mdi mdi-star"></i> Favoritos </a>
+							</li>
+							<li class="list-group-item ">
+								<a href="javascript:void(0)"><i class="mdi mdi-file-document-box"></i> Reportes </a>
+							</li>
+							<li class="list-group-item">
+								<a href="javascript:void(0)"><i class="mdi mdi-delete"></i> Descartados </a>
+							</li>
+						</ul>
+						<h3 class="card-title m-t-40">Etiquetas</h3>
+						<div class="list-group b-0 mail-list"> 
+							<a href="#" class="list-group-item"><span class="fa fa-circle text-success m-r-10"></span>Usuarios activos</a> 
+							<a href="#" class="list-group-item"><span class="fa fa-circle text-warning m-r-10"></span>Usuarios no activos</a> 
+							<a href="#" class="list-group-item"><span class="fa fa-circle text-danger m-r-10"></span>Usuarios reportados</a> 
+						</div>
+					</div>
+				</div>
+				<div class="col-xlg-10 col-lg-9 col-md-8 bg-light-part b-l">
+					<div class="card-body">
+						<h3 class="card-title">Nuevo mensaje</h3>
+						<form [formGroup]="form" (ngSubmit)="sendMessage()">
+							<div class="row">
+								<div class="form-group col-12">
+									<label class="col-2">Para:</label>
+									<select class="form-control col-10" formControlName="receiver">
+										<option value="Usuarios activos">Usuarios activos</option>
+										<option value="Usuarios no activos">Usuarios no activos</option>
+										<option value="Usuarios reportados">Usuarios reportados</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Título:" formControlName="title">
+							</div>
+							
+							<div class="form-group">
+								<textarea class="textarea_editor form-control" rows="15" placeholder="Cuerpo del mensaje..." 
+									formControlName="body"></textarea>
+							</div>
+
+							<button type="submit" class="btn btn-info m-t-20"><i class="fa fa-envelope-o"></i> Enviar</button>
+							<button class="btn btn-danger m-t-20"><i class="fa fa-times" (click)="moveToDiscart()"></i> Descartar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
