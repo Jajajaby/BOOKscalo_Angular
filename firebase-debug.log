@@ -1,0 +1,39 @@
+[debug] [2018-11-17T15:59:49.907Z] ----------------------------------------------------------------------
+[debug] [2018-11-17T15:59:49.909Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-11-17T15:59:49.909Z] CLI Version:   6.1.0
+[debug] [2018-11-17T15:59:49.909Z] Platform:      darwin
+[debug] [2018-11-17T15:59:49.909Z] Node Version:  v8.12.0
+[debug] [2018-11-17T15:59:49.910Z] Time:          Sat Nov 17 2018 12:59:49 GMT-0300 (-03)
+[debug] [2018-11-17T15:59:49.910Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-17T15:59:49.923Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-17T15:59:49.923Z] > authorizing via signed-in user
+[debug] [2018-11-17T15:59:49.923Z] [iam] checking project booksapp-chile for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-11-17T15:59:49.925Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-17T15:59:49.926Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-17T15:59:52.739Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-17T15:59:52.760Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/booksapp-chile:testIamPermissions  
+
+[debug] [2018-11-17T15:59:55.600Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-17T15:59:55.602Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/booksapp-chile  
+ 
+[debug] [2018-11-17T15:59:58.365Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'booksapp-chile'...
+[info] 
+[info] i  deploying hosting
+[debug] [2018-11-17T15:59:58.371Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/booksapp-chile/versions  
+
+[debug] [2018-11-17T16:00:06.258Z] <<< HTTP RESPONSE 200
+[info] i  hosting[booksapp-chile]: beginning deploy...
+[info] i  hosting[booksapp-chile]: found 831 files in public
+[debug] [2018-11-17T16:00:06.436Z] [hosting] hash cache [cHVibGlj] not populated
+[debug] [2018-11-17T16:00:08.191Z] [hosting] hash cache [cHVibGlj] stored for 831 files
+[debug] [2018-11-17T16:00:08.192Z] [hosting][hash queue][FINAL]
+[debug] [2018-11-17T16:00:08.192Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/booksapp-chile/versions/c69f662e53182226:populateFiles  
+ <request body omitted>
+[debug] [2018-11-17T16:00:43.111Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-17T16:00:43.188Z] [hosting][populate queue][FINAL]
+[debug] [2018-11-17T16:00:43.188Z] [hosting] uploads queued: undefined
+[debug] [2018-11-17T16:00:46.547Z] [hosting][upload]
