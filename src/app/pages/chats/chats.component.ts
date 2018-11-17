@@ -44,9 +44,7 @@ export class ChatsComponent {
       this.actual_user = JSON.parse( localStorage.getItem('user') );
       
       // Si es que viene un mensaje en la ruta lo abrimos
-      if( params['key'] !== undefined && params['key'] !== null ){
-        this.showMessages(params['key']);
-      }
+      if( params['key'] !== undefined && params['key'] !== null ) this.showMessages(params['key']);
 
       this.chatsCollection = afs.collection('messages-transaction')
       this.chats = this.chatsCollection.snapshotChanges()
@@ -72,9 +70,12 @@ export class ChatsComponent {
       .valueChanges()
       .subscribe( data => {
         this.message = data;
+        
          // Actualiza que el mensaje está leído
-        this.message.status = true;
-        this._dbService.updateData('messages-transaction', key, this.message);
+        if( !this.message.status && this.message.text[this.message.text.length - 1][this.uid] === undefined ){
+          this.message.status = true;
+          this._dbService.updateData('messages-transaction', key, this.message);
+        }
       });
   }
 
