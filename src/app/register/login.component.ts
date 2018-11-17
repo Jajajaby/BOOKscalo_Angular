@@ -13,6 +13,8 @@ import { auth } from 'firebase';
 import swal from 'sweetalert';
 import * as firebase from 'firebase';
 
+
+
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
