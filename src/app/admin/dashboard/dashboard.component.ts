@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
 
 		this._dbService.getData( "users")
 			.valueChanges()
-			.subscribe( data => {
+			.subscribe( (data:any) => {
 				this.users = data;
 				this.count_users = data.length;
 			});
