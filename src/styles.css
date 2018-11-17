@@ -151,3 +151,9 @@
 }
 
 .pointer { cursor: pointer; }
+
+.topbar .top-navbar .mailbox {
+    width: 300px;
+    max-height: 400px;
+    overflow: scroll;
+}
