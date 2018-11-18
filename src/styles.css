@@ -7,20 +7,6 @@
    border-bottom: 1px solid #398bf7 !important;
 }
 
-/*
-.fa-google-plus:before {
-  content: url(assets/images/icon/google.png)!important;
-  width: 10px;
-  height: 10px;
-  
-}
-*/
-
-/* #17a2b8  */
-/*#button-celeste {
-   background: #459FAE !important;
-}*/
-
 .modal-lg {
     max-width: 70% !important;
     min-width: 500px !important;
@@ -156,4 +142,8 @@
     width: 300px;
     max-height: 400px;
     overflow: scroll;
+}
+
+.no-wrap td, .no-wrap th {
+    white-space: pre-wrap;
 }

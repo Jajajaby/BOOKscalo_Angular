@@ -142,7 +142,6 @@
 				<table class="table vm no-th-brd no-wrap pro-of-month">
 					<thead>
 						<tr>
-							<th>ID</th>
 							<th>Usuario que reporta</th>
 							<th>Tipo de reporte</th>
 							<th>Fecha</th>
@@ -154,9 +153,6 @@
 					<tbody>
 						<tr *ngFor="let r of reports">
 							<!-- TODO: Revisar visualmente y borrar referencis sin ID -->
-							<td>
-								<h6>{{ r.id }}</h6>
-							</td>
 							<td>
 								<h6>{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}</h6>
 							</td>
@@ -171,7 +167,7 @@
 							</td>
 							<td>
 								<!-- FIXME: Alinear el link de la img para que quede justificado o algo así, a la columna -->
-								<!-- <h6 *ngIf="r.type == 'Reporte de imagen'">Se reportan las imagenes contenidas en el siguiente link {{ r.img }}</h6> -->
+								<h6 *ngIf="r.type == 'Reporte de imagen'">Se reportan las imagenes contenidas en el siguiente <a [href]="r.img" target="_blank"> link </a> </h6>
 								<h6 *ngIf="r.type == 'Reporte de usuario'">Se reporta al usuario {{ r.user_reported.name | titlecase }} {{ r.user_reported.last_name1 | titlecase }} {{ r.user_reported.last_name2 | titlecase }}</h6>
 							</td>
 							<td>
