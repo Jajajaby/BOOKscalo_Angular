@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MessagesComponent } from './messages/messages.component';
 import { LoadingComponent } from '../components/loading/loading.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { LoadingComponent } from '../components/loading/loading.component';
       HeaderComponent,
       SidebarComponent,
       MessagesComponent,
-      LoadingComponent
+      LoadingComponent,
+      NotificationsComponent
     ],
     exports: [
       HeaderComponent,

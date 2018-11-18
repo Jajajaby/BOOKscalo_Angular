@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
@@ -19,16 +20,10 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="manifest" href="/manifest.json" />
+		<!-- ONESIGNAL -->
+		<link rel="manifest" href="/manifest.json"/>
 		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-		<script>
-			var OneSignal = window.OneSignal || [];
-			OneSignal.push(function() {
-				OneSignal.init({
-					appId: "99acbb1d-89a7-4d6a-919d-691c9691927f",
-				});
-			});
-		</script>
+		<script src="assets/js/custom/oneSignal.js"></script>
 	</head>
 
 	<body class="fix-header card-no-border fix-sidebar">
@@ -65,33 +60,7 @@
 		<!-- SI SE USA PERO ESTE DEBE IR ABAJO DE TODOS IGUAL -->
 		<script src="assets/js/custom.js"></script>
 
-		<script>
-			function browserSupportsCSSProperty(propertyName) {
-				var elm = document.createElement('div');
-				propertyName = propertyName.toLowerCase();
-
-				if (elm.style[propertyName] != undefined)
-					return true;
-
-				var propertyNameCapital = propertyName.charAt(0).toUpperCase() + propertyName.substr(1),
-				domPrefixes = 'Webkit Moz ms O'.split(' ');
-
-				for (var i = 0; i < domPrefixes.length; i++) {
-					if (elm.style[domPrefixes[i] + propertyNameCapital] != undefined)
-						return true;
-				}
-
-				return false;
-			}
-
-			if (!browserSupportsCSSProperty('animation')) {
-				$('.bounce1, .bounce2, .bounce3').hide();
-				$('.spinner').css({
-					'background':'transparent url(https://dl.dropboxusercontent.com/u/11510916/fiddles/spinkit/spinner-fallback.gif) no-repeat',
-					'background-size':'70% 70%',
-					'height':'70px'
-				});
-			}
-		</script>
+		<!-- CUSTOM -->
+		<script src="assets/js/custom/loader.js"></script>
 	</body>
 </html>
