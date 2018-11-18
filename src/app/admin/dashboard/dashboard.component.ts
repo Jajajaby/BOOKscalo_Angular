@@ -18,7 +18,8 @@ export class DashboardComponent implements OnInit {
 
 	// Data de la DB
 	users:any;
-	reports:any;
+	reports:any[];
+	reportsData:any[];
 	tasks:any;
 
 	// Cantidad de 
@@ -26,7 +27,10 @@ export class DashboardComponent implements OnInit {
 	count_books:number;
 	count_messages:number;
 
-	form:any;
+	// Inputs
+	date:string;
+
+	form:FormGroup;
 
 	constructor( 	private _dbService:DatabaseService,
 								private _date:DateService ) {
@@ -51,7 +55,10 @@ export class DashboardComponent implements OnInit {
 
 		this._dbService.getData( "reports")
 			.valueChanges()
-			.subscribe( data => this.reports = data );
+			.subscribe( data => {
+				this.reports = data;
+				this.reportsData = this.reports;
+			});
 
 		// this._dbService.getData( "tasks")
 		// 	.valueChanges()
@@ -62,11 +69,10 @@ export class DashboardComponent implements OnInit {
 
 	ngOnInit() {
 		this.form = new FormGroup({
-			task:         new FormControl(Validators.required),
-			description:  new FormControl(Validators.required),
-			priority:     new FormControl(Validators.required) //high, medium, low
+			task:         new FormControl(undefined, Validators.required),
+			description:  new FormControl(undefined, Validators.required),
+			priority:     new FormControl(undefined, Validators.required) //high, medium, low
 		});
-	
 	}
 
 	// TODO: Terminar po jjj
@@ -76,7 +82,16 @@ export class DashboardComponent implements OnInit {
 			.catch( () => swal('Error', 'La tarea no ha podido guardarse, vuelva a intentarlo', 'error') );
 	}
 
-	
+	searchReportDate(date){
+		this.reports = [];
+		if( date === 'all' ){
+			this.reports = this.reportsData;
+		}else {
+			for(let r of this.reportsData) {
+				if( r.day === date ) this.reports.push(r);
+			}
+		}
+	}
 
 
 }
