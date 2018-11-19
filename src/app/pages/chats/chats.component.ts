@@ -98,4 +98,8 @@ export class ChatsComponent {
       
     }
 
+    transactionDone(event){
+      
+    }
+
 }
