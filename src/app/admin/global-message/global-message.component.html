@@ -34,11 +34,12 @@
 				<!-- End left column 																								-->
 				<!-- ============================================================== -->
 
-				<!-- ============================================================== -->
-				<!-- Right column 																									-->
-				<!-- ============================================================== -->
-				<div class="col-xlg-10 col-lg-9 col-md-8 bg-light-part b-l">
-					<div class="card-body">
+				<!-- TODO: Revisar si esta huea quedó guena -->
+				<div class="col-xlg-10 col-lg-9 col-md-8 bg-light-part b-l" [ngSwitch]="options">
+					<!-- ============================================================== -->
+					<!-- New message right column																				-->
+					<!-- ============================================================== -->
+					<div class="card-body" *ngSwitchCase="'new_message'">
 						<h3 class="card-title">Nuevo mensaje</h3>
 						<form [formGroup]="form" (ngSubmit)="sendMessage()">
 							<div class="row">
@@ -64,11 +65,38 @@
 							<button class="btn btn-danger m-t-20"><i class="fa fa-times" (click)="moveToDiscart()"></i> Descartar</button>
 						</form>
 					</div>
+					<!-- ============================================================== -->
+					<!-- End new message right column																		-->
+					<!-- ============================================================== -->
+					
+					<!-- ============================================================== -->
+					<!-- Reports messages right column																	-->
+					<!-- ============================================================== -->
+					<!-- FIXME: -->
+					<div class="chat-left-inner" *ngSwitchCase="'report_messages'">
+						<div class="form-material">
+							<input class="form-control p-20" type="text" placeholder="Buscar Chat">
+						</div>
+						<ul class="chatonline style-none">
+							<!-- <li *ngFor="let c of chats | async" (click)="showMessages(c.key)"> -->
+							<li *ngFor="let r of reports | async">
+								<a >
+									<img [src]="r.user.img" alt="user-img" class="img-circle img-circle-30"> 
+									<span>
+										{{ r.user.name | titlecase }} 
+										<small class="text-muted">{{ r.type  }}</small>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- ============================================================== -->
+					<!-- Reports messages right column																	-->
+					<!-- ============================================================== -->
 				</div>
-				<!-- ============================================================== -->
-				<!-- End right column 																							-->
-				<!-- ============================================================== -->
 			</div>
 		</div>
 	</div>
 </div>
+
+
