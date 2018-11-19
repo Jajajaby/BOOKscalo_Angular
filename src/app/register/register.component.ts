@@ -14,6 +14,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 // Sweet Alert
 import swal from 'sweetalert';
 
+// Inicializa los plugins
+declare function init_plugins();
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -33,6 +36,7 @@ export class RegisterComponent implements OnInit {
 								public router: Router ) { }
 
 	ngOnInit() {
+		init_plugins();
 		this.form = 		new FormGroup({
 			name: 				new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
