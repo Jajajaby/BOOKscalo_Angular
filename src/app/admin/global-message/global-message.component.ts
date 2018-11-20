@@ -19,9 +19,13 @@ export class GlobalMessageComponent implements OnInit {
   users:any;
   reports:any;
 
+  // Arreglos de usuarios para enviar mensajes globales
   active_users:any = [];
   inactive_users:any = [];
   reported_users:any = [];
+
+	options:string = 'new_message'; // Controla las opciones que se muestran en la columna derecha
+
 
   constructor(private _date:DateService,
               private _dbService:DatabaseService) { 
@@ -48,6 +52,12 @@ export class GlobalMessageComponent implements OnInit {
           this.reported_users.push(r.user_reported);
         }
     });
+
+    this._dbService.getData( "reports")
+			.valueChanges()
+			.subscribe( data => {
+				this.reports = data;
+			});
   }
 
   ngOnInit() {
@@ -91,6 +101,10 @@ export class GlobalMessageComponent implements OnInit {
 
   moveToDiscart(){
 
+  }
+
+  showMessages(){
+    
   }
 
 }

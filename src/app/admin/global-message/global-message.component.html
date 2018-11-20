@@ -2,6 +2,9 @@
 	<div class="col-lg-12">
 		<div class="card">
 			<div class="row">
+				<!-- ============================================================== -->
+				<!-- Left column 																										-->
+				<!-- ============================================================== -->
 				<div class="col-xlg-2 col-lg-3 col-md-4 ">
 					<div class="card-body inbox-panel">
 						<a href="app-compose.html" class="btn btn-danger m-b-20 p-10 btn-block waves-effect waves-light">Compose</a>
@@ -21,14 +24,22 @@
 						</ul>
 						<h3 class="card-title m-t-40">Etiquetas</h3>
 						<div class="list-group b-0 mail-list"> 
-							<a href="#" class="list-group-item"><span class="fa fa-circle text-success m-r-10"></span>Usuarios activos</a> 
-							<a href="#" class="list-group-item"><span class="fa fa-circle text-warning m-r-10"></span>Usuarios no activos</a> 
-							<a href="#" class="list-group-item"><span class="fa fa-circle text-danger m-r-10"></span>Usuarios reportados</a> 
+							<div href="#" class="list-group-item"><span class="fa fa-circle text-success m-r-10"></span>Usuarios activos</div> 
+							<div href="#" class="list-group-item"><span class="fa fa-circle text-warning m-r-10"></span>Usuarios no activos</div> 
+							<div href="#" class="list-group-item"><span class="fa fa-circle text-danger m-r-10"></span>Usuarios reportados</div> 
 						</div>
 					</div>
 				</div>
-				<div class="col-xlg-10 col-lg-9 col-md-8 bg-light-part b-l">
-					<div class="card-body">
+				<!-- ============================================================== -->
+				<!-- End left column 																								-->
+				<!-- ============================================================== -->
+
+				<!-- TODO: Revisar si esta huea quedó guena -->
+				<div class="col-xlg-10 col-lg-9 col-md-8 bg-light-part b-l" [ngSwitch]="options">
+					<!-- ============================================================== -->
+					<!-- New message right column																				-->
+					<!-- ============================================================== -->
+					<div class="card-body" *ngSwitchCase="'new_message'">
 						<h3 class="card-title">Nuevo mensaje</h3>
 						<form [formGroup]="form" (ngSubmit)="sendMessage()">
 							<div class="row">
@@ -45,7 +56,7 @@
 								<input class="form-control" placeholder="Título:" formControlName="title">
 							</div>
 							
-							<div class="form-group">
+								<div class="form-group">
 								<textarea class="textarea_editor form-control" rows="15" placeholder="Cuerpo del mensaje..." 
 									formControlName="body"></textarea>
 							</div>
@@ -54,8 +65,38 @@
 							<button class="btn btn-danger m-t-20"><i class="fa fa-times" (click)="moveToDiscart()"></i> Descartar</button>
 						</form>
 					</div>
+					<!-- ============================================================== -->
+					<!-- End new message right column																		-->
+					<!-- ============================================================== -->
+					
+					<!-- ============================================================== -->
+					<!-- Reports messages right column																	-->
+					<!-- ============================================================== -->
+					<!-- FIXME: -->
+					<div class="chat-left-inner" *ngSwitchCase="'report_messages'">
+						<div class="form-material">
+							<input class="form-control p-20" type="text" placeholder="Buscar Chat">
+						</div>
+						<ul class="chatonline style-none">
+							<!-- <li *ngFor="let c of chats | async" (click)="showMessages(c.key)"> -->
+							<li *ngFor="let r of reports | async">
+								<a >
+									<img [src]="r.user.img" alt="user-img" class="img-circle img-circle-30"> 
+									<span>
+										{{ r.user.name | titlecase }} 
+										<small class="text-muted">{{ r.type  }}</small>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- ============================================================== -->
+					<!-- Reports messages right column																	-->
+					<!-- ============================================================== -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
