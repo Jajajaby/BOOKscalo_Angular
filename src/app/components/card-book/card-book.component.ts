@@ -80,6 +80,8 @@ export class CardBookComponent implements OnInit {
 
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
 	sendMessage(){
+		console.log(this.form.value);
+		console.log(this.form.valid);
 		let predet_Message:Message = {
 			transaction:								this.form.value.transaction,
 			pref: 											this.form.value.pref,
