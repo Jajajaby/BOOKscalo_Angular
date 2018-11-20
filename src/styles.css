@@ -147,3 +147,10 @@
 .no-wrap td, .no-wrap th {
     white-space: pre-wrap;
 }
+
+
+@media (max-width: 767px){
+    .chat-main-box .chat-left-aside {
+        left: 0px !important;
+    }
+}

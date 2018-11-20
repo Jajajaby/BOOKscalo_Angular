@@ -30,7 +30,7 @@ export class ChatsComponent {
   uid:string;
   actual_user:string;
   text_answer:any;
-  key:string;
+  key:string = undefined;
   
   
   constructor(  private _dbService:DatabaseService,
