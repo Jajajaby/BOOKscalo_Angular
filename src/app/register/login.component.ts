@@ -13,6 +13,8 @@ import { auth } from 'firebase';
 import swal from 'sweetalert';
 import * as firebase from 'firebase';
 
+// Inicializa los plugins
+declare function init_plugins();
 
 
 @Component({
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		init_plugins();
 		this.form = new FormGroup({
 			email: 				new FormControl(localStorage.getItem('email') || undefined, [Validators.required, Validators.email]),
 			password: 		new FormControl(undefined, [Validators.required,Validators.minLength(6)]),

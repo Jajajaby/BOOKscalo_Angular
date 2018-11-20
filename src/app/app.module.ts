@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './register/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PageforbiddenComponent } from './pageforbidden/pageforbidden.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    PageforbiddenComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
 // Sweet Alert
 import swal from 'sweetalert';
 
+// Data
+import { CATEGORIES } from '../../data/categories.data';
+
+// Inicializa los plugins
+declare function init_plugins();
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -24,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
 	form:FormGroup;
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
-	categories:Array<string>=["Antiguedades y Coleccionables", "Arquitectura", "Arte", "Artes Escénicas", "Biografía y Autobiografía", "Casa y Hogar", "Ciencia", "Ciencias Políticas", "Ciencias Sociales", "Cocina", "Comida y Bebestibles", "Colecciones Literarias", "Cómics y Novelas Gráficas", "Computación e Internet", "Crímenes", "Crítica Literaria", "Cuerpo", "Mente y Espíritu", "Deportes y Recreación", "Drama", "Educación", "Estudio de Lenguas Extranjeras", "Ensayos Académicos", "Familia y Relaciones", "Ficción", "Ficción Adolescente", "Ficción para Niños", "Filosofía", "Fotografía", "Historia y Geografía", "Humor", "Jardinería", "Juegos", "Lectura escolar", "Lengua y Literatura", "Leyes", "Manualidades y Hobbies", "Mascotas y Animales", "Matemáticas", "Medicina", "Música", "Naturaleza y Aire libre", "Negocios y Economía", "Niños y Jóvenes", "Papelería", "Poesía", "Psicología", "Religión y Espiritualidad", "Salud y Bienestar", "Tecnología", "Transporte", "Viajes"];
+	categories:string[] = CATEGORIES
 	selected_categories:Array<string> = [];
 
 	constructor( 	private _dbService:DatabaseService,
@@ -33,6 +39,7 @@ export class RegisterComponent implements OnInit {
 								public router: Router ) { }
 
 	ngOnInit() {
+		init_plugins();
 		this.form = 		new FormGroup({
 			name: 				new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),

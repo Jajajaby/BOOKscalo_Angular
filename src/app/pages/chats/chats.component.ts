@@ -30,7 +30,7 @@ export class ChatsComponent {
   uid:string;
   actual_user:string;
   text_answer:any;
-  key:string;
+  key:string = undefined;
   
   
   constructor(  private _dbService:DatabaseService,
@@ -92,9 +92,13 @@ export class ChatsComponent {
     }
 
     this.message.text.push(answer);
-    this.message.status = false;
+    this.message.status = false; // Para dejar el mensaje nuevo como no leído
     this._dbService.updateData('messages-transaction', this.key, this.message);
-    this.text_answer = undefined;
+    this.text_answer = undefined; // Deja en blanco el campo para escribir el mensaje/chat
+      
+    }
+
+    transactionDone(event){
       
     }
 

@@ -5,12 +5,12 @@
 <div class="row">
 	<div class="col-12">
 		<div class="card m-b-0">
-			<div class="chat-main-box">
+			<div class="chat-main-box" style="height: 500px;">
 				<!-- =============================================================== -->
 				<!-- Left panel																											 -->
 				<!-- =============================================================== -->
 				<!-- TODO: Hacer que el panel izq se vea mas grande jiji -->
-				<div class="chat-left-aside">
+				<div class="chat-left-aside col-sm-3 col-md-4" style="width: 100%; height: 500px; overflow: scroll;">
 					<div class="open-panel">
 						<i class="ti-angle-right"></i>
 					</div>
@@ -21,7 +21,7 @@
 						<ul class="chatonline style-none">
 							<li *ngFor="let c of chats | async" (click)="showMessages(c.key)">
 								<!-- INTERESADO -->
-								<a *ngIf="c !== undefined && uid !== c.uid_interested.uid">
+								<a [ngClass]="{'active': key === c.key}" *ngIf="c !== undefined && uid !== c.uid_interested.uid">
 									<img [src]="c.uid_interested.img" alt="user-img" class="img-circle img-circle-30"> 
 									<span>
 										{{ c.uid_interested.name | titlecase }} 
@@ -32,7 +32,7 @@
 								</a>
 
 								<!-- DUENO -->
-								<a *ngIf="c !== undefined && uid !== c.user_owner">
+								<a [ngClass]="{'active': key === c.key}" *ngIf="c !== undefined && uid !== c.user_owner">
 									<img [src]="c.book.user.img" alt="user-img" class="img-circle img-circle-30"> 
 									<span>
 										{{ c.book.user.name | titlecase }} 
@@ -52,14 +52,15 @@
 				<!-- =============================================================== -->
 				<!-- Right panel																										 -->
 				<!-- =============================================================== -->
-				<div class="chat-right-aside">
-					<div class="chat-main-header">
+				<div class="chat-right-aside col-sm-9 col-md-8" style="height: 500px; overflow: scroll;">
+					<div class="chat-main-header" 
+							 style="position: fixed; width: 100%; z-index: 9; background: white;">
 						<div class="p-20 b-b">
 							<h3 class="box-title">Chat Message</h3>
 						</div>
 					</div>
-				<div class="chat-rbox">
-					<ul class="chat-list p-20">
+				<div *ngIf="key !== undefined; else elseChat" class="chat-rbox m-4"> 
+					<ul class="chat-list p-10">
 						<!--chat Row -->
 						<div *ngFor="let text of message.text; let i = index;">
 
@@ -156,7 +157,7 @@
 						</div>
 					</ul>
 				</div>
-				<div class="card-body b-t">
+				<div class="card-body b-t" *ngIf="key !== undefined;">
 					<div class="row">
 						<div class="col-8">
 							<textarea [(ngModel)]="text_answer" name="text_answer" placeholder="Escribe tu respuesta aquí..." class="form-control b-0"></textarea>
@@ -164,6 +165,10 @@
 						<div class="col-4 text-right">
 							<button type="button" class="btn btn-info btn-circle btn-lg" (click)="sendMessage(message, text_answer)">
 								<i class="fa fa-paper-plane-o"></i> 
+							</button>
+							<!-- FIXME: Terminar -->
+							<button type="button" class="btn btn-info btn-circle btn-lg" (click)="transactionDone($event)" title="Confirmar que hay un acuerdo de transacción">
+								<i class="fa fa-check"></i> 
 							</button>
 						</div>
 					</div>
@@ -179,3 +184,11 @@
 <!-- ============================================================== -->
 <!-- End PAge Content -->
 <!-- ============================================================== -->
+
+
+<ng-template #elseChat>
+	<br><br><br><br><br>
+	<div class="alert alert-primary" role="alert">
+		Debe seleccionar un mensaje...
+	</div>
+</ng-template>

@@ -96,7 +96,10 @@ export class CardBookComponent implements OnInit {
 			status:											false,
 			price:											this.book_modal.price
 		}
-		console.log(predet_Message.pref);
+
+		if(predet_Message.pref === null ){
+			return swal('Error al enviar un mensaje', 'Debe completar todos los campos', 'error');
+		}
 	
 
 		if ( this.form.value.transaction == undefined || this.form.value.transaction === null){
@@ -119,8 +122,6 @@ export class CardBookComponent implements OnInit {
 			}
 			];
 		}
-
-		console.log(predet_Message.pref);
 
 		// Envía el mensaje a la DB.
 		this._dbService.addData('messages-transaction', predet_Message)
