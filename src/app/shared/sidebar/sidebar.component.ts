@@ -19,13 +19,14 @@ export class SidebarComponent implements OnInit {
 
   menu:any=[];
   categories:any[] = CATEGORIES;
-  role:any;
+  role:string;
 
   constructor(  private _dbService:DatabaseService, 
                 private router: Router,
                 private _sidebar:SidebarService ) { 
     this.menu = this._sidebar.menu;
     this.role = JSON.parse(localStorage.getItem("user")).role;
+    console.log(this.role);
   }
 
   ngOnInit() {

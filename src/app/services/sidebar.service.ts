@@ -13,7 +13,7 @@ export class SidebarService {
   constructor() {
     if (JSON.parse(localStorage.getItem("user")).role === 'admin'){
       this.menu = MENU_ADMIN;
-    }else{
+    }else if (JSON.parse(localStorage.getItem("user")).role === 'normal'){
       this.menu = CATEGORIES;
     }
   }
