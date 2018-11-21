@@ -8,8 +8,8 @@
 						routerLinkActive="active"
 						style="cursor: pointer;" 
 						*ngFor="let m of menu">
-					<!-- TODO: crar variable role -->
-					<a [routerLink]="['/search', 'sidebar.'+m.name]"> {{ m.name }} </a>
+					<a *ngIf="role == normal" [routerLink]="['/search', 'sidebar.'+m.name]"> {{ m.name }} </a>
+					<a *ngIf="role == admin=" [routerLink]="['/m.route']"> {{ m.name }} </a>
 				</li>               
 			</ul>
 		</nav>
