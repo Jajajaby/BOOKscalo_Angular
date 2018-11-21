@@ -9,6 +9,7 @@ import { PageforbiddenComponent } from './pageforbidden/pageforbidden.component'
 const appRoutes: Routes = [
    { path: 'login', component: LoginComponent },
    { path: 'register', component: RegisterComponent },
+   { path: 'forbidden', component: PageforbiddenComponent },
    { path: '**', component: PagenotfoundComponent }
 ];
 

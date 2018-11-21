@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { CATEGORIES } from '../../../data/categories.data';
+
+
+
 // SERVICES
 import { DatabaseService } from 'src/app/services/database.service';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,10 +17,14 @@ export class SidebarComponent implements OnInit {
 
   books:any;
 
-  // TODO: FIXME: hay que crear estas datas en archivos aparte para mantener el orden.
-  categories:Array<string>=["Antiguedades y Coleccionables", "Arquitectura", "Arte", "Artes Escénicas", "Biografía y Autobiografía", "Casa y Hogar", "Ciencia", "Ciencias Políticas", "Ciencias Sociales", "Cocina", "Comida y Bebestibles", "Colecciones Literarias", "Cómics y Novelas Gráficas", "Computación e Internet", "Crímenes", "Crítica Literaria", "Cuerpo", "Mente y Espíritu", "Deportes y Recreación", "Drama", "Educación", "Estudio de Lenguas Extranjeras", "Ensayos Académicos", "Familia y Relaciones", "Ficción", "Ficción Adolescente", "Ficción para Niños", "Filosofía", "Fotografía", "Historia y Geografía", "Humor", "Jardinería", "Juegos", "Lectura escolar", "Lengua y Literatura", "Leyes", "Manualidades y Hobbies", "Mascotas y Animales", "Matemáticas", "Medicina", "Música", "Naturaleza y Aire libre", "Negocios y Economía", "Niños y Jóvenes", "Papelería", "Poesía", "Psicología", "Religión y Espiritualidad", "Salud y Bienestar", "Tecnología", "Transporte", "Viajes"];
+  menu:any=[];
+	categories:any[] = CATEGORIES;
 
-  constructor( private _dbService: DatabaseService, private router: Router ) { }
+  constructor(  private _dbService:DatabaseService, 
+                private router: Router,
+                private _sidebar:SidebarService ) { 
+    this.menu = this._sidebar.menu;
+  }
 
   ngOnInit() {
     this._dbService.getData('books')

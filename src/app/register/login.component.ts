@@ -16,7 +16,6 @@ import * as firebase from 'firebase';
 // Inicializa los plugins
 declare function init_plugins();
 
-
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
