@@ -105,8 +105,8 @@ export class ChatsComponent {
         title: "Confirmas que se estableció la transacción?",
         text: "Confirmar esto implica que ustedes fijaron horario, día y lugar para la transacción",
         icon: "warning",
-        buttons: true,
-        dangerMode: true,
+        // buttons: true,
+        dangerMode: true
       })
       .then((done) => {
         if (done) {
