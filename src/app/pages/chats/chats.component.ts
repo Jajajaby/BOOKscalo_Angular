@@ -10,6 +10,8 @@ import { DateService } from '../../services/date.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
 
+import swal from 'sweetalert';
+
 @Component({
   selector: 'app-chats',
   templateUrl: './chats.component.html',
@@ -98,8 +100,23 @@ export class ChatsComponent {
       
     }
 
-    transactionDone(event){
-      
+    transactionDone(){
+      swal({
+        title: "Confirmas que se estableció la transacción?",
+        text: "Confirmar esto implica que ustedes fijaron horario, día y lugar para la transacción",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((done) => {
+        if (done) {
+          swal("Transacción establecida! Gracias por confirmar, estaremos recordandote", {
+            icon: "success",
+          });
+        } else {
+          swal("Recuerda avisarnos cuando establezcan la transacción");
+        }
+      });
     }
 
 }
