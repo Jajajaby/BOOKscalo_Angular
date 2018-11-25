@@ -11,10 +11,15 @@ export class SidebarService {
   menu:any=[];
 
   constructor() {
+    this.defMenu();
+    setInterval( () => { this.defMenu(); console.log('hola'); }, 5000);
+  }
+
+  defMenu(){
     if (JSON.parse(localStorage.getItem("user")).role === 'admin'){
       this.menu = MENU_ADMIN;
     }else if (JSON.parse(localStorage.getItem("user")).role === 'normal'){
-      this.menu = CATEGORIES;
+     this.menu = CATEGORIES;
     }
   }
 }
