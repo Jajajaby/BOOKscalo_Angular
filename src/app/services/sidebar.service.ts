@@ -12,7 +12,7 @@ export class SidebarService {
 
   constructor() {
     this.defMenu();
-    setInterval( () => { this.defMenu(); console.log('hola'); }, 5000);
+    setInterval( () => { this.defMenu(); }, 5000);
   }
 
   defMenu(){

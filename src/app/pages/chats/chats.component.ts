@@ -96,22 +96,44 @@ export class ChatsComponent {
     this.message.text.push(answer);
     this.message.status = false; // Para dejar el mensaje nuevo como no leído
     this._dbService.updateData('messages-transaction', this.key, this.message);
-    this.text_answer = undefined; // Deja en blanco el campo para escribir el mensaje/chat
-      
-    }
+    this.text_answer = undefined; // Deja en blanco el campo para escribir el mensaje/chat    
+  }
 
     transactionDone(){
       swal({
         title: "Confirmas que se estableció la transacción?",
         text: "Confirmar esto implica que ustedes fijaron horario, día y lugar para la transacción",
         icon: "warning",
-        // buttons: true,
+        buttons: ["Cancelar", "Confirmar"],
         dangerMode: true
       })
-      .then((done) => {
-        if (done) {
-          swal("Transacción establecida! Gracias por confirmar, estaremos recordandote", {
-            icon: "success",
+      .then(( done ) => {
+        if ( done ) {
+          this._dbService.getDataQuery('books', 'id', '==', this.message.book.id)
+          .snapshotChanges()
+          .pipe(
+            map( actions => actions.map( a => {
+              const data = a.payload.doc.data();
+              const key = a.payload.doc.id;
+              return { key, ...data };
+            }))
+          )
+          .subscribe( data => {
+            if( data[0].status === 'completed' ) {
+              swal('Atención', 'Este libro ya fue intercambiado/vendido', 'warning');
+            }else{
+              data[0].status = 'completed';
+              const KEY = data[0].key;
+              delete data[0].key;
+
+              this._dbService.updateData('books', KEY, data[0])
+                .then( () => {
+                  swal("Transacción establecida! Gracias por confirmar, estaremos recordandote", {
+                    icon: "success",
+                  });
+                })
+                .catch( () => swal("Error al confirmar transaccion", "Vuelva a intentarlo", 'error'));
+              }
           });
         } else {
           swal("Recuerda avisarnos cuando establezcan la transacción");

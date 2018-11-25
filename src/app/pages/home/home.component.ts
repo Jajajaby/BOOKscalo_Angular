@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 	books:any[] = [];
 
 	constructor( private _dbService:DatabaseService ) {
-		this._dbService.getDataQuery('books', 'status', '==', true)
+		this._dbService.getDataQuery('books', 'status', '==', 'available')
 			.valueChanges()
 			.subscribe( data => {
 				this.books = [];
