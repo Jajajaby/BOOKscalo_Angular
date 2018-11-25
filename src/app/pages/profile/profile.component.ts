@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 // SERVICE
@@ -7,6 +8,7 @@ import { DatabaseService } from "../../services/database.service";
 
 // ANGULARFIRE2
 import * as firebase from 'firebase';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-profile',
@@ -26,7 +28,7 @@ export class ProfileComponent implements OnInit {
 	urlImgs:string; // Guarda la ruta de la imagen para guardar en DB
 
 
-  constructor( private _dbService:DatabaseService ) {
+  constructor( private _dbService:DatabaseService, private auth:AngularFireAuth, private router: Router ) {
 		this.preferences_modal = {
 			hour: '',
 			day: '',
@@ -48,7 +50,7 @@ export class ProfileComponent implements OnInit {
 				this.preferences =  this.profile.preferences;
 			});
 
-		this._dbService.getDataQuery( "books", "uid", "==", actual_user.uid )
+		this._dbService.getDataQuery("books", "uid", "==", actual_user.uid)
 			.valueChanges()
 			.subscribe( data => this.count_book = data.length );
 	}
@@ -110,32 +112,51 @@ export class ProfileComponent implements OnInit {
 	// Invalida la cuenta del usuario, no la borra, solo le cambia el estado
 	deleteAccount(){
 		this.profile.status = false;
-		
+		swal({
+			title: "Está seguro que desea eliminar su cuenta?",
+			text: "Si luego desea volver a restaurar su cuenta, debe enviar un correo a JavieraOrmeno.L@gmail.com",
+			icon: "warning",
+			buttons: ['Cancelar', 'Confirmar'],
+			dangerMode: true,
+		})
+		.then((willDelete) => {
+			if (willDelete) {
+				this.profile.status = false;
 
-		this._dbService.updateData( "users", this.profile.key, this.profile )
-			.then( () => {
-				swal('Cuenta eliminada', 'Su cuenta ha sido eliminada con éxito', 'success');
-				// TODO: Hacer que esto funcione
-				// swal({
-				// 	title: "Está seguro que desea eliminar su cuenta?",
-				// 	text: "Si luego desea volver a restaurar su cuenta, debe enviar un correo a JavieraOrmeno.L@gmail.com",
-				// 	icon: "warning",
-				// 	buttons: true,
-				// 	dangerMode: true,
-				//   })
-				//   .then((willDelete) => {
-				// 	if (willDelete) {
-				// 	  swal("Su cuenta ha sido eliminada con éxito", {
-				// 		icon: "success",
-				// 	  });
-				// 	} else {
-				// 	  swal("Su cuenta sigue activa");
-				// 	}
-				//   });
-			})
-			.catch( () => {
-				swal('Error al elminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
-			});
+				this._dbService.updateData( "users", this.profile.key, this.profile )
+					.then( () => {
+						
+
+						this._dbService.getDataQuery('books', 'uid', '==', this.profile.uid)
+							.snapshotChanges()
+							.pipe(
+								map( actions => actions.map( a => {
+									const data = a.payload.doc.data();
+										const key = a.payload.doc.id;
+										return { key, ...data };
+								}))
+							)
+							.subscribe( books => {
+								for(let book of books) {
+									book.status = 'removed';
+									this._dbService.updateData('books', book.key, book);
+								}
+
+								swal("Su cuenta ha sido eliminada con éxito", {
+									icon: "success",
+								})
+								.then( () => this.auth.auth.signOut() )
+								.then( () => this.router.navigate(['/login']));
+							});
+					})
+					.catch( () => {
+						swal('Error al elminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
+					});
+				} else {
+					swal("Su cuenta sigue activa");
+				}
+		});
+
 	}
 
 	// Elimina la preferencia seleccionada del usuario
