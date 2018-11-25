@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 	form:FormGroup;
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
 	categories:any[] = CATEGORIES;
-	selected_categories:Array<string> = [];
+	selected_categories:any[] = [];
 
 	constructor( 	private _dbService:DatabaseService,
 								private _dateService:DateService,
