@@ -78,6 +78,7 @@ export class AddBookComponent implements OnInit {
 		// Convierte el id de Firebase en uid + fechahora 
 		book.id = user.uid + "-" + new Date().valueOf() ;
 		book.uid = user.uid;
+		book.status = true;
 
 		// Guarda el libro
 		this._dbService.addData('books', book)

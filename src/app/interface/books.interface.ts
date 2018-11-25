@@ -17,6 +17,7 @@ export interface Books{
 	uid?:							string;
 	price?:						number;
 	images?:					Array<string>;
+	status?:					boolean;
 };
 
 // Interface users
