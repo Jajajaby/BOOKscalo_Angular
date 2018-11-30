@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 // SERVICES
 import { DatabaseService } from '../../services/database.service';
 
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
