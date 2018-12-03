@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
 	categories:any[] = CATEGORIES;
 	selected_categories:any[] = [];
+	submit:boolean = false;
 
 	constructor( 	private _dbService:DatabaseService,
 								private _dateService:DateService,
@@ -73,6 +74,11 @@ export class RegisterComponent implements OnInit {
 
 	// Guarda un usuario nuevo, en DB
 	saveUser(){
+
+		this.submit = true;
+
+		console.log(this.form);
+
 		if (this.form.valid) {
 			let form=this.form.value;
 
@@ -115,7 +121,7 @@ export class RegisterComponent implements OnInit {
 				})
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
 		}else{
-			console.log("No funcionó")
+			swal("Error", "Debe llenar todos los campos del formulario", "warning");
 		}
 	}
 
