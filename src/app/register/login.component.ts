@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 
 	form:FormGroup;  
 	public user:any = {};
+	public submit:boolean = false;
 
 	constructor( 	private afAuth: AngularFireAuth, 
 					private router:Router,
@@ -59,6 +60,10 @@ export class LoginComponent implements OnInit {
 	}
 	
 	loginUser(){
+		this.submit = true;
+
+		console.log(this.form.controls);
+
 		if( this.form.valid ){
 			this.afAuth.auth.signInWithEmailAndPassword(this.form.value['email'], this.form.value['password'])
 				.then( (resp) => {
@@ -102,7 +107,7 @@ export class LoginComponent implements OnInit {
 							}
 						});
 				})
-				.catch( () => console.log('error') )
+				.catch( () => swal('Usuario o contraseña incorrectos', 'Por favor vuelva a intentarlo', 'warning') );
 		}
 	}
 
