@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-messages',
-	templateUrl: './messages.component.html'
+	templateUrl: './messages.component.html',
+	styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
 
