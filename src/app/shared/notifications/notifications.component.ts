@@ -8,8 +8,8 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class NotificationsComponent implements OnInit {
 
-  count_messages: number;
   messages: any = [];
+  new_messages
 
   constructor( private _dbService:DatabaseService ) { 
 
@@ -19,6 +19,11 @@ export class NotificationsComponent implements OnInit {
         this.messages = [];
         this.messages = data;
       });
+
+    // Obtener la cantidad de mensajes no leidos
+		this._dbService.getDataQuery('global-messages', 'status', '==', false)
+      .valueChanges()
+      .subscribe( data => this.new_messages = data.length );
   }
 
   ngOnInit() {

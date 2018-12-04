@@ -131,6 +131,7 @@ export class RegisterComponent implements OnInit {
 		}
 	}
 
+	// FIXME: Revisar porque al parecer esto se está haciendo al revés
 	// Agrega una categoría al cuadro de categorías favoritas del usuario
 	addCategory(index:number){
 		this.selected_categories.push(this.categories[index]);
@@ -138,6 +139,7 @@ export class RegisterComponent implements OnInit {
 		// TODO: Ordenar por index
 	}
 
+	// FIXME: Revisar porque al parecer esto se está haciendo al revés
 	// Remueve una categoría del cuadro de categorías favoritas del usuario
 	removeCategory(index:number){
 		this.categories.push(this.selected_categories[index]);
@@ -145,7 +147,7 @@ export class RegisterComponent implements OnInit {
 	}
 
 	// Cambia el fondo del register dependiendo de en qué etapa se encuentre
-	getBackground(page) { 
+	getBackground(page:string) { 
 		switch (page) {
 		  case 'page_1':
 			return 'url(../../assets/images/background/book-5.jpg)';
