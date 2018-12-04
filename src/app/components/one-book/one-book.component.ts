@@ -21,10 +21,6 @@ export class OneBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// TODO: Ver si eso servía o no fdjlksf
-		// this.editForm = new FormGroup({
-		// 	title: 			new FormControl(this.book.title)
-		// });
 	}
 
 }

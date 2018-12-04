@@ -7,32 +7,32 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 
 import {Component, Directive} from '@angular/core';
-import {DashboardComponent} from './dashboard.component';
-import {DatabaseService} from '../../services/database.service';
+import {CardBookComponent} from './card-book.component';
 import {DateService} from '../../services/date.service';
-
-@Injectable()
-class MockDatabaseService { }
+import {DatabaseService} from '../../services/database.service';
 
 @Injectable()
 class MockDateService { }
 
-describe('DashboardComponent', () => {
+@Injectable()
+class MockDatabaseService { }
+
+describe('CardBookComponent', () => {
   let fixture;
   let component;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        DashboardComponent
+        CardBookComponent
       ],
       providers: [
-        {provide: DatabaseService, useClass: MockDatabaseService},
         {provide: DateService, useClass: MockDateService},
+        {provide: DatabaseService, useClass: MockDatabaseService},
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(CardBookComponent);
     component = fixture.debugElement.componentInstance;
   });
 
@@ -45,12 +45,16 @@ describe('DashboardComponent', () => {
     // const result = component.ngOnInit();
   });
 
-  it('should run #addTask()', async () => {
-    // const result = component.addTask();
+  it('should run #sendMessage()', async () => {
+    // const result = component.sendMessage();
   });
 
-  it('should run #searchReportDate()', async () => {
-    // const result = component.searchReportDate(date);
+  it('should run #reportUser()', async () => {
+    // const result = component.reportUser(book_m);
+  });
+
+  it('should run #reportImage()', async () => {
+    // const result = component.reportImage(book_m);
   });
 
 });

@@ -7,32 +7,27 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 
 import {Component, Directive} from '@angular/core';
-import {DashboardComponent} from './dashboard.component';
+import {LibraryComponent} from './library.component';
 import {DatabaseService} from '../../services/database.service';
-import {DateService} from '../../services/date.service';
 
 @Injectable()
 class MockDatabaseService { }
 
-@Injectable()
-class MockDateService { }
-
-describe('DashboardComponent', () => {
+describe('LibraryComponent', () => {
   let fixture;
   let component;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        DashboardComponent
+        LibraryComponent
       ],
       providers: [
         {provide: DatabaseService, useClass: MockDatabaseService},
-        {provide: DateService, useClass: MockDateService},
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(LibraryComponent);
     component = fixture.debugElement.componentInstance;
   });
 
@@ -45,12 +40,16 @@ describe('DashboardComponent', () => {
     // const result = component.ngOnInit();
   });
 
-  it('should run #addTask()', async () => {
-    // const result = component.addTask();
+  it('should run #updateBook()', async () => {
+    // const result = component.updateBook();
   });
 
-  it('should run #searchReportDate()', async () => {
-    // const result = component.searchReportDate(date);
+  it('should run #deleteBook()', async () => {
+    // const result = component.deleteBook();
+  });
+
+  it('should run #resetBook()', async () => {
+    // const result = component.resetBook();
   });
 
 });

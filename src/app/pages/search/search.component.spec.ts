@@ -7,32 +7,29 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 
 import {Component, Directive} from '@angular/core';
-import {DashboardComponent} from './dashboard.component';
+import {SearchComponent} from './search.component';
+import {ActivatedRoute} from '@angular/router';
 import {DatabaseService} from '../../services/database.service';
-import {DateService} from '../../services/date.service';
 
 @Injectable()
 class MockDatabaseService { }
 
-@Injectable()
-class MockDateService { }
-
-describe('DashboardComponent', () => {
+describe('SearchComponent', () => {
   let fixture;
   let component;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        DashboardComponent
+        SearchComponent
       ],
       providers: [
+        ActivatedRoute,
         {provide: DatabaseService, useClass: MockDatabaseService},
-        {provide: DateService, useClass: MockDateService},
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(SearchComponent);
     component = fixture.debugElement.componentInstance;
   });
 
@@ -45,12 +42,20 @@ describe('DashboardComponent', () => {
     // const result = component.ngOnInit();
   });
 
-  it('should run #addTask()', async () => {
-    // const result = component.addTask();
+  it('should run #searchBook()', async () => {
+    // const result = component.searchBook(books, search);
   });
 
-  it('should run #searchReportDate()', async () => {
-    // const result = component.searchReportDate(date);
+  it('should run #searchAuthor()', async () => {
+    // const result = component.searchAuthor(books, search);
+  });
+
+  it('should run #searchOwner()', async () => {
+    // const result = component.searchOwner(users, search);
+  });
+
+  it('should run #searchSidebar()', async () => {
+    // const result = component.searchSidebar(books, input);
   });
 
 });
