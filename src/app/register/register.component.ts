@@ -85,6 +85,11 @@ export class RegisterComponent implements OnInit {
 			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
 				.then( (resp:any) => {
 
+					// FIXME: Esto hace que se seleccione un emoji aleatorio para la imagen del nuevo usuario.
+					let num = Math.floor(Math.random() * (1 - 47)) + 1;
+					let path_img = "../assets/images/emojis/emoji("+num+").png";
+					console.log(path_img);
+
 					// Guarda el form para validarlo
 					const USER:Users = {
 						uid: 					resp.user.uid,
@@ -98,7 +103,8 @@ export class RegisterComponent implements OnInit {
 						google:      	false,
 						status:				true,
 						role:					'normal',
-						created_date: this._dateService.actual_date()
+						created_date: this._dateService.actual_date(),
+						img: 					path_img
 					};
 
 					if( !this.form.value.conditions ){
