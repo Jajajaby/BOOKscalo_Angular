@@ -12,22 +12,33 @@
 				novalidate="novalidate" 
 				action="index.html">    
 
-				<h3 class="box-title m-b-20">Sign In</h3>
-					<div class="form-group ">
+				<h3 class="box-title m-b-20"> Ingresar </h3>
+					<div class="form-group">
 						<div class="col-xs-12">
 							<input  formControlName="email"
-									class="form-control" 
-									type="text" 
-									placeholder="Correo electrónico"> 
+									class="form-control"
+									type="text"
+									placeholder="Correo electrónico">
 						</div>
+						<p class="text-danger" *ngIf="submit && form.controls['email'].errors?.required">	El correo es requerido </p>
+						<p class="text-danger" *ngIf="submit && form.controls['email'].errors?.email">	El correo no es valido </p>
 					</div>
 					  
 					<div class="form-group">
 						<div class="col-xs-12">
 							  <input 	formControlName="password"
-										class="form-control" 
-										type="password" 
-										placeholder="Password"> 
+										class="form-control"
+										type="password"
+										placeholder="Password">
+								<p class="text-danger" *ngIf="submit && form.controls['password'].errors?.required">	
+									La contraseña es requerida 
+								</p>
+								<p class="text-danger" 
+									 *ngIf="submit && 
+									 				form.controls['password'].errors?.minlength.actualLength !== undefined &&
+													form.controls['password'].errors?.minlength.actualLength < form.controls['password'].errors?.minlength.requiredLength">	
+									La es demasiado corta
+								</p>
 						</div>
 					</div>
 					  

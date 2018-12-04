@@ -23,7 +23,7 @@
     "angularfire2": "^5.0.0-rc.12",
     "core-js": "^2.5.4",
     "firebase": "^5.4.2",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.3.3",
     "sweetalert": "^2.1.0",
     "zone.js": "^0.8.26"
   },
@@ -38,6 +38,7 @@
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^23.6.0",
     "karma": "^3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.0",

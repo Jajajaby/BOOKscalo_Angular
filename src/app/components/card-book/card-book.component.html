@@ -202,38 +202,11 @@
 					</div><br>
 
 					<!-- Preferences -->
-					<!-- FIXME: Esto tiene que ser una tabla u otra cosa, no un select -->
-					<!-- https://www.lawebdelprogramador.com/foros/JavaScript/1495600-seleccionar-una-o-varias-filas-de-una-tabla-y-marcar-o-desmarcar-el-check-de-la-fila-correspondiente.html -->
 					<label>Seleccione la preferencia que más le acomode</label>
 					<select class="form-control" formControlName="pref">
 						<option value="{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}" *ngFor="let p of book_modal.user.preferences">{{ p.subway_station }} - {{ p.day }} - {{ p.hour  }}</option>
 						<option value="dislike_preferences">Ninguna me acomoda</option>
 					</select><br>
-					<!-- <div class="table-responsive">
-						<table class="table color-table info-table">
-							<thead>
-								<tr>
-									<th>Selección</th>
-									<th>Estación de metro</th>
-									<th>Día</th>
-									<th>Horario</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr *ngFor="let p of book_modal.user.preferences">
-									<td class="controls">
-										<label class="custom-control custom-checkbox">
-											<input type="checkbox" class="custom-control-input" value="p"> 
-											<span class="custom-control-indicator"></span>  
-										</label>
-									</td>
-									<td> {{ p.subway_station }} </td>
-									<td> {{ p.day }} </td>
-									<td> {{ p.hour }} </td>
-								</tr>
-							</tbody>
-						</table>
-					</div> -->
 					<br>
 					
 					<!-- Custom preferences -->

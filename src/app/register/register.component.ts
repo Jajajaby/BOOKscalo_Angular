@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
 	categories:any[] = CATEGORIES;
 	selected_categories:any[] = [];
+	submit:boolean = false;
 
 	constructor( 	private _dbService:DatabaseService,
 								private _dateService:DateService,
@@ -73,11 +74,21 @@ export class RegisterComponent implements OnInit {
 
 	// Guarda un usuario nuevo, en DB
 	saveUser(){
+
+		this.submit = true;
+
+		console.log(this.form);
+
 		if (this.form.valid) {
 			let form=this.form.value;
 
 			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
 				.then( (resp:any) => {
+
+					// FIXME: Esto hace que se seleccione un emoji aleatorio para la imagen del nuevo usuario.
+					let num = Math.floor(Math.random() * (1 - 47)) + 1;
+					let path_img = "../assets/images/emojis/emoji("+num+").png";
+					console.log(path_img);
 
 					// Guarda el form para validarlo
 					const USER:Users = {
@@ -92,7 +103,8 @@ export class RegisterComponent implements OnInit {
 						google:      	false,
 						status:				true,
 						role:					'normal',
-						created_date: this._dateService.actual_date()
+						created_date: this._dateService.actual_date(),
+						img: 					path_img
 					};
 
 					if( !this.form.value.conditions ){
@@ -115,10 +127,11 @@ export class RegisterComponent implements OnInit {
 				})
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
 		}else{
-			console.log("No funcionó")
+			swal("Error", "Debe llenar todos los campos del formulario", "warning");
 		}
 	}
 
+	// FIXME: Revisar porque al parecer esto se está haciendo al revés
 	// Agrega una categoría al cuadro de categorías favoritas del usuario
 	addCategory(index:number){
 		this.selected_categories.push(this.categories[index]);
@@ -126,6 +139,7 @@ export class RegisterComponent implements OnInit {
 		// TODO: Ordenar por index
 	}
 
+	// FIXME: Revisar porque al parecer esto se está haciendo al revés
 	// Remueve una categoría del cuadro de categorías favoritas del usuario
 	removeCategory(index:number){
 		this.categories.push(this.selected_categories[index]);
@@ -133,7 +147,7 @@ export class RegisterComponent implements OnInit {
 	}
 
 	// Cambia el fondo del register dependiendo de en qué etapa se encuentre
-	getBackground(page) { 
+	getBackground(page:string) { 
 		switch (page) {
 		  case 'page_1':
 			return 'url(../../assets/images/background/book-5.jpg)';

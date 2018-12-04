@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// ROUTES
 import { ADMIN_ROUTES } from './admin.routes';
-// Modulos
+
+// MODULES
 import { SharedModule } from '../shared/shared.module';
 
-// Componentes
+// COMPONENTS
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';

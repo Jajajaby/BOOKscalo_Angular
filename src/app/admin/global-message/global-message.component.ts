@@ -76,7 +76,8 @@ export class GlobalMessageComponent implements OnInit {
       title:       this.form.value.title,
       body:        this.form.value.body,
       day:         this._date.actual_day(),
-      hour:        this._date.actual_hour()
+      hour:        this._date.actual_hour(),
+      status:      false
     }
 
     switch (this.form.value.receiver) {
