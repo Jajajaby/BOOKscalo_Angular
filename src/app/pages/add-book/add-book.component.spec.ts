@@ -4,8 +4,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router'; 
 import { Observable } from 'rxjs';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
+import { throwError as _throw } from 'rxjs'; 
+import { of as _of } from 'rxjs'; 
 
 import {Component, Directive} from '@angular/core';
 import {AddBookComponent} from './add-book.component';

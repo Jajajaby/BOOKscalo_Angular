@@ -3,8 +3,8 @@ import { Injectable, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
+import { throwError as _throw } from 'rxjs'; 
+import { of as _of } from 'rxjs'; 
 
 import {Component, Directive} from '@angular/core';
 import {GlobalMessageComponent} from './global-message.component';
