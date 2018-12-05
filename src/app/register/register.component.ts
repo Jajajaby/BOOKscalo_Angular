@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
 			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			last_name2: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			rut: 					new FormControl(undefined, [Validators.required, Validators.pattern('^[.0-9]{6,11}\-?[kK0-9]{1}$')]),
-			phone: 				new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
+			phone: 				new FormControl('', [Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
 			// TODO: Validar los géneros 
 			categories: 	new FormControl([], Validators.required),
 			email: 				new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
@@ -86,7 +86,7 @@ export class RegisterComponent implements OnInit {
 				.then( (resp:any) => {
 
 					// FIXME: Esto hace que se seleccione un emoji aleatorio para la imagen del nuevo usuario.
-					let num = Math.floor(Math.random() * (1 - 47)) + 1;
+					let num = Math.floor((Math.random() * 47) + 1);
 					let path_img = "../assets/images/emojis/emoji("+num+").png";
 					console.log(path_img);
 
