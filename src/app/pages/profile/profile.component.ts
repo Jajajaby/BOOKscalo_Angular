@@ -125,8 +125,6 @@ export class ProfileComponent implements OnInit {
 
 				this._dbService.updateData( "users", this.profile.key, this.profile )
 					.then( () => {
-						
-
 						this._dbService.getDataQuery('books', 'uid', '==', this.profile.uid)
 							.snapshotChanges()
 							.pipe(
@@ -153,10 +151,9 @@ export class ProfileComponent implements OnInit {
 						swal('Error al elminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
 					});
 				} else {
-					swal("Su cuenta sigue activa");
+					swal("Su cuenta sigue activa", 'error');
 				}
 		});
-
 	}
 
 	// Elimina la preferencia seleccionada del usuario
