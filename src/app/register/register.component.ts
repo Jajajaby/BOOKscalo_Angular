@@ -16,6 +16,7 @@ import swal from 'sweetalert';
 
 // Data
 import { CATEGORIES } from '../../data/categories.data';
+import firebase = require('firebase');
 
 // Inicializa los plugins
 declare function init_plugins();
@@ -119,6 +120,15 @@ export class RegisterComponent implements OnInit {
 							swal('Cuenta creada con éxito', USER.email, 'success');
 							this.afAuth.auth.signOut();
 							this.router.navigate([ '/login' ]);
+
+							// Envía un correo de verificación al usuario que se acaba de registrar
+							var user = firebase.auth().currentUser;
+							user.sendEmailVerification().then(function() {
+								console.log("Email de verificación enviado")
+							}).catch(function(error) {
+								console.log("No se ha podido enviar el email de verificación enviado")
+ 							});
+
 						})
 					.catch( (err) => {
 						console.log("Error al guardar al usuario", err);
@@ -129,6 +139,8 @@ export class RegisterComponent implements OnInit {
 		}else{
 			swal("Error", "Debe llenar todos los campos del formulario", "warning");
 		}
+
+		
 	}
 
 	// FIXME: Revisar porque al parecer esto se está haciendo al revés
@@ -156,5 +168,5 @@ export class RegisterComponent implements OnInit {
 		  case 'page_3':
 			return 'url(../../assets/images/background/book-1.jpg)';
 		}
-	  }
+	}
 }
