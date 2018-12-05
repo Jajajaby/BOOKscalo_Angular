@@ -1,20 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// RUTAS
+// ROUTES
 import { APP_ROUTES } from './app.routes';
 
-// MODULOS
+// MODULES
 import { PagesModule } from './pages/pages.module';
 import { AdminModule } from './admin/admin.module';
 
-// COMPONENTES
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './register/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PageforbiddenComponent } from './pageforbidden/pageforbidden.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -26,11 +28,13 @@ import { PageforbiddenComponent } from './pageforbidden/pageforbidden.component'
     PageforbiddenComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     PagesModule,
     AdminModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
     APP_ROUTES
   ],
   providers: [],

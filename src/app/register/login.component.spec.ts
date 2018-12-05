@@ -11,6 +11,7 @@ import {Component, Directive} from '@angular/core';
 import {LoginComponent} from './login.component';
 import { DatabaseService } from '../services/database.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // @Injectable();
 // class MockRouter { navigate = jest.fn(); }
@@ -23,6 +24,9 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         LoginComponent
+      ],
+      imports: [
+        FormsModule, ReactiveFormsModule
       ],
       providers: [
         AngularFireAuth,

@@ -10,6 +10,7 @@ import {Component, Directive} from '@angular/core';
 import {CardBookComponent} from './card-book.component';
 import {DateService} from '../../services/date.service';
 import {DatabaseService} from '../../services/database.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Injectable()
 class MockDateService { }
@@ -26,6 +27,9 @@ describe('CardBookComponent', () => {
       declarations: [
         CardBookComponent
       ],
+      imports: [
+        FormsModule, ReactiveFormsModule
+      ],
       providers: [
         {provide: DateService, useClass: MockDateService},
         {provide: DatabaseService, useClass: MockDatabaseService},
@@ -37,7 +41,9 @@ describe('CardBookComponent', () => {
   });
 
   it('should create a component', async () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(CardBookComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy(); 
   });
 
 

@@ -50,7 +50,8 @@
 								<img [src]="profile.img" class="img-circle" width="300" />
 								<h4 class="card-title">
 									{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} </h4>
-								<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
+								<!-- TODO:
+								<h6 class="card-subtitle">Creado el: </h6> -->
 								<div class="row text-center justify-content-md-center">
 									<div class="col-4">
 										<a href="javascript:void(0)" class="link">
@@ -72,14 +73,14 @@
 							<small class="text-muted">Categorías favoritas:</small>
 							<ul>
 								<li>
-									<h6>{{ profile.categories }}</h6>
+									<h6 *ngFor="let c of profile.categories">{{ c }}</h6>
 								</li>
 							</ul>
 						</div>
 
 						<div class="card-body">
 							<div class="dropdown-divider"></div>
-
+							<!-- TODO: Dejarlo o sacarlo? -->							
 							<small class="text-muted p-t-30 db">Redes sociales</small><br/>
 							<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
 							<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
