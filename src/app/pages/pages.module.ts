@@ -37,6 +37,7 @@ import { SearchComponent } from './search/search.component';
 // COMPONENTS
 import { CardBookComponent } from '../components/card-book/card-book.component';
 import { OneBookComponent } from '../components/one-book/one-book.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { OneBookComponent } from '../components/one-book/one-book.component';
     ChatsComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     PAGES_ROUTES,
     SharedModule,
@@ -60,7 +62,8 @@ import { OneBookComponent } from '../components/one-book/one-book.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule
   ],
   providers: [
     DatabaseService,

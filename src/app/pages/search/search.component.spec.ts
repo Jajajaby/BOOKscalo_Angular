@@ -10,6 +10,7 @@ import {Component, Directive} from '@angular/core';
 import {SearchComponent} from './search.component';
 import {ActivatedRoute} from '@angular/router';
 import {DatabaseService} from '../../services/database.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Injectable()
 class MockDatabaseService { }
@@ -22,6 +23,9 @@ describe('SearchComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         SearchComponent
+      ],
+      imports: [
+        FormsModule, ReactiveFormsModule
       ],
       providers: [
         ActivatedRoute,

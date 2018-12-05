@@ -12,6 +12,7 @@ import {DatabaseService} from 'src/app/services/database.service';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {DateService} from '../../services/date.service';
 import {ActivatedRoute} from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Injectable()
 class MockDateService { }
@@ -24,6 +25,9 @@ describe('ChatsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ChatsComponent
+      ],
+      imports: [
+        FormsModule, ReactiveFormsModule
       ],
       providers: [
         DatabaseService,

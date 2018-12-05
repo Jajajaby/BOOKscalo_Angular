@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Injectable, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
@@ -26,6 +27,9 @@ describe('DashboardComponent', () => {
       declarations: [
         DashboardComponent
       ],
+      imports: [
+        FormsModule, ReactiveFormsModule
+      ],
       providers: [
         {provide: DatabaseService, useClass: MockDatabaseService},
         {provide: DateService, useClass: MockDateService},
@@ -37,7 +41,9 @@ describe('DashboardComponent', () => {
   });
 
   it('should create a component', async () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   });
 
 

@@ -76,6 +76,7 @@ export class DashboardComponent implements OnInit {
 	}
 
 	// TODO: Terminar po jjj
+	// FIXME: Terminar o sacar
 	addTask(){
 		this._dbService.addDataIdCustom('tasks', this.actual_user, this.form)
 			.then( () => swal('Tarea guardada', 'La tarea ha sido guardada con éxito', 'success') )

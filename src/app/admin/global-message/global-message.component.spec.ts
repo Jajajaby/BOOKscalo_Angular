@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Injectable, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { By } from '@angular/platform-browser';
@@ -26,6 +27,9 @@ describe('GlobalMessageComponent', () => {
       declarations: [
         GlobalMessageComponent
       ],
+      imports: [
+        FormsModule, ReactiveFormsModule
+      ],
       providers: [
         {provide: DateService, useClass: MockDateService},
         {provide: DatabaseService, useClass: MockDatabaseService},
@@ -37,7 +41,9 @@ describe('GlobalMessageComponent', () => {
   });
 
   it('should create a component', async () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(GlobalMessageComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();  
   });
 
 

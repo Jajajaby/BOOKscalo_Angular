@@ -13,6 +13,7 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { GlobalMessageComponent } from './global-message/global-message.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { GlobalMessageComponent } from './global-message/global-message.componen
     SharedModule,
     ADMIN_ROUTES,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [
     AdminComponent,

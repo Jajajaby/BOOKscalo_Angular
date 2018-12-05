@@ -12,6 +12,7 @@ import {AddBookComponent} from './add-book.component';
 
 import { DatabaseService } from "../../services/database.service";
 import { DateService } from 'src/app/services/date.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // @Injectable()
 // class MockRouter { navigate = jest.fn(); }
@@ -24,6 +25,9 @@ describe('AddBookComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AddBookComponent
+      ],
+      imports: [
+        FormsModule, ReactiveFormsModule
       ],
       providers: [
         DatabaseService,

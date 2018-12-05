@@ -12,6 +12,7 @@ import {DatabaseService} from '../services/database.service';
 import {DateService} from '../services/date.service';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Injectable()
 class MockDatabaseService { }
@@ -30,6 +31,9 @@ describe('RegisterComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         RegisterComponent
+      ],
+      imports: [
+        FormsModule, ReactiveFormsModule
       ],
       providers: [
         {provide: DatabaseService, useClass: MockDatabaseService},

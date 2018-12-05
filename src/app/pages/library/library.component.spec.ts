@@ -9,6 +9,7 @@ import { of as _of } from 'rxjs';
 import {Component, Directive} from '@angular/core';
 import {LibraryComponent} from './library.component';
 import {DatabaseService} from '../../services/database.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Injectable()
 class MockDatabaseService { }
@@ -21,6 +22,9 @@ describe('LibraryComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         LibraryComponent
+      ],
+      imports: [
+        FormsModule, ReactiveFormsModule
       ],
       providers: [
         {provide: DatabaseService, useClass: MockDatabaseService},
