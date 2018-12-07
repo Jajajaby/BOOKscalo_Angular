@@ -14,10 +14,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { GlobalMessageComponent } from './global-message/global-message.component';
 import { RouterModule } from '@angular/router';
+import { PipesCommonModule } from '../pipes/pipes-common/pipes-common.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    PipesCommonModule,
     SharedModule,
     ADMIN_ROUTES,
     FormsModule,
@@ -29,6 +31,9 @@ import { RouterModule } from '@angular/router';
     DashboardComponent,
     UsersComponent,
     GlobalMessageComponent
+  ],
+  exports: [
+    PipesCommonModule,
   ]
 })
 export class AdminModule { }
