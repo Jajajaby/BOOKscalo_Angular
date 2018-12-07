@@ -148,7 +148,7 @@ export class ProfileComponent implements OnInit {
 							});
 					})
 					.catch( () => {
-						swal('Error al elminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
+						swal('Error al eliminar su cuenta', 'Por favor, vuelva a intentarlo', 'error');
 					});
 				} else {
 					swal("Su cuenta sigue activa", 'error');
