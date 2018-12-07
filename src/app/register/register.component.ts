@@ -33,7 +33,9 @@ export class RegisterComponent implements OnInit {
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
 	categories:any[] = CATEGORIES;
 	selected_categories:any[] = [];
-	submit:boolean = false;
+	submit1:boolean = false;
+	submit2:boolean = false;
+	submit3:boolean = false;
 
 	constructor( 	private _dbService:DatabaseService,
 								private _dateService:DateService,
@@ -76,9 +78,9 @@ export class RegisterComponent implements OnInit {
 	// Guarda un usuario nuevo, en DB
 	saveUser(){
 
-		this.submit = true;
-
-		console.log(this.form);
+		this.submit1 = true;
+		this.submit2 = true;
+		this.submit3 = true;
 
 		if (this.form.valid) {
 			let form=this.form.value;
@@ -158,15 +160,31 @@ export class RegisterComponent implements OnInit {
 		this.selected_categories.splice(index, 1);				
 	}
 
+
+	nextPage(page:string){
+		let form = this.form;
+		switch( page ) {
+			case 'page_2':
+				this.submit1 = true;
+				if( form.controls['name'].valid && form.controls['last_name1'].valid && form.controls['last_name2'].valid && 	form.controls['rut'].valid)
+					this.register_pages = 'page_2';
+				break;
+			case 'page_3':
+				this.submit2 = true;
+				if( this.selected_categories.length >= 3 )
+					this.register_pages = 'page_3';
+				break;
+		}
+	}
 	// Cambia el fondo del register dependiendo de en qué etapa se encuentre
 	getBackground(page:string) { 
 		switch (page) {
 		  case 'page_1':
-			return 'url(../../assets/images/background/book-5.jpg)';
+				return 'url(../../assets/images/background/book-5.jpg)';
 		  case 'page_2':
-			return 'url(../../assets/images/background/book-3.jpg)';
+				return 'url(../../assets/images/background/book-3.jpg)';
 		  case 'page_3':
-			return 'url(../../assets/images/background/book-1.jpg)';
+				return 'url(../../assets/images/background/book-1.jpg)';
 		}
 	}
 }

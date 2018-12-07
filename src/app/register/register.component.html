@@ -17,20 +17,20 @@
 								<div class="col-xs-12">
 									<input formControlName="name" class="form-control" type="text" placeholder="Nombre">
 								</div>
-								<div *ngIf="form.controls['name'].errors?.required && submit"><p class="text-danger">El nombre es requerido</p></div>
-								<div *ngIf="form.controls['name'].errors?.pattern  && submit"><p class="text-danger">El nombre ingresado no es válido</p></div>
+								<div *ngIf="form.controls['name'].errors?.required && submit1"><p class="text-danger">El nombre es requerido</p></div>
+								<div *ngIf="form.controls['name'].errors?.pattern  && submit1"><p class="text-danger">El nombre ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group m-t-10 row">
 									<div class="col-md-6">
 										<input formControlName="last_name1" class="form-control" type="text" placeholder="Apellido paterno">
-										<div *ngIf="form.controls['last_name1'].errors?.required && submit"><p class="text-danger">El apellido es requerido</p></div>
-										<div *ngIf="form.controls['last_name1'].errors?.pattern  && submit"><p class="text-danger">El apellido ingresado no es válido</p></div>
+										<div *ngIf="form.controls['last_name1'].errors?.required && submit1"><p class="text-danger">El apellido es requerido</p></div>
+										<div *ngIf="form.controls['last_name1'].errors?.pattern  && submit1"><p class="text-danger">El apellido ingresado no es válido</p></div>
 									</div>
 									<div class="col-md-6">
 										<input formControlName="last_name2" class="form-control" type="text" placeholder="Apellido materno">
-										<div *ngIf="form.controls['last_name1'].errors?.required && submit"><p class="text-danger">El apellido es requerido</p></div>
-										<div *ngIf="form.controls['last_name1'].errors?.pattern && submit"><p class="text-danger">El apellido ingresado no es válido</p></div>
+										<div *ngIf="form.controls['last_name2'].errors?.required && submit1"><p class="text-danger">El apellido es requerido</p></div>
+										<div *ngIf="form.controls['last_name2'].errors?.pattern && submit1"><p class="text-danger">El apellido ingresado no es válido</p></div>
 									</div>
 								</div>
 
@@ -38,8 +38,8 @@
 								<div class="col-xs-12">
 									<input formControlName="rut" class="form-control"	type="text" placeholder="RUT">
 								</div>
-								<div *ngIf="form.controls['rut'].errors?.required && submit"><p class="text-danger">El RUT es requerido</p></div>
-								<div *ngIf="form.controls['rut'].errors?.pattern && submit"><p class="text-danger">El RUT ingresado no es válido</p></div>
+								<div *ngIf="form.controls['rut'].errors?.required && submit1"><p class="text-danger">El RUT es requerido</p></div>
+								<div *ngIf="form.controls['rut'].errors?.pattern && submit1"><p class="text-danger">El RUT ingresado no es válido</p></div>
 							</div>
 
 							<!-- <div class="form-group m-t-20">
@@ -51,12 +51,8 @@
 
 							<div class="form-group text-center m-t-20">
 								<div class="col-xs-12">
-									<button (click)="register_pages='page_2'"
-													class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
-													[disabled]="!form.controls['name'].valid ||
-																			!form.controls['last_name1'].valid ||
-																			!form.controls['last_name2'].valid ||
-																			!form.controls['rut'].valid">
+									<button type="button" (click)="nextPage('page_2')"
+													class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">
 										Continuar
 									</button>
 								</div>
@@ -98,12 +94,14 @@
 									</select>
 								</div>								
 							</div>
+							<p *ngIf="selected_categories.length < 3 && submit2" class="text-danger">
+								Debe seleccionar al menos 3 categorias
+							</p>
 
 							<div class="form-group text-center m-t-20">
 								<div class="col-xs-12">
-									<button (click)="register_pages='page_3'" 
-													class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
-													[disabled]="selected_categories.length < 3">
+									<button type="button" (click)="nextPage('page_3')" 
+													class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">
 										Continuar
 									</button>
 								</div>
@@ -133,8 +131,8 @@
 								<div class="col-xs-12">
 									<input formControlName="email" class="form-control" type="text" placeholder="Correo electrónico">
 								</div>
-								<div *ngIf="form.controls['email'].errors?.required && submit"><p class="text-danger">El email es requerido</p></div>
-								<div *ngIf="form.controls['email'].errors?.email && submit"><p class="text-danger">El email ingresado no es válido</p></div>
+								<div *ngIf="form.controls['email'].errors?.required && submit3"><p class="text-danger">El email es requerido</p></div>
+								<div *ngIf="form.controls['email'].errors?.email && submit3"><p class="text-danger">El email ingresado no es válido</p></div>
 							</div>
 
 							<div class="form-group ">
@@ -149,7 +147,7 @@
 									</div>
 							</div>
 
-							<div class="form-group" *ngIf="form['errors']?.areEquals && !form.pristine && submit">
+							<div class="form-group" *ngIf="form['errors']?.areEquals && !form.pristine && submit3">
 								<p class="text-danger">	Las contraseñas deben ser iguales </p>
 							</div>
 
@@ -168,8 +166,7 @@
 							<div class="form-group text-center m-t-20">
 								<div class="col-xs-12">
 									<button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" 
-													type="submit"
-													[disabled]="!form.controls['email'].valid || !form.controls['password'].valid || !form.controls['password2'].valid">
+													type="submit">
 										Registrarme
 								</button>
 								</div>

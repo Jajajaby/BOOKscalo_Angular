@@ -22,7 +22,7 @@ export class DateService {
 		if( hour < 10 ){ hh = '0'+hour; } else{ hh = hour; }
 		if( min < 10 ) { m  = '0'+min;  } else{ m  = min; }
 
-		return `${ dd }-${ mm }-${ year } ${hh}:${m}`;
+		return `${ mm }-${ dd }-${ year } ${hh}:${m}`;
 	}
 
 	// Extrae y retorna el día actual
