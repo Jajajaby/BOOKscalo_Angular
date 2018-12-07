@@ -5,8 +5,12 @@ import { ThousandsPipe } from '../thousands.pipe';
 @NgModule({
   imports: [
     CommonModule,
+  ],
+  declarations: [
     ThousandsPipe
   ],
-  declarations: []
+  exports: [
+    ThousandsPipe
+  ]
 })
 export class PipesCommonModule { }
