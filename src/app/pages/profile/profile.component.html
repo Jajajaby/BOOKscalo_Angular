@@ -50,8 +50,6 @@
 								<img [src]="profile.img" class="img-circle" width="300" />
 								<h4 class="card-title">
 									{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} </h4>
-								<!-- TODO:
-								<h6 class="card-subtitle">Creado el: </h6> -->
 								<div class="row text-center justify-content-md-center">
 									<div class="col-4">
 										<a href="javascript:void(0)" class="link">
@@ -66,6 +64,8 @@
 								<h6>{{ profile.email }}</h6>
 								<small class="text-muted p-t-30 db">Teléfono de contacto</small>
 								<h6>{{ profile.phone }}</h6>
+								<small class="text-muted p-t-30 db">Usuario creado el</small>
+								<h6>{{ profile.created_date }}</h6>
 							</div>
 						</div>
 						<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->
@@ -80,11 +80,10 @@
 
 						<div class="card-body">
 							<div class="dropdown-divider"></div>
-							<!-- TODO: Dejarlo o sacarlo? -->							
 							<small class="text-muted p-t-30 db">Redes sociales</small><br/>
-							<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
-							<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
-							<button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
+							<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-facebook"></i></button>
+							<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-twitter"></i></button>
+							<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-youtube"></i></button>
 						</div>
 					</div>
 				</div>

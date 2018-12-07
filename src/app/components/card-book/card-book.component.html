@@ -41,9 +41,9 @@
 						<p class="card-text" *ngIf="book.transaction == 'Ambos' || book.transaction == 'Venta'">Valor: ${{ book.price | thousands }}</p>
 						<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>
 						<button *ngIf="book.uid === actual_user.uid" class="btn btn-outline-info col-md-12" data-toggle="modal" 
-								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
+								data-target="#showBook" type="button" (click)="openBook( book )">Ver libro</button>
 						<button *ngIf="book.uid !== actual_user.uid" class="btn btn-outline-info col-md-6" data-toggle="modal" 
-								data-target="#showBook" type="button" (click)="book_modal=book">Ver libro</button>
+								data-target="#showBook" type="button" (click)="openBook( book )">Ver libro</button>
 						<button *ngIf="book.uid !== actual_user.uid" 
 								class="btn btn-outline-info col-md-6" data-toggle="modal" 
 								data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>
@@ -123,12 +123,11 @@
 											<img [src]="book_modal.user.img" class="img-circle" width="150" />
 											<h4 class="card-title">
 												{{ book_modal.user.name | titlecase }} {{ book_modal.user.last_name1 | titlecase }} {{ book_modal.user.last_name2 | titlecase }} </h4>
-											<h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
 											<div class="row text-center justify-content-md-center">
 												<div class="col-4">
 													<a href="javascript:void(0)" class="link">
 														<i class="fa fa-book"></i>
-														<!-- <font class="font-medium"> {{ count_book }}</font> -->
+														<font class="font-medium"> {{ count_book }}</font>
 													</a>
 												</div>
 											</div>
@@ -138,6 +137,8 @@
 											<h6> {{ book_modal.user.email }} </h6>
 											<small class="text-muted p-t-30 db">Teléfono de contacto</small>
 											<h6> {{ book_modal.user.phone }} </h6>
+											<small class="text-muted p-t-30 db">Usuario creado el</small>
+											<h6> {{ book_modal.user.created_date }} </h6>
 										</div>
 									</div>
 									<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->
@@ -152,9 +153,9 @@
 									<div class="card-body">
 										<div class="dropdown-divider"></div>
 										<small class="text-muted p-t-30 db">Redes sociales</small><br/>
-										<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
-										<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
-										<button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
+										<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-facebook"></i></button>
+										<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-twitter"></i></button>
+										<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-youtube"></i></button>
 									</div>
 								</div>
 							</div>

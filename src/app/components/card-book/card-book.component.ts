@@ -25,6 +25,7 @@ export class CardBookComponent implements OnInit {
 	form:any; 
 	actual_user:any;
 	today:any;
+	count_book:number = 0;
 
 	book_modal: Books = {
 		author: 			'', 
@@ -43,6 +44,8 @@ export class CardBookComponent implements OnInit {
 		images: 			[],
 		date: 				''
 	};
+
+
 
 	constructor(	private _date:DateService,
 								private _dbService:DatabaseService) {
@@ -80,8 +83,6 @@ export class CardBookComponent implements OnInit {
 
 	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
 	sendMessage(){
-		console.log(this.form.value);
-		console.log(this.form.valid);
 		let predet_Message:Message = {
 			transaction:								this.form.value.transaction,
 			pref: 											this.form.value.pref,
@@ -165,6 +166,15 @@ export class CardBookComponent implements OnInit {
 		this._dbService.addData('reports', report)
 			.then( () => swal('Reporte enviado', 'Muchas gracias por reportar, lo revisaremos en seguida', 'success') )
 			.catch( () => swal('Error', 'Su reporte no ha podido enviarse', 'error') );
+	}
+
+
+	openBook( book:any ) {
+		this.book_modal = book;
+
+		this._dbService.getDataQuery("books", "uid", "==", book.uid)
+			.valueChanges()
+			.subscribe( data => this.count_book = data.length );
 	}
 
 }
