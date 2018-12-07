@@ -16,7 +16,7 @@ import swal from 'sweetalert';
 
 // Data
 import { CATEGORIES } from '../../data/categories.data';
-import firebase = require('firebase');
+import  * as firebase from 'firebase';
 
 // Inicializa los plugins
 declare function init_plugins();
