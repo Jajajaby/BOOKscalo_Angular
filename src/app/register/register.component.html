@@ -46,7 +46,6 @@
 								<div class="col-xs-12">
 									<input formControlName="phone" class="form-control" type="text" placeholder="Teléfono opcional">
 								</div>
-								<div *ngIf="form.controls['phone'].errors?.required && submit"><p class="text-danger">El teléfono es requerido</p></div>
 								<div *ngIf="form.controls['phone'].errors?.pattern && submit"><p class="text-danger">El teléfono ingresado no es válido</p></div>
 							</div>
 
