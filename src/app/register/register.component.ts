@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
 			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			last_name2: 	new FormControl(undefined, [Validators.required, Validators.pattern("^([A-Za-z ,.'ñáéíóú]{2,20})$"), Validators.minLength(2)]),
 			rut: 					new FormControl(undefined, [Validators.required, Validators.pattern('^[.0-9]{6,11}\-?[kK0-9]{1}$')]),
-			phone: 				new FormControl('', [Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
+			// phone: 				new FormControl('', [Validators.pattern('^[0-9]{8}$'),  Validators.minLength(8), Validators.maxLength(8)]),
 			// TODO: Validar los géneros 
 			categories: 	new FormControl([], Validators.required),
 			email: 				new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
@@ -100,7 +100,7 @@ export class RegisterComponent implements OnInit {
 						last_name2: 	form.last_name2.toLowerCase(),
 						email: 				form.email.toLowerCase(),
 						categories:		this.selected_categories, 
-						phone: 				form.phone,
+						// phone: 				form.phone,
 						google:      	false,
 						status:				true,
 						role:					'normal',
