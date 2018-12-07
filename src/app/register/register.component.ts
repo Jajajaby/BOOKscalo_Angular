@@ -180,11 +180,11 @@ export class RegisterComponent implements OnInit {
 	getBackground(page:string) { 
 		switch (page) {
 		  case 'page_1':
-			return 'url(../../assets/images/background/book-5.jpg)';
+				return 'url(../../assets/images/background/book-5.jpg)';
 		  case 'page_2':
-			return 'url(../../assets/images/background/book-3.jpg)';
+				return 'url(../../assets/images/background/book-3.jpg)';
 		  case 'page_3':
-			return 'url(../../assets/images/background/book-1.jpg)';
+				return 'url(../../assets/images/background/book-1.jpg)';
 		}
 	}
 }
