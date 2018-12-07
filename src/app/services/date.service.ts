@@ -36,7 +36,7 @@ export class DateService {
 		if( day < 10 ) { dd = '0'+ day; } else{ dd = day; }
 		if( month < 10 ) { mm = '0'+ month; } else{ mm = month; }
 
-		return `${ dd }-${ mm }-${ year }`;
+		return `${ mm }-${ dd }-${ year }`;
 	}   
 
 	// Extrae y retorna la hora actual
