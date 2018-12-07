@@ -9,6 +9,8 @@ import { APP_ROUTES } from './app.routes';
 // MODULES
 import { PagesModule } from './pages/pages.module';
 import { AdminModule } from './admin/admin.module';
+import { RouterModule } from '@angular/router';
+import { PipesCommonModule } from './pipes/pipes-common/pipes-common.module';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -16,7 +18,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './register/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PageforbiddenComponent } from './pageforbidden/pageforbidden.component';
-import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    PipesCommonModule,
     BrowserModule,
     PagesModule,
     AdminModule,
@@ -36,6 +38,9 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule,
     APP_ROUTES
+  ],
+  exports: [
+    PipesCommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

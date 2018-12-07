@@ -5,9 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // MODULES
 import { SharedModule } from '../shared/shared.module';
-
-// PIPES
-import { ThousandsPipe } from '../pipes/thousands.pipe';
+import { RouterModule } from '@angular/router';
+import { PipesCommonModule } from '../pipes/pipes-common/pipes-common.module';
 
 // SERVICES
 import { DatabaseService } from "./../services/database.service";
@@ -37,7 +36,6 @@ import { SearchComponent } from './search/search.component';
 // COMPONENTS
 import { CardBookComponent } from '../components/card-book/card-book.component';
 import { OneBookComponent } from '../components/one-book/one-book.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -49,11 +47,11 @@ import { RouterModule } from '@angular/router';
     PagesComponent,
     CardBookComponent,
     SearchComponent,
-    ThousandsPipe,
     ChatsComponent
   ],
   imports: [
     CommonModule,
+    PipesCommonModule,
     BrowserModule,
     PAGES_ROUTES,
     SharedModule,
@@ -70,7 +68,7 @@ import { RouterModule } from '@angular/router';
     DateService
   ],
   exports:[
-    ThousandsPipe
+    PipesCommonModule,
   ],
   bootstrap: [PagesComponent]
 })
