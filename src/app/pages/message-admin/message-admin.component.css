@@ -1,0 +1,31 @@
+.message,
+.no-message {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #2321;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message span {
+  align-self: flex-end;
+  font-size: .8rem;
+}
+
+.no-message {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #d3a9a9;
+  padding: 2rem;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

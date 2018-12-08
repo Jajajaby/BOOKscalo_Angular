@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DatabaseService } from '../../services/database.service';
+
 @Component({
   selector: 'app-message-admin',
   templateUrl: './message-admin.component.html',
   styleUrls: ['./message-admin.component.css']
 })
-export class MessageAdminComponent implements OnInit {
+export class MessageAdminComponent {
 
-  constructor() { }
+  messages:any[];
+  selected:any;
+  loader:boolean = true;
 
-  ngOnInit() {
+  constructor( _dbService: DatabaseService ) {
+    _dbService.getData('global-messages')  
+      .valueChanges()
+      .subscribe( resp => {
+        this.messages = resp;
+        this.loader = false;
+      });
   }
-
 }

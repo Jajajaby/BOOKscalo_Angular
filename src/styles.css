@@ -1,50 +1,46 @@
-
 /* Líneas del formulario de libro */
 .border-input-custom {
-   border-bottom: 1px solid #67757c !important;
+  border-bottom: 1px solid #67757c !important;
 }
 .border-input-custom:focus {
-   border-bottom: 1px solid #398bf7 !important;
+  border-bottom: 1px solid #398bf7 !important;
 }
 
 .modal-lg {
-    max-width: 70% !important;
-    min-width: 500px !important;
+  max-width: 70% !important;
+  min-width: 500px !important;
 }
 
 .modal-body {
-    min-width: 500px !important;
+  min-width: 500px !important;
 }
 
 .sidebar-nav ul li a {
-    padding: 0 !important;
-    font-size: 12px !important;
+  padding: 0 !important;
+  font-size: 12px !important;
 }
 
-
 .img-carousel {
-    width: 100%;
-    height: 100%;
-    max-height: 340px;
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
 }
 
 /* ESTILO DE CAJA DE LOADER QUE QUEDA AL CENTRO */
 .loader-contenedor {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-    width: 80vw;
-    height: 300%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  width: 80vw;
+  height: 300%;
 }
 
-.container-fluid{
-    margin-left: 1% !important;
+.container-fluid {
+  margin-left: 1% !important;
 }
-
-
 
 /* ADMIN */
 /* @media (max-width: 1023px){
@@ -60,86 +56,92 @@
 } */
 
 .container {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
-
 .mailbox .message-center {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 /* Categorías de libros */
 .contenedor {
-    max-width: 220px !important;
-    min-width: 220px !important;
-  }
+  max-width: 220px !important;
+  min-width: 220px !important;
+}
 
 /* Imágen de perfil en header */
 .topbar .profile-pic {
-    width: 50px !important; 
+  width: 50px !important;
 }
 
 /* Dashboard */
-.container-dashboard{
-    /* margin-left: 0 !important; */
+.container-dashboard {
+  /* margin-left: 0 !important; */
 }
 
 .img-circle-30 {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
 }
 
 .img-circle-40 {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 
 .img-circle-50 {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }
 
 .sidebar-nav > ul > li > a.active {
-    background: none !important;
-    color: #687384 !important;
+  background: none !important;
+  color: #687384 !important;
 }
 
 .other-header .close {
-    float: none;
-    margin-left: 10px;
+  float: none;
+  margin-left: 10px;
 }
 
 .dropdown-menu.show {
-    display: block;
-    position: absolute !important;
-    top: 40px !important;
-    right: 20px !important;
-    left: auto !important;
+  display: block;
+  position: absolute !important;
+  top: 40px !important;
+  right: 20px !important;
+  left: auto !important;
 }
 
-.pointer { cursor: pointer; }
+.pointer {
+  cursor: pointer;
+}
 
 .topbar .top-navbar .mailbox {
-    width: 300px;
-    max-height: 400px;
-    overflow: scroll;
+  width: 300px;
+  max-height: 400px;
+  overflow: scroll;
 }
 
-.no-wrap td, .no-wrap th {
-    white-space: pre-wrap;
+.no-wrap td,
+.no-wrap th {
+  white-space: pre-wrap;
 }
 
-
-@media (max-width: 767px){
-    .chat-main-box .chat-left-aside {
-        left: 0px !important;
-    }
+@media (max-width: 767px) {
+  .chat-main-box .chat-left-aside {
+    left: 0px !important;
+  }
 }
 
 .chaoOverflow {
-    overflow: hidden !important;
+  overflow: hidden !important;
+}
+
+.shadow-box {
+  flex-direction: column;
+  box-shadow: 5px 5px 31px -6px rgba(84, 84, 84, 1);
 }
