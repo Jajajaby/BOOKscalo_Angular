@@ -37,7 +37,10 @@ export class HomeComponent implements OnInit {
 			.valueChanges()
 			.subscribe( data => {
 				let user = data[0];
-				this.preferences = user.preferences.length;
+				if( user.preferences !== undefined && user.preferences !== null )
+					this.preferences = user.preferences.length;
+				else 
+					this.preferences = 0;
 
 				if( !user.firtSession ) {
 					user.firtSession = true;
