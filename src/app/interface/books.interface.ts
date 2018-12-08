@@ -33,6 +33,7 @@ export interface Users{
 	status: 					boolean;
 	role:							string;
 	created_date: 		any;
+	firtSession:      boolean;
 	img?:							string;
 	preferences?:			Array<string>;
 	phone?:						string;

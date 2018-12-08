@@ -103,6 +103,7 @@ export class RegisterComponent implements OnInit {
 						email: 				form.email.toLowerCase(),
 						categories:		this.selected_categories, 
 						// phone: 				form.phone,
+						firtSession:  false,
 						google:      	false,
 						status:				true,
 						role:					'normal',

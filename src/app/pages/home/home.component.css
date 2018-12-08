@@ -1,0 +1,18 @@
+.noSession {
+  width: 98%;
+  padding: 1rem;
+  background: #F2D7D5;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.noSession span a {
+  cursor: pointer; 
+  color: blue;
+}
+
+.noSession a {
+  cursor: pointer;
+}
+
