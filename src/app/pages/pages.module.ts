@@ -36,6 +36,7 @@ import { SearchComponent } from './search/search.component';
 // COMPONENTS
 import { CardBookComponent } from '../components/card-book/card-book.component';
 import { OneBookComponent } from '../components/one-book/one-book.component';
+import { MessageAdminComponent } from './message-admin/message-admin.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { OneBookComponent } from '../components/one-book/one-book.component';
     PagesComponent,
     CardBookComponent,
     SearchComponent,
-    ChatsComponent
+    ChatsComponent,
+    MessageAdminComponent
   ],
   imports: [
     CommonModule,

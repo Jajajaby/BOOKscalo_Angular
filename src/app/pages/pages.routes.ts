@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { LibraryComponent } from './library/library.component';
 import { SearchComponent } from './search/search.component';
+import { MessageAdminComponent } from './message-admin/message-admin.component';
 
 // GUARD
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
@@ -26,6 +27,7 @@ const PAGES_ROUTE: Routes = [
 					{ path: 'search/:input', component: SearchComponent },
 					{ path: 'messages', component: ChatsComponent },
 					{ path: 'messages/:key', component: ChatsComponent },
+					{ path: 'message-admin', component: MessageAdminComponent },
 					{ path: '', pathMatch: 'full', redirectTo: 'home' }
 		] 
    }
