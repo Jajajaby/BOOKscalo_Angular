@@ -139,3 +139,7 @@
         left: 0px !important;
     }
 }
+
+.chaoOverflow {
+    overflow: hidden !important;
+}
