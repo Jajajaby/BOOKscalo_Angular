@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
 					private router:Router,
 					private _db:DatabaseService ) { 
 
+		if( JSON.parse(localStorage.getItem('session')).session ) router.navigate(['/']);
+
 		this.afAuth.authState.subscribe( user => {
 			console.log( 'Estado del usuario', user );
 			if( !user ){

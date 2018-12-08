@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
 
 	constructor( private _dbService:DatabaseService, private route:Router ) {
 		const UID = JSON.parse(localStorage.getItem('user')).uid;
-		console.log(UID);
 
 		this._dbService.getDataQuery('books', 'status', '==', 'available')
 			.valueChanges()

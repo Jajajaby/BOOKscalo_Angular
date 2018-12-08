@@ -40,7 +40,9 @@ export class RegisterComponent implements OnInit {
 	constructor( 	private _dbService:DatabaseService,
 								private _dateService:DateService,
 								private afAuth: AngularFireAuth,
-								public router: Router ) { }
+								public router: Router ) {
+		if( JSON.parse(localStorage.getItem('session')).session ) router.navigate(['/']);
+	}
 
 	ngOnInit() {
 		init_plugins();
