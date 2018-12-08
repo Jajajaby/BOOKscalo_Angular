@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 // SERVICE
@@ -17,7 +17,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class ProfileComponent implements OnInit {
 	
 	form:FormGroup;
-	profile_options:string = 'my_profile'; // Controla las opciones en Mi Perfil
+	profile_options:string; // Controla las opciones en Mi Perfil
 	profile:any;  
 	user_profile: any;
 	uid:string; // uid usuario actual
@@ -28,31 +28,42 @@ export class ProfileComponent implements OnInit {
 	urlImgs:string; // Guarda la ruta de la imagen para guardar en DB
 
 
-  constructor( private _dbService:DatabaseService, private auth:AngularFireAuth, private router: Router ) {
-		this.preferences_modal = {
-			hour: '',
-			day: '',
-			subway_station: ''
-		};
+	constructor( private _dbService:DatabaseService, 
+							 private auth:AngularFireAuth,
+							 private router: Router,
+							 private acRoute:ActivatedRoute ) {
 
-		let actual_user = JSON.parse( localStorage.getItem( "user" ) );
+		this.acRoute.params.subscribe( params => {
+			const input:string = params['input'];
 			
-		this._dbService.getDataQuery( "users", "uid", "==", actual_user.uid )
-			.snapshotChanges()
-			.pipe(
-				map(actions => actions.map(a => {
-					const data = a.payload.doc.data();
-					const key = a.payload.doc.id;
-					return { key, ...data };
-				}))
-			).subscribe( data => {
-				this.profile = data[0];
-				this.preferences =  this.profile.preferences;
-			});
-
-		this._dbService.getDataQuery("books", "uid", "==", actual_user.uid)
-			.valueChanges()
-			.subscribe( data => this.count_book = data.length );
+			if( input === 'preferences' ) this.profile_options = 'preference_profile';
+			else this.profile_options = 'my_profile';
+	
+			this.preferences_modal = {
+				hour: '',
+				day: '',
+				subway_station: ''
+			};
+	
+			let actual_user = JSON.parse( localStorage.getItem( "user" ) );
+				
+			this._dbService.getDataQuery( "users", "uid", "==", actual_user.uid )
+				.snapshotChanges()
+				.pipe(
+					map(actions => actions.map(a => {
+						const data = a.payload.doc.data();
+						const key = a.payload.doc.id;
+						return { key, ...data };
+					}))
+				).subscribe( data => {
+					this.profile = data[0];
+					this.preferences =  this.profile.preferences;
+				});
+	
+			this._dbService.getDataQuery("books", "uid", "==", actual_user.uid)
+				.valueChanges()
+				.subscribe( data => this.count_book = data.length );
+		});
 	}
 
   ngOnInit() {

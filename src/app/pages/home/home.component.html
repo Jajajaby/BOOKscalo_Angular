@@ -1,3 +1,14 @@
+
+
+<div class="noSession" *ngIf="preferences === 0">
+	<span> 
+		Recuerde ingresar sus preferencias 
+		<a (click)="preferencesRoute()"> Ingresar preferencias ahora </a>
+	</span> 
+	<a class="close" style="cursor: pointer;" (click)="preferences = 1">×</a>
+</div>
+
+
 <!-- ============================================================================== -->
 <!-- Options view bar																-->
 <!-- ============================================================================== -->

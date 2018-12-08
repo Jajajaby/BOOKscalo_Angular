@@ -21,6 +21,7 @@ const PAGES_ROUTE: Routes = [
 	      	{ path: 'home', component: HomeComponent },
 					{ path: 'addBook', component: AddBookComponent },
 					{ path: 'profile', component: ProfileComponent },
+					{ path: 'profile/:input', component: ProfileComponent },
 					{ path: 'library', component: LibraryComponent },
 					{ path: 'search/:input', component: SearchComponent },
 					{ path: 'messages', component: ChatsComponent },
