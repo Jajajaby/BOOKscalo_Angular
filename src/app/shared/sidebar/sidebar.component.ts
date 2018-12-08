@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 
 import { CATEGORIES } from '../../../data/categories.data';
 
-
-
 // SERVICES
 import { DatabaseService } from 'src/app/services/database.service';
 import { SidebarService } from '../../services/sidebar.service';
@@ -26,7 +24,6 @@ export class SidebarComponent implements OnInit {
                 private _sidebar:SidebarService ) { 
     this.menu = this._sidebar.menu;
     this.role = JSON.parse(localStorage.getItem("user")).role;
-    console.log(this.role);
   }
 
   ngOnInit() {
