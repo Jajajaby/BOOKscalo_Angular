@@ -1,0 +1,936 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BOOKscalo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">BOOKscalo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>LoginComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/register/login.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-login</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./register.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./login.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#submit">submit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#forgotPassword">forgotPassword</a>
+                            </li>
+                            <li>
+                                <a href="#loginGoogle">loginGoogle</a>
+                            </li>
+                            <li>
+                                <a href="#loginUser">loginUser</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(afAuth: AngularFireAuth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _db: <a href="../injectables/DatabaseService.html">DatabaseService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/register/login.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>afAuth</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_db</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forgotPassword"></a>
+                        <span class="name">
+                            <b>
+                            forgotPassword
+                            </b>
+                            <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>forgotPassword()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/register/login.component.ts:115</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginGoogle"></a>
+                        <span class="name">
+                            <b>
+                            loginGoogle
+                            </b>
+                            <a href="#loginGoogle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>loginGoogle()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/register/login.component.ts:56</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginUser"></a>
+                        <span class="name">
+                            <b>
+                            loginUser
+                            </b>
+                            <a href="#loginUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>loginUser()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/register/login.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/register/login.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/register/login.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            submit
+                            </b>
+                            <a href="#submit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>submit:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/register/login.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            user
+                            </b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>user:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/register/login.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { FormGroup, FormControl, Validators, FormControlName } from &#x27;@angular/forms&#x27;;
+
+// SERVICES
+import { DatabaseService } from &#x27;../services/database.service&#x27;;
+
+// ANGULARFIRE2
+import { AngularFireAuth } from &#x27;angularfire2/auth&#x27;;
+import { auth } from &#x27;firebase&#x27;;
+
+// PLUGINS
+import swal from &#x27;sweetalert&#x27;;
+import * as firebase from &#x27;firebase&#x27;;
+
+// Inicializa los plugins
+declare function init_plugins();
+
+@Component({
+	selector: &#x27;app-login&#x27;,
+	templateUrl: &#x27;./login.component.html&#x27;,
+	styleUrls: [&#x27;./register.component.css&#x27;]
+})
+export class LoginComponent implements OnInit {
+
+	form:FormGroup;  
+	public user:any &#x3D; {};
+	public submit:boolean &#x3D; false;
+
+	constructor( 	private afAuth: AngularFireAuth, 
+					private router:Router,
+					private _db:DatabaseService ) { 
+
+		if( JSON.parse(localStorage.getItem(&#x27;session&#x27;)).session ) router.navigate([&#x27;/&#x27;]);
+
+		this.afAuth.authState.subscribe( user &#x3D;&gt; {
+			console.log( &#x27;Estado del usuario&#x27;, user );
+			if( !user ){
+				return;
+			}
+			this.user.name &#x3D; user.displayName;
+			this.user.uid 	&#x3D; user.uid;
+			this.user.email 	&#x3D; user.email;
+		});
+	}
+
+	ngOnInit() {
+		init_plugins();
+		this.form &#x3D; new FormGroup({
+			email: 				new FormControl(localStorage.getItem(&#x27;email&#x27;) || undefined, [Validators.required, Validators.email]),
+			password: 		new FormControl(undefined, [Validators.required,Validators.minLength(6)]),
+			rememberMe: 	new FormControl(JSON.parse(localStorage.getItem(&#x27;session&#x27;)).rememberMe)
+		});
+	}
+
+	loginGoogle() {		
+		this.afAuth.auth.signInWithPopup( new auth.GoogleAuthProvider() )
+			.then( data &#x3D;&gt; {
+				console.log(data);
+			})
+			.catch( e &#x3D;&gt; console.log(&#x27;error&#x27;, e));
+	}
+	
+	loginUser(){
+		this.submit &#x3D; true;
+
+		if( this.form.valid ){
+			this.afAuth.auth.signInWithEmailAndPassword(this.form.value[&#x27;email&#x27;], this.form.value[&#x27;password&#x27;])
+				.then( (resp) &#x3D;&gt; {
+					const USER &#x3D; resp.user;
+
+					this._db.getDataQuery(&#x27;users&#x27;, &#x27;uid&#x27;, &#x27;&#x3D;&#x3D;&#x27;, USER.uid)
+						.valueChanges()
+						.subscribe( resp &#x3D;&gt; {
+							if (!resp[0].status){
+								this.afAuth.auth.signOut();
+								swal(&#x27;Su cuenta no se encuentra activa&#x27;, &#x27;Si desea activar su cuenta comunicarse con la administradora al siguiente email: JavieraOrmeno.L@gmail.com&#x27;, &#x27;warning&#x27;);
+							}else{
+								let userStorage &#x3D; {
+									uid: 					USER.uid,
+									email: 				USER.email,
+									name: 				resp[0].name,
+									last_name1:		resp[0].last_name1,
+									last_name2: 	resp[0].last_name2,
+									role: 				resp[0].role,
+									img: 					resp[0].img
+								};
+			
+								if( this.form.value[&#x27;rememberMe&#x27;] ){
+									localStorage.setItem(&#x27;email&#x27;, USER.email);
+								}else {
+									localStorage.removeItem(&#x27;email&#x27;);
+								}
+			
+								localStorage.setItem(&#x27;user&#x27;, JSON.stringify(userStorage));
+								localStorage.setItem(&#x27;session&#x27;, JSON.stringify({
+									rememberMe: this.form.value[&#x27;rememberMe&#x27;],
+									session: true
+								}));
+
+								// Redirige a dashboard o home según el rol del usuario
+								if ( userStorage.role &#x3D;&#x3D; &#x27;admin&#x27; ){
+									this.router.navigate([&#x27;/admin&#x27;]);
+								}else if ( userStorage.role &#x3D;&#x3D; &#x27;normal&#x27; ){
+									this.router.navigate([&#x27;/home&#x27;]);
+								}
+							}
+						});
+				})
+				.catch( () &#x3D;&gt; swal(&#x27;Usuario o contraseña incorrectos&#x27;, &#x27;Por favor vuelva a intentarlo&#x27;, &#x27;warning&#x27;) );
+		}
+	}
+
+	// Envía un correo desde Firebase para restaurar la contraseña
+	forgotPassword(){
+		let auth &#x3D; firebase.auth();
+
+		auth.sendPasswordResetEmail(this.form.value[&#x27;email&#x27;])
+			.then(() &#x3D;&gt; {
+				swal(&#x27;Correo enviado&#x27;, &#x27;Se ha enviado un correo para restaurar la contraseña&#x27;, &#x27;success&#x27;);
+			})
+			.catch( () &#x3D;&gt; {
+				swal(&#x27;Error al enviar correo&#x27;, &#x27;Por favor, vuelva a intentarlo&#x27;, &#x27;error&#x27;);
+			});
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section id&#x3D;&quot;wrapper&quot;&gt;
+	&lt;div class&#x3D;&quot;login-register&quot; style&#x3D;&quot;background-image:url(../../assets/images/background/book-2.jpg);&quot;&gt;
+		&lt;div class&#x3D;&quot;login-box card&quot;&gt;
+		  &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+		  	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- Login																			--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;form class&#x3D;&quot;form-horizontal form-material&quot; 
+				[formGroup]&#x3D;&quot;form&quot; 
+				(ngSubmit)&#x3D;&quot;loginUser()&quot; 
+				novalidate&#x3D;&quot;novalidate&quot; 
+				action&#x3D;&quot;index.html&quot;&gt;    
+
+				&lt;h3 class&#x3D;&quot;box-title m-b-20&quot;&gt; Ingresar &lt;/h3&gt;
+					&lt;div class&#x3D;&quot;form-group&quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+							&lt;input  formControlName&#x3D;&quot;email&quot;
+									class&#x3D;&quot;form-control&quot;
+									type&#x3D;&quot;text&quot;
+									placeholder&#x3D;&quot;Correo electrónico&quot;&gt;
+						&lt;/div&gt;
+						&lt;p class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;submit &amp;&amp; form.controls[&#x27;email&#x27;].errors?.required&quot;&gt;	El correo es requerido &lt;/p&gt;
+						&lt;p class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;submit &amp;&amp; form.controls[&#x27;email&#x27;].errors?.email&quot;&gt;	El correo no es valido &lt;/p&gt;
+					&lt;/div&gt;
+					  
+					&lt;div class&#x3D;&quot;form-group&quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+							  &lt;input 	formControlName&#x3D;&quot;password&quot;
+										class&#x3D;&quot;form-control&quot;
+										type&#x3D;&quot;password&quot;
+										placeholder&#x3D;&quot;Password&quot;&gt;
+								&lt;p class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;submit &amp;&amp; form.controls[&#x27;password&#x27;].errors?.required&quot;&gt;	
+									La contraseña es requerida 
+								&lt;/p&gt;
+								&lt;p class&#x3D;&quot;text-danger&quot; 
+									 *ngIf&#x3D;&quot;submit &amp;&amp; 
+									 				form.controls[&#x27;password&#x27;].errors?.minlength.actualLength !&#x3D;&#x3D; undefined &amp;&amp;
+													form.controls[&#x27;password&#x27;].errors?.minlength.actualLength &lt; form.controls[&#x27;password&#x27;].errors?.minlength.requiredLength&quot;&gt;	
+									La es demasiado corta
+								&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					  
+					&lt;div class&#x3D;&quot;form-group row&quot;&gt;
+						&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+							&lt;div class&#x3D;&quot;checkbox checkbox-info pull-left p-t-0&quot;&gt;
+								&lt;input 	formControlName&#x3D;&quot;rememberMe&quot;
+										id&#x3D;&quot;checkbox-signup&quot; 
+										type&#x3D;&quot;checkbox&quot; 
+										class&#x3D;&quot;filled-in chk-col-light-blue&quot;&gt;
+								&lt;label for&#x3D;&quot;checkbox-signup&quot;&gt; Recuérdame &lt;/label&gt;
+							&lt;/div&gt; 
+							&lt;a href&#x3D;&quot;javascript:void(0)&quot; id&#x3D;&quot;to-recover&quot; class&#x3D;&quot;text-dark pull-right&quot; (click)&#x3D;&quot;forgotPassword()&quot;&gt;
+								&lt;i class&#x3D;&quot;fa fa-lock m-r-5&quot;&gt;&lt;/i&gt; Olvidó su contraseña? 
+							&lt;/a&gt; 
+						&lt;/div&gt;
+					&lt;/div&gt;
+					
+					&lt;div class&#x3D;&quot;form-group text-center&quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12 p-b-20&quot;&gt;
+							&lt;button class&#x3D;&quot;btn btn-block btn-lg btn-info btn-rounded&quot; type&#x3D;&quot;submit&quot;&gt;Ingresar&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					
+					&lt;!-- Login with Google button --&gt;
+					&lt;div class&#x3D;&quot;row&quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12 col-sm-12 col-md-12 m-t-10 text-center&quot;&gt;
+							&lt;div class&#x3D;&quot;social&quot;&gt;
+								&lt;button (click)&#x3D;&quot;loginGoogle()&quot; 
+										type&#x3D;&quot;button&quot; 
+										id&#x3D;&quot;btnGoogle&quot; 
+										class&#x3D;&quot;btn btn-googleplus&quot; 
+										data-toggle&#x3D;&quot;tooltip&quot; 
+										title&#x3D;&quot;Iniciar sesión con Google&quot;&gt; 
+									&lt;i aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt; 
+								&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					  &lt;/div&gt;
+					  
+					&lt;!-- Register me --&gt;
+					&lt;div class&#x3D;&quot;form-group m-b-0&quot;&gt;
+						&lt;div class&#x3D;&quot;col-sm-12 text-center&quot;&gt;No tienes una cuenta?
+							&lt;a [routerLink]&#x3D;&quot;[&#x27;/register&#x27;]&quot; class&#x3D;&quot;text-info m-l-5&quot;&gt;
+								&lt;b&gt;Registrarme&lt;/b&gt;
+							&lt;/a&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/form&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+				&lt;!-- End Login																		--&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+					
+				  
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+				&lt;!-- Recovery password																	--&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+				&lt;form class&#x3D;&quot;form-horizontal&quot; id&#x3D;&quot;recoverform&quot; action&#x3D;&quot;index.html&quot;&gt;
+					&lt;div class&#x3D;&quot;form-group&quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+							&lt;h3&gt;Recuperar contraseña&lt;/h3&gt;
+							&lt;p class&#x3D;&quot;text-muted&quot;&gt;Ingresa tu correo electrónico y te enviaremos las instrucciones&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					  
+					&lt;div class&#x3D;&quot;form-group &quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+							&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; required&#x3D;&quot;&quot; placeholder&#x3D;&quot;Email&quot;&gt; &lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;form-group text-center m-t-20&quot;&gt;
+						&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+							&lt;button class&#x3D;&quot;btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light&quot; type&#x3D;&quot;submit&quot;&gt;Reset&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/form&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+				&lt;!-- End recovery password															--&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+					
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./register.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.login-register {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 160%;
+  width: 100%;
+  padding: 10% 0;
+  position: absolute; }
+
+.login-box {
+  width: 100%;
+  max-width: 580px; 
+  margin: 0 auto; }
+  .login-box .footer {
+    width: 100%;
+    left: 0px;
+    right: 0px; }
+  .login-box .social {
+    display: block;
+    margin-bottom: 30px; }
+
+#recoverform {
+  display: none; }
+
+.login-sidebar {
+  padding: 0px;
+  margin-top: 0px; }
+  .login-sidebar .login-box {
+    right: 0px;
+    position: absolute;
+    height: 100%; }
+
+.contenedor {
+  max-width: 220px !important;
+  min-width: 220px !important;
+}
+
+.ms-container {
+  width: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section id="wrapper">	<div class="login-register" style="background-image:url(../../assets/images/background/book-2.jpg);">		<div class="login-box card">		  <div class="card-body">		  	<!-- ============================================================================== -->			<!-- Login																			-->			<!-- ============================================================================== -->			<form class="form-horizontal form-material" 				[formGroup]="form" 				(ngSubmit)="loginUser()" 				novalidate="novalidate" 				action="index.html">    				<h3 class="box-title m-b-20"> Ingresar </h3>					<div class="form-group">						<div class="col-xs-12">							<input  formControlName="email"									class="form-control"									type="text"									placeholder="Correo electrónico">						</div>						<p class="text-danger" *ngIf="submit && form.controls[\'email\'].errors?.required">	El correo es requerido </p>						<p class="text-danger" *ngIf="submit && form.controls[\'email\'].errors?.email">	El correo no es valido </p>					</div>					  					<div class="form-group">						<div class="col-xs-12">							  <input 	formControlName="password"										class="form-control"										type="password"										placeholder="Password">								<p class="text-danger" *ngIf="submit && form.controls[\'password\'].errors?.required">										La contraseña es requerida 								</p>								<p class="text-danger" 									 *ngIf="submit && 									 				form.controls[\'password\'].errors?.minlength.actualLength !== undefined &&													form.controls[\'password\'].errors?.minlength.actualLength < form.controls[\'password\'].errors?.minlength.requiredLength">										La es demasiado corta								</p>						</div>					</div>					  					<div class="form-group row">						<div class="col-md-12">							<div class="checkbox checkbox-info pull-left p-t-0">								<input 	formControlName="rememberMe"										id="checkbox-signup" 										type="checkbox" 										class="filled-in chk-col-light-blue">								<label for="checkbox-signup"> Recuérdame </label>							</div> 							<a href="javascript:void(0)" id="to-recover" class="text-dark pull-right" (click)="forgotPassword()">								<i class="fa fa-lock m-r-5"></i> Olvidó su contraseña? 							</a> 						</div>					</div>										<div class="form-group text-center">						<div class="col-xs-12 p-b-20">							<button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Ingresar</button>						</div>					</div>										<!-- Login with Google button -->					<div class="row">						<div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">							<div class="social">								<button (click)="loginGoogle()" 										type="button" 										id="btnGoogle" 										class="btn btn-googleplus" 										data-toggle="tooltip" 										title="Iniciar sesión con Google"> 									<i aria-hidden="true" class="fa fa-google-plus"></i> 								</button>							</div>						</div>					  </div>					  					<!-- Register me -->					<div class="form-group m-b-0">						<div class="col-sm-12 text-center">No tienes una cuenta?							<a [routerLink]="[\'/register\']" class="text-info m-l-5">								<b>Registrarme</b>							</a>						</div>					</div>				</form>				<!-- ============================================================================== -->				<!-- End Login																		-->				<!-- ============================================================================== -->									  				<!-- ============================================================================== -->				<!-- Recovery password																	-->				<!-- ============================================================================== -->				<form class="form-horizontal" id="recoverform" action="index.html">					<div class="form-group">						<div class="col-xs-12">							<h3>Recuperar contraseña</h3>							<p class="text-muted">Ingresa tu correo electrónico y te enviaremos las instrucciones</p>						</div>					</div>					  					<div class="form-group ">						<div class="col-xs-12">							<input class="form-control" type="text" required="" placeholder="Email"> </div>					</div>					<div class="form-group text-center m-t-20">						<div class="col-xs-12">							<button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>						</div>					</div>				</form>				<!-- ============================================================================== -->				<!-- End recovery password															-->				<!-- ============================================================================== -->								</div>		</div>	</div></section></div>'
+    var COMPONENTS = [{'name': 'AddBookComponent', 'selector': 'app-add-book'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardBookComponent', 'selector': 'app-card-book'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'GlobalMessageComponent', 'selector': 'app-global-message'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LibraryComponent', 'selector': 'app-library'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageAdminComponent', 'selector': 'app-message-admin'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OneBookComponent', 'selector': 'app-one-book'},{'name': 'PageforbiddenComponent', 'selector': 'app-pageforbidden'},{'name': 'PagenotfoundComponent', 'selector': 'app-pagenotfound'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoginComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1326 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BOOKscalo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">BOOKscalo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DashboardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/dashboard/dashboard.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dashboard</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./dashboard.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dashboard.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actual_date">actual_date</a>
+                            </li>
+                            <li>
+                                <a href="#actual_day">actual_day</a>
+                            </li>
+                            <li>
+                                <a href="#actual_user">actual_user</a>
+                            </li>
+                            <li>
+                                <a href="#count_books">count_books</a>
+                            </li>
+                            <li>
+                                <a href="#count_messages">count_messages</a>
+                            </li>
+                            <li>
+                                <a href="#count_users">count_users</a>
+                            </li>
+                            <li>
+                                <a href="#date">date</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#reports">reports</a>
+                            </li>
+                            <li>
+                                <a href="#reportsData">reportsData</a>
+                            </li>
+                            <li>
+                                <a href="#tasks">tasks</a>
+                            </li>
+                            <li>
+                                <a href="#users">users</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addTask">addTask</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#searchReportDate">searchReportDate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_dbService: <a href="../injectables/DatabaseService.html">DatabaseService</a>, _date: <a href="../injectables/DateService.html">DateService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_dbService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_date</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DateService.html" target="_self" >DateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addTask"></a>
+                        <span class="name">
+                            <b>
+                            addTask
+                            </b>
+                            <a href="#addTask"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addTask()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchReportDate"></a>
+                        <span class="name">
+                            <b>
+                            searchReportDate
+                            </b>
+                            <a href="#searchReportDate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>searchReportDate(date)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actual_date"></a>
+                        <span class="name">
+                            <b>
+                            actual_date
+                            </b>
+                            <a href="#actual_date"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>actual_date:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actual_day"></a>
+                        <span class="name">
+                            <b>
+                            actual_day
+                            </b>
+                            <a href="#actual_day"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>actual_day:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actual_user"></a>
+                        <span class="name">
+                            <b>
+                            actual_user
+                            </b>
+                            <a href="#actual_user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>actual_user:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="count_books"></a>
+                        <span class="name">
+                            <b>
+                            count_books
+                            </b>
+                            <a href="#count_books"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>count_books:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="count_messages"></a>
+                        <span class="name">
+                            <b>
+                            count_messages
+                            </b>
+                            <a href="#count_messages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>count_messages:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="count_users"></a>
+                        <span class="name">
+                            <b>
+                            count_users
+                            </b>
+                            <a href="#count_users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>count_users:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="date"></a>
+                        <span class="name">
+                            <b>
+                            date
+                            </b>
+                            <a href="#date"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>date:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reports"></a>
+                        <span class="name">
+                            <b>
+                            reports
+                            </b>
+                            <a href="#reports"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>reports:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reportsData"></a>
+                        <span class="name">
+                            <b>
+                            reportsData
+                            </b>
+                            <a href="#reportsData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>reportsData:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tasks"></a>
+                        <span class="name">
+                            <b>
+                            tasks
+                            </b>
+                            <a href="#tasks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>tasks:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="users"></a>
+                        <span class="name">
+                            <b>
+                            users
+                            </b>
+                            <a href="#users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>users:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/admin/dashboard/dashboard.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, FormControlName, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+
+// SERVICES
+import { DatabaseService } from &#x27;../../services/database.service&#x27;;
+import { DateService } from &#x27;../../services/date.service&#x27;;
+
+@Component({
+	selector: &#x27;app-dashboard&#x27;,
+	templateUrl: &#x27;./dashboard.component.html&#x27;,
+  styleUrls: [&#x27;./dashboard.component.css&#x27;]
+})
+export class DashboardComponent implements OnInit {
+
+	actual_user:any;
+	actual_date:any;
+	actual_day:any;
+
+	// Data de la DB
+	users:any;
+	reports:any[];
+	reportsData:any[];
+	tasks:any;
+
+	// Cantidad de 
+	count_users:number;
+	count_books:number;
+	count_messages:number;
+
+	// Inputs
+	date:string;
+
+	form:FormGroup;
+
+	constructor( 	private _dbService:DatabaseService,
+								private _date:DateService ) {
+		this.actual_user &#x3D; JSON.parse( localStorage.getItem( &quot;user&quot; ) );
+		this.actual_date &#x3D; this._date.actual_date();
+		this.actual_day &#x3D; this._date.actual_day();
+
+		this._dbService.getData( &quot;users&quot;)
+			.valueChanges()
+			.subscribe( (data:any) &#x3D;&gt; {
+				this.users &#x3D; data;
+				this.count_users &#x3D; data.length;
+			});
+			
+		this._dbService.getData( &quot;books&quot;)
+			.valueChanges()
+			.subscribe( data &#x3D;&gt; this.count_books &#x3D; data.length );
+			
+		this._dbService.getData( &quot;messages-transaction&quot;)
+			.valueChanges()
+			.subscribe( data &#x3D;&gt; this.count_messages &#x3D; data.length );
+
+		this._dbService.getData( &quot;reports&quot;)
+			.valueChanges()
+			.subscribe( data &#x3D;&gt; {
+				this.reports &#x3D; data;
+				this.reportsData &#x3D; this.reports;
+			});
+
+		// this._dbService.getData( &quot;tasks&quot;)
+		// 	.valueChanges()
+		// 	.subscribe( data &#x3D;&gt; this.tasks &#x3D; data );
+
+
+	}
+
+	ngOnInit() {
+		this.form &#x3D; new FormGroup({
+			task:         new FormControl(undefined, Validators.required),
+			description:  new FormControl(undefined, Validators.required),
+			priority:     new FormControl(undefined, Validators.required) //high, medium, low
+		});
+	}
+
+	// TODO: Terminar po jjj
+	// FIXME: Terminar o sacar
+	addTask(){
+		this._dbService.addDataIdCustom(&#x27;tasks&#x27;, this.actual_user, this.form)
+			.then( () &#x3D;&gt; swal(&#x27;Tarea guardada&#x27;, &#x27;La tarea ha sido guardada con éxito&#x27;, &#x27;success&#x27;) )
+			.catch( () &#x3D;&gt; swal(&#x27;Error&#x27;, &#x27;La tarea no ha podido guardarse, vuelva a intentarlo&#x27;, &#x27;error&#x27;) );
+	}
+
+	searchReportDate(date){
+		this.reports &#x3D; [];
+		if( date &#x3D;&#x3D;&#x3D; &#x27;all&#x27; ){
+			this.reports &#x3D; this.reportsData;
+		}else {
+			for(let r of this.reportsData) {
+				if( r.day &#x3D;&#x3D;&#x3D; date ) this.reports.push(r);
+			}
+		}
+	}
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-dashboard&quot;&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;!-- Report boxes																										 --&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+			&lt;div class&#x3D;&quot;card&quot;&gt;
+				&lt;div class&#x3D;&quot;card-body&quot;&gt;
+					&lt;div class&#x3D;&quot;d-flex no-block&quot;&gt;
+						&lt;div class&#x3D;&quot;m-r-20 align-self-center&quot;&gt;
+							&lt;span class&#x3D;&quot;lstick m-r-20&quot;&gt;&lt;/span&gt;
+							&lt;img src&#x3D;&quot;../assets/images/icon/staff.png&quot; alt&#x3D;&quot;Income&quot; /&gt;
+						&lt;/div&gt;
+						&lt;div class&#x3D;&quot;align-self-center&quot;&gt;
+							&lt;h6 class&#x3D;&quot;text-muted m-t-10 m-b-0&quot;&gt;Total de usuarios&lt;/h6&gt;
+							&lt;h2 class&#x3D;&quot;m-t-0&quot;&gt;{{ count_users }}&lt;/h2&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+			&lt;div class&#x3D;&quot;card&quot;&gt;
+				&lt;div class&#x3D;&quot;card-body&quot;&gt;
+					&lt;div class&#x3D;&quot;d-flex no-block&quot;&gt;
+						&lt;div class&#x3D;&quot;m-r-20 align-self-center&quot;&gt;
+							&lt;span class&#x3D;&quot;lstick m-r-20&quot;&gt;&lt;/span&gt;
+							&lt;img src&#x3D;&quot;../assets/images/icon/expense.png&quot; alt&#x3D;&quot;Income&quot; /&gt;
+						&lt;/div&gt;
+						&lt;div class&#x3D;&quot;align-self-center&quot;&gt;
+							&lt;h6 class&#x3D;&quot;text-muted m-t-10 m-b-0&quot;&gt;Total de libros&lt;/h6&gt;
+							&lt;h2 class&#x3D;&quot;m-t-0&quot;&gt;{{ count_books }}&lt;/h2&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+			&lt;div class&#x3D;&quot;card&quot;&gt;
+				&lt;div class&#x3D;&quot;card-body&quot;&gt;
+					&lt;div class&#x3D;&quot;d-flex no-block&quot;&gt;
+						&lt;div class&#x3D;&quot;m-r-20 align-self-center&quot;&gt;
+							&lt;span class&#x3D;&quot;lstick m-r-20&quot;&gt;&lt;/span&gt;
+							&lt;img src&#x3D;&quot;../assets/images/icon/assets.png&quot; alt&#x3D;&quot;Income&quot; /&gt;
+						&lt;/div&gt;
+						&lt;div class&#x3D;&quot;align-self-center&quot;&gt;
+							&lt;h6 class&#x3D;&quot;text-muted m-t-10 m-b-0&quot;&gt;Mensajes enviados&lt;/h6&gt;
+							&lt;h2 class&#x3D;&quot;m-t-0&quot;&gt;{{ count_messages }}&lt;/h2&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;!-- End report boxes																								 --&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;!-- Users status																										 --&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-lg-12 col-md-12&quot;&gt;
+			&lt;div class&#x3D;&quot;card&quot;&gt;
+				&lt;div class&#x3D;&quot;card-body&quot;&gt;
+					&lt;div class&#x3D;&quot;d-flex&quot;&gt;
+						&lt;div&gt;
+							&lt;h4 class&#x3D;&quot;card-title&quot;&gt;&lt;span class&#x3D;&quot;lstick&quot;&gt;&lt;/span&gt;Estado de usuarios&lt;/h4&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;table-responsive m-t-20&quot;&gt;
+						&lt;table class&#x3D;&quot;table vm no-th-brd no-wrap pro-of-month&quot;&gt;
+							&lt;thead&gt;
+								&lt;tr&gt;
+									&lt;th colspan&#x3D;&quot;2&quot;&gt;Usuario&lt;/th&gt;
+									&lt;th&gt;Tipo de usuario&lt;/th&gt;
+									&lt;th&gt;Estado&lt;/th&gt;
+									&lt;th&gt;Cambiar estado&lt;/th&gt;
+								&lt;/tr&gt;
+							&lt;/thead&gt;
+							&lt;tbody&gt;
+								&lt;tr *ngFor&#x3D;&quot;let u of users&quot;&gt;
+									&lt;td style&#x3D;&quot;width:50px;&quot;&gt;&lt;span class&#x3D;&quot;round&quot;&gt;
+										&lt;img src&#x3D;&quot;../assets/images/users/1.jpg&quot; alt&#x3D;&quot;user&quot; width&#x3D;&quot;50&quot;&gt;&lt;/span&gt;
+									&lt;/td&gt;
+									&lt;td&gt;
+										&lt;h6&gt;{{ u.name | titlecase }} {{ u.last_name1 | titlecase }} {{ u.last_name2 | titlecase }}&lt;/h6&gt;
+										&lt;small class&#x3D;&quot;text-muted&quot;&gt;Creado el: {{ u.created_date }}&lt;/small&gt;
+									&lt;/td&gt;
+									&lt;td&gt;{{ u.role | titlecase }}&lt;/td&gt;
+									&lt;td&gt;
+										&lt;span *ngIf&#x3D;&quot;[u.status] &#x3D;&#x3D; &#x27;true&#x27;&quot; class&#x3D;&quot;label label-success label-rounded&quot;&gt;Activo&lt;/span&gt;
+										&lt;span *ngIf&#x3D;&quot;[u.status] &#x3D;&#x3D; &#x27;false&#x27;&quot; class&#x3D;&quot;label label-danger label-rounded&quot;&gt;Inactivo&lt;/span&gt;
+									&lt;/td&gt;
+									&lt;!-- TODO: Hacer algo con esto --&gt;
+									&lt;td&gt;
+										Cambiar jjj
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/tbody&gt;
+						&lt;/table&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;!-- End users status																								 --&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;!-- Reports			              																		--&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-lg-12 col-md-12&quot;&gt;
+			&lt;div class&#x3D;&quot;card&quot;&gt;
+				&lt;div class&#x3D;&quot;card-body&quot;&gt;
+					&lt;div class&#x3D;&quot;d-flex&quot;&gt;
+						&lt;div&gt;
+							&lt;h3 class&#x3D;&quot;card-title m-b-5&quot;&gt;
+							&lt;span class&#x3D;&quot;lstick&quot;&gt;&lt;/span&gt;Reportes 
+							&lt;/h3&gt;
+						&lt;/div&gt;
+						&lt;div class&#x3D;&quot;ml-auto&quot;&gt;
+							&lt;label&gt;Fecha&lt;/label&gt;
+							&lt;select class&#x3D;&quot;custom-select b-0&quot; [(ngModel)]&#x3D;&quot;date&quot; name&#x3D;&quot;date&quot; (ngModelChange)&#x3D;&quot;searchReportDate($event)&quot;&gt;Fecha
+								&lt;option value&#x3D;&quot;all&quot; selected&gt;Todas&lt;/option&gt;
+								&lt;option *ngFor&#x3D;&quot;let r of reportsData&quot;&gt;{{ r.day }}&lt;/option&gt;
+							&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;table class&#x3D;&quot;table vm no-th-brd no-wrap pro-of-month&quot;&gt;
+					&lt;thead&gt;
+						&lt;tr&gt;
+							&lt;th&gt;Usuario que reporta&lt;/th&gt;
+							&lt;th&gt;Tipo de reporte&lt;/th&gt;
+							&lt;th&gt;Fecha&lt;/th&gt;
+							&lt;th&gt;Hora&lt;/th&gt;
+							&lt;th&gt;Reporte&lt;/th&gt;
+							&lt;th&gt;Estado&lt;/th&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+					&lt;tbody&gt;
+						&lt;tr *ngFor&#x3D;&quot;let r of reports&quot;&gt;
+							&lt;!-- TODO: Revisar visualmente y borrar referencis sin ID --&gt;
+							&lt;td&gt;
+								&lt;h6&gt;{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}&lt;/h6&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h6&gt;{{ r.type }}&lt;/h6&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h6&gt;{{ r.day }}&lt;/h6&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h6&gt;{{ r.hour }}&lt;/h6&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h6 *ngIf&#x3D;&quot;r.type &#x3D;&#x3D; &#x27;Reporte de imagen&#x27;&quot;&gt;Se reportan las imagenes contenidas en el siguiente &lt;a [href]&#x3D;&quot;r.img&quot; target&#x3D;&quot;_blank&quot;&gt; link &lt;/a&gt; &lt;/h6&gt;
+								&lt;h6 *ngIf&#x3D;&quot;r.type &#x3D;&#x3D; &#x27;Reporte de usuario&#x27;&quot;&gt;Se reporta al usuario {{ r.user_reported.name | titlecase }} {{ r.user_reported.last_name1 | titlecase }} {{ r.user_reported.last_name2 | titlecase }}&lt;/h6&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;span *ngIf&#x3D;&quot;[r.status] &#x3D;&#x3D; &#x27;Revisado&#x27;&quot; class&#x3D;&quot;label label-success label-rounded&quot;&gt;Revisado&lt;/span&gt;
+								&lt;span *ngIf&#x3D;&quot;[r.status] &#x3D;&#x3D; &#x27;No revisado&#x27;&quot; class&#x3D;&quot;label label-danger label-rounded&quot;&gt;No revisado&lt;/span&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/tbody&gt;
+				&lt;/table&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;!-- End reports			           																		--&gt;
+	&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;!-- Todo list 																											--&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;div class&#x3D;&quot;col-lg-6 col-xlg-8&quot;&gt;
+			&lt;div class&#x3D;&quot;card&quot;&gt;
+				&lt;div class&#x3D;&quot;card-body&quot;&gt;
+					&lt;div class&#x3D;&quot;d-flex&quot;&gt;
+						&lt;div&gt;
+							&lt;h4 class&#x3D;&quot;card-title&quot;&gt;&lt;span class&#x3D;&quot;lstick&quot;&gt;&lt;/span&gt;To Do list&lt;/h4&gt;
+						&lt;/div&gt;
+						&lt;div class&#x3D;&quot;ml-auto&quot;&gt;
+							&lt;button class&#x3D;&quot;pull-right btn btn-circle btn-success&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#myModal&quot;&gt;
+								&lt;i class&#x3D;&quot;ti-plus&quot;&gt;&lt;/i&gt;
+							&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					
+					&lt;div class&#x3D;&quot;to-do-widget m-t-20&quot;&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;!-- Modal for add tasks   																				  --&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;myModal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+							&lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+								&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+									&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+										&lt;h4 class&#x3D;&quot;modal-title&quot;&gt;Agregar tarea&lt;/h4&gt;
+										&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt; &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt; &lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+										&lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;addTask()&quot; novalidate&gt;
+											&lt;div class&#x3D;&quot;form-group&quot;&gt;
+												&lt;label&gt;Nombre de la tarea&lt;/label&gt;
+												&lt;input formControlName&#x3D;&quot;task&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Revisar mensajes&quot;&gt; 
+											&lt;/div&gt;
+											&lt;div class&#x3D;&quot;form-group&quot;&gt;
+												&lt;label&gt;Descripción de la tarea&lt;/label&gt;
+												&lt;input formControlName&#x3D;&quot;description&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Revisar la lista de mensajes que están pendientes&quot;&gt; 
+											&lt;/div&gt;
+											&lt;div class&#x3D;&quot;form-group&quot;&gt;
+												&lt;label&gt;Prioridad&lt;/label&gt;
+												&lt;select formControlName&#x3D;&quot;priority&quot; class&#x3D;&quot;custom-select form-control pull-right&quot;&gt;
+													&lt;option value&#x3D;&quot;high&quot;&gt;Alta&lt;/option&gt;
+													&lt;option value&#x3D;&quot;medium&quot;&gt;Media&lt;/option&gt;
+													&lt;option value&#x3D;&quot;low&quot;&gt;Baja&lt;/option&gt;
+												&lt;/select&gt;
+											&lt;/div&gt;
+											&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+												&lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-success&quot;&gt;Agregar&lt;/button&gt;
+												&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+											&lt;/div&gt;
+										&lt;/form&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;!-- End modal for add tasks   																				  --&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;ul class&#x3D;&quot;list-task todo-list list-group m-b-0&quot; data-role&#x3D;&quot;tasklist&quot;&gt;
+							&lt;!-- &lt;li class&#x3D;&quot;list-group-item&quot; data-role&#x3D;&quot;task&quot; *ngFor&#x3D;&quot;let t of tasks&quot;&gt; --&gt;
+								&lt;div class&#x3D;&quot;checkbox checkbox-info m-b-10&quot;&gt;
+									&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;inputSchedule&quot; name&#x3D;&quot;inputCheckboxesSchedule&quot;&gt;
+									&lt;label for&#x3D;&quot;inputSchedule&quot; class&#x3D;&quot;&quot;&gt; 
+										&lt;!-- &lt;span&gt;{{ t.task }}&lt;/span&gt;  --&gt;
+										&lt;!-- &lt;span class&#x3D;&quot;label label-rounded label-danger pull-right&quot;&gt;{{ t.description }}&lt;/span&gt; --&gt;
+									&lt;/label&gt;
+								&lt;/div&gt;
+							&lt;!-- &lt;/li&gt; --&gt;
+							&lt;li class&#x3D;&quot;list-group-item&quot; data-role&#x3D;&quot;task&quot;&gt;
+								&lt;div class&#x3D;&quot;checkbox checkbox-info&quot;&gt;
+									&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;inputBook&quot; name&#x3D;&quot;inputCheckboxesBook&quot;&gt;
+									&lt;label for&#x3D;&quot;inputBook&quot; class&#x3D;&quot;&quot;&gt; 
+										&lt;span&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been&lt;/span&gt;
+										&lt;!-- &lt;span class&#x3D;&quot;label label-primary label-rounded pull-right&quot;&gt;{{ t.priority }}&lt;/span&gt;  --&gt;
+									&lt;/label&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-date&quot;&gt; 26 jun 2017&lt;/div&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;list-group-item&quot; data-role&#x3D;&quot;task&quot;&gt;
+								&lt;div class&#x3D;&quot;checkbox checkbox-info&quot;&gt;
+									&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;inputCall&quot; name&#x3D;&quot;inputCheckboxesCall&quot;&gt;
+									&lt;label for&#x3D;&quot;inputCall&quot; class&#x3D;&quot;&quot;&gt; 
+										&lt;span&gt;Give Purchase report to&lt;/span&gt; 
+										&lt;span class&#x3D;&quot;label label-info label-rounded pull-right&quot;&gt;Yesterday&lt;/span&gt; 
+									&lt;/label&gt;
+								&lt;/div&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;list-group-item&quot; data-role&#x3D;&quot;task&quot;&gt;
+								&lt;div class&#x3D;&quot;checkbox checkbox-info&quot;&gt;
+									&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;inputForward&quot; name&#x3D;&quot;inputCheckboxesForward&quot;&gt;
+									&lt;label for&#x3D;&quot;inputForward&quot; class&#x3D;&quot;&quot;&gt; 
+										&lt;span&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been&lt;/span&gt; 
+										&lt;span class&#x3D;&quot;label label-warning label-rounded pull-right&quot;&gt;2 weeks&lt;/span&gt; 
+										&lt;/label&gt;
+								&lt;/div&gt;
+							&lt;div class&#x3D;&quot;item-date&quot;&gt;{{ actual_day }}&lt;/div&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;!-- End todo list 																									--&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End Container fluid  --&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+					</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./dashboard.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container-dashboard">	<!-- =============================================================== -->	<!-- Report boxes																										 -->	<!-- =============================================================== -->	<div class="row">		<div class="col-lg-4">			<div class="card">				<div class="card-body">					<div class="d-flex no-block">						<div class="m-r-20 align-self-center">							<span class="lstick m-r-20"></span>							<img src="../assets/images/icon/staff.png" alt="Income" />						</div>						<div class="align-self-center">							<h6 class="text-muted m-t-10 m-b-0">Total de usuarios</h6>							<h2 class="m-t-0">{{ count_users }}</h2>						</div>					</div>				</div>			</div>		</div>		<div class="col-lg-4">			<div class="card">				<div class="card-body">					<div class="d-flex no-block">						<div class="m-r-20 align-self-center">							<span class="lstick m-r-20"></span>							<img src="../assets/images/icon/expense.png" alt="Income" />						</div>						<div class="align-self-center">							<h6 class="text-muted m-t-10 m-b-0">Total de libros</h6>							<h2 class="m-t-0">{{ count_books }}</h2>						</div>					</div>				</div>			</div>		</div>		<div class="col-lg-4">			<div class="card">				<div class="card-body">					<div class="d-flex no-block">						<div class="m-r-20 align-self-center">							<span class="lstick m-r-20"></span>							<img src="../assets/images/icon/assets.png" alt="Income" />						</div>						<div class="align-self-center">							<h6 class="text-muted m-t-10 m-b-0">Mensajes enviados</h6>							<h2 class="m-t-0">{{ count_messages }}</h2>						</div>					</div>				</div>			</div>		</div>	</div>	<!-- =============================================================== -->	<!-- End report boxes																								 -->	<!-- =============================================================== -->	<!-- =============================================================== -->	<!-- Users status																										 -->	<!-- =============================================================== -->	<div class="row">		<div class="col-lg-12 col-md-12">			<div class="card">				<div class="card-body">					<div class="d-flex">						<div>							<h4 class="card-title"><span class="lstick"></span>Estado de usuarios</h4>						</div>					</div>					<div class="table-responsive m-t-20">						<table class="table vm no-th-brd no-wrap pro-of-month">							<thead>								<tr>									<th colspan="2">Usuario</th>									<th>Tipo de usuario</th>									<th>Estado</th>									<th>Cambiar estado</th>								</tr>							</thead>							<tbody>								<tr *ngFor="let u of users">									<td style="width:50px;"><span class="round">										<img src="../assets/images/users/1.jpg" alt="user" width="50"></span>									</td>									<td>										<h6>{{ u.name | titlecase }} {{ u.last_name1 | titlecase }} {{ u.last_name2 | titlecase }}</h6>										<small class="text-muted">Creado el: {{ u.created_date }}</small>									</td>									<td>{{ u.role | titlecase }}</td>									<td>										<span *ngIf="[u.status] == \'true\'" class="label label-success label-rounded">Activo</span>										<span *ngIf="[u.status] == \'false\'" class="label label-danger label-rounded">Inactivo</span>									</td>									<!-- TODO: Hacer algo con esto -->									<td>										Cambiar jjj									</td>								</tr>							</tbody>						</table>					</div>				</div>			</div>		</div>	</div>	<!-- =============================================================== -->	<!-- End users status																								 -->	<!-- =============================================================== -->	<!-- ============================================================== -->	<!-- Reports			              																		-->	<!-- ============================================================== -->	<div class="row">		<div class="col-lg-12 col-md-12">			<div class="card">				<div class="card-body">					<div class="d-flex">						<div>							<h3 class="card-title m-b-5">							<span class="lstick"></span>Reportes 							</h3>						</div>						<div class="ml-auto">							<label>Fecha</label>							<select class="custom-select b-0" [(ngModel)]="date" name="date" (ngModelChange)="searchReportDate($event)">Fecha								<option value="all" selected>Todas</option>								<option *ngFor="let r of reportsData">{{ r.day }}</option>							</select>						</div>					</div>				</div>				<table class="table vm no-th-brd no-wrap pro-of-month">					<thead>						<tr>							<th>Usuario que reporta</th>							<th>Tipo de reporte</th>							<th>Fecha</th>							<th>Hora</th>							<th>Reporte</th>							<th>Estado</th>						</tr>					</thead>					<tbody>						<tr *ngFor="let r of reports">							<!-- TODO: Revisar visualmente y borrar referencis sin ID -->							<td>								<h6>{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}</h6>							</td>							<td>								<h6>{{ r.type }}</h6>							</td>							<td>								<h6>{{ r.day }}</h6>							</td>							<td>								<h6>{{ r.hour }}</h6>							</td>							<td>								<h6 *ngIf="r.type == \'Reporte de imagen\'">Se reportan las imagenes contenidas en el siguiente <a [href]="r.img" target="_blank"> link </a> </h6>								<h6 *ngIf="r.type == \'Reporte de usuario\'">Se reporta al usuario {{ r.user_reported.name | titlecase }} {{ r.user_reported.last_name1 | titlecase }} {{ r.user_reported.last_name2 | titlecase }}</h6>							</td>							<td>								<span *ngIf="[r.status] == \'Revisado\'" class="label label-success label-rounded">Revisado</span>								<span *ngIf="[r.status] == \'No revisado\'" class="label label-danger label-rounded">No revisado</span>							</td>						</tr>					</tbody>				</table>			</div>		</div>  </div>  <!-- ============================================================== -->	<!-- End reports			           																		-->	<!-- ============================================================== -->	<div class="row">		<!-- ============================================================== -->		<!-- Todo list 																											-->		<!-- ============================================================== -->		<div class="col-lg-6 col-xlg-8">			<div class="card">				<div class="card-body">					<div class="d-flex">						<div>							<h4 class="card-title"><span class="lstick"></span>To Do list</h4>						</div>						<div class="ml-auto">							<button class="pull-right btn btn-circle btn-success" data-toggle="modal" data-target="#myModal">								<i class="ti-plus"></i>							</button>						</div>					</div>										<div class="to-do-widget m-t-20">						<!-- ============================================================== -->						<!-- Modal for add tasks   																				  -->						<!-- ============================================================== -->						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">							<div class="modal-dialog" role="document">								<div class="modal-content">									<div class="modal-header">										<h4 class="modal-title">Agregar tarea</h4>										<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>									</div>									<div class="modal-body">										<form [formGroup]="form" (ngSubmit)="addTask()" novalidate>											<div class="form-group">												<label>Nombre de la tarea</label>												<input formControlName="task" type="text" class="form-control" placeholder="Revisar mensajes"> 											</div>											<div class="form-group">												<label>Descripción de la tarea</label>												<input formControlName="description" type="text" class="form-control" placeholder="Revisar la lista de mensajes que están pendientes"> 											</div>											<div class="form-group">												<label>Prioridad</label>												<select formControlName="priority" class="custom-select form-control pull-right">													<option value="high">Alta</option>													<option value="medium">Media</option>													<option value="low">Baja</option>												</select>											</div>											<div class="modal-footer">												<button type="submit" class="btn btn-success">Agregar</button>												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>											</div>										</form>									</div>								</div>							</div>						</div>						<!-- ============================================================== -->						<!-- End modal for add tasks   																				  -->						<!-- ============================================================== -->						<ul class="list-task todo-list list-group m-b-0" data-role="tasklist">							<!-- <li class="list-group-item" data-role="task" *ngFor="let t of tasks"> -->								<div class="checkbox checkbox-info m-b-10">									<input type="checkbox" id="inputSchedule" name="inputCheckboxesSchedule">									<label for="inputSchedule" class=""> 										<!-- <span>{{ t.task }}</span>  -->										<!-- <span class="label label-rounded label-danger pull-right">{{ t.description }}</span> -->									</label>								</div>							<!-- </li> -->							<li class="list-group-item" data-role="task">								<div class="checkbox checkbox-info">									<input type="checkbox" id="inputBook" name="inputCheckboxesBook">									<label for="inputBook" class=""> 										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span>										<!-- <span class="label label-primary label-rounded pull-right">{{ t.priority }}</span>  -->									</label>								</div>								<div class="item-date"> 26 jun 2017</div>							</li>							<li class="list-group-item" data-role="task">								<div class="checkbox checkbox-info">									<input type="checkbox" id="inputCall" name="inputCheckboxesCall">									<label for="inputCall" class=""> 										<span>Give Purchase report to</span> 										<span class="label label-info label-rounded pull-right">Yesterday</span> 									</label>								</div>							</li>							<li class="list-group-item" data-role="task">								<div class="checkbox checkbox-info">									<input type="checkbox" id="inputForward" name="inputCheckboxesForward">									<label for="inputForward" class=""> 										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span> 										<span class="label label-warning label-rounded pull-right">2 weeks</span> 										</label>								</div>							<div class="item-date">{{ actual_day }}</div>							</li>						</ul>					</div>				</div>			</div>		</div>		<!-- ============================================================== -->		<!-- End todo list 																									-->		<!-- ============================================================== -->	</div></div><!-- ============================================================== --><!-- End Container fluid  --><!-- ============================================================== -->					</div>'
+    var COMPONENTS = [{'name': 'AddBookComponent', 'selector': 'app-add-book'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardBookComponent', 'selector': 'app-card-book'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'GlobalMessageComponent', 'selector': 'app-global-message'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LibraryComponent', 'selector': 'app-library'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageAdminComponent', 'selector': 'app-message-admin'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OneBookComponent', 'selector': 'app-one-book'},{'name': 'PageforbiddenComponent', 'selector': 'app-pageforbidden'},{'name': 'PagenotfoundComponent', 'selector': 'app-pagenotfound'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashboardComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

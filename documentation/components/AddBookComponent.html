@@ -1,0 +1,1210 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BOOKscalo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">BOOKscalo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AddBookComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/add-book/add-book.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-book</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-book.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories">categories</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router">router</a>
+                            </li>
+                            <li>
+                                <a href="#selected_categories">selected_categories</a>
+                            </li>
+                            <li>
+                                <a href="#today">today</a>
+                            </li>
+                            <li>
+                                <a href="#uid">uid</a>
+                            </li>
+                            <li>
+                                <a href="#urlImgs">urlImgs</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addCategory">addCategory</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#removeCategory">removeCategory</a>
+                            </li>
+                            <li>
+                                <a href="#saveBook">saveBook</a>
+                            </li>
+                            <li>
+                                <a href="#uploadFile">uploadFile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_dbService: <a href="../injectables/DatabaseService.html">DatabaseService</a>, _date: <a href="../injectables/DateService.html">DateService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_dbService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_date</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DateService.html" target="_self" >DateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addCategory"></a>
+                        <span class="name">
+                            <b>
+                            addCategory
+                            </b>
+                            <a href="#addCategory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addCategory(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:155</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeCategory"></a>
+                        <span class="name">
+                            <b>
+                            removeCategory
+                            </b>
+                            <a href="#removeCategory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>removeCategory(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="162" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:162</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="saveBook"></a>
+                        <span class="name">
+                            <b>
+                            saveBook
+                            </b>
+                            <a href="#saveBook"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>saveBook()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:57</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadFile"></a>
+                        <span class="name">
+                            <b>
+                            uploadFile
+                            </b>
+                            <a href="#uploadFile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>uploadFile(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:97</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categories"></a>
+                        <span class="name">
+                            <b>
+                            categories
+                            </b>
+                            <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>categories:     <code>Array&lt;string&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;Antiguedades y Coleccionables&quot;, &quot;Arquitectura&quot;, &quot;Arte&quot;, &quot;Artes Escénicas&quot;, &quot;Biografía y Autobiografía&quot;, &quot;Casa y Hogar&quot;, &quot;Ciencia&quot;, &quot;Ciencias Políticas&quot;, &quot;Ciencias Sociales&quot;, &quot;Cocina&quot;, &quot;Comida y Bebestibles&quot;, &quot;Colecciones Literarias&quot;, &quot;Cómics y Novelas Gráficas&quot;, &quot;Computación e Internet&quot;, &quot;Crímenes&quot;, &quot;Crítica Literaria&quot;, &quot;Cuerpo&quot;, &quot;Mente y Espíritu&quot;, &quot;Deportes y Recreación&quot;, &quot;Drama&quot;, &quot;Educación&quot;, &quot;Estudio de Lenguas Extranjeras&quot;, &quot;Ensayos Académicos&quot;, &quot;Familia y Relaciones&quot;, &quot;Ficción&quot;, &quot;Ficción Adolescente&quot;, &quot;Ficción para Niños&quot;, &quot;Filosofía&quot;, &quot;Fotografía&quot;, &quot;Historia y Geografía&quot;, &quot;Humor&quot;, &quot;Jardinería&quot;, &quot;Juegos&quot;, &quot;Lectura escolar&quot;, &quot;Lengua y Literatura&quot;, &quot;Leyes&quot;, &quot;Manualidades y Hobbies&quot;, &quot;Mascotas y Animales&quot;, &quot;Matemáticas&quot;, &quot;Medicina&quot;, &quot;Música&quot;, &quot;Naturaleza y Aire libre&quot;, &quot;Negocios y Economía&quot;, &quot;Niños y Jóvenes&quot;, &quot;Papelería&quot;, &quot;Poesía&quot;, &quot;Psicología&quot;, &quot;Religión y Espiritualidad&quot;, &quot;Salud y Bienestar&quot;, &quot;Tecnología&quot;, &quot;Transporte&quot;, &quot;Viajes&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            router
+                            </b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>router:     <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected_categories"></a>
+                        <span class="name">
+                            <b>
+                            selected_categories
+                            </b>
+                            <a href="#selected_categories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>selected_categories:     <code>string[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="today"></a>
+                        <span class="name">
+                            <b>
+                            today
+                            </b>
+                            <a href="#today"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>today:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uid"></a>
+                        <span class="name">
+                            <b>
+                            uid
+                            </b>
+                            <a href="#uid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>uid:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="urlImgs"></a>
+                        <span class="name">
+                            <b>
+                            urlImgs
+                            </b>
+                            <a href="#urlImgs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>urlImgs:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/add-book/add-book.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { FormGroup, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+
+// INTERFACE
+import { Books } from &quot;../../interface/books.interface&quot;;
+
+// SERVICE
+import { DatabaseService } from &quot;../../services/database.service&quot;;
+import { DateService } from &#x27;src/app/services/date.service&#x27;;
+
+// ANGULARFIRE2
+import * as firebase from &#x27;firebase&#x27;;
+
+// SWEET ALERT
+import swal from &#x27;sweetalert&#x27;;
+
+@Component({
+  selector: &#x27;app-add-book&#x27;,
+  templateUrl: &#x27;./add-book.component.html&#x27;
+})
+export class AddBookComponent implements OnInit {
+
+	form:FormGroup;
+	urlImgs:any[]; // Almacena las rutas de imagenes, para ser guardadas en Storage
+	uid:string; // uid usuario actual
+	today:any;
+	categories:Array&lt;string&gt;&#x3D;[&quot;Antiguedades y Coleccionables&quot;, &quot;Arquitectura&quot;, &quot;Arte&quot;, &quot;Artes Escénicas&quot;, &quot;Biografía y Autobiografía&quot;, &quot;Casa y Hogar&quot;, &quot;Ciencia&quot;, &quot;Ciencias Políticas&quot;, &quot;Ciencias Sociales&quot;, &quot;Cocina&quot;, &quot;Comida y Bebestibles&quot;, &quot;Colecciones Literarias&quot;, &quot;Cómics y Novelas Gráficas&quot;, &quot;Computación e Internet&quot;, &quot;Crímenes&quot;, &quot;Crítica Literaria&quot;, &quot;Cuerpo&quot;, &quot;Mente y Espíritu&quot;, &quot;Deportes y Recreación&quot;, &quot;Drama&quot;, &quot;Educación&quot;, &quot;Estudio de Lenguas Extranjeras&quot;, &quot;Ensayos Académicos&quot;, &quot;Familia y Relaciones&quot;, &quot;Ficción&quot;, &quot;Ficción Adolescente&quot;, &quot;Ficción para Niños&quot;, &quot;Filosofía&quot;, &quot;Fotografía&quot;, &quot;Historia y Geografía&quot;, &quot;Humor&quot;, &quot;Jardinería&quot;, &quot;Juegos&quot;, &quot;Lectura escolar&quot;, &quot;Lengua y Literatura&quot;, &quot;Leyes&quot;, &quot;Manualidades y Hobbies&quot;, &quot;Mascotas y Animales&quot;, &quot;Matemáticas&quot;, &quot;Medicina&quot;, &quot;Música&quot;, &quot;Naturaleza y Aire libre&quot;, &quot;Negocios y Economía&quot;, &quot;Niños y Jóvenes&quot;, &quot;Papelería&quot;, &quot;Poesía&quot;, &quot;Psicología&quot;, &quot;Religión y Espiritualidad&quot;, &quot;Salud y Bienestar&quot;, &quot;Tecnología&quot;, &quot;Transporte&quot;, &quot;Viajes&quot;];
+	selected_categories:string[] &#x3D; [];
+
+	constructor( 	private _dbService:DatabaseService,
+								private _date:DateService,
+								public router:Router ) { 			
+	}
+
+	ngOnInit() {
+		this.form &#x3D; new FormGroup({
+			title: 				new FormControl(undefined, Validators.required),
+			author: 			new FormControl(undefined, Validators.required),
+			editorial: 		new FormControl(undefined, Validators.required),
+			type: 				new FormControl(undefined, Validators.required),
+			genres: 			new FormControl(this.selected_categories),
+			transaction: 	new FormControl(undefined, Validators.required),
+			price: 				new FormControl(undefined),
+			language: 		new FormControl(undefined, Validators.required),
+			original: 		new FormControl(undefined, Validators.required),
+			num_page: 		new FormControl(undefined, Validators.required),
+			comment: 			new FormControl(undefined),
+			images: 			new FormControl(undefined),
+			date: 				new FormControl(this._date.actual_date())
+		});
+
+		this.uid &#x3D; JSON.parse(localStorage.getItem(&#x27;user&#x27;)).uid;
+	}
+
+	// Guarda un libro nuevo en la DB
+	saveBook(){
+		if( this.form.invalid ){
+			swal(
+				&#x27;Debe completar el formulario&#x27;, 
+				&#x27;Debe ingresar todos los campos de este formulario&#x27;,
+				&#x27;warning&#x27;
+			);
+			return;
+		}
+		
+		// Carga las imagenes en el formulario para luego subirlas
+		this.form.patchValue({
+			images: this.urlImgs
+		});
+
+		let book:Books &#x3D; this.form.value;  // Guarda el formulario para validar
+
+		// Agrega la referencia al usuario propietario del libro
+		let user &#x3D; JSON.parse( localStorage.getItem( &quot;user&quot; ));
+		book.user &#x3D; this._dbService.afs.collection(&#x27;users&#x27;).doc(user.uid).ref;
+
+		// Convierte el id de Firebase en uid + fechahora 
+		book.id &#x3D; user.uid + &quot;-&quot; + new Date().valueOf() ;
+		book.uid &#x3D; user.uid;
+		book.status &#x3D; &#x27;available&#x27;;
+
+		// Guarda el libro
+		this._dbService.addData(&#x27;books&#x27;, book)
+			.then( () &#x3D;&gt; {
+				console.log(&quot;se guardó el libro&quot;); 
+				swal(&#x27;Libro registrado con éxito&#x27;, book.title, &#x27;success&#x27;);
+				this.router.navigate([ &#x27;/home&#x27; ]);
+			})
+			.catch( (err) &#x3D;&gt; {
+				console.log(&quot;error al guardar libros&quot;, err) 
+				swal(&quot;Error&quot;, &quot;No se ha podido guardar el nuevo libro&quot;, &quot;warning&quot;);
+			});
+	}
+
+	// Carga las imagenes al storage de Firebase
+	uploadFile(event) {
+		let files &#x3D; event.target.files;
+		let url &#x3D; []; // Guarda las imagenes correctas para luego subirlas
+		let aux &#x3D; false; // Sirve para que no se cargen imagenes si existe aunque sea una incorrecta
+
+		for( let i&#x3D;0; i&lt;files.length; i++ ){
+			const separatedFile &#x3D; files[i].name.split(&#x27;.&#x27;);
+			const extension &#x3D; separatedFile[separatedFile.length - 1];
+				
+			// Tipos de archivo válidos para las imagenes
+			const typeValid &#x3D; [&#x27;jpg&#x27;, &#x27;jpeg&#x27;, &#x27;png&#x27;];
+
+			// si las imagenes no son validas se termina el proceso
+			if( typeValid.indexOf( extension ) &lt;&#x3D; -1 ){
+				swal(
+					&#x27;Error al ingresar imagen&#x27;,
+					&#x27;Extensiones válidas (png, jpg, jpeg), vuelva a intentarlo&#x27;,
+					&#x27;error&#x27;
+				);
+				aux &#x3D; true;
+				return;
+			}
+		}
+
+		if( !aux ){
+			const storageRef &#x3D; firebase.storage().ref();
+			let upload &#x3D; false;
+			for(let i&#x3D;0; i&lt;files.length; i++){
+				
+				let filePath &#x3D; &#x60;${this.uid}-${new Date().valueOf()}&#x60;; 
+				console.log(filePath)
+					 
+				const uploadTask:firebase.storage.UploadTask &#x3D; 
+					storageRef.child(&#x60;images/${ filePath }&#x60;)
+					.put(files[i])
+
+				uploadTask.on(&#x27;state_changed&#x27;,
+					() &#x3D;&gt; {}, // Manejo de carga
+					(error) &#x3D;&gt; { // Manejo de errores
+						console.log(&#x27;Error al cargar imagen&#x27; ,error);
+				  	swal(&#x27;Error al cargar imagenes&#x27;, &#x27;Por favor, vueva a intentarlo&#x27;, &#x27;error&#x27;);
+					}, 
+					() &#x3D;&gt; { // Éxito
+					   uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) &#x3D;&gt; {
+							url.push( downloadURL );
+							if(i &#x3D;&#x3D;&#x3D; files.length-1) {
+								console.log(&quot;Imagenes cargadas&quot;);
+								swal(&#x27;Éxito&#x27;, &#x27;Imagenes cargadas con exito&#x27;, &#x27;success&#x27;);
+							}
+				  		});
+					}
+				);
+			}
+			this.urlImgs &#x3D; url;
+		}
+	}
+
+	// Agrega una categoría al cuadro de categorías del libro
+	addCategory(index:number){
+		this.selected_categories.push(this.categories[index]);
+		this.categories.splice(index, 1);				
+		// TODO: Ordenar por index
+	}
+
+	// Remueve una categoría del cuadro de categorías del libro
+	removeCategory(index:number){
+		this.categories.push(this.selected_categories[index]);
+		this.selected_categories.splice(index, 1);
+		console.log(this.selected_categories);				
+	}
+}
+
+				</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;background-color: #ffffff;&quot;&gt;
+	&lt;h1 style&#x3D;&quot;padding-top:30px;&quot;&gt;Agregar libro&lt;/h1&gt;
+	&lt;form class&#x3D;&quot;form-material m-t-40&quot; [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;saveBook()&quot; novalidate&#x3D;&quot;novalidate&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;!-- Inicio col 1 --&gt;
+			&lt;div class&#x3D;&quot;col-6&quot;&gt;
+				&lt;div class&#x3D;&quot;form-group&quot;&gt;
+					&lt;label&gt;Título del texto&lt;/label&gt;
+					&lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;title&quot; 
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: Harry Potter&quot;&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group&quot;&gt;
+					&lt;label&gt;Autor del texto&lt;/label&gt;
+					&lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;author&quot;
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: J. K. Rowling&quot;&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group&quot;&gt;
+					&lt;label&gt;Editorial del texto&lt;/label&gt;
+					&lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;editorial&quot;
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: Salamandra&quot;&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group border-input-custom&quot;&gt;
+					&lt;label&gt;Tipo de elemento&lt;/label&gt;
+					&lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;type&quot;&gt;
+						&lt;option value&#x3D;&quot;Libro&quot;&gt;Libro&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Cómic&quot;&gt;Cómic&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Lectura especializada&quot;&gt;Lectura especializada&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Literatura infantil&quot;&gt;Literatura infantil&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Otro&quot;&gt;Otro&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+
+				&lt;!-- TODO: Dejar esto más bonito --&gt;
+				&lt;div class&#x3D;&quot;form-group&quot;&gt;
+					&lt;input id&#x3D;&quot;file&quot; type&#x3D;&quot;file&quot; style&#x3D;&quot;padding-top: 25px;&quot; (change)&#x3D;&quot;uploadFile($event)&quot; multiple&gt;
+				&lt;/div&gt;
+		
+			&lt;/div&gt;
+			&lt;!-- Fin col 1  --&gt;
+				
+			&lt;!-- Inicio col 2  --&gt;
+			&lt;div class&#x3D;&quot;col-6&quot;&gt;
+				&lt;div class&#x3D;&quot;form-group border-input-custom&quot;&gt;
+					&lt;label&gt;Tipo de transacción&lt;/label&gt;
+					&lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;transaction&quot;&gt;
+						&lt;option value&#x3D;&quot;Intercambio&quot;&gt;Intercambio&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Venta&quot;&gt;Venta&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Ambos&quot;&gt;Ambos&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group&quot; *ngIf&#x3D;&quot;form.value.transaction &#x3D;&#x3D;&#x3D; &#x27;Venta&#x27;&quot;&gt;
+					&lt;label&gt;Precio&lt;/label&gt;
+					&lt;input 	formControlName&#x3D;&quot;price&quot; onlynumber&#x3D;&quot;true&quot; minlength&#x3D;&quot;3&quot; maxlength&#x3D;&quot;6&quot; 
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: 5000&quot;&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group&quot; *ngIf&#x3D;&quot;form.value.transaction &#x3D;&#x3D;&#x3D; &#x27;Ambos&#x27;&quot;&gt;
+					&lt;label&gt;Precio&lt;/label&gt;
+					&lt;input 	formControlName&#x3D;&quot;price&quot; onlynumber&#x3D;&quot;true&quot; minlength&#x3D;&quot;3&quot; maxlength&#x3D;&quot;6&quot; 
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: 5000&quot;&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group border-input-custom&quot;&gt;
+					&lt;label&gt;Idioma&lt;/label&gt;
+					&lt;select class&#x3D;&quot;form-control&quot; 
+							formControlName&#x3D;&quot;language&quot;&gt;
+						&lt;option value&#x3D;&quot;Español&quot;&gt;Español&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Inglés&quot;&gt;Inglés&lt;/option&gt;
+						&lt;option value&#x3D;&quot;Otro&quot;&gt;Otro&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group border-input-custom&quot; 
+					 name&#x3D;&quot;original&quot;&gt;
+					&lt;label&gt;Texto original&lt;/label&gt;
+					&lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;original&quot;&gt;
+						&lt;option value&#x3D;&quot;Sí&quot;&gt;Sí&lt;/option&gt;
+						&lt;option value&#x3D;&quot;No&quot;&gt;No&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;form-group&quot;&gt;
+					&lt;label&gt;Cantidad de páginas&lt;/label&gt;
+					&lt;input 	formControlName&#x3D;&quot;num_page&quot; onlynumber&#x3D;&quot;true&quot; minlength&#x3D;&quot;2&quot; maxlength&#x3D;&quot;5&quot; 
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: 324&quot;&gt;
+				&lt;/div&gt;
+					
+				&lt;div class&#x3D;&quot;form-group&quot;&gt;
+					&lt;label&gt;Comentario&lt;/label&gt;
+					&lt;textarea class&#x3D;&quot;form-control border-input-custom&quot; formControlName&#x3D;&quot;comment&quot; rows&#x3D;&quot;2&quot; 
+								placeholder&#x3D;&quot;Ej.: El libro se encuentra en buen estado, leído solo una vez.&quot;&gt;
+					&lt;/textarea&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- Fin col 2  --&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;form-group border-input-custom&quot;&gt;
+			&lt;label&gt;Categoría a la que pertenece&lt;/label&gt;
+			&lt;!-- FIXME: Revisar po jjj --&gt;
+			&lt;div class&#x3D;&quot;ms-container&quot; id&#x3D;&quot;ms-pre-selected-options&quot;&gt;
+				&lt;div class&#x3D;&quot;ms-selectable&quot;&gt;
+					&lt;select class&#x3D;&quot;ms-list contenedor&quot; multiple&#x3D;&#x27;multiple&#x27;&gt;
+						&lt;option [value]&#x3D;&#x27;c&#x27; class&#x3D;&quot;ms-elem-selectable&quot; *ngFor&#x3D;&quot;let c of categories; let i &#x3D; index;&quot;
+							(click)&#x3D;&quot;addCategory(i)&quot;&gt; {{ c }} &lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;ms-selection&quot;&gt;
+					&lt;select class&#x3D;&quot;ms-list contenedor&quot; multiple&#x3D;&#x27;multiple&#x27; formControlName&#x3D;&quot;genres&quot; style&#x3D;&quot;margin-left: 35px;&quot;&gt;
+						&lt;option [value]&#x3D;&#x27;sc&#x27; class&#x3D;&quot;ms-elem-selection&quot; *ngFor&#x3D;&quot;let sc of selected_categories; let i &#x3D; index;&quot;
+							(click)&#x3D;&quot;removeCategory(i)&quot;&gt; {{ sc }} &lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;								
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class&#x3D;&quot;row justify-content-md-center&quot;&gt;
+			&lt;div class&#x3D;&quot;form-group&quot;&gt;
+				&lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-outline-info&quot;&gt;Guardar&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+
+
+
+
+
+			</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container" style="background-color: #ffffff;">	<h1 style="padding-top:30px;">Agregar libro</h1>	<form class="form-material m-t-40" [formGroup]="form" (ngSubmit)="saveBook()" novalidate="novalidate">		<div class="row">			<!-- Inicio col 1 -->			<div class="col-6">				<div class="form-group">					<label>Título del texto</label>					<input type="text" formControlName="title" 							class="form-control form-control-line border-input-custom" placeholder="Ej.: Harry Potter">				</div>				<div class="form-group">					<label>Autor del texto</label>					<input type="text" formControlName="author"							class="form-control form-control-line border-input-custom" placeholder="Ej.: J. K. Rowling">				</div>				<div class="form-group">					<label>Editorial del texto</label>					<input type="text" formControlName="editorial"							class="form-control form-control-line border-input-custom" placeholder="Ej.: Salamandra">				</div>				<div class="form-group border-input-custom">					<label>Tipo de elemento</label>					<select class="form-control" formControlName="type">						<option value="Libro">Libro</option>						<option value="Cómic">Cómic</option>						<option value="Lectura especializada">Lectura especializada</option>						<option value="Literatura infantil">Literatura infantil</option>						<option value="Otro">Otro</option>					</select>				</div>				<!-- TODO: Dejar esto más bonito -->				<div class="form-group">					<input id="file" type="file" style="padding-top: 25px;" (change)="uploadFile($event)" multiple>				</div>					</div>			<!-- Fin col 1  -->							<!-- Inicio col 2  -->			<div class="col-6">				<div class="form-group border-input-custom">					<label>Tipo de transacción</label>					<select class="form-control" formControlName="transaction">						<option value="Intercambio">Intercambio</option>						<option value="Venta">Venta</option>						<option value="Ambos">Ambos</option>					</select>				</div>				<div class="form-group" *ngIf="form.value.transaction === \'Venta\'">					<label>Precio</label>					<input 	formControlName="price" onlynumber="true" minlength="3" maxlength="6" 							class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000">				</div>				<div class="form-group" *ngIf="form.value.transaction === \'Ambos\'">					<label>Precio</label>					<input 	formControlName="price" onlynumber="true" minlength="3" maxlength="6" 							class="form-control form-control-line border-input-custom" placeholder="Ej.: 5000">				</div>				<div class="form-group border-input-custom">					<label>Idioma</label>					<select class="form-control" 							formControlName="language">						<option value="Español">Español</option>						<option value="Inglés">Inglés</option>						<option value="Otro">Otro</option>					</select>				</div>				<div class="form-group border-input-custom" 					 name="original">					<label>Texto original</label>					<select class="form-control" formControlName="original">						<option value="Sí">Sí</option>						<option value="No">No</option>					</select>				</div>				<div class="form-group">					<label>Cantidad de páginas</label>					<input 	formControlName="num_page" onlynumber="true" minlength="2" maxlength="5" 							class="form-control form-control-line border-input-custom" placeholder="Ej.: 324">				</div>									<div class="form-group">					<label>Comentario</label>					<textarea class="form-control border-input-custom" formControlName="comment" rows="2" 								placeholder="Ej.: El libro se encuentra en buen estado, leído solo una vez.">					</textarea>				</div>			</div>			<!-- Fin col 2  -->		</div>		<div class="form-group border-input-custom">			<label>Categoría a la que pertenece</label>			<!-- FIXME: Revisar po jjj -->			<div class="ms-container" id="ms-pre-selected-options">				<div class="ms-selectable">					<select class="ms-list contenedor" multiple=\'multiple\'>						<option [value]=\'c\' class="ms-elem-selectable" *ngFor="let c of categories; let i = index;"							(click)="addCategory(i)"> {{ c }} </option>					</select>				</div>				<div class="ms-selection">					<select class="ms-list contenedor" multiple=\'multiple\' formControlName="genres" style="margin-left: 35px;">						<option [value]=\'sc\' class="ms-elem-selection" *ngFor="let sc of selected_categories; let i = index;"							(click)="removeCategory(i)"> {{ sc }} </option>					</select>				</div>											</div>		</div>				<div class="row justify-content-md-center">			<div class="form-group">				<button type="submit" class="btn btn-outline-info">Guardar</button>			</div>		</div>	</form></div>			</div>'
+    var COMPONENTS = [{'name': 'AddBookComponent', 'selector': 'app-add-book'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardBookComponent', 'selector': 'app-card-book'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'GlobalMessageComponent', 'selector': 'app-global-message'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LibraryComponent', 'selector': 'app-library'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageAdminComponent', 'selector': 'app-message-admin'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OneBookComponent', 'selector': 'app-one-book'},{'name': 'PageforbiddenComponent', 'selector': 'app-pageforbidden'},{'name': 'PagenotfoundComponent', 'selector': 'app-pagenotfound'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddBookComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddBookComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

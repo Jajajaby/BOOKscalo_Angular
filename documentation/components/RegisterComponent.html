@@ -1,0 +1,1641 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BOOKscalo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">BOOKscalo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RegisterComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/register/register.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-register</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./register.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./register.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories">categories</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#register_pages">register_pages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router">router</a>
+                            </li>
+                            <li>
+                                <a href="#selected_categories">selected_categories</a>
+                            </li>
+                            <li>
+                                <a href="#submit1">submit1</a>
+                            </li>
+                            <li>
+                                <a href="#submit2">submit2</a>
+                            </li>
+                            <li>
+                                <a href="#submit3">submit3</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addCategory">addCategory</a>
+                            </li>
+                            <li>
+                                <a href="#areEquals">areEquals</a>
+                            </li>
+                            <li>
+                                <a href="#getBackground">getBackground</a>
+                            </li>
+                            <li>
+                                <a href="#nextPage">nextPage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#removeCategory">removeCategory</a>
+                            </li>
+                            <li>
+                                <a href="#saveUser">saveUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_dbService: <a href="../injectables/DatabaseService.html">DatabaseService</a>, _dateService: <a href="../injectables/DateService.html">DateService</a>, afAuth: AngularFireAuth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/register/register.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_dbService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_dateService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DateService.html" target="_self" >DateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>afAuth</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addCategory"></a>
+                        <span class="name">
+                            <b>
+                            addCategory
+                            </b>
+                            <a href="#addCategory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addCategory(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="153" class="link-to-prism">src/app/register/register.component.ts:153</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="areEquals"></a>
+                        <span class="name">
+                            <b>
+                            areEquals
+                            </b>
+                            <a href="#areEquals"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>areEquals(input1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, input2: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/register/register.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>input1</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>input2</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>(group: any) &#x3D;&gt; { areEquals: boolean; }</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getBackground"></a>
+                        <span class="name">
+                            <b>
+                            getBackground
+                            </b>
+                            <a href="#getBackground"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getBackground(page: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">src/app/register/register.component.ts:183</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>page</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>&quot;url(../../assets/images/background/book-5.jpg)&quot; | &quot;url(../../assets/images/background/book-3.jpg...</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nextPage"></a>
+                        <span class="name">
+                            <b>
+                            nextPage
+                            </b>
+                            <a href="#nextPage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>nextPage(page: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">src/app/register/register.component.ts:167</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>page</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/register/register.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeCategory"></a>
+                        <span class="name">
+                            <b>
+                            removeCategory
+                            </b>
+                            <a href="#removeCategory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>removeCategory(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/app/register/register.component.ts:161</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="saveUser"></a>
+                        <span class="name">
+                            <b>
+                            saveUser
+                            </b>
+                            <a href="#saveUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>saveUser()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/register/register.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categories"></a>
+                        <span class="name">
+                            <b>
+                            categories
+                            </b>
+                            <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>categories:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CATEGORIES</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/register/register.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/register/register.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="register_pages"></a>
+                        <span class="name">
+                            <b>
+                            register_pages
+                            </b>
+                            <a href="#register_pages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>register_pages:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;page_1&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/register/register.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            router
+                            </b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>router:     <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/register/register.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected_categories"></a>
+                        <span class="name">
+                            <b>
+                            selected_categories
+                            </b>
+                            <a href="#selected_categories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>selected_categories:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/register/register.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submit1"></a>
+                        <span class="name">
+                            <b>
+                            submit1
+                            </b>
+                            <a href="#submit1"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>submit1:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/register/register.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submit2"></a>
+                        <span class="name">
+                            <b>
+                            submit2
+                            </b>
+                            <a href="#submit2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>submit2:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/register/register.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submit3"></a>
+                        <span class="name">
+                            <b>
+                            submit3
+                            </b>
+                            <a href="#submit3"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>submit3:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/register/register.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormControl, Validators, FormControlName } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+// INTERFACE
+import { Users } from &quot;../interface/books.interface&quot;;
+
+// SERVICES
+import { DatabaseService } from &quot;../services/database.service&quot;;
+import { DateService } from &#x27;../services/date.service&#x27;;
+
+import { AngularFireAuth } from &#x27;angularfire2/auth&#x27;;
+
+// Sweet Alert
+import swal from &#x27;sweetalert&#x27;;
+
+// Data
+import { CATEGORIES } from &#x27;../../data/categories.data&#x27;;
+import  * as firebase from &#x27;firebase&#x27;;
+
+// Inicializa los plugins
+declare function init_plugins();
+
+@Component({
+  selector: &#x27;app-register&#x27;,
+  templateUrl: &#x27;./register.component.html&#x27;,
+  styleUrls: [&#x27;./register.component.css&#x27;]
+
+})
+export class RegisterComponent implements OnInit {
+
+	form:FormGroup;
+	register_pages:string &#x3D; &quot;page_1&quot;; //Muestra la primera página del registro por defecto
+	categories:any[] &#x3D; CATEGORIES;
+	selected_categories:any[] &#x3D; [];
+	submit1:boolean &#x3D; false;
+	submit2:boolean &#x3D; false;
+	submit3:boolean &#x3D; false;
+
+	constructor( 	private _dbService:DatabaseService,
+								private _dateService:DateService,
+								private afAuth: AngularFireAuth,
+								public router: Router ) {
+		if( JSON.parse(localStorage.getItem(&#x27;session&#x27;)).session ) router.navigate([&#x27;/&#x27;]);
+	}
+
+	ngOnInit() {
+		init_plugins();
+		this.form &#x3D; 		new FormGroup({
+			name: 				new FormControl(undefined, [Validators.required, Validators.pattern(&quot;^([A-Za-z ,.&#x27;ñáéíóú]{2,20})$&quot;), Validators.minLength(2)]),
+			last_name1: 	new FormControl(undefined, [Validators.required, Validators.pattern(&quot;^([A-Za-z ,.&#x27;ñáéíóú]{2,20})$&quot;), Validators.minLength(2)]),
+			last_name2: 	new FormControl(undefined, [Validators.required, Validators.pattern(&quot;^([A-Za-z ,.&#x27;ñáéíóú]{2,20})$&quot;), Validators.minLength(2)]),
+			rut: 					new FormControl(undefined, [Validators.required, Validators.pattern(&#x27;^[.0-9]{6,11}\-?[kK0-9]{1}$&#x27;)]),
+			// phone: 				new FormControl(&#x27;&#x27;, [Validators.pattern(&#x27;^[0-9]{8}$&#x27;),  Validators.minLength(8), Validators.maxLength(8)]),
+			// TODO: Validar los géneros 
+			categories: 	new FormControl([], Validators.required),
+			email: 				new FormControl(undefined, [Validators.required, Validators.email, Validators.minLength(8)]),
+			password: 		new FormControl(undefined, Validators.required),
+			password2: 		new FormControl(undefined, Validators.required),
+			conditions: 	new FormControl(false, Validators.required),
+		}, { validators: this.areEquals( &#x27;password&#x27;, &#x27;password2&#x27;) });
+	}
+
+	// Verifica que ambas contraseñas ingresadas sean iguales
+	areEquals(input1:string, input2:string){
+		return (group: FormGroup) &#x3D;&gt; {
+			let pass1 &#x3D; group.controls[input1].value;
+			let pass2 &#x3D; group.controls[input2].value;
+
+			if( pass1 &#x3D;&#x3D;&#x3D; pass2 ){
+				return null;
+			}
+
+			return {
+				areEquals: true
+			}
+		}
+	}
+
+	// Guarda un usuario nuevo, en DB
+	saveUser(){
+
+		this.submit1 &#x3D; true;
+		this.submit2 &#x3D; true;
+		this.submit3 &#x3D; true;
+
+		if (this.form.valid) {
+			let form&#x3D;this.form.value;
+
+			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
+				.then( (resp:any) &#x3D;&gt; {
+
+					// FIXME: Esto hace que se seleccione un emoji aleatorio para la imagen del nuevo usuario.
+					let num &#x3D; Math.floor((Math.random() * 47) + 1);
+					let path_img &#x3D; &quot;../assets/images/emojis/emoji(&quot;+num+&quot;).png&quot;;
+					console.log(path_img);
+
+					// Guarda el form para validarlo
+					const USER:Users &#x3D; {
+						uid: 					resp.user.uid,
+						rut: 					form.rut,
+						name: 				form.name.toLowerCase(),
+						last_name1: 	form.last_name1.toLowerCase(),
+						last_name2: 	form.last_name2.toLowerCase(),
+						email: 				form.email.toLowerCase(),
+						categories:		this.selected_categories, 
+						// phone: 				form.phone,
+						firtSession:  false,
+						google:      	false,
+						status:				true,
+						role:					&#x27;normal&#x27;,
+						created_date: this._dateService.actual_date(),
+						img: 					path_img
+					};
+
+					if( !this.form.value.conditions ){
+						swal(&quot;Importante&quot;, &quot;Debe aceptar los términos y condiciones&quot;, &quot;warning&quot;);
+						return;
+					}
+
+					// Guarda al usuario en DB
+					this._dbService.addDataIdCustom(&#x27;users&#x27;, USER.uid, USER)
+						.then( () &#x3D;&gt; {
+							console.log(&quot;Se guardó el usuario&quot;);
+							swal(&#x27;Cuenta creada con éxito&#x27;, USER.email, &#x27;success&#x27;);
+							this.afAuth.auth.signOut();
+							this.router.navigate([ &#x27;/login&#x27; ]);
+
+							// Envía un correo de verificación al usuario que se acaba de registrar
+							var user &#x3D; firebase.auth().currentUser;
+							user.sendEmailVerification().then(function() {
+								console.log(&quot;Email de verificación enviado&quot;)
+							}).catch(function(error) {
+								console.log(&quot;No se ha podido enviar el email de verificación enviado&quot;)
+ 							});
+
+						})
+					.catch( (err) &#x3D;&gt; {
+						console.log(&quot;Error al guardar al usuario&quot;, err);
+						swal(&quot;Error&quot;, &quot;No se ha podido guardar el nuevo usuario&quot;, &quot;warning&quot;);
+					})
+				})
+				.catch( (err) &#x3D;&gt; console.error(&#x27;ERROR: Crear usuario en firebase&#x27;, err) );
+		}else{
+			swal(&quot;Error&quot;, &quot;Debe llenar todos los campos del formulario&quot;, &quot;warning&quot;);
+		}
+
+		
+	}
+
+	// FIXME: Revisar porque al parecer esto se está haciendo al revés
+	// Agrega una categoría al cuadro de categorías favoritas del usuario
+	addCategory(index:number){
+		this.selected_categories.push(this.categories[index]);
+		this.categories.splice(index, 1);				
+		// TODO: Ordenar por index
+	}
+
+	// FIXME: Revisar porque al parecer esto se está haciendo al revés
+	// Remueve una categoría del cuadro de categorías favoritas del usuario
+	removeCategory(index:number){
+		this.categories.push(this.selected_categories[index]);
+		this.selected_categories.splice(index, 1);				
+	}
+
+
+	nextPage(page:string){
+		let form &#x3D; this.form;
+		switch( page ) {
+			case &#x27;page_2&#x27;:
+				this.submit1 &#x3D; true;
+				if( form.controls[&#x27;name&#x27;].valid &amp;&amp; form.controls[&#x27;last_name1&#x27;].valid &amp;&amp; form.controls[&#x27;last_name2&#x27;].valid &amp;&amp; 	form.controls[&#x27;rut&#x27;].valid)
+					this.register_pages &#x3D; &#x27;page_2&#x27;;
+				break;
+			case &#x27;page_3&#x27;:
+				this.submit2 &#x3D; true;
+				if( this.selected_categories.length &gt;&#x3D; 3 )
+					this.register_pages &#x3D; &#x27;page_3&#x27;;
+				break;
+		}
+	}
+	// Cambia el fondo del register dependiendo de en qué etapa se encuentre
+	getBackground(page:string) { 
+		switch (page) {
+		  case &#x27;page_1&#x27;:
+				return &#x27;url(../../assets/images/background/book-5.jpg)&#x27;;
+		  case &#x27;page_2&#x27;:
+				return &#x27;url(../../assets/images/background/book-3.jpg)&#x27;;
+		  case &#x27;page_3&#x27;:
+				return &#x27;url(../../assets/images/background/book-1.jpg)&#x27;;
+		}
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section id&#x3D;&quot;wrapper&quot;&gt;
+	&lt;div class&#x3D;&quot;login-register&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;:getBackground(register_pages)}&quot; &gt;
+		&lt;div class&#x3D;&quot;login-box card&quot;&gt;
+			&lt;div class&#x3D;&quot;card-body&quot; &gt;
+				&lt;form class&#x3D;&quot;form-horizontal form-material&quot; novalidate&#x3D;&quot;novalidate&quot; action&#x3D;&quot;index.html&quot;
+						[formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;saveUser()&quot;&gt;
+
+					&lt;div [ngSwitch]&#x3D;&quot;register_pages&quot;&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;!-- PAGE 1													                      							--&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;div *ngSwitchCase&#x3D;&quot;&#x27;page_1&#x27;&quot;&gt;
+							&lt;h3 class&#x3D;&quot;box-title m-b-40&quot;&gt;Datos de perfil&lt;/h3&gt;
+							&lt;small&gt;Crea tu cuenta para ingresar&lt;/small&gt;
+
+							&lt;div class&#x3D;&quot;form-group m-t-20&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;input formControlName&#x3D;&quot;name&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nombre&quot;&gt;
+								&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;name&#x27;].errors?.required &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El nombre es requerido&lt;/p&gt;&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;name&#x27;].errors?.pattern  &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El nombre ingresado no es válido&lt;/p&gt;&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group m-t-10 row&quot;&gt;
+									&lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+										&lt;input formControlName&#x3D;&quot;last_name1&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Apellido paterno&quot;&gt;
+										&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;last_name1&#x27;].errors?.required &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El apellido es requerido&lt;/p&gt;&lt;/div&gt;
+										&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;last_name1&#x27;].errors?.pattern  &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El apellido ingresado no es válido&lt;/p&gt;&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+										&lt;input formControlName&#x3D;&quot;last_name2&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Apellido materno&quot;&gt;
+										&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;last_name2&#x27;].errors?.required &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El apellido es requerido&lt;/p&gt;&lt;/div&gt;
+										&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;last_name2&#x27;].errors?.pattern &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El apellido ingresado no es válido&lt;/p&gt;&lt;/div&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group m-t-20&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;input formControlName&#x3D;&quot;rut&quot; class&#x3D;&quot;form-control&quot;	type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;RUT&quot;&gt;
+								&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;rut&#x27;].errors?.required &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El RUT es requerido&lt;/p&gt;&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;rut&#x27;].errors?.pattern &amp;&amp; submit1&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El RUT ingresado no es válido&lt;/p&gt;&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;!-- &lt;div class&#x3D;&quot;form-group m-t-20&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;input formControlName&#x3D;&quot;phone&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Teléfono opcional&quot;&gt;
+								&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;phone&#x27;].errors?.pattern &amp;&amp; submit&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El teléfono ingresado no es válido&lt;/p&gt;&lt;/div&gt;
+							&lt;/div&gt; --&gt;
+
+							&lt;div class&#x3D;&quot;form-group text-center m-t-20&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;nextPage(&#x27;page_2&#x27;)&quot;
+													class&#x3D;&quot;btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light&quot;&gt;
+										Continuar
+									&lt;/button&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group m-b-0&quot;&gt;
+								&lt;div class&#x3D;&quot;col-sm-12 &quot;&gt;
+									&lt;button class&#x3D;&quot;btn btn-circle btn-info&quot; style&#x3D;&quot;margin-right: 80px;&quot; [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot;&gt;
+										&lt;i class&#x3D;&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt;
+									&lt;/button&gt;
+									&lt;p class&#x3D;&quot;text-center&quot; style&#x3D;&quot;display: contents;&quot;&gt;Ya tienes una cuenta?
+										&lt;a [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot; class&#x3D;&quot;text-info m-l-5&quot;&gt;
+											&lt;b&gt;Ingresar&lt;/b&gt;
+										&lt;/a&gt;
+									&lt;/p&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;!-- PAGE 2													                                      							--&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;div *ngSwitchCase&#x3D;&quot;&#x27;page_2&#x27;&quot;&gt;
+
+							&lt;h3 class&#x3D;&quot;box-title m-b-40&quot;&gt;Categorías de interés &lt;span&gt;(Min. 3)&lt;/span&gt;&lt;/h3&gt;
+							&lt;div class&#x3D;&quot;ms-container&quot; id&#x3D;&quot;ms-pre-selected-options&quot;&gt;
+								&lt;div class&#x3D;&quot;ms-selectable&quot;&gt;
+									&lt;select class&#x3D;&quot;ms-list contenedor&quot; multiple&#x3D;&#x27;multiple&#x27; formControlName&#x3D;&quot;categories&quot;&gt;
+										&lt;option [value]&#x3D;&#x27;c&#x27; class&#x3D;&quot;ms-elem-selectable&quot; 
+											*ngFor&#x3D;&quot;let c of categories; let i &#x3D; index;&quot;
+											(click)&#x3D;&quot;addCategory(i)&quot;&gt; {{ c.name }} &lt;/option&gt;
+									&lt;/select&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;ms-selection&quot;&gt;
+									&lt;select class&#x3D;&quot;ms-list contenedor&quot; multiple&#x3D;&#x27;multiple&#x27; formControlName&#x3D;&quot;categories&quot;&gt;
+										&lt;option [value]&#x3D;&#x27;sc&#x27; class&#x3D;&quot;ms-elem-selection&quot; 
+											*ngFor&#x3D;&quot;let sc of selected_categories; let i &#x3D; index;&quot;
+											(click)&#x3D;&quot;removeCategory(i)&quot;&gt; {{ sc.name }} &lt;/option&gt;
+									&lt;/select&gt;
+								&lt;/div&gt;								
+							&lt;/div&gt;
+							&lt;p *ngIf&#x3D;&quot;selected_categories.length &lt; 3 &amp;&amp; submit2&quot; class&#x3D;&quot;text-danger&quot;&gt;
+								Debe seleccionar al menos 3 categorias
+							&lt;/p&gt;
+
+							&lt;div class&#x3D;&quot;form-group text-center m-t-20&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;nextPage(&#x27;page_3&#x27;)&quot; 
+													class&#x3D;&quot;btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light&quot;&gt;
+										Continuar
+									&lt;/button&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group m-b-0&quot;&gt;
+								&lt;div class&#x3D;&quot;col-sm-12 &quot;&gt;
+									&lt;button class&#x3D;&quot;btn btn-circle btn-info&quot; style&#x3D;&quot;margin-right: 80px;&quot; (click)&#x3D;&quot;register_pages&#x3D;&#x27;page_1&#x27;&quot;&gt;
+										&lt;i class&#x3D;&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt;
+									&lt;/button&gt;
+									&lt;p class&#x3D;&quot;text-center&quot; style&#x3D;&quot;display: contents;&quot;&gt;Ya tienes una cuenta?
+										&lt;a [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot; class&#x3D;&quot;text-info m-l-5&quot;&gt;
+											&lt;b&gt;Ingresar&lt;/b&gt;
+										&lt;/a&gt;
+									&lt;/p&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;!-- PAGE 3																																							--&gt;
+						&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;div *ngSwitchCase&#x3D;&quot;&#x27;page_3&#x27;&quot;&gt;
+
+							&lt;h3 class&#x3D;&quot;box-title m-b-40&quot;&gt;Datos de la cuenta&lt;/h3&gt;
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;input formControlName&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Correo electrónico&quot;&gt;
+								&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;email&#x27;].errors?.required &amp;&amp; submit3&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El email es requerido&lt;/p&gt;&lt;/div&gt;
+								&lt;div *ngIf&#x3D;&quot;form.controls[&#x27;email&#x27;].errors?.email &amp;&amp; submit3&quot;&gt;&lt;p class&#x3D;&quot;text-danger&quot;&gt;El email ingresado no es válido&lt;/p&gt;&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group &quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;input formControlName&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Contraseña&quot;&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+									&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;input formControlName&#x3D;&quot;password2&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Confirme su contraseña&quot;&gt;
+									&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group&quot; *ngIf&#x3D;&quot;form[&#x27;errors&#x27;]?.areEquals &amp;&amp; !form.pristine &amp;&amp; submit3&quot;&gt;
+								&lt;p class&#x3D;&quot;text-danger&quot;&gt;	Las contraseñas deben ser iguales &lt;/p&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group row&quot;&gt;
+							 	&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+									&lt;div class&#x3D;&quot;checkbox checkbox-primary p-t-0&quot;&gt;
+									 	&lt;input 	formControlName&#x3D;&quot;conditions&quot; id&#x3D;&quot;checkbox-signup&quot; type&#x3D;&quot;checkbox&quot;&gt;
+										&lt;label for&#x3D;&quot;checkbox-signup&quot;&gt; Acepto los
+											&lt;!-- TODO: Revisar --&gt;
+											&lt;a style&#x3D;&quot;color:#398bf7;&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#conditionsOfUse&quot;&gt;Términos y Condiciones de Uso&lt;/a&gt;
+										&lt;/label&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group text-center m-t-20&quot;&gt;
+								&lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+									&lt;button class&#x3D;&quot;btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light&quot; 
+													type&#x3D;&quot;submit&quot;&gt;
+										Registrarme
+								&lt;/button&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group m-b-0&quot;&gt;
+								&lt;div class&#x3D;&quot;col-sm-12 &quot;&gt;
+									&lt;button class&#x3D;&quot;btn btn-circle btn-info&quot; style&#x3D;&quot;margin-right: 80px;&quot; (click)&#x3D;&quot;register_pages&#x3D;&#x27;page_2&#x27;&quot;&gt;
+										&lt;i class&#x3D;&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt;
+									&lt;/button&gt;
+									&lt;p class&#x3D;&quot;text-center&quot; style&#x3D;&quot;display: contents;&quot;&gt;Ya tienes una cuenta?
+										&lt;a [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot; class&#x3D;&quot;text-info m-l-5&quot;&gt;
+											&lt;b&gt;Ingresar&lt;/b&gt;
+										&lt;/a&gt;
+									&lt;/p&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/form&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Modal Terms and Use Conditions																																			--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div id&#x3D;&quot;conditionsOfUse&quot; class&#x3D;&quot;modal fade bs-example-modal-lg&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;myLargeModalLabel&quot;&gt; Términos y Condiciones de uso &lt;/h4&gt;
+				&lt;button _ngcontent-c0&#x3D;&quot;&quot; aria-label&#x3D;&quot;Close&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; type&#x3D;&quot;button&quot;&gt;
+					&lt;span _ngcontent-c0&#x3D;&quot;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;/span&gt;
+				&lt;/button&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+				&lt;p&gt;&lt;strong&gt;INFORMACIÓN RELEVANTE&lt;/strong&gt;&lt;/p&gt;
+				&lt;p&gt;
+					Es requisito necesario para la utilización de los servicios que presta este aplicativo web, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la recepción de notificaciones implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento.
+				&lt;/p&gt;
+				&lt;p&gt;
+					El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que lo desee. BOOKscalo.com no asume la responsabilidad en caso de que entregue dicha clave a terceros.
+				&lt;/p&gt;
+				&lt;p&gt;
+					Todos los acuerdos que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación por parte de los involucrados. En algunos casos puede que se requiera una verificación por medio de correo electrónico.
+				&lt;/p&gt;
+				&lt;p&gt;
+					Los precios de los libros y textos ofrecidos en este aplicativo web son de exclusiva responsabilidad del usuario que los publica, los cuales pueden modificarlos a su antojo.
+				&lt;/p&gt;
+				&lt;p&gt;
+					En ningún caso esta compañía será responsable de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales,fortuitos o consecuentes u otras pérdidas resultantes de las reuniones que se realicen entre usuarios con el objetivo de concretar las transacciones de libros o textos publicitados en el sitio web.
+				&lt;/p&gt;
+				&lt;p&gt;
+					El sitio web no está destinado al pago, transacciones monetarias, ni al envío de libros o textos a los usuarios finales. Toda transacción es exclusiva responsabilidad de los usuarios que realicen el establecimiento de transacción.
+				&lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;LICENCIA&lt;/strong&gt;&lt;/p&gt;
+				&lt;p&gt;
+					BOOKscalo a través de su sitio web concede una licencia para que los usuarios publiquen los libros y textos que desean ofertar en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+				&lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;PROPIEDAD&lt;/strong&gt;&lt;/p&gt;
+				&lt;p&gt;
+					Usted no puede declarar propiedad intelectual o exclusiva a ninguno de los libros o textos publicados, modificado o sin modificar. Todos los libros o textos son propiedad de los proveedores del contenido. En caso de que no se especifique lo contrario, los libros o textos se proporcionan sin ningún tipo de garantía, expresa o implícita.
+				&lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;COMPROBACIÓN ANTIFRAUDE&lt;/strong&gt;&lt;/p&gt;
+				&lt;p&gt;
+					La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+				&lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;PRIVACIDAD&lt;/strong&gt;&lt;/p&gt;
+				&lt;p&gt;
+					Este &lt;a href&#x3D;&quot;https://bookscalo.com&quot; target&#x3D;&quot;_blank&quot;&gt;sitio web&lt;/a&gt; BOOKscalo.com garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.
+				&lt;/p&gt;
+				&lt;p&gt;
+					La suscripción a boletines de correos electrónicos publicitarios es voluntaria y la suscripción a notificaciones también, las cuales podrá encontrar una vez ingrese al sitio web mediante sus credenciales, seleccionando la campana ubicada en la esquina inferior derecha.
+				&lt;/p&gt;
+				&lt;p&gt;
+					BOOKscalo reserva los derechos de cambiar o de modificar estos términos sin previo aviso, aunque para su seguridad, los cambios serán notificados mediante notificaciones del administrador.
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End modal Terms and Use Conditions																																	--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./register.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.login-register {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 160%;
+  width: 100%;
+  padding: 10% 0;
+  position: absolute; }
+
+.login-box {
+  width: 100%;
+  max-width: 580px; 
+  margin: 0 auto; }
+  .login-box .footer {
+    width: 100%;
+    left: 0px;
+    right: 0px; }
+  .login-box .social {
+    display: block;
+    margin-bottom: 30px; }
+
+#recoverform {
+  display: none; }
+
+.login-sidebar {
+  padding: 0px;
+  margin-top: 0px; }
+  .login-sidebar .login-box {
+    right: 0px;
+    position: absolute;
+    height: 100%; }
+
+.contenedor {
+  max-width: 220px !important;
+  min-width: 220px !important;
+}
+
+.ms-container {
+  width: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section id="wrapper">	<div class="login-register" [ngStyle]="{\'background-image\':getBackground(register_pages)}" >		<div class="login-box card">			<div class="card-body" >				<form class="form-horizontal form-material" novalidate="novalidate" action="index.html"						[formGroup]="form" (ngSubmit)="saveUser()">					<div [ngSwitch]="register_pages">						<!-- ================================================================== -->						<!-- PAGE 1													                      							-->						<!-- ================================================================== -->						<div *ngSwitchCase="\'page_1\'">							<h3 class="box-title m-b-40">Datos de perfil</h3>							<small>Crea tu cuenta para ingresar</small>							<div class="form-group m-t-20">								<div class="col-xs-12">									<input formControlName="name" class="form-control" type="text" placeholder="Nombre">								</div>								<div *ngIf="form.controls[\'name\'].errors?.required && submit1"><p class="text-danger">El nombre es requerido</p></div>								<div *ngIf="form.controls[\'name\'].errors?.pattern  && submit1"><p class="text-danger">El nombre ingresado no es válido</p></div>							</div>							<div class="form-group m-t-10 row">									<div class="col-md-6">										<input formControlName="last_name1" class="form-control" type="text" placeholder="Apellido paterno">										<div *ngIf="form.controls[\'last_name1\'].errors?.required && submit1"><p class="text-danger">El apellido es requerido</p></div>										<div *ngIf="form.controls[\'last_name1\'].errors?.pattern  && submit1"><p class="text-danger">El apellido ingresado no es válido</p></div>									</div>									<div class="col-md-6">										<input formControlName="last_name2" class="form-control" type="text" placeholder="Apellido materno">										<div *ngIf="form.controls[\'last_name2\'].errors?.required && submit1"><p class="text-danger">El apellido es requerido</p></div>										<div *ngIf="form.controls[\'last_name2\'].errors?.pattern && submit1"><p class="text-danger">El apellido ingresado no es válido</p></div>									</div>								</div>							<div class="form-group m-t-20">								<div class="col-xs-12">									<input formControlName="rut" class="form-control"	type="text" placeholder="RUT">								</div>								<div *ngIf="form.controls[\'rut\'].errors?.required && submit1"><p class="text-danger">El RUT es requerido</p></div>								<div *ngIf="form.controls[\'rut\'].errors?.pattern && submit1"><p class="text-danger">El RUT ingresado no es válido</p></div>							</div>							<!-- <div class="form-group m-t-20">								<div class="col-xs-12">									<input formControlName="phone" class="form-control" type="text" placeholder="Teléfono opcional">								</div>								<div *ngIf="form.controls[\'phone\'].errors?.pattern && submit"><p class="text-danger">El teléfono ingresado no es válido</p></div>							</div> -->							<div class="form-group text-center m-t-20">								<div class="col-xs-12">									<button type="button" (click)="nextPage(\'page_2\')"													class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">										Continuar									</button>								</div>							</div>							<div class="form-group m-b-0">								<div class="col-sm-12 ">									<button class="btn btn-circle btn-info" style="margin-right: 80px;" [routerLink]="[\'/login\']">										<i class="fa fa-arrow-left"></i>									</button>									<p class="text-center" style="display: contents;">Ya tienes una cuenta?										<a [routerLink]="[\'/login\']" class="text-info m-l-5">											<b>Ingresar</b>										</a>									</p>								</div>							</div>						</div>						<!-- ================================================================================== -->						<!-- PAGE 2													                                      							-->						<!-- ================================================================================== -->						<div *ngSwitchCase="\'page_2\'">							<h3 class="box-title m-b-40">Categorías de interés <span>(Min. 3)</span></h3>							<div class="ms-container" id="ms-pre-selected-options">								<div class="ms-selectable">									<select class="ms-list contenedor" multiple=\'multiple\' formControlName="categories">										<option [value]=\'c\' class="ms-elem-selectable" 											*ngFor="let c of categories; let i = index;"											(click)="addCategory(i)"> {{ c.name }} </option>									</select>								</div>								<div class="ms-selection">									<select class="ms-list contenedor" multiple=\'multiple\' formControlName="categories">										<option [value]=\'sc\' class="ms-elem-selection" 											*ngFor="let sc of selected_categories; let i = index;"											(click)="removeCategory(i)"> {{ sc.name }} </option>									</select>								</div>															</div>							<p *ngIf="selected_categories.length < 3 && submit2" class="text-danger">								Debe seleccionar al menos 3 categorias							</p>							<div class="form-group text-center m-t-20">								<div class="col-xs-12">									<button type="button" (click)="nextPage(\'page_3\')" 													class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">										Continuar									</button>								</div>							</div>							<div class="form-group m-b-0">								<div class="col-sm-12 ">									<button class="btn btn-circle btn-info" style="margin-right: 80px;" (click)="register_pages=\'page_1\'">										<i class="fa fa-arrow-left"></i>									</button>									<p class="text-center" style="display: contents;">Ya tienes una cuenta?										<a [routerLink]="[\'/login\']" class="text-info m-l-5">											<b>Ingresar</b>										</a>									</p>								</div>							</div>						</div>						<!-- ================================================================================== -->						<!-- PAGE 3																																							-->						<!-- ================================================================================== -->						<div *ngSwitchCase="\'page_3\'">							<h3 class="box-title m-b-40">Datos de la cuenta</h3>							<div class="form-group">								<div class="col-xs-12">									<input formControlName="email" class="form-control" type="text" placeholder="Correo electrónico">								</div>								<div *ngIf="form.controls[\'email\'].errors?.required && submit3"><p class="text-danger">El email es requerido</p></div>								<div *ngIf="form.controls[\'email\'].errors?.email && submit3"><p class="text-danger">El email ingresado no es válido</p></div>							</div>							<div class="form-group ">								<div class="col-xs-12">									<input formControlName="password" class="form-control" type="password" placeholder="Contraseña">								</div>							</div>							<div class="form-group">									<div class="col-xs-12">									<input formControlName="password2" class="form-control" type="password" placeholder="Confirme su contraseña">									</div>							</div>							<div class="form-group" *ngIf="form[\'errors\']?.areEquals && !form.pristine && submit3">								<p class="text-danger">	Las contraseñas deben ser iguales </p>							</div>							<div class="form-group row">							 	<div class="col-md-12">									<div class="checkbox checkbox-primary p-t-0">									 	<input 	formControlName="conditions" id="checkbox-signup" type="checkbox">										<label for="checkbox-signup"> Acepto los											<!-- TODO: Revisar -->											<a style="color:#398bf7;" data-toggle="modal" data-target="#conditionsOfUse">Términos y Condiciones de Uso</a>										</label>									</div>								</div>							</div>							<div class="form-group text-center m-t-20">								<div class="col-xs-12">									<button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" 													type="submit">										Registrarme								</button>								</div>							</div>							<div class="form-group m-b-0">								<div class="col-sm-12 ">									<button class="btn btn-circle btn-info" style="margin-right: 80px;" (click)="register_pages=\'page_2\'">										<i class="fa fa-arrow-left"></i>									</button>									<p class="text-center" style="display: contents;">Ya tienes una cuenta?										<a [routerLink]="[\'/login\']" class="text-info m-l-5">											<b>Ingresar</b>										</a>									</p>								</div>							</div>						</div>					</div>				</form>			</div>		</div>	</div></section><!-- ================================================================================================== --><!-- Modal Terms and Use Conditions																																			--><!-- ================================================================================================== --><div id="conditionsOfUse" class="modal fade bs-example-modal-lg">	<div class="modal-dialog modal-lg">		<div class="modal-content">			<div class="modal-header">				<h4 class="modal-title" id="myLargeModalLabel"> Términos y Condiciones de uso </h4>				<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">					<span _ngcontent-c0="" aria-hidden="true">×</span>				</button>			</div>			<div class="modal-body">				<p><strong>INFORMACIÓN RELEVANTE</strong></p>				<p>					Es requisito necesario para la utilización de los servicios que presta este aplicativo web, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la recepción de notificaciones implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento.				</p>				<p>					El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que lo desee. BOOKscalo.com no asume la responsabilidad en caso de que entregue dicha clave a terceros.				</p>				<p>					Todos los acuerdos que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación por parte de los involucrados. En algunos casos puede que se requiera una verificación por medio de correo electrónico.				</p>				<p>					Los precios de los libros y textos ofrecidos en este aplicativo web son de exclusiva responsabilidad del usuario que los publica, los cuales pueden modificarlos a su antojo.				</p>				<p>					En ningún caso esta compañía será responsable de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales,fortuitos o consecuentes u otras pérdidas resultantes de las reuniones que se realicen entre usuarios con el objetivo de concretar las transacciones de libros o textos publicitados en el sitio web.				</p>				<p>					El sitio web no está destinado al pago, transacciones monetarias, ni al envío de libros o textos a los usuarios finales. Toda transacción es exclusiva responsabilidad de los usuarios que realicen el establecimiento de transacción.				</p>				<p><strong>LICENCIA</strong></p>				<p>					BOOKscalo a través de su sitio web concede una licencia para que los usuarios publiquen los libros y textos que desean ofertar en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.				</p>				<p><strong>PROPIEDAD</strong></p>				<p>					Usted no puede declarar propiedad intelectual o exclusiva a ninguno de los libros o textos publicados, modificado o sin modificar. Todos los libros o textos son propiedad de los proveedores del contenido. En caso de que no se especifique lo contrario, los libros o textos se proporcionan sin ningún tipo de garantía, expresa o implícita.				</p>				<p><strong>COMPROBACIÓN ANTIFRAUDE</strong></p>				<p>					La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.				</p>				<p><strong>PRIVACIDAD</strong></p>				<p>					Este <a href="https://bookscalo.com" target="_blank">sitio web</a> BOOKscalo.com garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.				</p>				<p>					La suscripción a boletines de correos electrónicos publicitarios es voluntaria y la suscripción a notificaciones también, las cuales podrá encontrar una vez ingrese al sitio web mediante sus credenciales, seleccionando la campana ubicada en la esquina inferior derecha.				</p>				<p>					BOOKscalo reserva los derechos de cambiar o de modificar estos términos sin previo aviso, aunque para su seguridad, los cambios serán notificados mediante notificaciones del administrador.				</p>			</div>		</div>	</div></div><!-- ================================================================================================== --><!-- End modal Terms and Use Conditions																																	--><!-- ================================================================================================== --></div>'
+    var COMPONENTS = [{'name': 'AddBookComponent', 'selector': 'app-add-book'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardBookComponent', 'selector': 'app-card-book'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'GlobalMessageComponent', 'selector': 'app-global-message'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LibraryComponent', 'selector': 'app-library'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageAdminComponent', 'selector': 'app-message-admin'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OneBookComponent', 'selector': 'app-one-book'},{'name': 'PageforbiddenComponent', 'selector': 'app-pageforbidden'},{'name': 'PagenotfoundComponent', 'selector': 'app-pagenotfound'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RegisterComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegisterComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

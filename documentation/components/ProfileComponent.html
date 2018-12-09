@@ -1,0 +1,1699 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BOOKscalo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">BOOKscalo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/profile/profile.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-profile</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#count_book">count_book</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#p_selected">p_selected</a>
+                            </li>
+                            <li>
+                                <a href="#preferences">preferences</a>
+                            </li>
+                            <li>
+                                <a href="#preferences_modal">preferences_modal</a>
+                            </li>
+                            <li>
+                                <a href="#profile">profile</a>
+                            </li>
+                            <li>
+                                <a href="#profile_options">profile_options</a>
+                            </li>
+                            <li>
+                                <a href="#uid">uid</a>
+                            </li>
+                            <li>
+                                <a href="#urlImgs">urlImgs</a>
+                            </li>
+                            <li>
+                                <a href="#user_profile">user_profile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addPreference">addPreference</a>
+                            </li>
+                            <li>
+                                <a href="#deleteAccount">deleteAccount</a>
+                            </li>
+                            <li>
+                                <a href="#deletePreference">deletePreference</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#resetUser">resetUser</a>
+                            </li>
+                            <li>
+                                <a href="#updateProfile">updateProfile</a>
+                            </li>
+                            <li>
+                                <a href="#uploadFile">uploadFile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_dbService: <a href="../injectables/DatabaseService.html">DatabaseService</a>, auth: AngularFireAuth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, acRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/profile/profile.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_dbService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>acRoute</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addPreference"></a>
+                        <span class="name">
+                            <b>
+                            addPreference
+                            </b>
+                            <a href="#addPreference"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addPreference()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/pages/profile/profile.component.ts:96</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteAccount"></a>
+                        <span class="name">
+                            <b>
+                            deleteAccount
+                            </b>
+                            <a href="#deleteAccount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deleteAccount()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/app/pages/profile/profile.component.ts:124</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deletePreference"></a>
+                        <span class="name">
+                            <b>
+                            deletePreference
+                            </b>
+                            <a href="#deletePreference"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deletePreference(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">src/app/pages/profile/profile.component.ts:171</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/pages/profile/profile.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resetUser"></a>
+                        <span class="name">
+                            <b>
+                            resetUser
+                            </b>
+                            <a href="#resetUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>resetUser()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="231" class="link-to-prism">src/app/pages/profile/profile.component.ts:231</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateProfile"></a>
+                        <span class="name">
+                            <b>
+                            updateProfile
+                            </b>
+                            <a href="#updateProfile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>updateProfile()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/pages/profile/profile.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadFile"></a>
+                        <span class="name">
+                            <b>
+                            uploadFile
+                            </b>
+                            <a href="#uploadFile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>uploadFile(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">src/app/pages/profile/profile.component.ts:183</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="count_book"></a>
+                        <span class="name">
+                            <b>
+                            count_book
+                            </b>
+                            <a href="#count_book"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>count_book:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/profile/profile.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/profile/profile.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="p_selected"></a>
+                        <span class="name">
+                            <b>
+                            p_selected
+                            </b>
+                            <a href="#p_selected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>p_selected:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/profile/profile.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preferences"></a>
+                        <span class="name">
+                            <b>
+                            preferences
+                            </b>
+                            <a href="#preferences"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>preferences:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/profile/profile.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preferences_modal"></a>
+                        <span class="name">
+                            <b>
+                            preferences_modal
+                            </b>
+                            <a href="#preferences_modal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>preferences_modal:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/profile/profile.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="profile"></a>
+                        <span class="name">
+                            <b>
+                            profile
+                            </b>
+                            <a href="#profile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>profile:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/profile/profile.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="profile_options"></a>
+                        <span class="name">
+                            <b>
+                            profile_options
+                            </b>
+                            <a href="#profile_options"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>profile_options:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/profile/profile.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uid"></a>
+                        <span class="name">
+                            <b>
+                            uid
+                            </b>
+                            <a href="#uid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>uid:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/profile/profile.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="urlImgs"></a>
+                        <span class="name">
+                            <b>
+                            urlImgs
+                            </b>
+                            <a href="#urlImgs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>urlImgs:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/profile/profile.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user_profile"></a>
+                        <span class="name">
+                            <b>
+                            user_profile
+                            </b>
+                            <a href="#user_profile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>user_profile:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/profile/profile.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+
+// SERVICE
+import { DatabaseService } from &quot;../../services/database.service&quot;;
+
+// ANGULARFIRE2
+import * as firebase from &#x27;firebase&#x27;;
+import { AngularFireAuth } from &#x27;angularfire2/auth&#x27;;
+
+@Component({
+  selector: &#x27;app-profile&#x27;,
+  templateUrl: &#x27;./profile.component.html&#x27;
+})
+export class ProfileComponent implements OnInit {
+	
+	form:FormGroup;
+	profile_options:string; // Controla las opciones en Mi Perfil
+	profile:any;  
+	user_profile: any;
+	uid:string; // uid usuario actual
+	count_book:any; // Contador de libros del usuario actual
+	preferences_modal:any;
+	preferences:any; // Todas las preferencais 
+	p_selected:any; // Preferencias seleccionadas
+	urlImgs:string; // Guarda la ruta de la imagen para guardar en DB
+
+
+	constructor( private _dbService:DatabaseService, 
+							 private auth:AngularFireAuth,
+							 private router: Router,
+							 private acRoute:ActivatedRoute ) {
+
+		this.acRoute.params.subscribe( params &#x3D;&gt; {
+			const input:string &#x3D; params[&#x27;input&#x27;];
+			
+			if( input &#x3D;&#x3D;&#x3D; &#x27;preferences&#x27; ) this.profile_options &#x3D; &#x27;preference_profile&#x27;;
+			else this.profile_options &#x3D; &#x27;my_profile&#x27;;
+	
+			this.preferences_modal &#x3D; {
+				hour: &#x27;&#x27;,
+				day: &#x27;&#x27;,
+				subway_station: &#x27;&#x27;
+			};
+	
+			let actual_user &#x3D; JSON.parse( localStorage.getItem( &quot;user&quot; ) );
+				
+			this._dbService.getDataQuery( &quot;users&quot;, &quot;uid&quot;, &quot;&#x3D;&#x3D;&quot;, actual_user.uid )
+				.snapshotChanges()
+				.pipe(
+					map(actions &#x3D;&gt; actions.map(a &#x3D;&gt; {
+						const data &#x3D; a.payload.doc.data();
+						const key &#x3D; a.payload.doc.id;
+						return { key, ...data };
+					}))
+				).subscribe( data &#x3D;&gt; {
+					this.profile &#x3D; data[0];
+					this.preferences &#x3D;  this.profile.preferences;
+				});
+	
+			this._dbService.getDataQuery(&quot;books&quot;, &quot;uid&quot;, &quot;&#x3D;&#x3D;&quot;, actual_user.uid)
+				.valueChanges()
+				.subscribe( data &#x3D;&gt; this.count_book &#x3D; data.length );
+		});
+	}
+
+  ngOnInit() {
+  	this.resetUser();
+
+		this.form &#x3D; new FormGroup({
+			subway_station: new FormControl(undefined, Validators.required),
+			day: 						new FormControl(undefined, Validators.required),
+			hour: 					new FormControl(undefined, Validators.required)
+		});
+
+		this.uid &#x3D; JSON.parse(localStorage.getItem(&#x27;user&#x27;)).uid;
+	}
+	
+	// Actualiza los datos de perfil del usuario en la DB
+	updateProfile(){
+		this.profile.img &#x3D; this.urlImgs;
+
+		this._dbService.updateData( &quot;users&quot;, this.profile.key, this.profile )
+			.then( () &#x3D;&gt; {
+				swal(&#x27;Cambios guardados&#x27;, &#x27;Sus cambios han sidos guardados con éxito&#x27;, &#x27;success&#x27;);
+			})
+			.catch( () &#x3D;&gt; {
+				swal(&#x27;Error al editar&#x27;, &#x27;Por favor, vuelva a intentarlo&#x27;, &#x27;error&#x27;);
+			});
+	}
+
+	// TODO: Falta revisar si la nueva preferencia ya existe.
+	// Agrega la nueva preferencia a la DB 
+	addPreference(){
+		if ( this.form.invalid ) {
+			swal(
+				&#x27;Debe completar el formulario&#x27;, 
+				&#x27;Debe ingresar todos los campos de este formulario&#x27;,
+				&#x27;warning&#x27;
+			);
+			return;
+		}
+
+		let pref:any &#x3D; this.form.value; // Asigna la nueva preferencia a la variable a actualizar
+
+		if(this.profile.preferences &#x3D;&#x3D;&#x3D; undefined ){
+			this.profile.preferences &#x3D; [pref];
+		}else {
+			this.profile.preferences.push(pref);
+		}
+
+		this._dbService.updateData( &quot;users&quot;, this.profile.key, this.profile )
+			.then( () &#x3D;&gt; {
+				swal(&#x27;Preferencia agregada&#x27;, &#x27;Su preferencia ha sido agregada con éxito&#x27;, &#x27;success&#x27;);
+			})
+			.catch( () &#x3D;&gt; {
+				swal(&#x27;Error al agregar su preferencia&#x27;, &#x27;Por favor, vuelva a intentarlo&#x27;, &#x27;error&#x27;);
+			});
+	}
+ 
+	// Invalida la cuenta del usuario, no la borra, solo le cambia el estado
+	deleteAccount(){
+		this.profile.status &#x3D; false;
+		swal({
+			title: &quot;Está seguro que desea eliminar su cuenta?&quot;,
+			text: &quot;Si luego desea volver a restaurar su cuenta, debe enviar un correo a JavieraOrmeno.L@gmail.com&quot;,
+			icon: &quot;warning&quot;,
+			buttons: [&#x27;Cancelar&#x27;, &#x27;Confirmar&#x27;],
+			dangerMode: true,
+		})
+		.then((willDelete) &#x3D;&gt; {
+			if (willDelete) {
+				this.profile.status &#x3D; false;
+
+				this._dbService.updateData( &quot;users&quot;, this.profile.key, this.profile )
+					.then( () &#x3D;&gt; {
+						this._dbService.getDataQuery(&#x27;books&#x27;, &#x27;uid&#x27;, &#x27;&#x3D;&#x3D;&#x27;, this.profile.uid)
+							.snapshotChanges()
+							.pipe(
+								map( actions &#x3D;&gt; actions.map( a &#x3D;&gt; {
+									const data &#x3D; a.payload.doc.data();
+										const key &#x3D; a.payload.doc.id;
+										return { key, ...data };
+								}))
+							)
+							.subscribe( books &#x3D;&gt; {
+								for(let book of books) {
+									book.status &#x3D; &#x27;removed&#x27;;
+									this._dbService.updateData(&#x27;books&#x27;, book.key, book);
+								}
+
+								swal(&quot;Su cuenta ha sido eliminada con éxito&quot;, {
+									icon: &quot;success&quot;,
+								})
+								.then( () &#x3D;&gt; this.auth.auth.signOut() )
+								.then( () &#x3D;&gt; this.router.navigate([&#x27;/login&#x27;]));
+							});
+					})
+					.catch( () &#x3D;&gt; {
+						swal(&#x27;Error al eliminar su cuenta&#x27;, &#x27;Por favor, vuelva a intentarlo&#x27;, &#x27;error&#x27;);
+					});
+				} else {
+					swal(&quot;Su cuenta sigue activa&quot;, &#x27;error&#x27;);
+				}
+		});
+	}
+
+	// Elimina la preferencia seleccionada del usuario
+	deletePreference(index:number){
+		this.profile.preferences.splice(index, 1);
+		this._dbService.updateData( &quot;users&quot;, this.profile.key, this.profile )
+			.then( () &#x3D;&gt; {
+				swal(&#x27;Preferencia eliminada&#x27;, &#x27;La preferencia seleccionada ha sido eliminada con éxito&#x27;, &#x27;success&#x27;);
+			})
+			.catch( () &#x3D;&gt; {
+				swal(&#x27;Error al eliminar&#x27;, &#x27;Por favor, vuelva a intentarlo&#x27;, &#x27;error&#x27;);
+			});
+	}
+
+	// Carga las imagenes al storage de Firebase
+	uploadFile(event) {
+		let file &#x3D; event.target.files;
+		let url:string; // guarda las imagenes correctas para luego subirlas
+		let aux &#x3D; false; // para que no se cargen imagenes si existe aunque sea 1 mala
+
+		const separatedFile &#x3D; file[0].name.split(&#x27;.&#x27;);
+		const extension &#x3D; separatedFile[separatedFile.length - 1];
+				
+		const typeValid &#x3D; [&#x27;jpg&#x27;, &#x27;jpeg&#x27;, &#x27;png&#x27;];
+
+		// Valida las extensiones de las imagenes
+		if( typeValid.indexOf( extension ) &lt;&#x3D; -1){
+			swal(
+				&#x27;Error al ingresar imagen&#x27;,
+				&#x27;Extensiones válidas (png, jpg, jpeg), vuelva a intentarlo&#x27;,
+				&#x27;error&#x27;
+			);
+			aux &#x3D; true;
+			return;
+		}
+
+		if( !aux ){
+			const storageRef &#x3D; firebase.storage().ref();
+			let filePath &#x3D; this.uid; 
+					 
+			const uploadTask:firebase.storage.UploadTask &#x3D; 
+			storageRef.child(&#x60;profile_img/${ filePath }&#x60;)
+			.put(file[0])
+			
+			uploadTask.on(&#x27;state_changed&#x27;, 
+				() &#x3D;&gt; {}, // Manejo de carga
+				(error) &#x3D;&gt; { // Manejo de errores
+					console.log(&#x27;Error al cargar imagen&#x27; ,error);
+			  	swal(&#x27;Error al cargar imagenes&#x27;, &#x27;Por favor, vueva a intentarlo&#x27;, &#x27;error&#x27;);
+				}, 
+				() &#x3D;&gt; { // Éxito
+				  uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) &#x3D;&gt; {
+					url &#x3D; downloadURL;
+					console.log(&quot;Imagenes cargadas&quot;);
+					swal(&#x27;Éxito&#x27;, &#x27;Imagenes cargadas con exito&#x27;, &#x27;success&#x27;);
+					this.urlImgs &#x3D; url;
+		  		});
+				}
+			);
+		}
+	}
+
+	// Deja los campos de usuario en blanco
+	resetUser(){
+		this.profile &#x3D; {
+			uid: 					&#x27;&#x27;, 
+			rut: 					&#x27;&#x27;, 
+			name: 				&#x27;&#x27;, 
+			last_name1: 	&#x27;&#x27;, 
+			last_name2: 	&#x27;&#x27;, 
+			email: 				[], 
+			phone: 				&#x27;&#x27;, 
+			categories:		[], 
+			commune: 			&#x27;&#x27;,
+			status:				true,
+			img: 					&#x27;&#x27;
+		};
+	}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+	&lt;div class&#x3D;&quot;row card&quot;&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;!-- Profile options																					--&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;ul class&#x3D;&quot;nav nav-tabs customtab&quot; role&#x3D;&quot;tablist&quot;&gt;
+			&lt;li class&#x3D;&quot;nav-item&quot;&gt;
+				&lt;a 	class&#x3D;&quot;nav-link&quot; data-toggle&#x3D;&quot;tab&quot; role&#x3D;&quot;tab&quot; aria-expanded&#x3D;&quot;true&quot;
+					[ngClass]&#x3D;&quot;{&#x27;active&#x27;: profile_options &#x3D;&#x3D;&#x3D; &#x27;my_profile&#x27;}&quot;
+					(click)&#x3D;&quot;profile_options &#x3D; &#x27;my_profile&#x27;&quot;&gt;
+					&lt;span class&#x3D;&quot;hidden-xs-down&quot;&gt;Mi perfil&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class&#x3D;&quot;nav-item&quot;&gt;
+				&lt;a 	class&#x3D;&quot;nav-link&quot; data-toggle&#x3D;&quot;tab&quot; role&#x3D;&quot;tab&quot; aria-expanded&#x3D;&quot;true&quot;
+					[ngClass]&#x3D;&quot;{&#x27;active&#x27;: profile_options &#x3D;&#x3D;&#x3D; &#x27;edit_profile&#x27;}&quot;
+					(click)&#x3D;&quot;profile_options &#x3D; &#x27;edit_profile&#x27;&quot;&gt;
+					&lt;span class&#x3D;&quot;hidden-xs-down&quot;&gt;Editar perfil&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class&#x3D;&quot;nav-item&quot;&gt;
+				&lt;a 	class&#x3D;&quot;nav-link&quot; data-toggle&#x3D;&quot;tab&quot; role&#x3D;&quot;tab&quot; aria-expanded&#x3D;&quot;true&quot;
+					[ngClass]&#x3D;&quot;{&#x27;active&#x27;: profile_options &#x3D;&#x3D;&#x3D; &#x27;preference_profile&#x27;}&quot;
+					(click)&#x3D;&quot;profile_options &#x3D; &#x27;preference_profile&#x27;&quot;&gt;
+					&lt;span class&#x3D;&quot;hidden-xs-down&quot;&gt;Preferencias de entrega&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class&#x3D;&quot;nav-item&quot;&gt;
+				&lt;a 	class&#x3D;&quot;nav-link&quot; data-toggle&#x3D;&quot;tab&quot; role&#x3D;&quot;tab&quot; aria-expanded&#x3D;&quot;true&quot;
+					[ngClass]&#x3D;&quot;{&#x27;active&#x27;: profile_options &#x3D;&#x3D;&#x3D; &#x27;delete_profile&#x27;}&quot;
+					(click)&#x3D;&quot;profile_options &#x3D; &#x27;delete_profile&#x27;&quot;&gt;
+					&lt;span class&#x3D;&quot;hidden-xs-down&quot;&gt;Eliminar cuenta&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;!-- End profile options																																										--&gt;
+		&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+
+		&lt;div [ngSwitch]&#x3D;&quot;profile_options&quot;&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- Show profile																																										--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;div *ngSwitchCase&#x3D;&quot;&#x27;my_profile&#x27;&quot;&gt;
+				&lt;div class&#x3D;&quot;col-12&quot;&gt;
+					&lt;div class&#x3D;&quot;card&quot;&gt;
+						&lt;div class&#x3D;&quot;card-body row&quot;&gt;
+							&lt;div class&#x3D;&quot;col-md-6&quot; align&#x3D;&quot;center&quot;&gt;
+								&lt;img [src]&#x3D;&quot;profile.img&quot; class&#x3D;&quot;img-circle&quot; width&#x3D;&quot;300&quot; /&gt;
+								&lt;h4 class&#x3D;&quot;card-title&quot;&gt;
+									{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} &lt;/h4&gt;
+								&lt;div class&#x3D;&quot;row text-center justify-content-md-center&quot;&gt;
+									&lt;div class&#x3D;&quot;col-4&quot;&gt;
+										&lt;a href&#x3D;&quot;javascript:void(0)&quot; class&#x3D;&quot;link&quot;&gt;
+											&lt;i class&#x3D;&quot;fa fa-book&quot;&gt;&lt;/i&gt;
+											&lt;font class&#x3D;&quot;font-medium&quot;&gt; {{ count_book }}&lt;/font&gt;
+										&lt;/a&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+								&lt;small class&#x3D;&quot;text-muted&quot;&gt;Correo electrónico&lt;/small&gt;
+								&lt;h6&gt;{{ profile.email }}&lt;/h6&gt;
+								&lt;small class&#x3D;&quot;text-muted p-t-30 db&quot;&gt;Teléfono de contacto&lt;/small&gt;
+								&lt;h6&gt;{{ profile.phone }}&lt;/h6&gt;
+								&lt;small class&#x3D;&quot;text-muted p-t-30 db&quot;&gt;Usuario creado el&lt;/small&gt;
+								&lt;h6&gt;{{ profile.created_date }}&lt;/h6&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook --&gt;
+						&lt;div class&#x3D;&quot;card-body&quot;&gt;
+							&lt;small class&#x3D;&quot;text-muted&quot;&gt;Categorías favoritas:&lt;/small&gt;
+							&lt;ul&gt;
+								&lt;li&gt;
+									&lt;h6 *ngFor&#x3D;&quot;let c of profile.categories&quot;&gt;{{ c }}&lt;/h6&gt;
+								&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/div&gt;
+
+						&lt;div class&#x3D;&quot;card-body&quot;&gt;
+							&lt;div class&#x3D;&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+							&lt;small class&#x3D;&quot;text-muted p-t-30 db&quot;&gt;Redes sociales&lt;/small&gt;&lt;br/&gt;
+							&lt;button class&#x3D;&quot;btn btn-circle btn-secondary&quot; style&#x3D;&quot;margin-left: 15px;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+							&lt;button class&#x3D;&quot;btn btn-circle btn-secondary&quot; style&#x3D;&quot;margin-left: 15px;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+							&lt;button class&#x3D;&quot;btn btn-circle btn-secondary&quot; style&#x3D;&quot;margin-left: 15px;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-youtube&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- End show profile																																								--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- Edit profile																																										--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;div *ngSwitchCase&#x3D;&quot;&#x27;edit_profile&#x27;&quot;&gt;
+				&lt;div style&#x3D;&quot;background-color: #FFFFFF;&quot; class&#x3D;&quot;tab-pane active&quot; role&#x3D;&quot;tabpanel&quot; aria-expanded&#x3D;&quot;true&quot;&gt;
+					&lt;div class&#x3D;&quot;card-body&quot;&gt;
+						&lt;form class&#x3D;&quot;form-horizontal form-material&quot;&gt;
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;label class&#x3D;&quot;col-md-12&quot;&gt;Nombres&lt;/label&gt;
+								&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+									&lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;profile.name&quot; name&#x3D;&quot;name&quot; class&#x3D;&quot;form-control form-control-line&quot;&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;label class&#x3D;&quot;col-md-12&quot;&gt;Apellido Paterno&lt;/label&gt;
+								&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+									&lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;profile.last_name1&quot; name&#x3D;&quot;last_name1&quot; class&#x3D;&quot;form-control form-control-line&quot;&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;label class&#x3D;&quot;col-md-12&quot;&gt;Apellido Materno&lt;/label&gt;
+								&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+									&lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;profile.last_name2&quot; name&#x3D;&quot;last_name2&quot; class&#x3D;&quot;form-control form-control-line&quot;&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;label for&#x3D;&quot;example-email&quot; class&#x3D;&quot;col-md-12&quot;&gt;Correo electrónico&lt;/label&gt;
+								&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+									&lt;input type&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;profile.email&quot; name&#x3D;&quot;email&quot; class&#x3D;&quot;form-control form-control-line&quot;&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;label class&#x3D;&quot;col-md-12&quot;&gt;Teléfono de contacto&lt;/label&gt;
+								&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+									&lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;profile.phone&quot; name&#x3D;&quot;phone&quot; class&#x3D;&quot;form-control form-control-line&quot;&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							
+							&lt;div class&#x3D;&quot;form-group col-md-12&quot;&gt;
+								&lt;input type&#x3D;&quot;file&quot; (change)&#x3D;&quot;uploadFile($event)&quot; id&#x3D;&quot;file&quot;&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group&quot;&gt;
+								&lt;div class&#x3D;&quot;col-sm-12&quot;&gt;
+									&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-info btn-block&quot; (click)&#x3D;&quot;updateProfile()&quot;&gt;Editar&lt;/button&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							
+						&lt;/form&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- End edit profile																																								--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- User preferences																																								--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;div *ngSwitchCase&#x3D;&quot;&#x27;preference_profile&#x27;&quot;&gt;
+				&lt;div style&#x3D;&quot;background-color: #FFFFFF;&quot; class&#x3D;&quot;tab-pane active&quot; id&#x3D;&quot;settings&quot; role&#x3D;&quot;tabpanel&quot; aria-expanded&#x3D;&quot;true&quot;&gt;
+					&lt;div class&#x3D;&quot;card-body&quot;&gt;
+						&lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+							&lt;table class&#x3D;&quot;table color-table info-table&quot;&gt;
+								&lt;thead&gt;
+									&lt;tr&gt;
+										&lt;th&gt;Estación de metro&lt;/th&gt;
+										&lt;th&gt;Día&lt;/th&gt;
+										&lt;th&gt;Horario&lt;/th&gt;
+										&lt;th class&#x3D;&quot;text-nowrap&quot;&gt;Acción&lt;/th&gt;
+									&lt;/tr&gt;
+								&lt;/thead&gt;
+								&lt;tbody&gt;
+									&lt;tr *ngFor&#x3D;&quot;let p of preferences; let i &#x3D; index;&quot;&gt;
+										&lt;td&gt; {{ p.subway_station }} &lt;/td&gt;
+										&lt;td&gt; {{ p.day }} &lt;/td&gt;
+										&lt;td&gt; {{ p.hour }} &lt;/td&gt;
+										&lt;td class&#x3D;&quot;text-nowrap&quot;&gt;
+											&lt;!-- TODO: Falta hacer que esto funcione --&gt;
+											&lt;a data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#editPreferences&quot; (click)&#x3D;&quot;preferences_modal &#x3D; p&quot;&gt;
+												&lt;i class&#x3D;&quot;fa fa-pencil text-inverse m-r-10&quot;&gt;&lt;/i&gt;
+											&lt;/a&gt;
+											&lt;a data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#deletePreferences&quot; (click)&#x3D;&quot;deletePreference(i)&quot;&gt;
+												&lt;i class&#x3D;&quot;fa fa-close text-danger&quot;&gt;&lt;/i&gt;
+											&lt;/a&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/tbody&gt;
+							&lt;/table&gt;
+						&lt;/div&gt;
+						&lt;button type&#x3D;&quot;button&quot;
+								class&#x3D;&quot;btn btn-outline-info&quot;
+								data-toggle&#x3D;&quot;modal&quot;
+								data-target&#x3D;&quot;#addPreferences&quot;&gt;Agregar nueva preferencia&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- End user preferences																																						--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- Delete user account																																						--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;div *ngSwitchCase&#x3D;&quot;&#x27;delete_profile&#x27;&quot;&gt;
+				&lt;div style&#x3D;&quot;background-color: #FFFFFF;&quot; class&#x3D;&quot;tab-pane active&quot; id&#x3D;&quot;settings&quot; role&#x3D;&quot;tabpanel&quot; aria-expanded&#x3D;&quot;true&quot;&gt;
+					&lt;div class&#x3D;&quot;card-body&quot;&gt;
+						&lt;p&gt;Estás por eliminar tu cuenta de BOOKscalo. Tus datos, tu perfil público y las publicaciones que realizaste ya no podrán ser vistas por ti, ni por ningún otro usuario.
+						&lt;/p&gt;
+						&lt;p&gt;Además debes considerar:&lt;/p&gt;
+						&lt;ul&gt;
+							&lt;li type&#x3D;&quot;circle&quot;&gt;Si solo quieres cambiar tus datos, no es necesario que desactives tu cuenta; modifícala en &quot;Editar perfil&quot;.&lt;/li&gt;
+							&lt;li type&#x3D;&quot;circle&quot;&gt;Si solo quieres eliminar o editar una o todas tus publicaciones, no es necesario que desactives tu cuenta; elimínalos o edítalos en &quot;Mi Biblioteca&quot;.&lt;/li&gt;
+							&lt;li type&#x3D;&quot;circle&quot;&gt;No podrás crear otra cuenta con el mismo correo con que iniciaste esta cuenta.&lt;/li&gt;
+						&lt;/ul&gt;
+						&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn waves-effect waves-light btn-block btn-danger&quot; (click)&#x3D;&quot;deleteAccount()&quot;&gt;
+							&lt;i class&#x3D;&quot;fa fa-warning&quot;&gt;&lt;/i&gt; Eliminar cuenta&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- End delete user account																																				--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Modal add preferences										                                      										--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div id&#x3D;&quot;addPreferences&quot; class&#x3D;&quot;modal fade bs-example-modal-lg&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;myLargeModalLabel&quot;&gt; Agregar nueva preferencia de transacción &lt;/h4&gt;
+				&lt;button _ngcontent-c0&#x3D;&quot;&quot; aria-label&#x3D;&quot;Close&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; type&#x3D;&quot;button&quot;&gt;
+					&lt;span _ngcontent-c0&#x3D;&quot;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;/span&gt;
+				&lt;/button&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+				&lt;form class&#x3D;&quot;form-material m-t-40&quot; [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;addPreference()&quot;&gt;
+					&lt;div class&#x3D;&quot;row&quot;&gt;
+						&lt;!-- Inicio col 1 --&gt;
+						&lt;div class&#x3D;&quot;form-group col-12&quot;&gt;
+							&lt;label&gt;Estación de metro&lt;/label&gt;
+							&lt;select formControlName&#x3D;&quot;subway_station&quot; id&#x3D;&quot;subway_station&quot; class&#x3D;&quot;form-control&quot;&gt;
+								&lt;optgroup label&#x3D;&quot;Línea 1&quot;&gt;
+									&lt;option value&#x3D;&quot;República&quot;&gt;República&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Los Héroes&quot;&gt;Los Héroes&lt;/option&gt;
+									&lt;option value&#x3D;&quot;La Moneda&quot;&gt;La Moneda&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Universidad de Chile&quot;&gt;Universidad de Chile&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Santa Lucía&quot;&gt;Santa Lucía&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Universidad Católica&quot;&gt;Universidad Católica&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Baquedano&quot;&gt;Baquedano&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Salvador&quot;&gt;Salvador&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Manuel Montt&quot;&gt;Manuel Montt&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Pedro de Valdivia&quot;&gt;Pedro de Valdivia&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Los Leones&quot;&gt;Los Leones&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Tobalaba&quot;&gt;Tobalaba&lt;/option&gt;
+								&lt;/optgroup&gt;
+								&lt;optgroup label&#x3D;&quot;Línea 5&quot;&gt;
+									&lt;option value&#x3D;&quot;Quinta Normal&quot;&gt;Quinta Normal&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Cumming&quot;&gt;Cumming&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Santa Ana&quot;&gt;Santa Ana&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Plaza de Armas&quot;&gt;Plaza de Armas&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Bellas Artes&quot;&gt;Bellas Artes&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Baquedano&quot;&gt;Baquedano&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Parque Bustamante&quot;&gt;Parque Bustamante&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Santa Isabel&quot;&gt;Santa Isabel&lt;/option&gt;
+								&lt;/optgroup&gt;
+							&lt;/select&gt;
+						&lt;/div&gt;
+							&lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+							&lt;label&gt;Tipo de elemento&lt;/label&gt;
+							&lt;select formControlName&#x3D;&quot;day&quot; id&#x3D;&quot;day&quot; class&#x3D;&quot;form-control&quot;&gt;
+								&lt;option value&#x3D;&quot;Lunes&quot;&gt;Lunes&lt;/option&gt;
+								&lt;option value&#x3D;&quot;Martes&quot;&gt;Martes&lt;/option&gt;
+								&lt;option value&#x3D;&quot;Miércoles&quot;&gt;Miércoles&lt;/option&gt;
+								&lt;option value&#x3D;&quot;Jueves&quot;&gt;Jueves&lt;/option&gt;
+								&lt;option value&#x3D;&quot;Viernes&quot;&gt;Viernes&lt;/option&gt;
+								&lt;option value&#x3D;&quot;Sábado&quot;&gt;Sábado&lt;/option&gt;
+								&lt;option value&#x3D;&quot;Domingo&quot;&gt;Domingo&lt;/option&gt;
+							&lt;/select&gt;
+						&lt;/div&gt;
+
+						&lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+							&lt;label&gt;Hora&lt;/label&gt;
+							&lt;input formControlName&#x3D;&quot;hour&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;time&quot; value&#x3D;&quot;12:00&quot; id&#x3D;&quot;hour&quot;&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/form&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-info&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;addPreference()&quot;&gt;Agregar&lt;/button&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger waves-effect text-left&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cerrar&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End modal add preferences																																					--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Modal edit preferences																																							--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div id&#x3D;&quot;editPreferences&quot; class&#x3D;&quot;modal fade bs-example-modal-lg&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+				&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+					&lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;myLargeModalLabel&quot;&gt; Editar preferencia de transacción &lt;/h4&gt;
+					&lt;button _ngcontent-c0&#x3D;&quot;&quot; aria-label&#x3D;&quot;Close&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; type&#x3D;&quot;button&quot;&gt;
+						&lt;span _ngcontent-c0&#x3D;&quot;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;/span&gt;
+					&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+					&lt;form class&#x3D;&quot;form-material m-t-40&quot; &gt;
+						&lt;div class&#x3D;&quot;row&quot;&gt;
+							&lt;!-- Inicio col 1 --&gt;
+							&lt;div class&#x3D;&quot;form-group col-12&quot;&gt;
+								&lt;label&gt;Estación de metro&lt;/label&gt;
+								&lt;select name&#x3D;&quot;subway_station&quot; [(ngModel)]&#x3D;&quot;preferences_modal.subway_station&quot; class&#x3D;&quot;form-control&quot;&gt;
+									&lt;optgroup label&#x3D;&quot;Línea 1&quot;&gt;
+										&lt;option value&#x3D;&quot;República&quot;&gt;República&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Los Héroes&quot;&gt;Los Héroes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;La Moneda&quot;&gt;La Moneda&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Universidad de Chile&quot;&gt;Universidad de Chile&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Santa Lucía&quot;&gt;Santa Lucía&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Universidad Católica&quot;&gt;Universidad Católica&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Baquedano&quot;&gt;Baquedano&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Salvador&quot;&gt;Salvador&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Manuel Montt&quot;&gt;Manuel Montt&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Pedro de Valdivia&quot;&gt;Pedro de Valdivia&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Los Leones&quot;&gt;Los Leones&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Tobalaba&quot;&gt;Tobalaba&lt;/option&gt;
+									&lt;/optgroup&gt;
+									&lt;optgroup label&#x3D;&quot;Línea 5&quot;&gt;
+										&lt;option value&#x3D;&quot;Quinta Normal&quot;&gt;Quinta Normal&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Cumming&quot;&gt;Cumming&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Santa Ana&quot;&gt;Santa Ana&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Plaza de Armas&quot;&gt;Plaza de Armas&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Bellas Artes&quot;&gt;Bellas Artes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Baquedano&quot;&gt;Baquedano&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Parque Bustamante&quot;&gt;Parque Bustamante&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Santa Isabel&quot;&gt;Santa Isabel&lt;/option&gt;
+									&lt;/optgroup&gt;
+								&lt;/select&gt;
+							&lt;/div&gt;
+								&lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+								&lt;label&gt;Tipo de elemento&lt;/label&gt;
+								&lt;select name&#x3D;&quot;day&quot; [(ngModel)]&#x3D;&quot;preferences_modal.day&quot;  class&#x3D;&quot;form-control&quot;&gt;
+									&lt;option value&#x3D;&quot;Lunes&quot;&gt;Lunes&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Martes&quot;&gt;Martes&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Miércoles&quot;&gt;Miércoles&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Jueves&quot;&gt;Jueves&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Viernes&quot;&gt;Viernes&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Sábado&quot;&gt;Sábado&lt;/option&gt;
+									&lt;option value&#x3D;&quot;Domingo&quot;&gt;Domingo&lt;/option&gt;
+								&lt;/select&gt;
+							&lt;/div&gt;
+
+							&lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+								&lt;label&gt;Hora&lt;/label&gt;
+								&lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;hour&quot; [(ngModel)]&#x3D;&quot;preferences_modal.hour&quot; class&#x3D;&quot;form-control form-control-line&quot; type&#x3D;&quot;time&quot; value&#x3D;&quot;12:00&quot; id&#x3D;&quot;hour&quot;&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+					&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-info&quot; (click)&#x3D;&quot;updateProfile()&quot;&gt;Editar&lt;/button&gt;
+					&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger waves-effect text-left&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Cerrar&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End modal edit preferences																																					--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">	<div class="row card">		<!-- ================================================================================================== -->		<!-- Profile options																					-->		<!-- ================================================================================================== -->		<ul class="nav nav-tabs customtab" role="tablist">			<li class="nav-item">				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"					[ngClass]="{\'active\': profile_options === \'my_profile\'}"					(click)="profile_options = \'my_profile\'">					<span class="hidden-xs-down">Mi perfil</span>				</a>			</li>			<li class="nav-item">				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"					[ngClass]="{\'active\': profile_options === \'edit_profile\'}"					(click)="profile_options = \'edit_profile\'">					<span class="hidden-xs-down">Editar perfil</span>				</a>			</li>			<li class="nav-item">				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"					[ngClass]="{\'active\': profile_options === \'preference_profile\'}"					(click)="profile_options = \'preference_profile\'">					<span class="hidden-xs-down">Preferencias de entrega</span>				</a>			</li>			<li class="nav-item">				<a 	class="nav-link" data-toggle="tab" role="tab" aria-expanded="true"					[ngClass]="{\'active\': profile_options === \'delete_profile\'}"					(click)="profile_options = \'delete_profile\'">					<span class="hidden-xs-down">Eliminar cuenta</span>				</a>			</li>		</ul>		<!-- ================================================================================================== -->		<!-- End profile options																																										-->		<!-- ================================================================================================== -->		<div [ngSwitch]="profile_options">			<!-- ============================================================================================== -->			<!-- Show profile																																										-->			<!-- ============================================================================================== -->			<div *ngSwitchCase="\'my_profile\'">				<div class="col-12">					<div class="card">						<div class="card-body row">							<div class="col-md-6" align="center">								<img [src]="profile.img" class="img-circle" width="300" />								<h4 class="card-title">									{{ profile.name | titlecase }} {{ profile.last_name1 | titlecase }} {{ profile.last_name2 | titlecase }} </h4>								<div class="row text-center justify-content-md-center">									<div class="col-4">										<a href="javascript:void(0)" class="link">											<i class="fa fa-book"></i>											<font class="font-medium"> {{ count_book }}</font>										</a>									</div>								</div>							</div>							<div class="col-md-6">								<small class="text-muted">Correo electrónico</small>								<h6>{{ profile.email }}</h6>								<small class="text-muted p-t-30 db">Teléfono de contacto</small>								<h6>{{ profile.phone }}</h6>								<small class="text-muted p-t-30 db">Usuario creado el</small>								<h6>{{ profile.created_date }}</h6>							</div>						</div>						<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->						<div class="card-body">							<small class="text-muted">Categorías favoritas:</small>							<ul>								<li>									<h6 *ngFor="let c of profile.categories">{{ c }}</h6>								</li>							</ul>						</div>						<div class="card-body">							<div class="dropdown-divider"></div>							<small class="text-muted p-t-30 db">Redes sociales</small><br/>							<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-facebook"></i></button>							<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-twitter"></i></button>							<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-youtube"></i></button>						</div>					</div>				</div>			</div>			<!-- ============================================================================================== -->			<!-- End show profile																																								-->			<!-- ============================================================================================== -->			<!-- ============================================================================================== -->			<!-- Edit profile																																										-->			<!-- ============================================================================================== -->			<div *ngSwitchCase="\'edit_profile\'">				<div style="background-color: #FFFFFF;" class="tab-pane active" role="tabpanel" aria-expanded="true">					<div class="card-body">						<form class="form-horizontal form-material">							<div class="form-group">								<label class="col-md-12">Nombres</label>								<div class="col-md-12">									<input type="text" [(ngModel)]="profile.name" name="name" class="form-control form-control-line">								</div>							</div>							<div class="form-group">								<label class="col-md-12">Apellido Paterno</label>								<div class="col-md-12">									<input type="text" [(ngModel)]="profile.last_name1" name="last_name1" class="form-control form-control-line">								</div>							</div>							<div class="form-group">								<label class="col-md-12">Apellido Materno</label>								<div class="col-md-12">									<input type="text" [(ngModel)]="profile.last_name2" name="last_name2" class="form-control form-control-line">								</div>							</div>							<div class="form-group">								<label for="example-email" class="col-md-12">Correo electrónico</label>								<div class="col-md-12">									<input type="email" [(ngModel)]="profile.email" name="email" class="form-control form-control-line">								</div>							</div>							<div class="form-group">								<label class="col-md-12">Teléfono de contacto</label>								<div class="col-md-12">									<input type="text" [(ngModel)]="profile.phone" name="phone" class="form-control form-control-line">								</div>							</div>														<div class="form-group col-md-12">								<input type="file" (change)="uploadFile($event)" id="file">							</div>							<div class="form-group">								<div class="col-sm-12">									<button type="button" class="btn btn-outline-info btn-block" (click)="updateProfile()">Editar</button>								</div>							</div>													</form>					</div>				</div>			</div>			<!-- ============================================================================================== -->			<!-- End edit profile																																								-->			<!-- ============================================================================================== -->			<!-- ============================================================================================== -->			<!-- User preferences																																								-->			<!-- ============================================================================================== -->			<div *ngSwitchCase="\'preference_profile\'">				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">					<div class="card-body">						<div class="table-responsive">							<table class="table color-table info-table">								<thead>									<tr>										<th>Estación de metro</th>										<th>Día</th>										<th>Horario</th>										<th class="text-nowrap">Acción</th>									</tr>								</thead>								<tbody>									<tr *ngFor="let p of preferences; let i = index;">										<td> {{ p.subway_station }} </td>										<td> {{ p.day }} </td>										<td> {{ p.hour }} </td>										<td class="text-nowrap">											<!-- TODO: Falta hacer que esto funcione -->											<a data-toggle="modal" data-target="#editPreferences" (click)="preferences_modal = p">												<i class="fa fa-pencil text-inverse m-r-10"></i>											</a>											<a data-toggle="modal" data-target="#deletePreferences" (click)="deletePreference(i)">												<i class="fa fa-close text-danger"></i>											</a>										</td>									</tr>								</tbody>							</table>						</div>						<button type="button"								class="btn btn-outline-info"								data-toggle="modal"								data-target="#addPreferences">Agregar nueva preferencia</button>					</div>				</div>			</div>			<!-- ============================================================================================== -->			<!-- End user preferences																																						-->			<!-- ============================================================================================== -->			<!-- ============================================================================================== -->			<!-- Delete user account																																						-->			<!-- ============================================================================================== -->			<div *ngSwitchCase="\'delete_profile\'">				<div style="background-color: #FFFFFF;" class="tab-pane active" id="settings" role="tabpanel" aria-expanded="true">					<div class="card-body">						<p>Estás por eliminar tu cuenta de BOOKscalo. Tus datos, tu perfil público y las publicaciones que realizaste ya no podrán ser vistas por ti, ni por ningún otro usuario.						</p>						<p>Además debes considerar:</p>						<ul>							<li type="circle">Si solo quieres cambiar tus datos, no es necesario que desactives tu cuenta; modifícala en "Editar perfil".</li>							<li type="circle">Si solo quieres eliminar o editar una o todas tus publicaciones, no es necesario que desactives tu cuenta; elimínalos o edítalos en "Mi Biblioteca".</li>							<li type="circle">No podrás crear otra cuenta con el mismo correo con que iniciaste esta cuenta.</li>						</ul>						<button type="button" class="btn waves-effect waves-light btn-block btn-danger" (click)="deleteAccount()">							<i class="fa fa-warning"></i> Eliminar cuenta</button>					</div>				</div>			</div>			<!-- ============================================================================================== -->			<!-- End delete user account																																				-->			<!-- ============================================================================================== -->		</div>	</div></div><!-- ================================================================================================== --><!-- Modal add preferences										                                      										--><!-- ================================================================================================== --><div id="addPreferences" class="modal fade bs-example-modal-lg">	<div class="modal-dialog modal-lg">		<div class="modal-content">			<div class="modal-header">				<h4 class="modal-title" id="myLargeModalLabel"> Agregar nueva preferencia de transacción </h4>				<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">					<span _ngcontent-c0="" aria-hidden="true">×</span>				</button>			</div>			<div class="modal-body">				<form class="form-material m-t-40" [formGroup]="form" (ngSubmit)="addPreference()">					<div class="row">						<!-- Inicio col 1 -->						<div class="form-group col-12">							<label>Estación de metro</label>							<select formControlName="subway_station" id="subway_station" class="form-control">								<optgroup label="Línea 1">									<option value="República">República</option>									<option value="Los Héroes">Los Héroes</option>									<option value="La Moneda">La Moneda</option>									<option value="Universidad de Chile">Universidad de Chile</option>									<option value="Santa Lucía">Santa Lucía</option>									<option value="Universidad Católica">Universidad Católica</option>									<option value="Baquedano">Baquedano</option>									<option value="Salvador">Salvador</option>									<option value="Manuel Montt">Manuel Montt</option>									<option value="Pedro de Valdivia">Pedro de Valdivia</option>									<option value="Los Leones">Los Leones</option>									<option value="Tobalaba">Tobalaba</option>								</optgroup>								<optgroup label="Línea 5">									<option value="Quinta Normal">Quinta Normal</option>									<option value="Cumming">Cumming</option>									<option value="Santa Ana">Santa Ana</option>									<option value="Plaza de Armas">Plaza de Armas</option>									<option value="Bellas Artes">Bellas Artes</option>									<option value="Baquedano">Baquedano</option>									<option value="Parque Bustamante">Parque Bustamante</option>									<option value="Santa Isabel">Santa Isabel</option>								</optgroup>							</select>						</div>							<div class="form-group col-md-6">							<label>Tipo de elemento</label>							<select formControlName="day" id="day" class="form-control">								<option value="Lunes">Lunes</option>								<option value="Martes">Martes</option>								<option value="Miércoles">Miércoles</option>								<option value="Jueves">Jueves</option>								<option value="Viernes">Viernes</option>								<option value="Sábado">Sábado</option>								<option value="Domingo">Domingo</option>							</select>						</div>						<div class="form-group col-md-6">							<label>Hora</label>							<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">						</div>					</div>				</form>			</div>			<div class="modal-footer">				<button type="button" class="btn btn-outline-info" data-dismiss="modal" (click)="addPreference()">Agregar</button>				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Cerrar</button>			</div>		</div>	</div></div><!-- ================================================================================================== --><!-- End modal add preferences																																					--><!-- ================================================================================================== --><!-- ================================================================================================== --><!-- Modal edit preferences																																							--><!-- ================================================================================================== --><div id="editPreferences" class="modal fade bs-example-modal-lg">		<div class="modal-dialog modal-lg">			<div class="modal-content">				<div class="modal-header">					<h4 class="modal-title" id="myLargeModalLabel"> Editar preferencia de transacción </h4>					<button _ngcontent-c0="" aria-label="Close" class="close" data-dismiss="modal" type="button">						<span _ngcontent-c0="" aria-hidden="true">×</span>					</button>				</div>				<div class="modal-body">					<form class="form-material m-t-40" >						<div class="row">							<!-- Inicio col 1 -->							<div class="form-group col-12">								<label>Estación de metro</label>								<select name="subway_station" [(ngModel)]="preferences_modal.subway_station" class="form-control">									<optgroup label="Línea 1">										<option value="República">República</option>										<option value="Los Héroes">Los Héroes</option>										<option value="La Moneda">La Moneda</option>										<option value="Universidad de Chile">Universidad de Chile</option>										<option value="Santa Lucía">Santa Lucía</option>										<option value="Universidad Católica">Universidad Católica</option>										<option value="Baquedano">Baquedano</option>										<option value="Salvador">Salvador</option>										<option value="Manuel Montt">Manuel Montt</option>										<option value="Pedro de Valdivia">Pedro de Valdivia</option>										<option value="Los Leones">Los Leones</option>										<option value="Tobalaba">Tobalaba</option>									</optgroup>									<optgroup label="Línea 5">										<option value="Quinta Normal">Quinta Normal</option>										<option value="Cumming">Cumming</option>										<option value="Santa Ana">Santa Ana</option>										<option value="Plaza de Armas">Plaza de Armas</option>										<option value="Bellas Artes">Bellas Artes</option>										<option value="Baquedano">Baquedano</option>										<option value="Parque Bustamante">Parque Bustamante</option>										<option value="Santa Isabel">Santa Isabel</option>									</optgroup>								</select>							</div>								<div class="form-group col-md-6">								<label>Tipo de elemento</label>								<select name="day" [(ngModel)]="preferences_modal.day"  class="form-control">									<option value="Lunes">Lunes</option>									<option value="Martes">Martes</option>									<option value="Miércoles">Miércoles</option>									<option value="Jueves">Jueves</option>									<option value="Viernes">Viernes</option>									<option value="Sábado">Sábado</option>									<option value="Domingo">Domingo</option>								</select>							</div>							<div class="form-group col-md-6">								<label>Hora</label>								<input type="email" name="hour" [(ngModel)]="preferences_modal.hour" class="form-control form-control-line" type="time" value="12:00" id="hour">							</div>						</div>					</form>				</div>				<div class="modal-footer">					<button type="button" class="btn btn-outline-info" (click)="updateProfile()">Editar</button>					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Cerrar</button>				</div>			</div>		</div>	</div><!-- ================================================================================================== --><!-- End modal edit preferences																																					--><!-- ================================================================================================== --></div>'
+    var COMPONENTS = [{'name': 'AddBookComponent', 'selector': 'app-add-book'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardBookComponent', 'selector': 'app-card-book'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'GlobalMessageComponent', 'selector': 'app-global-message'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LibraryComponent', 'selector': 'app-library'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageAdminComponent', 'selector': 'app-message-admin'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OneBookComponent', 'selector': 'app-one-book'},{'name': 'PageforbiddenComponent', 'selector': 'app-pageforbidden'},{'name': 'PagenotfoundComponent', 'selector': 'app-pagenotfound'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProfileComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

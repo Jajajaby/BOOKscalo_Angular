@@ -1,0 +1,1464 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BOOKscalo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">BOOKscalo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CardBookComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/card-book/card-book.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-card-book</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./card-book.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actual_user">actual_user</a>
+                            </li>
+                            <li>
+                                <a href="#book_modal">book_modal</a>
+                            </li>
+                            <li>
+                                <a href="#books">books</a>
+                            </li>
+                            <li>
+                                <a href="#count_book">count_book</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#today">today</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openBook">openBook</a>
+                            </li>
+                            <li>
+                                <a href="#reportImage">reportImage</a>
+                            </li>
+                            <li>
+                                <a href="#reportUser">reportUser</a>
+                            </li>
+                            <li>
+                                <a href="#sendMessage">sendMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#booksHome">booksHome</a>
+                            </li>
+                            <li>
+                                <a href="#type">type</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_date: <a href="../injectables/DateService.html">DateService</a>, _dbService: <a href="../injectables/DatabaseService.html">DatabaseService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/card-book/card-book.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_date</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DateService.html" target="_self" >DateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_dbService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="booksHome"></a>
+                        <code>booksHome</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code>any[]</code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/card-book/card-book.component.ts:21</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="type"></a>
+                        <code>type</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/card-book/card-book.component.ts:20</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/card-book/card-book.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openBook"></a>
+                        <span class="name">
+                            <b>
+                            openBook
+                            </b>
+                            <a href="#openBook"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openBook(book: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="172" class="link-to-prism">src/app/components/card-book/card-book.component.ts:172</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>book</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reportImage"></a>
+                        <span class="name">
+                            <b>
+                            reportImage
+                            </b>
+                            <a href="#reportImage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reportImage(book_m: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="153" class="link-to-prism">src/app/components/card-book/card-book.component.ts:153</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>book_m</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reportUser"></a>
+                        <span class="name">
+                            <b>
+                            reportUser
+                            </b>
+                            <a href="#reportUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reportUser(book_m: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/app/components/card-book/card-book.component.ts:134</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>book_m</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sendMessage"></a>
+                        <span class="name">
+                            <b>
+                            sendMessage
+                            </b>
+                            <a href="#sendMessage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>sendMessage()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/components/card-book/card-book.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actual_user"></a>
+                        <span class="name">
+                            <b>
+                            actual_user
+                            </b>
+                            <a href="#actual_user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>actual_user:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/card-book/card-book.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="book_modal"></a>
+                        <span class="name">
+                            <b>
+                            book_modal
+                            </b>
+                            <a href="#book_modal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>book_modal:     <code><a href="../interfaces/Books.html" target="_self" >Books</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Books.html" target="_self" >Books</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+		author: 			&#x27;&#x27;, 
+		title: 				&#x27;&#x27;, 
+		editorial: 		&#x27;&#x27;, 
+		type: 				&#x27;&#x27;, 
+		categories: 	[], 
+		language: 		&#x27;&#x27;, 
+		num_page: 		0,
+		original: 		false, 
+		transaction:	&#x27;&#x27;, 	
+		user: 				&#x27;&#x27;, 
+		id: 					&#x27;&#x27;, 
+		comment: 			&#x27;&#x27;, 
+		price: 				0, 
+		images: 			[],
+		date: 				&#x27;&#x27;
+	}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/card-book/card-book.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="books"></a>
+                        <span class="name">
+                            <b>
+                            books
+                            </b>
+                            <a href="#books"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>books:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/card-book/card-book.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="count_book"></a>
+                        <span class="name">
+                            <b>
+                            count_book
+                            </b>
+                            <a href="#count_book"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>count_book:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/card-book/card-book.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/card-book/card-book.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading
+                            </b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loading:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/card-book/card-book.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="today"></a>
+                        <span class="name">
+                            <b>
+                            today
+                            </b>
+                            <a href="#today"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>today:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/card-book/card-book.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+
+// INTERFACE
+import { Books, Message, Users, Report } from &#x27;../../interface/books.interface&#x27;;
+
+// SERVICIOS
+import { DatabaseService } from &#x27;../../services/database.service&#x27;;
+import { DateService } from &#x27;../../services/date.service&#x27;;
+
+import swal from &#x27;sweetalert&#x27;;
+
+@Component({
+  selector: &#x27;app-card-book&#x27;,
+  templateUrl: &#x27;./card-book.component.html&#x27;
+})
+export class CardBookComponent implements OnInit {
+
+	// Input desde el Home, traen el elemento a mostrar
+	@Input() type:string; 
+	@Input() booksHome:any[]; 
+
+	books:any[]; // array con los books a mostrar
+	loading:boolean &#x3D; true; // muestra y esconde un loading
+	form:any; 
+	actual_user:any;
+	today:any;
+	count_book:number &#x3D; 0;
+
+	book_modal: Books &#x3D; {
+		author: 			&#x27;&#x27;, 
+		title: 				&#x27;&#x27;, 
+		editorial: 		&#x27;&#x27;, 
+		type: 				&#x27;&#x27;, 
+		categories: 	[], 
+		language: 		&#x27;&#x27;, 
+		num_page: 		0,
+		original: 		false, 
+		transaction:	&#x27;&#x27;, 	
+		user: 				&#x27;&#x27;, 
+		id: 					&#x27;&#x27;, 
+		comment: 			&#x27;&#x27;, 
+		price: 				0, 
+		images: 			[],
+		date: 				&#x27;&#x27;
+	};
+
+
+
+	constructor(	private _date:DateService,
+								private _dbService:DatabaseService) {
+		this.actual_user &#x3D; JSON.parse(localStorage.getItem(&#x27;user&#x27;));
+	}
+
+	ngOnInit() {
+		setTimeout( () &#x3D;&gt; { 
+			if( this.type &#x3D;&#x3D;&#x3D; &#x27;all&#x27; ){
+				this.loading &#x3D; false;
+				this.books &#x3D; this.booksHome;
+			}else {
+				let aux &#x3D; [];
+
+				for(let book of this.booksHome){
+					if( book.transaction &#x3D;&#x3D;&#x3D;  this.type ) aux.push(book);
+				}
+				this.loading &#x3D; false;
+				this.books &#x3D; aux;
+			}
+		}, 2000);
+
+		this.form &#x3D; 				new FormGroup({
+			text: 						new FormControl([], Validators.required),
+			transaction: 			new FormControl(undefined, Validators.required),
+			pref: 						new FormControl(undefined, Validators.required),
+			station: 					new FormControl(undefined),
+			hour: 						new FormControl(undefined),
+			day: 							new FormControl(undefined),
+			new_price:				new FormControl(0),
+			new_text:					new FormControl([], Validators.required),
+		})
+
+	 }
+
+	// Envía el mensaje desde el usuario actual hacia el usuario dueño del libro
+	sendMessage(){
+		let predet_Message:Message &#x3D; {
+			transaction:								this.form.value.transaction,
+			pref: 											this.form.value.pref,
+			text:									[{ 
+				[this.actual_user.uid]: 	this.form.value.text, 
+				date: 										this._date.actual_date()
+			}],
+			date:												this._date.actual_date(),
+			book:												this.book_modal,
+			user_owner:									this.book_modal.user.uid,
+			uid_interested:							this.actual_user,
+			status:											false,
+			price:											this.book_modal.price
+		}
+
+		if(predet_Message.pref &#x3D;&#x3D;&#x3D; null ){
+			return swal(&#x27;Error al enviar un mensaje&#x27;, &#x27;Debe completar todos los campos&#x27;, &#x27;error&#x27;);
+		}
+	
+
+		if ( this.form.value.transaction &#x3D;&#x3D; undefined || this.form.value.transaction &#x3D;&#x3D;&#x3D; null){
+			predet_Message.transaction &#x3D; this.book_modal.transaction;
+		}
+
+		if ( this.form.value.pref &#x3D;&#x3D;&#x3D; &#x27;dislike_preferences&#x27; ){
+			let new_preferences &#x3D; this.form.value.station + &#x27; - &#x27; + this.form.value.day + &#x27; - &#x27; + this.form.value.hour;
+			predet_Message.pref &#x3D; new_preferences;
+		}
+
+		if ( this.form.value.text &#x3D;&#x3D;&#x3D; &#x27;dislike-price&#x27; ){
+			predet_Message.price &#x3D; this.form.value.price;
+		}
+
+		if ( this.form.value.text &#x3D;&#x3D;&#x3D; &#x27;new_text&#x27; ){
+			predet_Message.text &#x3D; [{
+				[this.actual_user.uid]: this.form.value.new_text,
+				date:										this._date.actual_date()
+			}
+			];
+		}
+
+		// Envía el mensaje a la DB.
+		this._dbService.addData(&#x27;messages-transaction&#x27;, predet_Message)
+			.then( () &#x3D;&gt; swal(&#x27;Mensaje enviado&#x27;, &#x27;Su mensaje ha sido enviado con éxito&#x27;, &#x27;success&#x27;) )
+			.catch( () &#x3D;&gt; swal(&#x27;Error&#x27;, &#x27;Su mensaje no ha podido enviarse, vuelva a intentarlo&#x27;, &#x27;error&#x27;) );
+	}
+	
+	// Envía el mensaje de reporte del usuario al admin
+	reportUser( book_m:any ){
+
+		let report:Report &#x3D; {
+			id: 						this.actual_user.uid + &quot;-&quot; + new Date().valueOf(),
+			day: 						this._date.actual_day(),
+			hour: 					this._date.actual_hour(),
+			user: 					this.actual_user,
+			user_reported: 	book_m.user,
+			type: 					&quot;Reporte de usuario&quot;,
+			status:					&quot;No revisado&quot;
+		}
+		console.log(report);	
+		// Envía el mensaje a la DB.
+		this._dbService.addData(&#x27;reports&#x27;, report)
+			.then( () &#x3D;&gt; swal(&#x27;Reporte enviado&#x27;, &#x27;Muchas gracias por reportar, lo revisaremos en seguida&#x27;, &#x27;success&#x27;) )
+			.catch( () &#x3D;&gt; swal(&#x27;Error&#x27;, &#x27;Su reporte no ha podido enviarse&#x27;, &#x27;error&#x27;) );
+	}
+
+	// Envía el mensaje de reporte de imagen al admin
+	reportImage( book_m:any ){
+
+		let report:Report &#x3D; {
+			id: 					this.actual_user.uid + &quot;-&quot; + new Date().valueOf(),
+			day: 					this._date.actual_day(),
+			hour: 				this._date.actual_hour(),
+			user: 				this.actual_user,
+			img: 					book_m.images,
+			type: 				&quot;Reporte de imagen&quot;,
+			status: 			&quot;No revisado&quot;
+		}
+		console.log(report);	
+		// Envía el mensaje a la DB.
+		this._dbService.addData(&#x27;reports&#x27;, report)
+			.then( () &#x3D;&gt; swal(&#x27;Reporte enviado&#x27;, &#x27;Muchas gracias por reportar, lo revisaremos en seguida&#x27;, &#x27;success&#x27;) )
+			.catch( () &#x3D;&gt; swal(&#x27;Error&#x27;, &#x27;Su reporte no ha podido enviarse&#x27;, &#x27;error&#x27;) );
+	}
+
+
+	openBook( book:any ) {
+		this.book_modal &#x3D; book;
+
+		this._dbService.getDataQuery(&quot;books&quot;, &quot;uid&quot;, &quot;&#x3D;&#x3D;&quot;, book.uid)
+			.valueChanges()
+			.subscribe( data &#x3D;&gt; this.count_book &#x3D; data.length );
+	}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Loader 																																				--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;loader-contenedor&quot;&gt;
+	&lt;app-loading&gt;&lt;/app-loading&gt;
+	&lt;p&gt; Buscando libros... &lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End loader 																																		--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Card book 																																			--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div *ngIf&#x3D;&quot;!loading&quot; class&#x3D;&quot;card-columns&quot;&gt;
+				&lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;max-width:18rem;&quot; *ngFor&#x3D;&quot;let book of books; let index &#x3D; index;&quot;&gt;
+					&lt;!-- CARROUSEL BOOK IMAGES --&gt;
+					&lt;div id&#x3D;&quot;carouselExampleFade-{{index}}&quot; class&#x3D;&quot;carousel slide carousel-fade&quot; data-ride&#x3D;&quot;carousel&quot;&gt;
+						&lt;div class&#x3D;&quot;carousel-inner&quot;&gt;
+							&lt;div class&#x3D;&quot;carousel-item&quot; *ngFor&#x3D;&quot;let img of book.images; let i&#x3D;index;&quot; [ngClass]&#x3D;&quot;{&#x27;active&#x27;: i&#x3D;&#x3D;&#x3D;0}&quot; &gt;
+							 &lt;img class&#x3D;&quot;d-block img-carousel&quot; [src]&#x3D;&quot;img&quot;&gt;
+							&lt;/div&gt;
+						&lt;/div&gt; 
+						&lt;a class&#x3D;&quot;carousel-control-prev&quot; href&#x3D;&quot;#carouselExampleFade-{{index}}&quot; role&#x3D;&quot;button&quot; data-slide&#x3D;&quot;prev&quot;&gt;
+							&lt;span class&#x3D;&quot;carousel-control-prev-icon&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
+						&lt;/a&gt;
+						&lt;a class&#x3D;&quot;carousel-control-next&quot; href&#x3D;&quot;#carouselExampleFade-{{index}}&quot; role&#x3D;&quot;button&quot; data-slide&#x3D;&quot;next&quot;&gt;
+							&lt;span class&#x3D;&quot;carousel-control-next-icon&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
+						&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;!-- END CARROUSEL BOOK IMAGES --&gt;
+			
+					&lt;!-- TEXT CARD --&gt;
+					&lt;div class&#x3D;&quot;card-body&quot;&gt;
+						&lt;h5 class&#x3D;&quot;card-title&quot;&gt;Título: {{ book.title | titlecase }}&lt;/h5&gt;
+						&lt;p class&#x3D;&quot;card-text&quot;&gt;Autor/a: {{ book.author | titlecase }}&lt;/p&gt;
+						&lt;p class&#x3D;&quot;card-text&quot;&gt;Editorial: {{ book.editorial | titlecase }}&lt;/p&gt;
+						&lt;p class&#x3D;&quot;card-text&quot;&gt;Fecha publicación: {{ book.date }}&lt;/p&gt;
+						&lt;p class&#x3D;&quot;card-text&quot; *ngIf&#x3D;&quot;book.transaction &#x3D;&#x3D; &#x27;Ambos&#x27; || book.transaction &#x3D;&#x3D; &#x27;Venta&#x27;&quot;&gt;Valor: ${{ book.price | thousands }}&lt;/p&gt;
+						&lt;p class&#x3D;&quot;card-text&quot;&gt;Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}&lt;/p&gt;
+						&lt;button *ngIf&#x3D;&quot;book.uid &#x3D;&#x3D;&#x3D; actual_user.uid&quot; class&#x3D;&quot;btn btn-outline-info col-md-12&quot; data-toggle&#x3D;&quot;modal&quot; 
+								data-target&#x3D;&quot;#showBook&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;openBook( book )&quot;&gt;Ver libro&lt;/button&gt;
+						&lt;button *ngIf&#x3D;&quot;book.uid !&#x3D;&#x3D; actual_user.uid&quot; class&#x3D;&quot;btn btn-outline-info col-md-6&quot; data-toggle&#x3D;&quot;modal&quot; 
+								data-target&#x3D;&quot;#showBook&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;openBook( book )&quot;&gt;Ver libro&lt;/button&gt;
+						&lt;button *ngIf&#x3D;&quot;book.uid !&#x3D;&#x3D; actual_user.uid&quot; 
+								class&#x3D;&quot;btn btn-outline-info col-md-6&quot; data-toggle&#x3D;&quot;modal&quot; 
+								data-target&#x3D;&quot;#contactOwner&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;book_modal&#x3D;book&quot;&gt;Contactar&lt;/button&gt;
+					&lt;/div&gt;
+					&lt;!-- END TEXT CARD --&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Modal show book																																																--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div 	class&#x3D;&quot;modal fade bs-example-modal-lg&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; id&#x3D;&quot;showBook&quot;				
+			aria-labelledby&#x3D;&quot;myLargeModalLabel&quot; aria-hidden&#x3D;&quot;true&quot; style&#x3D;&quot;display: none;&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;myLargeModalLabel&quot;&gt; {{ book_modal.title | titlecase }}&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;other-header&quot;&gt;
+					
+					&lt;button  type&#x3D;&quot;button&quot; aria-expanded&#x3D;&quot;false&quot; aria-haspopup&#x3D;&quot;true&quot; class&#x3D;&quot;close waves-effect&quot; data-toggle&#x3D;&quot;dropdown&quot;&gt;
+						&lt;i class&#x3D;&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;
+					&lt;/button&gt;
+					&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+					&lt;!-- Little modal to report																									--&gt;
+					&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+					&lt;div class&#x3D;&quot;dropdown-menu dropdown-menu-right mailbox animated bounceInDown&quot;&gt;
+						&lt;ul style&#x3D;&quot;padding: 0%!important; margin-bottom: 0 !important;&quot;&gt;
+							&lt;div class&#x3D;&quot;message-center&quot;&gt;
+								&lt;a (click)&#x3D;reportUser(book_modal)&gt;
+									&lt;div class&#x3D;&quot;btn btn-danger btn-circle&quot;&gt;&lt;i class&#x3D;&quot;ti-user&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+									&lt;h5 style&#x3D;&quot;display: inline; margin-left: 20px;&quot;&gt;Reportar usuario&lt;/h5&gt;
+								&lt;/a&gt;
+								&lt;a (click)&#x3D;reportImage(book_modal)&gt;
+									&lt;div class&#x3D;&quot;btn btn-danger btn-circle&quot;&gt;&lt;i class&#x3D;&quot;fa fa-file-image-o&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+									&lt;h5 style&#x3D;&quot;display: inline; margin-left: 20px;&quot;&gt;Reportar imagen&lt;/h5&gt;
+								&lt;/a&gt;
+							&lt;/div&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+
+					&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+				&lt;!-- End little modal to report																							--&gt;
+				&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+				
+			&lt;/div&gt;
+
+			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+				&lt;app-one-book [book]&#x3D;&quot;book_modal&quot;&gt;&lt;/app-one-book&gt;
+			&lt;/div&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- Profile collapse																												--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;div id&#x3D;&quot;accordion&quot;&gt;
+				&lt;div class&#x3D;&quot;card&quot;&gt;
+				  	&lt;div class&#x3D;&quot;card-header&quot; id&#x3D;&quot;headingOne&quot;&gt;
+						&lt;h5 class&#x3D;&quot;mb-0&quot;&gt;
+					  	&lt;button class&#x3D;&quot;btn btn-link&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#collapseOne&quot; aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapseOne&quot;&gt;
+							Ver perfil del dueño
+					  	&lt;/button&gt;
+						&lt;/h5&gt;
+					&lt;/div&gt;
+					&lt;div id&#x3D;&quot;collapseOne&quot; class&#x3D;&quot;collapse &quot; aria-labelledby&#x3D;&quot;headingOne&quot; data-parent&#x3D;&quot;#accordion&quot;&gt;
+						&lt;div class&#x3D;&quot;card-body&quot;&gt;
+							&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+							&lt;!-- Show profile																														--&gt;
+							&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+							&lt;div class&#x3D;&quot;col-12&quot;&gt;
+								&lt;div class&#x3D;&quot;card&quot;&gt;
+									&lt;div class&#x3D;&quot;card-body row&quot;&gt;
+										&lt;div class&#x3D;&quot;col-md-6&quot; align&#x3D;&quot;center&quot;&gt;
+											&lt;img [src]&#x3D;&quot;book_modal.user.img&quot; class&#x3D;&quot;img-circle&quot; width&#x3D;&quot;150&quot; /&gt;
+											&lt;h4 class&#x3D;&quot;card-title&quot;&gt;
+												{{ book_modal.user.name | titlecase }} {{ book_modal.user.last_name1 | titlecase }} {{ book_modal.user.last_name2 | titlecase }} &lt;/h4&gt;
+											&lt;div class&#x3D;&quot;row text-center justify-content-md-center&quot;&gt;
+												&lt;div class&#x3D;&quot;col-4&quot;&gt;
+													&lt;a href&#x3D;&quot;javascript:void(0)&quot; class&#x3D;&quot;link&quot;&gt;
+														&lt;i class&#x3D;&quot;fa fa-book&quot;&gt;&lt;/i&gt;
+														&lt;font class&#x3D;&quot;font-medium&quot;&gt; {{ count_book }}&lt;/font&gt;
+													&lt;/a&gt;
+												&lt;/div&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+											&lt;small class&#x3D;&quot;text-muted&quot;&gt;Correo electrónico&lt;/small&gt;
+											&lt;h6&gt; {{ book_modal.user.email }} &lt;/h6&gt;
+											&lt;small class&#x3D;&quot;text-muted p-t-30 db&quot;&gt;Teléfono de contacto&lt;/small&gt;
+											&lt;h6&gt; {{ book_modal.user.phone }} &lt;/h6&gt;
+											&lt;small class&#x3D;&quot;text-muted p-t-30 db&quot;&gt;Usuario creado el&lt;/small&gt;
+											&lt;h6&gt; {{ book_modal.user.created_date }} &lt;/h6&gt;
+										&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook --&gt;
+									&lt;div class&#x3D;&quot;card-body&quot;&gt;
+										&lt;small class&#x3D;&quot;text-muted&quot;&gt;Categorías favoritas:&lt;/small&gt;
+										&lt;ul&gt;
+											&lt;li&gt;
+												&lt;h6&gt;{{ book_modal.user.categories }}&lt;/h6&gt;
+											&lt;/li&gt;
+										&lt;/ul&gt;
+									&lt;/div&gt;
+									&lt;div class&#x3D;&quot;card-body&quot;&gt;
+										&lt;div class&#x3D;&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+										&lt;small class&#x3D;&quot;text-muted p-t-30 db&quot;&gt;Redes sociales&lt;/small&gt;&lt;br/&gt;
+										&lt;button class&#x3D;&quot;btn btn-circle btn-secondary&quot; style&#x3D;&quot;margin-left: 15px;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+										&lt;button class&#x3D;&quot;btn btn-circle btn-secondary&quot; style&#x3D;&quot;margin-left: 15px;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+										&lt;button class&#x3D;&quot;btn btn-circle btn-secondary&quot; style&#x3D;&quot;margin-left: 15px;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-youtube&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+							&lt;!-- End show profile																												--&gt;
+							&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;!-- End profile collapse																										--&gt;
+			&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+			&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger waves-effect text-left&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End modal show book																										--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+
+
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- Modal contact owner																										--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;div 	class&#x3D;&quot;modal fade bs-example-modal-lg&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; id&#x3D;&quot;contactOwner&quot;
+			aria-labelledby&#x3D;&quot;myLargeModalLabel&quot; aria-hidden&#x3D;&quot;true&quot; style&#x3D;&quot;display: none;&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;myLargeModalLabel&quot;&gt; Contactar dueño/a &lt;/h4&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-hidden&#x3D;&quot;true&quot;&gt;×&lt;/button&gt;
+			&lt;/div&gt;
+			&lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;sendMessage()&quot;&gt;
+				&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+					&lt;!-- Transaction -- Ambos --&gt;
+					&lt;div *ngIf&#x3D;&quot;book_modal.transaction &#x3D;&#x3D; &#x27;Ambos&#x27;&quot; &gt;
+						&lt;label&gt;Elija el tipo de transacción que desea&lt;/label&gt;
+						&lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;transaction&quot;&gt;
+							&lt;option value&#x3D;&quot;Intercambio&quot;&gt;Deseo intercambiar el libro&lt;/option&gt;
+							&lt;option value&#x3D;&quot;Venta&quot;&gt;Deseo comprar el libro&lt;/option&gt;
+						&lt;/select&gt;
+					&lt;/div&gt;&lt;br&gt;
+
+					&lt;!-- Preferences --&gt;
+					&lt;label&gt;Seleccione la preferencia que más le acomode&lt;/label&gt;
+					&lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;pref&quot;&gt;
+						&lt;option value&#x3D;&quot;{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}&quot; *ngFor&#x3D;&quot;let p of book_modal.user.preferences&quot;&gt;{{ p.subway_station }} - {{ p.day }} - {{ p.hour  }}&lt;/option&gt;
+						&lt;option value&#x3D;&quot;dislike_preferences&quot;&gt;Ninguna me acomoda&lt;/option&gt;
+					&lt;/select&gt;&lt;br&gt;
+					&lt;br&gt;
+					
+					&lt;!-- Custom preferences --&gt;
+					&lt;div *ngIf&#x3D;&quot;form.value.pref &#x3D;&#x3D;&#x3D; &#x27;dislike_preferences&#x27;&quot;&gt;
+						&lt;label&gt;Seleccione el horario que desea proponer&lt;/label&gt;
+						&lt;div class&#x3D;&quot;row&quot;&gt;
+							&lt;!-- Station --&gt;
+							&lt;div class&#x3D;&quot;form-group col-4&quot;&gt;
+								&lt;label&gt;Estación de metro&lt;/label&gt;
+								&lt;select formControlName&#x3D;&quot;station&quot; id&#x3D;&quot;subway_station&quot; class&#x3D;&quot;form-control&quot;&gt;
+									&lt;optgroup label&#x3D;&quot;Línea 1&quot;&gt;
+										&lt;option value&#x3D;&quot;República&quot;&gt;República&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Los Héroes&quot;&gt;Los Héroes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;La Moneda&quot;&gt;La Moneda&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Universidad de Chile&quot;&gt;Universidad de Chile&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Santa Lucía&quot;&gt;Santa Lucía&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Universidad Católica&quot;&gt;Universidad Católica&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Baquedano&quot;&gt;Baquedano&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Salvador&quot;&gt;Salvador&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Manuel Montt&quot;&gt;Manuel Montt&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Pedro de Valdivia&quot;&gt;Pedro de Valdivia&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Los Leones&quot;&gt;Los Leones&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Tobalaba&quot;&gt;Tobalaba&lt;/option&gt;
+									&lt;/optgroup&gt;
+									&lt;optgroup label&#x3D;&quot;Línea 5&quot;&gt;
+										&lt;option value&#x3D;&quot;Quinta Normal&quot;&gt;Quinta Normal&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Cumming&quot;&gt;Cumming&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Santa Ana&quot;&gt;Santa Ana&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Plaza de Armas&quot;&gt;Plaza de Armas&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Bellas Artes&quot;&gt;Bellas Artes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Baquedano&quot;&gt;Baquedano&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Parque Bustamante&quot;&gt;Parque Bustamante&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Santa Isabel&quot;&gt;Santa Isabel&lt;/option&gt;
+									&lt;/optgroup&gt;
+								&lt;/select&gt;
+							&lt;/div&gt;
+							&lt;!-- Day --&gt;
+							&lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+									&lt;label&gt;Día&lt;/label&gt;
+									&lt;select formControlName&#x3D;&quot;day&quot; id&#x3D;&quot;day&quot; class&#x3D;&quot;form-control&quot;&gt;
+										&lt;option value&#x3D;&quot;Lunes&quot;&gt;Lunes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Martes&quot;&gt;Martes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Miércoles&quot;&gt;Miércoles&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Jueves&quot;&gt;Jueves&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Viernes&quot;&gt;Viernes&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Sábado&quot;&gt;Sábado&lt;/option&gt;
+										&lt;option value&#x3D;&quot;Domingo&quot;&gt;Domingo&lt;/option&gt;
+									&lt;/select&gt;
+							&lt;/div&gt;
+							&lt;!-- Hour --&gt;
+							&lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+								&lt;label&gt;Hora&lt;/label&gt;
+								&lt;input formControlName&#x3D;&quot;hour&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;time&quot; value&#x3D;&quot;12:00&quot; id&#x3D;&quot;hour&quot;&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;!-- Message --&gt;
+					&lt;div &gt;
+						&lt;label&gt;Seleccione el mensaje a enviar&lt;/label&gt;
+						&lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;text&quot;&gt;
+							&lt;option value&#x3D;&quot;Deseo establecer la transacción&quot;&gt;Deseo establecer la transacción&lt;/option&gt;
+							&lt;option *ngIf&#x3D;&quot;book_modal.transaction &#x3D;&#x3D; &#x27;Venta&#x27; || form.value.transaction &#x3D;&#x3D; &#x27;Venta&#x27;&quot; 
+								value&#x3D;&quot;dislike-price&quot;&gt;No me acomoda el precio&lt;/option&gt;
+							&lt;option value&#x3D;&quot;new_text&quot;&gt;Deseo escribirle un mensajes personalmente&lt;/option&gt;
+						&lt;/select&gt;
+					&lt;/div&gt;&lt;br&gt;
+					
+					&lt;!-- Custom price --&gt;
+					&lt;div *ngIf&#x3D;&quot;form.value.text &#x3D;&#x3D; &#x27;dislike-price&#x27;&quot;&gt;
+						&lt;label&gt;Ingrese el precio que desea proponer&lt;/label&gt;
+						&lt;input 	type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;new_price&quot; 
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Ej.: 2000&quot;&gt;
+					&lt;/div&gt;
+
+					&lt;!-- Custom message --&gt;
+					&lt;div *ngIf&#x3D;&quot;form.value.text &#x3D;&#x3D; &#x27;new_text&#x27;&quot;&gt;
+						&lt;label&gt;Mensaje&lt;/label&gt;
+						&lt;input 	type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;new_text&quot; 
+							class&#x3D;&quot;form-control form-control-line border-input-custom&quot; placeholder&#x3D;&quot;Hola, me gustaría establecer la transacción del libro...&quot;&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+					&lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-outline-info waves-effect text-left&quot;&gt;Enviar&lt;/button&gt;
+					&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger waves-effect text-left&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;!-- End modal contact owner																								--&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- ============================================================================== --><!-- Loader 																																				--><!-- ============================================================================== --><div *ngIf="loading" class="loader-contenedor">	<app-loading></app-loading>	<p> Buscando libros... </p></div><!-- ============================================================================== --><!-- End loader 																																		--><!-- ============================================================================== --><!-- ============================================================================== --><!-- Card book 																																			--><!-- ============================================================================== --><div class="container-fluid">	<div class="row">			<div *ngIf="!loading" class="card-columns">				<div class="card" style="max-width:18rem;" *ngFor="let book of books; let index = index;">					<!-- CARROUSEL BOOK IMAGES -->					<div id="carouselExampleFade-{{index}}" class="carousel slide carousel-fade" data-ride="carousel">						<div class="carousel-inner">							<div class="carousel-item" *ngFor="let img of book.images; let i=index;" [ngClass]="{\'active\': i===0}" >							 <img class="d-block img-carousel" [src]="img">							</div>						</div> 						<a class="carousel-control-prev" href="#carouselExampleFade-{{index}}" role="button" data-slide="prev">							<span class="carousel-control-prev-icon" aria-hidden="true"></span>						</a>						<a class="carousel-control-next" href="#carouselExampleFade-{{index}}" role="button" data-slide="next">							<span class="carousel-control-next-icon" aria-hidden="true"></span>						</a>					 </div>					<!-- END CARROUSEL BOOK IMAGES -->								<!-- TEXT CARD -->					<div class="card-body">						<h5 class="card-title">Título: {{ book.title | titlecase }}</h5>						<p class="card-text">Autor/a: {{ book.author | titlecase }}</p>						<p class="card-text">Editorial: {{ book.editorial | titlecase }}</p>						<p class="card-text">Fecha publicación: {{ book.date }}</p>						<p class="card-text" *ngIf="book.transaction == \'Ambos\' || book.transaction == \'Venta\'">Valor: ${{ book.price | thousands }}</p>						<p class="card-text">Dueño: {{book.user.name | titlecase }} {{book.user.last_name1 | titlecase }} {{book.user.last_name2 | titlecase }}</p>						<button *ngIf="book.uid === actual_user.uid" class="btn btn-outline-info col-md-12" data-toggle="modal" 								data-target="#showBook" type="button" (click)="openBook( book )">Ver libro</button>						<button *ngIf="book.uid !== actual_user.uid" class="btn btn-outline-info col-md-6" data-toggle="modal" 								data-target="#showBook" type="button" (click)="openBook( book )">Ver libro</button>						<button *ngIf="book.uid !== actual_user.uid" 								class="btn btn-outline-info col-md-6" data-toggle="modal" 								data-target="#contactOwner" type="button" (click)="book_modal=book">Contactar</button>					</div>					<!-- END TEXT CARD -->				</div>			</div>	</div></div><!-- ============================================================================================================== --><!-- Modal show book																																																--><!-- ============================================================================================================== --><div 	class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="showBook"							aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">	<div class="modal-dialog modal-lg">		<div class="modal-content">			<div class="modal-header">				<h4 class="modal-title" id="myLargeModalLabel"> {{ book_modal.title | titlecase }}</h4>				<div class="other-header">										<button  type="button" aria-expanded="false" aria-haspopup="true" class="close waves-effect" data-toggle="dropdown">						<i class="fa fa-angle-down"></i>					</button>					<!-- ====================================================================== -->					<!-- Little modal to report																									-->					<!-- ====================================================================== -->					<div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">						<ul style="padding: 0%!important; margin-bottom: 0 !important;">							<div class="message-center">								<a (click)=reportUser(book_modal)>									<div class="btn btn-danger btn-circle"><i class="ti-user"></i></div>									<h5 style="display: inline; margin-left: 20px;">Reportar usuario</h5>								</a>								<a (click)=reportImage(book_modal)>									<div class="btn btn-danger btn-circle"><i class="fa fa-file-image-o"></i></div>									<h5 style="display: inline; margin-left: 20px;">Reportar imagen</h5>								</a>							</div>						</ul>					</div>					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>				</div>				<!-- ====================================================================== -->				<!-- End little modal to report																							-->				<!-- ====================================================================== -->							</div>			<div class="modal-body">				<app-one-book [book]="book_modal"></app-one-book>			</div>			<!-- ====================================================================== -->			<!-- Profile collapse																												-->			<!-- ====================================================================== -->			<div id="accordion">				<div class="card">				  	<div class="card-header" id="headingOne">						<h5 class="mb-0">					  	<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">							Ver perfil del dueño					  	</button>						</h5>					</div>					<div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">						<div class="card-body">							<!-- ====================================================================== -->							<!-- Show profile																														-->							<!-- ====================================================================== -->							<div class="col-12">								<div class="card">									<div class="card-body row">										<div class="col-md-6" align="center">											<img [src]="book_modal.user.img" class="img-circle" width="150" />											<h4 class="card-title">												{{ book_modal.user.name | titlecase }} {{ book_modal.user.last_name1 | titlecase }} {{ book_modal.user.last_name2 | titlecase }} </h4>											<div class="row text-center justify-content-md-center">												<div class="col-4">													<a href="javascript:void(0)" class="link">														<i class="fa fa-book"></i>														<font class="font-medium"> {{ count_book }}</font>													</a>												</div>											</div>										</div>										<div class="col-md-6">											<small class="text-muted">Correo electrónico</small>											<h6> {{ book_modal.user.email }} </h6>											<small class="text-muted p-t-30 db">Teléfono de contacto</small>											<h6> {{ book_modal.user.phone }} </h6>											<small class="text-muted p-t-30 db">Usuario creado el</small>											<h6> {{ book_modal.user.created_date }} </h6>										</div>									</div>									<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->									<div class="card-body">										<small class="text-muted">Categorías favoritas:</small>										<ul>											<li>												<h6>{{ book_modal.user.categories }}</h6>											</li>										</ul>									</div>									<div class="card-body">										<div class="dropdown-divider"></div>										<small class="text-muted p-t-30 db">Redes sociales</small><br/>										<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-facebook"></i></button>										<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-twitter"></i></button>										<button class="btn btn-circle btn-secondary" style="margin-left: 15px;"><i class="fa fa-youtube"></i></button>									</div>								</div>							</div>							<!-- ====================================================================== -->							<!-- End show profile																												-->							<!-- ====================================================================== -->						</div>					</div>				</div>			</div>			<!-- ====================================================================== -->			<!-- End profile collapse																										-->			<!-- ====================================================================== -->			<div class="modal-footer">				<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>			</div>		</div>	</div></div><!-- ====================================================================== --><!-- End modal show book																										--><!-- ====================================================================== --><!-- ====================================================================== --><!-- Modal contact owner																										--><!-- ====================================================================== --><div 	class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="contactOwner"			aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">	<div class="modal-dialog modal-lg">		<div class="modal-content">			<div class="modal-header">				<h4 class="modal-title" id="myLargeModalLabel"> Contactar dueño/a </h4>				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>			</div>			<form [formGroup]="form" (ngSubmit)="sendMessage()">				<div class="modal-body">					<!-- Transaction -- Ambos -->					<div *ngIf="book_modal.transaction == \'Ambos\'" >						<label>Elija el tipo de transacción que desea</label>						<select class="form-control" formControlName="transaction">							<option value="Intercambio">Deseo intercambiar el libro</option>							<option value="Venta">Deseo comprar el libro</option>						</select>					</div><br>					<!-- Preferences -->					<label>Seleccione la preferencia que más le acomode</label>					<select class="form-control" formControlName="pref">						<option value="{{ p.subway_station }}-{{ p.day }}-{{ p.hour }}" *ngFor="let p of book_modal.user.preferences">{{ p.subway_station }} - {{ p.day }} - {{ p.hour  }}</option>						<option value="dislike_preferences">Ninguna me acomoda</option>					</select><br>					<br>										<!-- Custom preferences -->					<div *ngIf="form.value.pref === \'dislike_preferences\'">						<label>Seleccione el horario que desea proponer</label>						<div class="row">							<!-- Station -->							<div class="form-group col-4">								<label>Estación de metro</label>								<select formControlName="station" id="subway_station" class="form-control">									<optgroup label="Línea 1">										<option value="República">República</option>										<option value="Los Héroes">Los Héroes</option>										<option value="La Moneda">La Moneda</option>										<option value="Universidad de Chile">Universidad de Chile</option>										<option value="Santa Lucía">Santa Lucía</option>										<option value="Universidad Católica">Universidad Católica</option>										<option value="Baquedano">Baquedano</option>										<option value="Salvador">Salvador</option>										<option value="Manuel Montt">Manuel Montt</option>										<option value="Pedro de Valdivia">Pedro de Valdivia</option>										<option value="Los Leones">Los Leones</option>										<option value="Tobalaba">Tobalaba</option>									</optgroup>									<optgroup label="Línea 5">										<option value="Quinta Normal">Quinta Normal</option>										<option value="Cumming">Cumming</option>										<option value="Santa Ana">Santa Ana</option>										<option value="Plaza de Armas">Plaza de Armas</option>										<option value="Bellas Artes">Bellas Artes</option>										<option value="Baquedano">Baquedano</option>										<option value="Parque Bustamante">Parque Bustamante</option>										<option value="Santa Isabel">Santa Isabel</option>									</optgroup>								</select>							</div>							<!-- Day -->							<div class="form-group col-md-4">									<label>Día</label>									<select formControlName="day" id="day" class="form-control">										<option value="Lunes">Lunes</option>										<option value="Martes">Martes</option>										<option value="Miércoles">Miércoles</option>										<option value="Jueves">Jueves</option>										<option value="Viernes">Viernes</option>										<option value="Sábado">Sábado</option>										<option value="Domingo">Domingo</option>									</select>							</div>							<!-- Hour -->							<div class="form-group col-md-4">								<label>Hora</label>								<input formControlName="hour" class="form-control" type="time" value="12:00" id="hour">							</div>						</div>					</div>					<!-- Message -->					<div >						<label>Seleccione el mensaje a enviar</label>						<select class="form-control" formControlName="text">							<option value="Deseo establecer la transacción">Deseo establecer la transacción</option>							<option *ngIf="book_modal.transaction == \'Venta\' || form.value.transaction == \'Venta\'" 								value="dislike-price">No me acomoda el precio</option>							<option value="new_text">Deseo escribirle un mensajes personalmente</option>						</select>					</div><br>										<!-- Custom price -->					<div *ngIf="form.value.text == \'dislike-price\'">						<label>Ingrese el precio que desea proponer</label>						<input 	type="text" formControlName="new_price" 							class="form-control form-control-line border-input-custom" placeholder="Ej.: 2000">					</div>					<!-- Custom message -->					<div *ngIf="form.value.text == \'new_text\'">						<label>Mensaje</label>						<input 	type="text" formControlName="new_text" 							class="form-control form-control-line border-input-custom" placeholder="Hola, me gustaría establecer la transacción del libro...">					</div>				</div>				<div class="modal-footer">					<button type="submit" class="btn btn-outline-info waves-effect text-left">Enviar</button>					<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>				</div>			</form>		</div>	</div></div><!-- ====================================================================== --><!-- End modal contact owner																								--><!-- ====================================================================== --></div>'
+    var COMPONENTS = [{'name': 'AddBookComponent', 'selector': 'app-add-book'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardBookComponent', 'selector': 'app-card-book'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'GlobalMessageComponent', 'selector': 'app-global-message'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LibraryComponent', 'selector': 'app-library'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageAdminComponent', 'selector': 'app-message-admin'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OneBookComponent', 'selector': 'app-one-book'},{'name': 'PageforbiddenComponent', 'selector': 'app-pageforbidden'},{'name': 'PagenotfoundComponent', 'selector': 'app-pagenotfound'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CardBookComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CardBookComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
