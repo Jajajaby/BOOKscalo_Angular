@@ -51,9 +51,9 @@ describe('DashboardComponent', () => {
     // const result = component.ngOnInit();
   });
 
-  it('should run #addTask()', async () => {
-    // const result = component.addTask();
-  });
+  // it('should run #addTask()', async () => {
+  //   // const result = component.addTask();
+  // });
 
   it('should run #searchReportDate()', async () => {
     // const result = component.searchReportDate(date);

@@ -92,9 +92,9 @@
 										<span *ngIf="[u.status] == 'true'" class="label label-success label-rounded">Activo</span>
 										<span *ngIf="[u.status] == 'false'" class="label label-danger label-rounded">Inactivo</span>
 									</td>
-									<!-- TODO: Hacer algo con esto -->
+									<!-- FIXME: Probar -->
 									<td>
-										Cambiar jjj
+										<button class="btn btn-circle btn-info" (click)="changeState(u)">Cambiar estado</button>
 									</td>
 								</tr>
 							</tbody>
@@ -175,10 +175,10 @@
 	<!-- End reports			           																		-->
 	<!-- ============================================================== -->
 
-	<div class="row">
-		<!-- ============================================================== -->
-		<!-- Todo list 																											-->
-		<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- Todo list 																											-->
+	<!-- ============================================================== -->
+	<!-- <div class="row">
 		<div class="col-lg-6 col-xlg-8">
 			<div class="card">
 				<div class="card-body">
@@ -194,9 +194,6 @@
 					</div>
 					
 					<div class="to-do-widget m-t-20">
-						<!-- ============================================================== -->
-						<!-- Modal for add tasks   																				  -->
-						<!-- ============================================================== -->
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
@@ -231,25 +228,23 @@
 								</div>
 							</div>
 						</div>
-						<!-- ============================================================== -->
-						<!-- End modal for add tasks   																				  -->
-						<!-- ============================================================== -->
+						==============================================================
 						<ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
-							<!-- <li class="list-group-item" data-role="task" *ngFor="let t of tasks"> -->
+							<li class="list-group-item" data-role="task" *ngFor="let t of tasks">
 								<div class="checkbox checkbox-info m-b-10">
 									<input type="checkbox" id="inputSchedule" name="inputCheckboxesSchedule">
 									<label for="inputSchedule" class=""> 
-										<!-- <span>{{ t.task }}</span>  -->
-										<!-- <span class="label label-rounded label-danger pull-right">{{ t.description }}</span> -->
+										<span>{{ t.task }}</span> 
+										<span class="label label-rounded label-danger pull-right">{{ t.description }}</span>
 									</label>
 								</div>
-							<!-- </li> -->
+							</li>
 							<li class="list-group-item" data-role="task">
 								<div class="checkbox checkbox-info">
 									<input type="checkbox" id="inputBook" name="inputCheckboxesBook">
 									<label for="inputBook" class=""> 
 										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</span>
-										<!-- <span class="label label-primary label-rounded pull-right">{{ t.priority }}</span>  -->
+										<span class="label label-primary label-rounded pull-right">{{ t.priority }}</span> 
 									</label>
 								</div>
 								<div class="item-date"> 26 jun 2017</div>
@@ -278,10 +273,10 @@
 				</div>
 			</div>
 		</div>
-		<!-- ============================================================== -->
-		<!-- End todo list 																									-->
-		<!-- ============================================================== -->
-	</div>
+	</div> -->
+	<!-- ============================================================== -->
+	<!-- End todo list 																									-->
+	<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->

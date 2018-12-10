@@ -63,8 +63,6 @@ export class DashboardComponent implements OnInit {
 		// this._dbService.getData( "tasks")
 		// 	.valueChanges()
 		// 	.subscribe( data => this.tasks = data );
-
-
 	}
 
 	ngOnInit() {
@@ -74,15 +72,7 @@ export class DashboardComponent implements OnInit {
 			priority:     new FormControl(undefined, Validators.required) //high, medium, low
 		});
 	}
-
-	// TODO: Terminar po jjj
-	// FIXME: Terminar o sacar
-	addTask(){
-		this._dbService.addDataIdCustom('tasks', this.actual_user, this.form)
-			.then( () => swal('Tarea guardada', 'La tarea ha sido guardada con éxito', 'success') )
-			.catch( () => swal('Error', 'La tarea no ha podido guardarse, vuelva a intentarlo', 'error') );
-	}
-
+	
 	searchReportDate(date){
 		this.reports = [];
 		if( date === 'all' ){
@@ -93,6 +83,25 @@ export class DashboardComponent implements OnInit {
 			}
 		}
 	}
+	
+	// FIXME: Probar
+	changeState(user:any){
+		user.status = ! user.status;
 
-
+		this._dbService.updateData( "users", user.key, user )
+			.then( () => {
+				swal('Éxito', 'Se ha cambiado el estado del usuario', 'success');
+			})
+			.catch( () => {
+				swal('Error', 'Por favor, vuelva a intentarlo', 'error');
+			});
+		
+		
+	}
+	
+	// addTask(){
+	// 	this._dbService.addDataIdCustom('tasks', this.actual_user, this.form)
+	// 		.then( () => swal('Tarea guardada', 'La tarea ha sido guardada con éxito', 'success') )
+	// 		.catch( () => swal('Error', 'La tarea no ha podido guardarse, vuelva a intentarlo', 'error') );
+	// }
 }
