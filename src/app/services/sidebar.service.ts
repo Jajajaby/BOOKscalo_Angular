@@ -11,15 +11,16 @@ export class SidebarService {
   menu:any=[];
 
   constructor() {
-    this.defMenu();
-    setInterval( () => { this.defMenu(); }, 5000);
-  }
-
-  defMenu(){
-    if (JSON.parse(localStorage.getItem("user")).role === 'admin'){
-      this.menu = MENU_ADMIN;
-    }else if (JSON.parse(localStorage.getItem("user")).role === 'normal'){
-     this.menu = CATEGORIES;
-    }
+    // Esta preguntando que usuario esta conectado
+    setInterval( () => {
+      if( localStorage.getItem("user") ) {
+        let role = JSON.parse(localStorage.getItem("user")).role;
+        if (role === 'admin'){
+          this.menu = MENU_ADMIN;
+        }else if (role === 'normal'){
+         this.menu = CATEGORIES;
+        }
+      }
+    }, 500);
   }
 }

@@ -22,8 +22,14 @@ export class SidebarComponent implements OnInit {
   constructor(  private _dbService:DatabaseService, 
                 private router: Router,
                 private _sidebar:SidebarService ) { 
-    this.menu = this._sidebar.menu;
-    this.role = JSON.parse(localStorage.getItem("user")).role;
+    setInterval( () => {
+      this.menu = this._sidebar.menu;
+      if(localStorage.getItem("user")) {
+        this.role = JSON.parse(localStorage.getItem("user")).role;
+      }else {
+        this.role = '';
+      }
+    }, 500)
   }
 
   ngOnInit() {
