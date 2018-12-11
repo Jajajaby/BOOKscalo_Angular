@@ -110,34 +110,35 @@ export class ChatsComponent {
       .then(( done ) => {
         if ( done ) {
           this._dbService.getDataQuery('books', 'id', '==', this.message.book.id)
-          .snapshotChanges()
-          .pipe(
-            map( actions => actions.map( a => {
-              const data = a.payload.doc.data();
-              const key = a.payload.doc.id;
-              return { key, ...data };
-            }))
-          )
-          .subscribe( (data:any) => {
-            if( data[0].status === 'completed' ) {
-              swal('Atención', 'Este libro ya fue intercambiado/vendido', 'warning');
-            }else{
-              let send:any = data[0];
-              send.status = 'completed';
-              const KEY = send.key;
-              delete send.key;
-
-              send.date_transaction = this._date.actual_date();
-              
-              this._dbService.updateData('books', KEY, send)
+            .snapshotChanges()
+            .pipe(
+              map( actions => actions.map( a => {
+                const data = a.payload.doc.data();
+                const key = a.payload.doc.id;
+                return { key, ...data };
+              }))
+            )
+            .subscribe( (data:any) => {
+              if( data[0].status === 'completed' ) {
+                // FIXME:s
+                // swal('Error', 'No se puede establecer la transacción porque existe otra transacción en curso', 'error');
+              }else{
+                let send:any = data[0];
+                send.status = 'completed';
+                const KEY = send.key;
+                delete send.key;
+                
+                send.date_transaction = this._date.actual_date();
+                
+                this._dbService.updateData('books', KEY, send)
                 .then( () => {
-                  swal("Transacción establecida! Gracias por confirmar, estaremos recordandote", {
-                    icon: "success",
-                  });
-                })
-                .catch( () => swal("Error al confirmar transaccion", "Vuelva a intentarlo", 'error'));
-              }
-          });
+                    swal("Transacción establecida", "Recuerda borrar el libro de tu librería en un plazo menor a 48 horas o lo eliminaremos nosotros.", {
+                      icon: "success"
+                    });
+                  })
+                  .catch( () => swal("Error al confirmar transaccion", "Vuelva a intentarlo", 'error'));
+                }
+            });
         } else {
           swal("Recuerda avisarnos cuando establezcan la transacción");
         }
