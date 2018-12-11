@@ -61,7 +61,7 @@ export class AddBookComponent implements OnInit {
 	}
 
 	// Guarda un libro nuevo en la DB
-	saveBook(){
+	addBook(){
 		if( this.form.invalid ){
 			swal(
 				'Debe completar el formulario', 
