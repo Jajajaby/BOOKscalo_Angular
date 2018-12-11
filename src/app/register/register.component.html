@@ -87,14 +87,14 @@
 									</select>
 								</div>
 								<div class="ms-selection">
-									<select class="ms-list contenedor" multiple='multiple' formControlName="categories">
+									<select class="ms-list contenedor hidden-contenedor" multiple='multiple' formControlName="categories">
 										<option [value]='sc' class="ms-elem-selection" 
 											*ngFor="let sc of selected_categories; let i = index;"
 											(click)="removeCategory(i)"> {{ sc.name }} </option>
 									</select>
 								</div>								
 							</div>
-							<p *ngIf="selected_categories.length < 3 && submit2" class="text-danger">
+							<p *ngIf="(selected_categories.length < 3 || form.value.categories.length < 3) && submit2" class="text-danger">
 								Debe seleccionar al menos 3 categorias
 							</p>
 

@@ -86,6 +86,10 @@ export class RegisterComponent implements OnInit {
 
 		if (this.form.valid) {
 			let form=this.form.value;
+		
+			if( form.categories.length > 1 ) {
+				console.log(form.categories);
+			}
 
 			this.afAuth.auth.createUserWithEmailAndPassword( form.email, form.password )
 				.then( (resp:any) => {
@@ -93,25 +97,46 @@ export class RegisterComponent implements OnInit {
 					// FIXME: Esto hace que se seleccione un emoji aleatorio para la imagen del nuevo usuario.
 					let num = Math.floor((Math.random() * 47) + 1);
 					let path_img = "../assets/images/emojis/emoji("+num+").png";
-					console.log(path_img);
+
+					let user:any;
+
 
 					// Guarda el form para validarlo
-					const USER:Users = {
-						uid: 					resp.user.uid,
-						rut: 					form.rut,
-						name: 				form.name.toLowerCase(),
-						last_name1: 	form.last_name1.toLowerCase(),
-						last_name2: 	form.last_name2.toLowerCase(),
-						email: 				form.email.toLowerCase(),
-						categories:		this.selected_categories, 
-						// phone: 				form.phone,
-						firtSession:  false,
-						google:      	false,
-						status:				true,
-						role:					'normal',
-						created_date: this._dateService.actual_date(),
-						img: 					path_img
-					};
+					if( form.categories.length > 1 ) { // si es mayor a uno es mobile.
+						user = {
+							uid: 					resp.user.uid,
+							rut: 					form.rut,
+							name: 				form.name.toLowerCase(),
+							last_name1: 	form.last_name1.toLowerCase(),
+							last_name2: 	form.last_name2.toLowerCase(),
+							email: 				form.email.toLowerCase(),
+							categories:		form.categories, 
+							// phone: 				form.phone,
+							firtSession:  false,
+							google:      	false,
+							status:				true,
+							role:					'normal',
+							created_date: this._dateService.actual_date(),
+							img: 					path_img
+						};
+					} else {
+						user = {
+							uid: 					resp.user.uid,
+							rut: 					form.rut,
+							name: 				form.name.toLowerCase(),
+							last_name1: 	form.last_name1.toLowerCase(),
+							last_name2: 	form.last_name2.toLowerCase(),
+							email: 				form.email.toLowerCase(),
+							categories:		this.selected_categories, 
+							// phone: 				form.phone,
+							firtSession:  false,
+							google:      	false,
+							status:				true,
+							role:					'normal',
+							created_date: this._dateService.actual_date(),
+							img: 					path_img
+						};
+					}
 
 					if( !this.form.value.conditions ){
 						swal("Importante", "Debe aceptar los términos y condiciones", "warning");
@@ -119,10 +144,10 @@ export class RegisterComponent implements OnInit {
 					}
 
 					// Guarda al usuario en DB
-					this._dbService.addDataIdCustom('users', USER.uid, USER)
+					this._dbService.addDataIdCustom('users', user.uid, user)
 						.then( () => {
 							console.log("Se guardó el usuario");
-							swal('Cuenta creada con éxito', USER.email, 'success');
+							swal('Cuenta creada con éxito', user.email, 'success');
 							this.afAuth.auth.signOut();
 							this.router.navigate([ '/login' ]);
 
@@ -171,10 +196,12 @@ export class RegisterComponent implements OnInit {
 				this.submit1 = true;
 				if( form.controls['name'].valid && form.controls['last_name1'].valid && form.controls['last_name2'].valid && 	form.controls['rut'].valid)
 					this.register_pages = 'page_2';
+
+				
 				break;
 			case 'page_3':
 				this.submit2 = true;
-				if( this.selected_categories.length >= 3 )
+				if( this.selected_categories.length >= 3 || this.form.value.categories.length >= 3 )
 					this.register_pages = 'page_3';
 				break;
 		}
