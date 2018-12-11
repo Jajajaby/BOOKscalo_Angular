@@ -56,6 +56,75 @@
 	<!-- End report boxes																								 -->
 	<!-- =============================================================== -->
 
+	<!-- ============================================================== -->
+	<!-- Reports			              																		-->
+	<!-- ============================================================== -->
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div>
+							<h3 class="card-title m-b-5">
+							<span class="lstick"></span>Reportes 
+							</h3>
+						</div>
+						<div class="ml-auto">
+							<label>Fecha</label>
+							<select class="custom-select b-0" [(ngModel)]="date" name="date" (ngModelChange)="searchReportDate($event)">Fecha
+								<option value="all" selected>Todas</option>
+								<option *ngFor="let r of reportsData">{{ r.day }}</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<table class="table vm no-th-brd no-wrap pro-of-month">
+					<thead>
+						<tr>
+							<th>Usuario que reporta</th>
+							<th>Tipo de reporte</th>
+							<th>Fecha</th>
+							<th>Hora</th>
+							<th>Reporte</th>
+							<th>Estado</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let r of reports; let i = index;">
+							<td>
+								<h6>{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}</h6>
+							</td>
+							<td>
+								<h6>{{ r.type }}</h6>
+							</td>
+							<td>
+								<h6>{{ r.day }}</h6>
+							</td>
+							<td>
+								<h6>{{ r.hour }}</h6>
+							</td>
+							<td>
+								<h6 *ngIf="r.type == 'Reporte de imagen'">Se reportan las imagenes contenidas en el siguiente <a [href]="r.img" target="_blank"> link </a> </h6>
+								<h6 *ngIf="r.type == 'Reporte de usuario'">Se reporta al usuario {{ r.user_reported.name | titlecase }} {{ r.user_reported.last_name1 | titlecase }} {{ r.user_reported.last_name2 | titlecase }}</h6>
+							</td>
+							<td>
+								<span *ngIf="[r.status] == 'Revisado'" class="label label-success label-rounded">Revisado</span>
+								<span *ngIf="[r.status] == 'No revisado'" class="label label-danger label-rounded">No revisado</span>
+							</td>
+							<td>
+								<button class="btn btn-primary mr-3" (click)="reportBlock(r.type, r, i)"> Bloquear </button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+  </div>
+  <!-- ============================================================== -->
+	<!-- End reports			           																		-->
+	<!-- ============================================================== -->
+
 	<!-- =============================================================== -->
 	<!-- Users status																										 -->
 	<!-- =============================================================== -->
@@ -92,9 +161,8 @@
 										<span *ngIf="[u.status] == 'true'" class="label label-success label-rounded">Activo</span>
 										<span *ngIf="[u.status] == 'false'" class="label label-danger label-rounded">Inactivo</span>
 									</td>
-									<!-- FIXME: Probar -->
 									<td>
-										<button class="btn btn-circle btn-info" (click)="changeState(u)">Cambiar estado</button>
+										<button class="btn btn-info" (click)="changeState(u)">Cambiar estado</button>
 									</td>
 								</tr>
 							</tbody>
@@ -107,73 +175,6 @@
 	<!-- =============================================================== -->
 	<!-- End users status																								 -->
 	<!-- =============================================================== -->
-
-
-	<!-- ============================================================== -->
-	<!-- Reports			              																		-->
-	<!-- ============================================================== -->
-	<div class="row">
-		<div class="col-lg-12 col-md-12">
-			<div class="card">
-				<div class="card-body">
-					<div class="d-flex">
-						<div>
-							<h3 class="card-title m-b-5">
-							<span class="lstick"></span>Reportes 
-							</h3>
-						</div>
-						<div class="ml-auto">
-							<label>Fecha</label>
-							<select class="custom-select b-0" [(ngModel)]="date" name="date" (ngModelChange)="searchReportDate($event)">Fecha
-								<option value="all" selected>Todas</option>
-								<option *ngFor="let r of reportsData">{{ r.day }}</option>
-							</select>
-						</div>
-					</div>
-				</div>
-				<table class="table vm no-th-brd no-wrap pro-of-month">
-					<thead>
-						<tr>
-							<th>Usuario que reporta</th>
-							<th>Tipo de reporte</th>
-							<th>Fecha</th>
-							<th>Hora</th>
-							<th>Reporte</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr *ngFor="let r of reports">
-							<!-- TODO: Revisar visualmente y borrar referencis sin ID -->
-							<td>
-								<h6>{{ r.user.name | titlecase }} {{ r.user.last_name1 | titlecase }} {{ r.user.last_name2 | titlecase }}</h6>
-							</td>
-							<td>
-								<h6>{{ r.type }}</h6>
-							</td>
-							<td>
-								<h6>{{ r.day }}</h6>
-							</td>
-							<td>
-								<h6>{{ r.hour }}</h6>
-							</td>
-							<td>
-								<h6 *ngIf="r.type == 'Reporte de imagen'">Se reportan las imagenes contenidas en el siguiente <a [href]="r.img" target="_blank"> link </a> </h6>
-								<h6 *ngIf="r.type == 'Reporte de usuario'">Se reporta al usuario {{ r.user_reported.name | titlecase }} {{ r.user_reported.last_name1 | titlecase }} {{ r.user_reported.last_name2 | titlecase }}</h6>
-							</td>
-							<td>
-								<span *ngIf="[r.status] == 'Revisado'" class="label label-success label-rounded">Revisado</span>
-								<span *ngIf="[r.status] == 'No revisado'" class="label label-danger label-rounded">No revisado</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-  </div>
-  <!-- ============================================================== -->
-	<!-- End reports			           																		-->
-	<!-- ============================================================== -->
 
 	<!-- ============================================================== -->
 	<!-- Todo list 																											-->

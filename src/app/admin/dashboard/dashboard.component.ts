@@ -4,6 +4,7 @@ import { FormControl, FormControlName, FormGroup, Validators } from '@angular/fo
 // SERVICES
 import { DatabaseService } from '../../services/database.service';
 import { DateService } from '../../services/date.service';
+import { map } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-dashboard',
@@ -39,7 +40,14 @@ export class DashboardComponent implements OnInit {
 		this.actual_day = this._date.actual_day();
 
 		this._dbService.getData( "users")
-			.valueChanges()
+			.snapshotChanges()
+			.pipe(
+				map( actions => actions.map( a => {
+					const data = a.payload.doc.data();
+						const key = a.payload.doc.id;
+						return { key, ...data };
+				}))
+			)
 			.subscribe( (data:any) => {
 				this.users = data;
 				this.count_users = data.length;
@@ -54,7 +62,14 @@ export class DashboardComponent implements OnInit {
 			.subscribe( data => this.count_messages = data.length );
 
 		this._dbService.getData( "reports")
-			.valueChanges()
+			.snapshotChanges()
+			.pipe(
+				map( actions => actions.map( a => {
+					const data = a.payload.doc.data();
+						const key = a.payload.doc.id;
+						return { key, ...data };
+				}))
+			)
 			.subscribe( data => {
 				this.reports = data;
 				this.reportsData = this.reports;
@@ -84,7 +99,6 @@ export class DashboardComponent implements OnInit {
 		}
 	}
 	
-	// FIXME: Probar
 	changeState(user:any){
 		user.status = ! user.status;
 
@@ -95,8 +109,6 @@ export class DashboardComponent implements OnInit {
 			.catch( () => {
 				swal('Error', 'Por favor, vuelva a intentarlo', 'error');
 			});
-		
-		
 	}
 	
 	// addTask(){
@@ -104,4 +116,52 @@ export class DashboardComponent implements OnInit {
 	// 		.then( () => swal('Tarea guardada', 'La tarea ha sido guardada con éxito', 'success') )
 	// 		.catch( () => swal('Error', 'La tarea no ha podido guardarse, vuelva a intentarlo', 'error') );
 	// }
+
+	reportBlock(type, report, index) {		
+		report.status = 'Revisado';
+
+		if( type === 'Reporte de imagen' ) {
+			swal({
+				title: type,
+				text: `¿Desea bloquear esta imagen?`,
+				icon: "warning",
+				buttons: ['Omitir', 'Bloquear'],
+				dangerMode: true
+			})
+			.then(( bloqued ) => {
+				if ( bloqued ) {
+					this._dbService.updateData('reports', report.key, report)
+						.then( ()=>{
+							swal("La imagen fue bloqueada del sistema!", {
+								icon: "success",
+							});
+						});
+				} else {
+					swal("Esta reporte fue omitido");
+				}
+			});
+
+
+		}else if( type === 'Reporte de usuario' ) {
+			swal({
+				title: type,
+				text: `¿Desea bloquear al usuario ${report.user_reported.name} ${report.user_reported.last_name1}?`,
+				icon: "warning",
+				buttons: ['Omitir', 'Bloquear'],
+				dangerMode: true
+			})
+			.then(( bloqued ) => {
+				if ( bloqued ) {
+					this._dbService.updateData('reports', report.key, report)
+						.then( ()=>{
+							swal("Este usuario fue bloqueado del sistema!", {
+								icon: "success",
+							});
+						});
+				} else {
+					swal("Este reporte fue omitido");
+				}
+			});
+		}
+	}
 }
