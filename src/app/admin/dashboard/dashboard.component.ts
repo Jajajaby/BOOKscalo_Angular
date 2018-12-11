@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
 	reports:any[];
 	reportsData:any[];
 	tasks:any;
+	booksTrans:any[];
 
 	// Cantidad de 
 	count_users:number;
@@ -74,6 +75,20 @@ export class DashboardComponent implements OnInit {
 				this.reports = data;
 				this.reportsData = this.reports;
 			});
+
+			this._dbService.getDataQuery("books", 'status', '==', 'completed')
+				.snapshotChanges()
+				.pipe(
+					map( actions => actions.map( a => {
+						const data = a.payload.doc.data();
+							const key = a.payload.doc.id;
+							return { key, ...data };
+					}))
+				)
+				.subscribe( data => {
+					this.booksTrans = data;
+					console.log(data);
+				});
 
 		// this._dbService.getData( "tasks")
 		// 	.valueChanges()
@@ -164,4 +179,6 @@ export class DashboardComponent implements OnInit {
 			});
 		}
 	}
+
+
 }

@@ -118,15 +118,18 @@ export class ChatsComponent {
               return { key, ...data };
             }))
           )
-          .subscribe( data => {
+          .subscribe( (data:any) => {
             if( data[0].status === 'completed' ) {
               swal('Atención', 'Este libro ya fue intercambiado/vendido', 'warning');
             }else{
-              data[0].status = 'completed';
-              const KEY = data[0].key;
-              delete data[0].key;
+              let send:any = data[0];
+              send.status = 'completed';
+              const KEY = send.key;
+              delete send.key;
 
-              this._dbService.updateData('books', KEY, data[0])
+              send.date_transaction = this._date.actual_date();
+              
+              this._dbService.updateData('books', KEY, send)
                 .then( () => {
                   swal("Transacción establecida! Gracias por confirmar, estaremos recordandote", {
                     icon: "success",
