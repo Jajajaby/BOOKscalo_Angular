@@ -83,9 +83,9 @@ export class AddBookComponent implements OnInit {
 		book.id = user.uid + "-" + new Date().valueOf() ;
 		book.uid = user.uid;
 		book.status = 'available';
-		book.categories = this.selected_categories;
+		book.genres = this.selected_categories;
 
-		console.log(book.categories);
+		console.log(book.genres);
 		console.log(this.selected_categories);
 
 		// Guarda el libro
