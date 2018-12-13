@@ -120,7 +120,7 @@ export class ChatsComponent {
             )
             .subscribe( (data:any) => {
               if( data[0].status === 'completed' ) {
-                // FIXME:s
+                // FIXME:
                 // swal('Error', 'No se puede establecer la transacción porque existe otra transacción en curso', 'error');
               }else{
                 let send:any = data[0];
