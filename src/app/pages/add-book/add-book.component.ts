@@ -162,12 +162,13 @@ export class AddBookComponent implements OnInit {
 	addCategory(index:number){
 		this.selected_categories.push(this.categories[index]);
 		this.categories.splice(index, 1);
+		console.log(this.selected_categories);
 	}
 
 	// Remueve una categoría del cuadro de categorías del libro
 	removeCategory(index:number){
 		this.categories.push(this.selected_categories[index]);
-		this.selected_categories.splice(index, 1);				
+		this.selected_categories.splice(index, 1);	
 	}
 }
 
