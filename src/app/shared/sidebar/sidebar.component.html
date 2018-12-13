@@ -8,7 +8,7 @@
 				<li class="nav-small-cap active"
 						style="cursor: pointer;" 
 						*ngFor="let m of menu">
-					<a *ngIf="role === 'normal'" [routerLink]="['/search', 'sidebar.'+m.name]"> {{ m }} </a>
+					<a *ngIf="role === 'normal'" [routerLink]="['/search', 'sidebar.'+m]"> {{ m }} </a>
 					<a *ngIf="role === 'admin'" [routerLink]=[m.route]> {{ m }} </a>
 				</li>               
 			</ul>

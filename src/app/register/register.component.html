@@ -36,7 +36,7 @@
 
 							<div class="form-group m-t-20">
 								<div class="col-xs-12">
-									<input formControlName="rut" class="form-control"	type="text" placeholder="RUT">
+									<input formControlName="rut" class="form-control"	type="text" placeholder="RUT ejemplo: 12345678-9">
 								</div>
 								<div *ngIf="form.controls['rut'].errors?.required && submit1"><p class="text-danger">El RUT es requerido</p></div>
 								<div *ngIf="form.controls['rut'].errors?.pattern && submit1"><p class="text-danger">El RUT ingresado no es válido</p></div>

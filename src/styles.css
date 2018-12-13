@@ -145,3 +145,17 @@
   flex-direction: column;
   box-shadow: 5px 5px 31px -6px rgba(84, 84, 84, 1);
 }
+
+.box-info-text {
+  background: #F2D7D5;
+  padding: 1.4rem;
+  margin-bottom: 2rem;
+}
+.box-info-text .info-text {
+  background: #F2D7D5;
+  width: 400px;
+}
+
+.box-info-text .info-text span {
+  color: red;
+}

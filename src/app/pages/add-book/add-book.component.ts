@@ -85,9 +85,6 @@ export class AddBookComponent implements OnInit {
 		book.status = 'available';
 		book.genres = this.selected_categories;
 
-		console.log(book.genres);
-		console.log(this.selected_categories);
-
 		// Guarda el libro
 		this._dbService.addData('books', book)
 			.then( () => {

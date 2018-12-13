@@ -71,15 +71,17 @@ export class SearchComponent implements OnInit {
 	searchOwner(users:any[], search:string) {
 		console.log(users);
 		let owners = [...users].filter( data => {
-			
+			if( data.name.indexOf(search.toLowerCase()) >= 0 ) return data;
 		});
+
+		console.log(owners);
 		
-		for( let user of users ){	
-			let owner = user.name;
-				if( owner.indexOf(search.toLowerCase()) >= 0 ) {
-					owners.push(user);
-				}
-		}
+		// for( let user of users ){	
+		// 	let owner = user.name;
+		// 		if( owner.indexOf(search.toLowerCase()) >= 0 ) {
+		// 			owners.push(user);
+		// 		}
+		// }
 		return owners;
 	}
 
