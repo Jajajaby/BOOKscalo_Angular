@@ -147,7 +147,6 @@ export class AddBookComponent implements OnInit {
 					   uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
 							url.push( downloadURL );
 							if(i === files.length-1) {
-								console.log("Imagenes cargadas");
 								swal('Éxito', 'Imagenes cargadas con exito', 'success');
 							}
 				  		});

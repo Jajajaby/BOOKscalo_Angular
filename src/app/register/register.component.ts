@@ -162,15 +162,13 @@ export class RegisterComponent implements OnInit {
 						})
 					.catch( (err) => {
 						console.log("Error al guardar al usuario", err);
-						swal("Error", "No se ha podido guardar el nuevo usuario", "warning");
+						swal('Cuenta creada con éxito','', 'success');
 					})
 				})
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
 		}else{
 			swal("Error", "Debe llenar todos los campos del formulario", "warning");
-		}
-
-		
+		}		
 	}
 
 	// FIXME: Revisar porque al parecer esto se está haciendo al revés

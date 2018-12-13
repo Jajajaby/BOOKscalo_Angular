@@ -69,7 +69,10 @@ export class SearchComponent implements OnInit {
 	}
 
 	searchOwner(users:any[], search:string) {
-		let owners = [];
+		console.log(users);
+		let owners = [...users].filter( data => {
+			
+		});
 		
 		for( let user of users ){	
 			let owner = user.name;
