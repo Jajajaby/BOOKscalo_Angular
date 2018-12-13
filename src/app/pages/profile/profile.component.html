@@ -72,8 +72,8 @@
 						<div class="card-body">
 							<small class="text-muted">Categorías favoritas:</small>
 							<ul>
-								<li>
-									<h6 *ngFor="let c of profile.categories">{{ c }}</h6>
+								<li *ngFor="let c of profile.genres">
+									<h6>{{ c }}</h6>
 								</li>
 							</ul>
 						</div>

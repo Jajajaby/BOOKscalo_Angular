@@ -2,11 +2,10 @@
 	<div class="scroll-sidebar">
 		<nav class="sidebar-nav">
 			<ul id="sidebarnav">
-			 	<li class="nav-small-cap" *ngIf="role === 'normal'">CATEGORÍAS</li>
+			 	<li class="nav-small-cap" style="color:white;" *ngIf="role === 'normal'">CATEGORÍAS</li>
 			 	<li class="nav-small-cap" *ngIf="role === 'admin'">MENÚ</li>
 				<li class="nav-devider"></li>
-				<li class="nav-small-cap" 
-						routerLinkActive="active"
+				<li class="nav-small-cap active"
 						style="cursor: pointer;" 
 						*ngFor="let m of menu">
 					<a *ngIf="role === 'normal'" [routerLink]="['/search', 'sidebar.'+m.name]"> {{ m }} </a>

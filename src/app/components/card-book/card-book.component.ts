@@ -32,7 +32,7 @@ export class CardBookComponent implements OnInit {
 		title: 				'', 
 		editorial: 		'', 
 		type: 				'', 
-		categories: 	[], 
+		genres: 	[], 
 		language: 		'', 
 		num_page: 		0,
 		original: 		false, 
@@ -177,4 +177,5 @@ export class CardBookComponent implements OnInit {
 			.subscribe( data => this.count_book = data.length );
 	}
 
+	
 }

@@ -139,12 +139,11 @@
 											<h6> {{ book_modal.user.created_date }} </h6>
 										</div>
 									</div>
-									<!-- TODO: Revisar que esté aparezcan todas las cat. Copiar en modal de cardbook -->
 									<div class="card-body">
 										<small class="text-muted">Categorías favoritas:</small>
 										<ul>
-											<li>
-												<h6>{{ book_modal.user.categories }}</h6>
+											<li *ngFor="let c of book_modal.genres">
+												<h6>{{ c }}</h6>
 											</li>
 										</ul>
 									</div>

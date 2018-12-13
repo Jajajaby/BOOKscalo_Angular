@@ -5,7 +5,7 @@ export interface Books{
 	title:						string;
 	editorial:				string;
 	type:							string;
-	categories:				Array<string>;
+	genres:				Array<string>;
 	language:					string;
 	comment:					string;
 	num_page:					number;
