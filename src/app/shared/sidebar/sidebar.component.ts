@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
   books:any;
 
   menu:any=[];
-  categories:any[] = CATEGORIES;
+  categories:any[] = [...CATEGORIES];
   role:string;
 
   constructor(  private _dbService:DatabaseService, 

@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
 	form:FormGroup;
 	register_pages:string = "page_1"; //Muestra la primera página del registro por defecto
-	categories:any[] = CATEGORIES;
+	categories:any[] = [...CATEGORIES];
 	selected_categories:any[] = [];
 	submit1:boolean = false;
 	submit2:boolean = false;
@@ -110,7 +110,7 @@ export class RegisterComponent implements OnInit {
 							last_name1: 	form.last_name1.toLowerCase(),
 							last_name2: 	form.last_name2.toLowerCase(),
 							email: 				form.email.toLowerCase(),
-							categories:		form.categories, 
+							genres:		form.categories, 
 							// phone: 				form.phone,
 							firtSession:  false,
 							google:      	false,
@@ -127,7 +127,7 @@ export class RegisterComponent implements OnInit {
 							last_name1: 	form.last_name1.toLowerCase(),
 							last_name2: 	form.last_name2.toLowerCase(),
 							email: 				form.email.toLowerCase(),
-							categories:		this.selected_categories, 
+							genres:		this.selected_categories, 
 							// phone: 				form.phone,
 							firtSession:  false,
 							google:      	false,
@@ -163,6 +163,7 @@ export class RegisterComponent implements OnInit {
 					.catch( (err) => {
 						console.log("Error al guardar al usuario", err);
 						swal('Cuenta creada con éxito','', 'success');
+						this.router.navigate([ '/login' ]);
 					})
 				})
 				.catch( (err) => console.error('ERROR: Crear usuario en firebase', err) );
@@ -171,16 +172,11 @@ export class RegisterComponent implements OnInit {
 		}		
 	}
 
-	// FIXME: Revisar porque al parecer esto se está haciendo al revés
-	// Agrega una categoría al cuadro de categorías favoritas del usuario
 	addCategory(index:number){
 		this.selected_categories.push(this.categories[index]);
-		this.categories.splice(index, 1);				
-		// TODO: Ordenar por index
+		this.categories.splice(index, 1);		
 	}
 
-	// FIXME: Revisar porque al parecer esto se está haciendo al revés
-	// Remueve una categoría del cuadro de categorías favoritas del usuario
 	removeCategory(index:number){
 		this.categories.push(this.selected_categories[index]);
 		this.selected_categories.splice(index, 1);				

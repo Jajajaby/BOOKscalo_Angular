@@ -83,14 +83,14 @@
 									<select class="ms-list contenedor" multiple='multiple' formControlName="categories">
 										<option [value]='c' class="ms-elem-selectable" 
 											*ngFor="let c of categories; let i = index;"
-											(click)="addCategory(i)"> {{ c.name }} </option>
+											(click)="addCategory(i)"> {{ c }} </option>
 									</select>
 								</div>
 								<div class="ms-selection">
 									<select class="ms-list contenedor hidden-contenedor" multiple='multiple' formControlName="categories">
 										<option [value]='sc' class="ms-elem-selection" 
 											*ngFor="let sc of selected_categories; let i = index;"
-											(click)="removeCategory(i)"> {{ sc.name }} </option>
+											(click)="removeCategory(i)"> {{ sc }} </option>
 									</select>
 								</div>								
 							</div>
