@@ -34,6 +34,8 @@ export class DashboardComponent implements OnInit {
 
 	form:FormGroup;
 
+	hoy:any = new Date().getTime();
+
 	constructor( 	private _dbService:DatabaseService,
 								private _date:DateService ) {
 		this.actual_user = JSON.parse( localStorage.getItem( "user" ) );
@@ -87,7 +89,6 @@ export class DashboardComponent implements OnInit {
 				)
 				.subscribe( data => {
 					this.booksTrans = data;
-					console.log(data);
 				});
 
 		// this._dbService.getData( "tasks")
@@ -178,6 +179,17 @@ export class DashboardComponent implements OnInit {
 				}
 			});
 		}
+	}
+
+
+	deleteBook(book) {
+		book.type = 'sale';
+		const KEY = book.key;
+		delete book.key;
+
+		this._dbService.updateData('books', KEY, book)
+			.then( () => swal('Libro eliminado', `El libro ${book.title} ha sido eliminado`, 'success') )
+			.catch( () => swal('Error al eliminar libro', 'Vuelva a intentarlo', 'error'));
 	}
 
 

@@ -297,6 +297,8 @@
 									<th>Nombre</th>
 									<th>Tipo</th>
 									<th> Fecha del acuerdo </th>
+									<th>Estado</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -310,6 +312,13 @@
 									<td> {{ book.transaction }} </td>
 									<td>
 										{{ book.date_transaction | date }}
+									</td>
+									<td>
+										<span *ngIf="book.type === 'Libro'" class="label label-success label-rounded">Activo</span>
+										<span *ngIf="book.type === 'sale'" class="label label-danger label-rounded">Inactivo</span>
+									</td>
+									<td>
+										<button class="btn btn-primary" (click)="deleteBook(book)"> Eliminar libro </button>
 									</td>
 								</tr>
 							</tbody>
